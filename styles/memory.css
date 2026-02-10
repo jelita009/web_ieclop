@@ -1,0 +1,70 @@
+.memory {
+    padding: 10rem 4% 0;
+}
+.memory h1 {
+    text-align: center;
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    text-decoration: underline 3px solid rgb(30, 144, 255, 0.6);
+}
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+    grid-auto-rows: 200px;
+    grid-auto-flow: dense;
+    padding: 10px;
+    border: 2px solid dodgerblue;
+    border-radius: 10px;
+}
+.gallery > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.gallery img {
+    width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.gallery > div > img {
+    object-fit: cover;
+    background-position: center;
+    border-radius: 10px;
+}
+.gallery .lanscape {
+    grid-column: span 2;
+}
+.gallery .potrait {
+    grid-row: span 2;
+}
+
+@media (max-width: 378px) {
+    .memory {
+        padding: 5rem 4% 0;
+        margin-top: 5rem;
+    }
+    .gallery .potrait {
+        grid-column: span 2;
+    }
+    .gallery .lanscape {
+        display: none;
+    }
+}
+
+@media (max-width: 430px) {
+    .memory {
+        padding: 5rem 4% 0;
+        margin-top: 5rem;
+    }
+    .gallery .potrait {
+        grid-column: span 2;
+    }
+    .gallery .lanscape {
+        display: none;
+    }
+}

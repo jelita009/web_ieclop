@@ -1,0 +1,211 @@
+.strukturPage {
+  padding: 7rem 4% 0;
+  text-align: center;
+  font-family: "Poppins", serif;
+}
+
+.strukturPage h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-decoration: underline 3px solid rgb(30, 144, 255, 0.6);
+}
+
+.strukturPage .bph {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* 3 kolom */
+  grid-template-rows: auto auto;
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.strukturPage .ketum {
+  grid-column: 2 / 3;
+  /* posisikan di tengah kolom */
+  text-align: center;
+  color: #333;
+}
+
+.strukturPage .ketum img,
+.sekum img,
+.bendum img {
+  width: 80%;
+  object-fit: cover;
+  border: 2px solid dodgerblue;
+  box-shadow: 0 0 20px blue;
+}
+
+.strukturPage .sekum {
+  grid-column: 1 / 2;
+  /* kiri bawah */
+}
+
+.strukturPage .bendum {
+  grid-column: 3 / 4;
+  /* kanan bawah */
+}
+
+.strukturDivisi {
+  font-family: "Poppins", serif;
+  height: 70vh;
+  padding: 5.7rem 4% 0;
+  display: flex;
+  justify-content: center;
+}
+
+.strukturDivisi .strukturCard {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  width: 80%;
+  height: 25rem;
+  border: 2px solid dodgerblue;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.strukturDivisi .strukturCard img {
+  width: 27%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.7rem;
+  border: 2px solid rgb(51, 51, 51, 0.5);
+  box-shadow: 0 0 20px dodgerblue;
+}
+
+.strukturDivisi .strukturCard .textDivisi {
+  width: 70%;
+}
+
+.strukturDivisi .strukturCard .textDivisi h1 {
+  font-size: 2rem;
+}
+
+.strukturDivisi .strukturCard .textDivisi .anggota {
+  display: flex;
+  height: 79%;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: start;
+}
+
+@media (max-width: 378px) {
+  html {
+    font-size: 75%;
+  }
+
+  .strukturPage {
+    padding: 6rem 4% 0;
+  }
+
+  .strukturPage h1 {
+    font-size: 1.9rem;
+  }
+
+  .strukturPage .bph {
+    grid-template-columns: 1fr;
+    /* jadi 1 kolom */
+    grid-template-rows: auto;
+  }
+
+  .strukturPage .ketum,
+  .strukturPage .sekum,
+  .strukturPage .bendum {
+    grid-column: 1 / 2;
+    /* semuanya dalam 1 kolom */
+    text-align: center;
+    font-size: 1.25rem;
+  }
+
+  .strukturPage .ketum img,
+  .strukturPage .sekum img,
+  .strukturPage .bendum img {
+    width: 50%;
+    /* biar lebih kecil di HP */
+  }
+
+  .strukturDivisi .strukturCard {
+    width: 90%;
+    height: 110%;
+  }
+
+  .strukturDivisi .strukturCard img {
+    display: none;
+  }
+
+  .strukturDivisi .strukturCard .textDivisi {
+    width: 100%;
+  }
+
+  .strukturDivisi .strukturCard .textDivisi .anggota {
+    display: flex;
+    height: 80%;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+  }
+}
+
+@media (max-width: 430px) {
+  html {
+    font-size: 75%;
+  }
+
+  .strukturPage {
+    padding: 7rem 4% 0;
+  }
+
+  .strukturPage h1 {
+    font-size: 2.rem;
+  }
+
+  .strukturPage .bph {
+    grid-template-columns: 1fr;
+    /* jadi 1 kolom */
+    grid-template-rows: auto;
+  }
+
+  .strukturPage .ketum,
+  .strukturPage .sekum,
+  .strukturPage .bendum {
+    grid-column: 1 / 2;
+    /* semuanya dalam 1 kolom */
+    text-align: center;
+    font-size: 1.25rem;
+  }
+
+  .strukturPage .ketum img,
+  .strukturPage .sekum img,
+  .strukturPage .bendum img {
+    width: 50%;
+    /* biar lebih kecil di HP */
+  }
+
+  .strukturDivisi .strukturCard {
+    width: 90%;
+    height: 110%;
+  }
+
+  .strukturDivisi .strukturCard img {
+    display: none;
+  }
+
+  .strukturDivisi .strukturCard .textDivisi {
+    width: 100%;
+  }
+
+  .strukturDivisi .strukturCard .textDivisi .anggota {
+    display: flex;
+    height: 80%;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+  }
+}

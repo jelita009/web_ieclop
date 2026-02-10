@@ -1,0 +1,120 @@
+.home {
+    /* background-image: url('../assets/IECLOP.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; */
+    background: linear-gradient(180deg, dodgerblue, #ddd);
+    font-family: "Rubik", serif;
+    height: 100vh;
+    padding-top: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+}
+
+.home .kata h1 {
+    color: #333;
+    font-size: 17rem;
+    font-weight: 600;
+    font-style: italic;
+    line-height: 300px;
+    margin-bottom: -2rem;
+    margin-top: 3rem;
+}
+
+.home .kata p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-align: center;
+}
+
+.scroll-down {
+    display: none
+}
+
+@media (max-width: 378px) {
+    .home {
+        padding: 5.1rem 0 5rem 0;
+        height: 100vh;
+        margin-bottom: 4rem;
+    }
+
+    .home .kata h1 {
+        font-family: "Rubik", serif;
+        font-weight: 600;
+        font-style: italic;
+        font-size: 6rem;
+        text-align: center;
+        margin-bottom: -7rem;
+    }
+
+    .home .kata p {
+        font-size: 0.9rem;
+    }
+
+    .scroll-down {
+        display: block;
+        width: 30px;
+        height: 30px;
+        border-right: 10px double rgb(51, 51, 51, 0.3);
+        border-bottom: 10px double rgb(51, 51, 51, 0.3);
+        transform: rotate(45deg);
+        position: absolute;
+        bottom: 100px;
+        left: 48%;
+        animation: bounce 2s infinite alternate;
+    }
+
+    @keyframes bounce {
+        0% {
+            opacity: 80%;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+}
+
+@media (max-width: 430px) {
+    .home {
+        padding-bottom: 18rem;
+        height: 100vh;
+        align-items: center;
+    }
+
+    .home .kata h1 {
+        font-family: "Rubik", serif;
+        font-weight: 600;
+        font-style: italic;
+        font-size: 6rem;
+        margin-bottom: -7rem;
+    }
+
+    .home .kata p {
+        font-size: 1rem;
+    }
+
+    .scroll-down {
+        display: block;
+        width: 30px;
+        height: 30px;
+        border-right: 10px double rgb(51, 51, 51, 0.3);
+        border-bottom: 10px double rgb(51, 51, 51, 0.3);
+        transform: rotate(45deg);
+        position: absolute;
+        bottom: 100px;
+        left: 48%;
+        animation: bounce 2s infinite alternate;
+    }
+
+    @keyframes bounce {
+        0% {
+            opacity: 80%;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+}
