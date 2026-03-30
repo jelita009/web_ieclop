@@ -1,240 +1,200 @@
-.struktur {
-    padding: 6rem 4% 0;
-    font-family: "Poppins", serif;
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    overflow-x: hidden;
+    /* Latar belakang dasar gelap gelap */
+    background-color: #0f172a; 
 }
 
-.struktur-container {
-    display: flex;
-    justify-content: space-between;
-    height: 28rem;
-}
-
-.struktur h1 {
+.main-title {
     text-align: center;
-    font-family: "Poppins", serif;
-    font-weight: 500;
-    margin-bottom: 1.5rem;
-    text-decoration: underline 3px solid rgb(30, 144, 255, 0.6);
+    font-family: 'Lexend', sans-serif;
+    font-weight: 800;
+    font-size: 2.5rem;
+    color: #fdfcfc;
+    margin-bottom: 60px;
+    animation: fadeInDown 1s ease-out;
 }
 
-.struktur .struktur-ketum {
+.section-title, .section-subtitle {
+    font-size: clamp(2.5rem, 6vw, 3.5rem); /* Responsive font size */
+    font-family: 'Lexend', sans-serif;
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: -1px;
+    color: #ffffff;
+}
+
+.highlight {
+    color: #60a5fa; /* Biru Neon cerah */
+    /* Efek Lighting Neon pada Teks */
+    text-shadow: 0 0 15px rgba(96, 165, 250, 0.7), 
+                 0 0 30px rgba(37, 99, 235, 0.5);
+}
+
+.main-title span {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 400;
+    display: block;
+}
+
+/* TREE STRUCTURE LOGIC */
+.tree {
     display: flex;
     justify-content: center;
-    align-items: start;
-    padding-top: 4.5rem;
-    flex: 1 1 5rem;
 }
 
-.struktur .struktur-ketum .ketum {
-    height: 70%;
-    width: 40%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
+.tree ul {
+    padding-top: 20px;
+    position: relative;
+    transition: all 0.5s;
+    display: flex;
+    justify-content: center;
 }
 
-.struktur .struktur-ketum .ketum img {
-    height: 100%;
+.tree li {
+    float: left;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 5px 0 5px;
+    transition: all 0.5s;
+}
+
+/* Garis Vertikal Atas */
+.tree li::before, .tree li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
+    border-top: 2px solid #ccc;
+    width: 50%;
+    height: 20px;
+}
+
+.tree li::after {
+    right: auto;
+    left: 50%;
+    border-left: 2px solid #ccc;
+}
+
+/* Hapus garis untuk elemen tunggal */
+.tree li:only-child::after, .tree li:only-child::before {
+    display: none;
+}
+
+.tree li:only-child {
+    padding-top: 0;
+}
+
+/* Garis untuk elemen pertama dan terakhir */
+.tree li:first-child::before, .tree li:last-child::after {
+    border: 0 none;
+}
+
+.tree li:last-child::before {
+    border-right: 2px solid #ccc;
+    border-radius: 0 5px 0 0;
+}
+
+.tree li:first-child::after {
+    border-radius: 5px 0 0 0;
+}
+
+/* Garis turun dari parent */
+.tree ul ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-left: 2px solid #ccc;
+    width: 0;
+    height: 20px;
+}
+
+/* CARD DESIGN */
+.card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 15px;
+    display: inline-block;
+    position: relative;
+    transition: all 0.4s ease;
+    border: 1px solid #eee;
+    min-width: 180px;
+    animation: popUp 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+.image-box {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    padding: 3px;
+    background: #fff;
+    border: 2px solid #eee;
+    overflow: hidden;
+}
+
+.image-box img {
     width: 100%;
+    height: 100%;
+    border-radius: 50%;
     object-fit: cover;
-    border-radius: 5px;
-    border: 2px solid rgb(51, 51, 51, 0.5);
 }
 
-.struktur .struktur-info {
-    display: flex;
-    align-items: start;
-    padding-top: 3rem;
-    flex: 1 1 20rem;
-}
-
-.struktur .struktur-info .struktur-info-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 1rem;
-    height: 80%;
-    width: 90%;
-    border: 2px solid dodgerblue;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-}
-
-.struktur .struktur-info .struktur-info-card p {
-    font-size: 2rem;
+.info h3 {
+    font-size: 0.9rem;
+    font-weight: 700;
     color: #333;
 }
 
-.struktur .struktur-info .struktur-info-card button {
-    padding: 0.3rem;
-    background-color: dodgerblue;
-    font-family: "Poppins", serif;
-    border-radius: 5px;
-    width: auto;
-    height: 3rem;
-    color: #ddd;
+.info p {
+    font-size: 0.75rem;
+    color: #777;
+    margin-top: 3px;
 }
 
-.struktur .struktur-info .struktur-info-card button:hover {
-    transform: scaleY(1.1);
+/* THEME COLORS */
+.ketum { border-bottom: 5px solid #2563eb; }
+.bph { border-bottom: 5px solid #10b981; }
+.divisi { border-bottom: 5px solid #7c3aed; }
+
+/* ANIMATIONS & EFFECTS */
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    background: #f8faff;
 }
 
-/* CSS (template button) */
-.struktur .struktur-info .struktur-info-card a {
-    align-items: center;
-    background-color: dodgerblue;
-    border: 2px solid rgba(0, 0, 0, 0.2);
-    border-radius: .25rem;
-    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-    box-sizing: border-box;
-    color: #ddd;
-    cursor: pointer;
-    display: inline-flex;
-    font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    justify-content: center;
-    line-height: 1.25;
-    margin: 0;
-    min-height: 1.2rem;
-    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-    position: relative;
-    text-decoration: none;
-    transition: all 250ms;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: baseline;
-    width: auto;
+.shadow-blue:hover { border-color: #2563eb; }
+.shadow-green:hover { border-color: #10b981; }
+
+@keyframes popUp {
+    0% { opacity: 0; transform: translateY(30px) scale(0.8); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-.struktur .struktur-info .struktur-info-card a:hover,
-.struktur .struktur-info .struktur-info-card a:focus {
-    border-color: rgba(0, 0, 0, 0.15);
-    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-    color: rgb(221, 221, 221, 0.9);
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.struktur .struktur-info .struktur-info-card a:hover {
-    transform: translateY(-1px);
+/* Floating Animation for Ketum */
+.ketum {
+    animation: float 3s ease-in-out infinite, popUp 0.8s ease-out;
 }
 
-.struktur .struktur-info .struktur-info-card a:active {
-    background-color: #ddd;
-    border-color: rgba(0, 0, 0, 0.15);
-    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
-    color: rgba(0, 0, 0, 0.65);
-    transform: translateY(0);
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
 }
 
-.struktur h4 {
-    border-bottom: 2px solid dodgerblue;
-    border-radius: 5px;
-    font-weight: 500;
-    padding: 1rem;
-    width: 100%;
-    text-align: center;
-}
-
-@media (max-width: 378px) {
-    .struktur {
-        padding: 5rem 4% 0;
-    }
-
-    .struktur-container {
-        flex-wrap: wrap;
-    }
-
-    .struktur h1 {
-        margin-bottom: -2rem;
-    }
-
-    .struktur .struktur-ketum .ketum {
-        height: 100%;
-        width: 50%;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        border-radius: 5px;
-    }
-
-    .struktur .struktur-ketum .ketum p {
-        font-size: 0.9rem;
-    }
-
-    .struktur .struktur-container .struktur-info .struktur-info-card p {
-        font-size: 1.5rem;
-    }
-
-    .struktur .struktur-info {
-        margin-top: 1rem;
-        justify-content: center;
-        align-items: end;
-    }
-
-    .struktur .struktur-info .struktur-info-card {
-        height: 95%;
-        padding: 0.7rem;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .struktur .struktur-info .struktur-info-card button {
-        height: 2.3rem;
-    }
-
-    .struktur h4 {
-        /* margin-top: 0.5rem;
-        font-size: 0.8rem;
-        padding: 0.5rem; */
-        display: none;
-    }
-}
-
-@media (max-width: 430px) {
-    .struktur {
-        padding: 5rem 4% 0;
-    }
-
-    .struktur-container {
-        flex-wrap: wrap;
-    }
-
-    .struktur h1 {
-        margin-bottom: -2rem;
-    }
-
-    .struktur .struktur-ketum .ketum {
-        height: 100%;
-        width: 50%;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        border-radius: 5px;
-    }
-
-    .struktur .struktur-ketum .ketum p {
-        font-size: 0.9rem;
-    }
-
-    .struktur .struktur-container .struktur-info .struktur-info-card p {
-        font-size: 1.5rem;
-    }
-
-    .struktur .struktur-info {
-        margin-top: 1rem;
-        justify-content: center;
-        align-items: end;
-    }
-
-    .struktur .struktur-info .struktur-info-card {
-        height: 95%;
-        padding: 0.7rem;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .struktur .struktur-info .struktur-info-card button {
-        height: 2.3rem;
-    }
-
-    .struktur h4 {
-        /* margin-top: 0.5rem;
-        font-size: 0.8rem;
-        padding: 0.5rem; */
-        display: none;
-    }
-}
+/* Delay for children to appear one by one */
+.tree li:nth-child(1) .card { animation-delay: 0.2s; }
+.tree li:nth-child(2) .card { animation-delay: 0.4s; }
+.tree li:nth-child(3) .card { animation-delay: 0.6s; }

@@ -1,256 +1,271 @@
-.aboutPage {
-    padding: 7rem 4% 0;
-    text-align: center;
-    font-family: "Poppins", serif;
+/* =========================================
+   ABOUT PAGE & DIVISI STYLES (MODERN UPDATE)
+   ========================================= */
+
+/* 1. GLOBAL & DYNAMIC BACKGROUND */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    overflow-x: hidden;
+    /* Latar belakang dasar gelap gelap */
+    background-color: #0f172a; 
 }
 
-.aboutPage h1 {
-    text-align: center;
-    font-family: "Poppins", serif;
-    font-size: 2.5rem;
-    font-weight: 500;
-    margin-bottom: 1rem;
-    text-decoration: underline 3px solid rgb(30, 144, 255, 0.6);
+/* Mengganti BG polos dengan Pola Grid + Lighting Neon */
+.animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    /* Pola Grid Geometris (Garis Kotak-Kotak) */
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px; /* Ukuran kotak grid */
+    background-position: center;
 }
 
-.aboutPage .aboutpage-wrapper {
-    height: 70vh;
+/* Efek Lighting Neon Merah & Biru yang Bergerak */
+.glass-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(225, 29, 72, 0.1) 0%, transparent 40%);
+    backdrop-filter: blur(3px); /* Sedikit blur agar grid menyatu */
+    animation: pulseLighting 10s ease-in-out infinite alternate;
+}
+
+@keyframes pulseLighting {
+    0% { background-position: 0% 0%; opacity: 0.8; }
+    100% { background-position: 100% 100%; opacity: 1; }
+}
+
+/* 2. LAYOUT CONTAINER (DIPERBAIKI: Jarak ke atas dikurangi) */
+.aboutPage, .division-section {
+    /* Padding atas dikurangi dari 80px menjadi 30px agar lebih ke atas */
+    padding: 30px 8% 80px; 
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.about-hero {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title, .section-subtitle {
+    font-size: clamp(2.5rem, 6vw, 3.5rem); /* Responsive font size */
+    font-family: 'Lexend', sans-serif;
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: -1px;
+    color: #ffffff;
+}
+
+.highlight {
+    color: #60a5fa; /* Biru Neon cerah */
+    /* Efek Lighting Neon pada Teks */
+    text-shadow: 0 0 15px rgba(96, 165, 250, 0.7), 
+                 0 0 30px rgba(37, 99, 235, 0.5);
+}
+
+.title-underline {
+    width: 100px;
+    height: 6px;
+    background: linear-gradient(90deg, #2563eb, #e11d48); /* Gradasi Biru-Merah */
+    margin: 15px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(37, 99, 235, 0.5);
+}
+
+/* 3. HERO WRAPPER (Glassmorphism Super Keren) */
+.aboutpage-wrapper {
     display: flex;
     align-items: center;
+    gap: 50px;
+    /* Efek Kaca Transparan Gelap */
+    background: rgba(255, 255, 255, 0.03); 
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 60px;
+    border-radius: 30px;
+    /* Garis tepi tipis bersinar */
+    border: 1px solid rgba(255, 255, 255, 0.08); 
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.aboutPage .aboutpage-wrapper .aboutpage-img img {
-    width: 65%;
-    border-radius: 150px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+.aboutpage-wrapper:hover {
+    transform: translateY(-5px);
+    border-color: rgba(96, 165, 250, 0.3);
 }
 
-.aboutPage .aboutpage-wrapper .aboutpage-img {
-    width: 40%;
+.aboutpage-img {
+    flex: 0 0 35%;
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
-.aboutPage .aboutpage-wrapper .aboutpage-text {
-    width: 60%;
-    height: 70%;
-    display: flex;
-    border: 2px solid dodgerblue;
-    border-radius: 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    align-items: center;
-    padding: 1rem 5rem;
-}
-
-.aboutPage .aboutpage-wrapper .aboutpage-text p {
-    font-size: 1rem;
-}
-
-.aboutPage .aboutpage-wrapper .aboutpage-text .con {
-    display: block;
-}
-
-.aboutDivisi {
-    font-family: "Poppins", serif;
-    height: 70vh;
-    padding: 5.7rem 4% 0;
-}
-
-.aboutDivisi .card {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem;
+.aboutpage-img img {
     width: 100%;
-    height: 25rem;
-    border: 2px solid dodgerblue;
-    border-radius: 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    /* Animasi Floating (Melayang) */
+    animation: floatLogo 5s ease-in-out infinite;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
 }
 
-.aboutDivisi .card .textDivisi {
-    width: 70%;
+@keyframes floatLogo {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(2deg); }
 }
 
-.aboutDivisi .card .textDivisi h1 {
-    font-size: 3rem;
+.aboutpage-text p {
+    line-height: 1.8;
+    font-size: 1.15rem;
+    color: #d1d5db; /* Abu-abu terang agar nyaman dibaca */
+    font-weight: 300;
 }
 
-.aboutDivisi img {
-    width: 23%;
-    height: 100%;
+/* 4. STATS BOX (Cool Digital Look) */
+.stats-container {
+    display: flex;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.stat-box {
+    text-align: center;
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.stat-box:hover {
+    background: rgba(37, 99, 235, 0.1);
+    border-color: #60a5fa;
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+}
+
+.stat-num {
+    display: block;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #60a5fa;
+    text-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
+}
+
+.stat-box p {
+    color: #9ca3af;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+
+/* 5. DIVISION CARDS (Modern Alternating Layout) */
+.division-card {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    margin-bottom: 40px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.division-card:hover {
+    transform: translateY(-10px) scale(1.01);
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(96, 165, 250, 0.3);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.div-content {
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    gap: 40px;
+}
+
+/* Membuat tata letak bergantian (Teks-Gambar / Gambar-Teks) */
+.division-card.reverse .div-content {
+    flex-direction: row-reverse;
+}
+
+.div-text {
+    flex: 1;
+}
+
+.div-text h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.div-text h3 span {
+    margin-left: 10px;
+    font-size: 1.5rem;
+}
+
+.div-text p {
+    color: #9ca3af;
+    line-height: 1.7;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.div-img {
+    flex: 0 0 40%;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.div-img img {
+    width: 100%;
+    height: auto;
     object-fit: cover;
-    border-radius: 0.7rem;
-    border: 2px solid rgb(51, 51, 51, 0.5);
-    box-shadow: 0 0 20px dodgerblue;
+    transition: transform 0.6s ease;
 }
 
-@media (max-width: 378px) {
-    html {
-        font-size: 80%;
-    }
-
-    .aboutPage {
-        padding: 6rem 4% 0;
-    }
-
-    .aboutPage h1 {
-        font-size: 2rem;
-    }
-
-    .aboutPage .aboutpage-wrapper {
-        /* background-color: wheat; */
-        flex-direction: column;
-        justify-content: space-between;
-        height: 75vh;
-    }
-
-    .aboutPage .aboutpage-wrapper .aboutpage-img img {
-        width: 100%;
-        border-radius: 150px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    }
-
-    .aboutPage .aboutpage-wrapper .aboutpage-img {
-        width: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 1rem;
-    }
-
-    .aboutPage .aboutpage-wrapper .aboutpage-text {
-        width: 80%;
-        height: 65%;
-        display: flex;
-        border: 2px solid dodgerblue;
-        border-radius: 1rem;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        align-items: center;
-        padding: 0 0.1rem;
-    }
-
-    .aboutPage .aboutpage-wrapper .aboutpage-text p {
-        font-size: 1.1rem;
-    }
-
-    .aboutDivisi .card {
-        display: flex;
-        justify-content: space-between;
-        padding: 1rem;
-        width: 100%;
-        height: auto;
-        border: 2px solid dodgerblue;
-        border-radius: 1rem;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .aboutDivisi .card .textDivisi {
-        width: 100%;
-        height: 30rem;
-    }
-
-    .aboutDivisi .card .textDivisi h1 {
-        font-size: 2.3rem;
-    }
-
-    .aboutDivisi .card .textDivisi span {
-        display: none;
-    }
-
-    .aboutDivisi .card .textDivisi p {
-        font-size: 1rem;
-    }
-
-    .aboutDivisi .card img {
-        display: none;
-    }
+/* Efek Zoom Gambar saat Card di-hover */
+.division-card:hover .div-img img {
+    transform: scale(1.1) rotate(1deg);
 }
 
-@media (max-width: 430px) {
-    html {
-        font-size: 80%;
-    }
+/* 6. RESPONSIVE (Menjaga tampilan di HP tetap keren) */
+@media (max-width: 992px) {
+    .aboutPage, .division-section { padding: 20px 5% 60px; }
+    .aboutpage-wrapper { flex-direction: column; padding: 40px; text-align: center; }
+    .aboutpage-img { width: 100%; max-width: 250px; margin-bottom: 30px; }
+    .stats-container { justify-content: center; flex-wrap: wrap; }
+    .stat-box { flex: 0 0 45%; }
+}
 
-    .aboutPage {
-        padding: 7rem 4% 0;
+@media (max-width: 768px) {
+    .div-content, .division-card.reverse .div-content {
+        flex-direction: column-reverse; /* Gambar di atas teks saat mobile */
+        padding: 30px;
+        text-align: center;
     }
-
-    .aboutPage h1 {
-        font-size: 2rem;
-    }
-
-    .aboutPage .aboutpage-wrapper {
-        /* background-color: wheat; */
-        flex-direction: column;
-        justify-content: space-between;
-        height: 65vh;
-        margin-bottom: 4rem;
-    }
-
-    .aboutPage .aboutpage-wrapper .aboutpage-img img {
-        width: 100%;
-        border-radius: 150px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    }
-
-    .aboutPage .aboutpage-wrapper .aboutpage-img {
-        width: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 1rem;
-    }
-
-    .aboutPage .aboutpage-wrapper .aboutpage-text {
-        width: 80%;
-        height: 55%;
-        display: flex;
-        border: 2px solid dodgerblue;
-        border-radius: 1rem;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        align-items: center;
-        padding: 0 1rem;
-    }
-
-    .aboutPage .aboutpage-wrapper .aboutpage-text p {
-        font-size: 1.2rem;
-    }
-
-    .aboutDivisi {
-        font-family: "Poppins", serif;
-        height: 60vh;
-    }
-
-    .aboutDivisi .card {
-        display: flex;
-        justify-content: space-between;
-        padding: 1rem;
-        width: 100%;
-        height: auto;
-        border: 2px solid dodgerblue;
-        border-radius: 1rem;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .aboutDivisi .card .textDivisi {
-        width: 100%;
-        height: 35rem;
-    }
-
-    .aboutDivisi .card .textDivisi h1 {
-        font-size: 2.7rem;
-    }
-
-    .aboutDivisi .card .textDivisi span {
-        display: none;
-    }
-
-    .aboutDivisi .card .textDivisi p {
-        font-size: 1.3rem;
-    }
-
-    .aboutDivisi .card img {
-        display: none;
-    }
+    
+    .div-img { width: 100%; margin-bottom: 25px; }
+    
+    .section-title { font-size: 2.2rem; }
 }

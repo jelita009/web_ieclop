@@ -1,147 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- styles -->
-    <link rel="stylesheet" href="./styles/navbar.css">
-    <link rel="stylesheet" href="./styles/memoryPage.css">
-    <link rel="stylesheet" href="./styles/footer.css">
+    <title>Memories - UKM IECLOP</title>
     
-    <style>
-        @media(max-width: 430px) {
-            footer {
-                font-size: 115%;
-            }
-        }
-    </style>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,600&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
-        rel="stylesheet">
-    <!-- Bootstrap Icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <title>Memories IECLOP</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/memoryPage.css">
 </head>
+<body class="text-white antialiased">
+    <div class="overlay"></div>
 
-<body style="background-color: #ddd;">
-    <!-- ===== NAVBAR ===== -->
-    <nav class="navbar">
-        <a href="#home" class="nav-logo">
-            <img src="img/logo_IECLOP.png" alt="Logo IECLOP" />
-        </a>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="struktur.html">Structure</a>
-            <a href="memory.html">Memories</a>
+    <nav class="navbar-main">
+        <div class="flex items-center space-x-3">
+            <img src="image/logo_IECLOP.png" alt="Logo IECLOP" class="h-10 md:h-12 w-auto object-contain">
+            <span class="text-xl md:text-2xl font-black tracking-tighter uppercase">IECLOP</span>
         </div>
-        <a href="#" id='hamburger-menu'><i class="bi bi-list"></i></a>
+        
+        <div class="hidden md:flex items-center space-x-10 font-semibold tracking-wide">
+            <a href="index.html" class="nav-link">Beranda</a>
+            <a href="about.html" class="nav-link">Tentang</a>
+            <a href="struktur.html" class="nav-link">Struktur</a>
+            
+            <div class="dropdown">
+                <button class="nav-link flex items-center group">
+                    <span>Divisi</span> 
+                    <i class="fa-solid fa-chevron-down text-xs ml-2 transition-transform group-hover:rotate-180"></i>
+                </button>
+                <div class="dropdown-menu-wrapper">
+                    <div class="dropdown-content">
+                        <a href="#"><i class="fa-solid fa-users-gears mr-2"></i> Human Resource</a>
+                        <a href="#"><i class="fa-solid fa-book-open-reader mr-2"></i> Education</a>
+                        <a href="#"><i class="fa-solid fa-bullhorn mr-2"></i> Public Relation</a>
+                    </div>
+                </div>
+            </div>
+            <a href="memory.html" class="nav-link active">Memory</a>
+        </div>
+
+        <div class="flex items-center space-x-6">
+            <div class="lang-container">
+                <span class="lang-link lang-active">ID</span>
+                <span class="text-gray-500">|</span>
+                <span class="lang-link">EN</span>
+            </div>
+            <button class="admin-login-btn">
+                <i class="fa-solid fa-user-shield"></i>
+            </button>
+        </div>
     </nav>
-    <section class="memoryPage">
-        <h1>Our Memories remains here!</h1>
-        <div class="gallery">
-            <!-- Tambah/Ganti foto disini 😊👇 (jangan unggah gambar potrait pada class lanscape)* -->
-            <div class="potrait"><img src="img/memories/P24.JPG" alt="" /></div>
-            <div class="potrait"><img src="img/memories/P25.JPG" alt="" /></div>
-            <div class="lanscape"><img src="img/memories/L21.JPG" alt="" /></div>
-            <div class="lanscape"><img src="img/memories/L22.JPG" alt="" /></div>
-            <div class="potrait"><img src="img/memories/P28.JPG" alt="" /></div>
-            <div class="lanscape"><img src="img/memories/L29.JPG" alt="" /></div>
-            <div class="lanscape"><img src="img/memories/L30.JPG" alt="" /></div>
-            <div class="potrait"><img src="img/memories/P27.JPG" alt="" /></div>
-            
-            <div class="potrait"><img src="img/memories/P17.JPG" alt="" /></div>
-            <div class="potrait"><img src="img/memories/P18.JPG" alt="" /></div>
-            <div class="lanscape"><img src="img/memories/L27.JPG" alt="" /></div>
-            <div class="lanscape"><img src="img/memories/L23.JPG" alt="" /></div>
-            <div class="potrait"><img src="img/memories/P19.JPG" alt="" /></div>
-            <div class="lanscape"><img src="img/memories/L19.JPG" alt="" /></div>
-            <div class="lanscape"><img src="img/memories/L20.JPG" alt="" /></div>
-            <div class="potrait"><img src="img/memories/P20.JPG" alt="" /></div>
-            
-            <div class="potrait"><img src="img/memories/P26.JPG" alt="" /></div>
-            <div class="potrait"><img src="img/memories/P21.JPG" alt="" /></div>
-            <div class="lanscape"><img src="img/memories/L28.JPG" alt="" /></div>
-            <div class="lanscape"><img src="img/memories/L26.JPG" alt="" /></div>
-            <div class="potrait"><img src="img/memories/P23.JPG" alt="" /></div>
-            <div class="lanscape"><img src="img/memories/L25.JPG" alt="" /></div>
-            <div class="lanscape"><img src="img/memories/L24.JPG" alt="" /></div>
-            <div class="potrait"><img src="img/memories/P22.JPG" alt="" /></div>
-            
-            <div class="potrait"><img src="img/memories/P1.jpg" alt="" /></div>
-            <div class="potrait"><img src="img/memories/P2.jpg" alt="" /></div>
-            <div class="lanscape"><img src="img/memories/L1.jpg" alt="" /></div>
-            <div class="lanscape"><img src="img/memories/L2.jpg" alt="" /></div>
-            <div class="potrait"><img src="img/memories/P3.jpg" alt="" /></div>
-            <div class="lanscape"><img src="img/memories/L3.jpg" alt="" /></div>
-            <div class="lanscape"><img src="img/memories/L4.jpg" alt="" /></div>
-            <div class="potrait"><img src="img/memories/P8.jpg" alt="" /></div>
-            
-            <div class="potrait"><img src="img/memories/P5.jpg" alt="" /></div>
-            <div class="potrait"><img src="img/memories/P6.jpg" alt="" /></div> 
-            <div class="lanscape"><img src="img/memories/L9.jpg" alt="" /></div>
-            <div class="lanscape"><img src="img/memories/L6.jpg" alt="" /></div>
-            <div class="potrait"><img src="img/memories/P4.jpg" alt="" /></div>
-            <div class="lanscape"><img src="img/memories/L5.jpg" alt="" /></div>
-            <div class="lanscape"><img src="img/memories/L8.jpg" alt="" /></div>
-            <div class="potrait"><img src="img/memories/P7.jpg" alt="" /></div>
-            
-            <div class="potrait"><img src="img/memories/P9.JPG" alt="" /></div>
-            <div class="potrait"><img src="img/memories/P10.JPG" alt="" /></div>
-            <div class="lanscape"><img src="img/memories/L13.JPG" alt="" /></div>
-            <div class="lanscape"><img src="img/memories/L14.JPG" alt="" /></div>
-            <div class="potrait"><img src="img/memories/P11.JPG" alt="" /></div>
-            <div class="lanscape"><img src="img/memories/L12.JPG" alt="" /></div>
-            <div class="lanscape"><img src="img/memories/L11.JPG" alt="" /></div>
-            <div class="potrait"><img src="img/memories/P12.JPG" alt="" /></div>
 
-            <div class="potrait"><img src="img/memories/P13.JPG" alt="" /></div>
-            <div class="potrait"><img src="img/memories/P16.JPG" alt="" /></div>
-            <div class="lanscape"><img src="img/memories/L15.JPG" alt="" /></div>
-            <div class="lanscape"><img src="img/memories/L16.JPG" alt="" /></div>
-            <div class="potrait"><img src="img/memories/P15.JPG" alt="" /></div>
-            <div class="lanscape"><img src="img/memories/L17.JPG" alt="" /></div>
-            <div class="lanscape"><img src="img/memories/L18.JPG" alt="" /></div>
-            <div class="potrait"><img src="img/memories/P14.JPG" alt="" /></div>
-
+    <section class="memory-container">
+        <div class="memory-header">
+            <div class="accent-line mx-auto"></div>
+            <h1>Our Shared <span class="highlight">Memories</span></h1>
+            <p>Setiap foto menceritakan sebuah cerita perjuangan dan kebersamaan kami di IECLOP.</p>
         </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item potrait">
+                <img src="img/memories/P24.JPG" alt="Memory 1">
+                <div class="item-overlay"><span>Moment 2024</span></div>
+            </div>
+            <div class="gallery-item lanscape">
+                <img src="img/memories/L21.JPG" alt="Memory 2">
+                <div class="item-overlay"><span>Activity</span></div>
+            </div>
+            <div class="gallery-item potrait">
+                <img src="img/memories/P25.JPG" alt="Memory 3">
+                <div class="item-overlay"><span>Documentation</span></div>
+            </div>
+            <div class="gallery-item lanscape">
+                <img src="img/memories/L22.JPG" alt="Memory 4">
+                <div class="item-overlay"><span>Group Photo</span></div>
+            </div>
+            <div class="gallery-item potrait"><img src="img/memories/P28.JPG" alt=""><div class="item-overlay"><span>Team</span></div></div>
+            <div class="gallery-item lanscape"><img src="img/memories/L29.JPG" alt=""><div class="item-overlay"><span>Workshop</span></div></div>
+            </div>
     </section>
-    <!-- ===== FOOTER ===== -->
-    <footer>
-        <div class="footer-medsos">
-            <a href="https://www.youtube.com/@ukmiecloppnl4498" target="_blank"><i class="bi bi-youtube"></i></a>
-            <a href="https://discord.gg/TVRUnAWU" target="_blank"><i class="bi bi-discord"></i></a>
-            <a href="https://www.instagram.com/ieclop.kbmpnl?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="bi bi-instagram"></i></a>
+
+    <footer class="footer">
+        <div class="flex justify-center space-x-6 mb-4 text-2xl">
+            <a href="#" class="hover:text-blue-500 transition"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="hover:text-blue-400 transition"><i class="bi bi-discord"></i></a>
+            <a href="#" class="hover:text-pink-500 transition"><i class="bi bi-instagram"></i></a>
         </div>
-        <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="struktur.html">Structure</a>
-            <a href="memory.html">Memories</a>
-        </div>
-        <p>copyright by INFOCOM IECLOP&copy;</p>
+        <p>Copyright &copy; 2024 INFOCOM IECLOP. All Rights Reserved.</p>
     </footer>
-        <script>
-        // ketika hamburger menu di klik
-        const navLinks = document.querySelector(".nav-links");
-        const hamburgerMenu = document.querySelector("#hamburger-menu");
-        hamburgerMenu.onclick = (e) => {
-            e.preventDefault();
-            navLinks.classList.toggle('active');
-
-        };
-
-        // tutup hamburger menu ketika tidak mengklik hamburger menu
-        document.addEventListener('click', function (e) {
-            if (!hamburgerMenu.contains(e.target) && !navLinks.contains(e.target)) {
-                navLinks.classList.remove('active')
-            }
-        });
-    </script>
 </body>
-
 </html>

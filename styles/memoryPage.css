@@ -1,93 +1,140 @@
-.memoryPage {
-    padding: 7rem 4% 0;
-    font-family: "Poppins", serif;
+/* 1. GLOBAL & DYNAMIC BACKGROUND */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    overflow-x: hidden;
+    /* Latar belakang dasar gelap gelap */
+    background-color: #0f172a; 
 }
 
-.memoryPage h1 {
-    text-align: center;
-    font-weight: 500;
-    margin-bottom: 1.5rem;
-    text-decoration: underline 3px solid rgb(30, 144, 255, 0.6);
-}
-
-.gallery {
-    display: grid;
+/* CONTAINER SETUP */
+.memory-container {
+    padding: 6rem 5% 4rem;
+    min-height: 100vh;
     position: relative;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 10px;
-    grid-auto-rows: 200px;
-    grid-auto-flow: dense;
-    padding: 10px;
-    border: 2px solid dodgerblue;
-    border-radius: 10px;
+    z-index: 1;
 }
 
-.gallery>div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/* HEADER STYLE */
+.memory-header {
+    text-align: center;
+    margin-bottom: 4rem;
 }
 
-.gallery img {
-    width: 100%;
-    max-height: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.memory-header h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin-bottom: 1rem;
 }
 
-.gallery>div>img {
-    object-fit: cover;
-    background-position: center;
-    border-radius: 10px;
+.memory-header .highlight {
+    color: #2563eb;
+    text-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
 }
 
-.gallery .lanscape {
-    grid-column: span 2;
+.memory-header p {
+    color: #9ca3af;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.gallery .potrait {
+/* GALLERY GRID SYSTEM (MASONRY LOOK) */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 150px; /* Tinggi baris dasar */
+    grid-auto-flow: dense; /* Sangat penting untuk mengisi celah kosong */
+    gap: 20px;
+}
+
+/* BASE ITEM */
+.gallery-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* LOGIC UKURAN GAMBAR */
+.potrait {
+    grid-row: span 3; /* Lebih tinggi */
+}
+
+.lanscape {
+    grid-column: span 2; /* Lebih lebar */
     grid-row: span 2;
 }
 
-
-@media (max-width: 378px) {
-    html {
-        font-size: 80%;
-    }
-
-    .memoryPage {
-        padding: 5rem 4% 0;
-    }
-
-    .gallery .potrait {
-        grid-column: span 2;
-    }
-
-    .gallery .lanscape {
-        display: none;
+@media (max-width: 768px) {
+    .lanscape {
+        grid-column: span 1; /* Di HP jadi normal agar tidak sempit */
     }
 }
 
-@media (max-width: 430px) {
-    html {
-        font-size: 80%;
-    }
+/* IMAGE BEHAVIOR */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
 
-    .memoryPage {
-        padding: 7rem 4% 0;
-    }
+/* HOVER EFFECTS */
+.gallery-item:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(37, 99, 235, 0.4);
+    z-index: 10;
+}
 
-    .memoryPage h1 {
-        font-size: 2rem;        
-    }
+.gallery-item:hover img {
+    transform: scale(1.1);
+    filter: brightness(0.6);
+}
 
-    .gallery .potrait {
-        grid-column: span 2;
-    }
+/* CAPTION OVERLAY */
+.item-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to top, rgba(37, 99, 235, 0.4), transparent);
+    opacity: 0;
+    transition: 0.4s ease;
+}
 
-    .gallery .lanscape {
-        display: none;
-    }
+.item-overlay span {
+    color: white;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #2563eb;
+    padding-bottom: 5px;
+    transform: translateY(20px);
+    transition: 0.4s ease;
+}
+
+.gallery-item:hover .item-overlay {
+    opacity: 1;
+}
+
+.gallery-item:hover .item-overlay span {
+    transform: translateY(0);
+}
+
+/* FOOTER FIX UNTUK PAGE INI */
+.footer {
+    margin-top: 5rem;
+    padding: 3rem;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
 }
