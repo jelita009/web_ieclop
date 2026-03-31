@@ -6,61 +6,40 @@
     <title>Admin Dashboard - IECLOP</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
     <style>
-        .admin-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 20px;
-            transition: 0.3s;
-        }
-        .task-item {
-            display: flex;
-            align-items: center;
-            padding: 12px;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.02);
-            margin-bottom: 8px;
-            cursor: pointer;
-        }
+        .admin-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; }
+        .task-item { display: flex; align-items: center; padding: 12px; border-radius: 12px; background: rgba(255, 255, 255, 0.02); margin-bottom: 8px; cursor: pointer; transition: 0.3s; }
         .task-item:hover { background: rgba(255, 255, 255, 0.07); }
-        
-        input[type="checkbox"] {
-            width: 20px; height: 20px;
-            accent-color: #3b82f6;
-            margin-right: 15px;
-        }
+        input[type="checkbox"] { width: 18px; height: 18px; accent-color: #3b82f6; margin-right: 15px; }
     </style>
 </head>
 <body class="bg-[#080808] text-white">
-    <div class="overlay"></div>
 
-    <nav class="navbar-main mb-10">
-        <span class="text-xl font-black">ADMIN <span class="text-blue-500">DASHBOARD</span></span>
-        <button onclick="logout()" class="bg-red-500/20 text-red-500 px-4 py-2 rounded-lg text-sm font-bold border border-red-500/30 hover:bg-red-500 hover:text-white transition">
-            LOGOUT
-        </button>
+    <nav class="p-6 flex justify-between items-center max-w-6xl mx-auto mb-10">
+        <span class="text-xl font-black uppercase">Admin <span class="text-blue-500">Dashboard</span></span>
+        <div class="flex gap-4">
+            <button onclick="resetProgress()" class="text-xs text-gray-500 underline hover:text-red-400 transition">Reset All</button>
+            <button onclick="logout()" class="bg-red-500/20 text-red-500 px-4 py-2 rounded-lg text-xs font-bold border border-red-500/30 hover:bg-red-500 hover:text-white transition">LOGOUT</button>
+        </div>
     </nav>
 
     <main class="max-w-6xl mx-auto px-6 pb-20">
-        <header class="mb-10">
-            <h1 class="text-4xl font-black mb-2">Manajemen Tugas Divisi</h1>
-            <p class="text-gray-400">Centang tugas yang sudah selesai untuk ditampilkan di halaman publik.</p>
+        <header class="mb-10 text-center md:text-left">
+            <h1 class="text-4xl font-black mb-2">Manajemen Proker Divisi</h1>
+            <p class="text-gray-400">Centang untuk mengubah status menjadi "Terlaksana" di halaman publik.</p>
         </header>
 
-        <div class="grid md:grid-cols-3 gap-8" id="admin-task-container">
-            </div>
+        <div class="grid md:grid-cols-3 gap-8" id="admin-task-container"></div>
     </main>
 
     <script>
-        // Cek Login
-        if(localStorage.getItem("adminLoggedIn") !== "true") window.location.href = "login.html";
-
-        // Data Tugas (Sesuaikan dengan kebutuhanmu)
+        // Data Tugas Master (HARUS SAMA DENGAN DIVISI.HTML)
         const tasksData = {
-            "Human Resource": ["Open Recruitment 2026", "Gathering Internal", "Pelatihan Kepemimpinan", "Evaluasi Anggota"],
-            "Education": ["Web Development Workshop", "IoT Fundamental Class", "Sharing Session Alumni", "Lomba Coding"],
-            "Public Relation": ["Postingan Instagram Mingguan", "MOU dengan Perusahaan", "Media Partner Event", "Update Website UKM"]
+            "Infocom": ["Update Website UKM", "Postingan IG Mingguan", "Desain PDH Day"],
+            "Education": ["Weekly Study", "TOEFL Simulation", "English Camp"],
+            "Regeneration": ["Open Recruitment", "Internship Program", "Internal Bonding"],
+            "Olympic": ["Olympic Practice", "Debate Competition", "Speech Workshop"],
+            "Public Relation": ["MOU Perusahaan", "Media Partner", "Alumni Database"]
         };
 
         function renderTasks() {
@@ -68,19 +47,20 @@
             container.innerHTML = "";
 
             for (const [divisi, tasks] of Object.entries(tasksData)) {
-                let taskHtml = `<div class="admin-card p-6">
+                let taskHtml = `
+                <div class="admin-card p-6">
                     <h2 class="text-xl font-bold mb-4 text-blue-400 border-b border-white/10 pb-2">${divisi}</h2>`;
                 
                 tasks.forEach((task, index) => {
-                    const taskId = `${divisi}-${index}`.replace(/\s+/g, '-');
+                    // Rumus ID: NamaDivisi-Index (Contoh: Infocom-0)
+                    const taskId = `${divisi}-${index}`;
                     const isChecked = localStorage.getItem(taskId) === "true";
                     
                     taskHtml += `
                         <label class="task-item">
                             <input type="checkbox" onchange="toggleTask('${taskId}', this.checked)" ${isChecked ? 'checked' : ''}>
-                            <span class="${isChecked ? 'text-blue-400 line-through' : 'text-gray-300'}">${task}</span>
-                        </label>
-                    `;
+                            <span class="${isChecked ? 'text-blue-400 line-through' : 'text-gray-300'} text-sm">${task}</span>
+                        </label>`;
                 });
 
                 taskHtml += `</div>`;
@@ -90,7 +70,16 @@
 
         function toggleTask(id, status) {
             localStorage.setItem(id, status);
-            renderTasks(); // Refresh tampilan agar efek line-through muncul
+            renderTasks();
+        }
+
+        function resetProgress() {
+            if(confirm("Hapus semua status terlaksana?")) {
+                Object.keys(localStorage).forEach(key => {
+                    if(key.includes('-')) localStorage.removeItem(key);
+                });
+                location.reload();
+            }
         }
 
         function logout() {
