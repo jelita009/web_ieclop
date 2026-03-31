@@ -16,51 +16,53 @@
     </video>
     <div class="overlay"></div>
 
-    <nav class="navbar-main">
-        <div class="flex items-center space-x-3">
-            <img src="image/logo_IECLOP.png" alt="Logo IECLOP" class="h-10 md:h-12 w-auto object-contain">
-            <span class="text-xl md:text-2xl font-black tracking-tighter uppercase">IECLOP</span>
-        </div>
+<!--    <nav class="navbar-main">-->
+<!--        <div class="flex items-center space-x-3">-->
+<!--            <img src="image/logo_IECLOP.png" alt="Logo IECLOP" class="h-10 md:h-12 w-auto object-contain">-->
+<!--            <span class="text-xl md:text-2xl font-black tracking-tighter uppercase">IECLOP</span>-->
+<!--        </div>-->
 
-        <div class="hidden md:flex items-center space-x-10 font-semibold tracking-wide">
-            <a href="index.html" class="nav-link active" id="navHome">Beranda</a>
-            <a href="about.html" id="nav-about">Tentang</a>
-            <a href="struktur.html" class="nav-link" id="nav-structure">Struktur</a>
+<!--        <div class="hidden md:flex items-center space-x-10 font-semibold tracking-wide">-->
+<!--            <a href="index.html" class="nav-link active" id="navHome">Beranda</a>-->
+<!--            <a href="about.html" id="nav-about">Tentang</a>-->
+<!--            <a href="struktur.html" class="nav-link" id="nav-structure">Struktur</a>-->
 
-            <div class="dropdown">
-                <button class="nav-link flex items-center group">
-                    <span id="navDevisi">Divisi</span>
-                    <i class="fa-solid fa-chevron-down text-xs ml-2 transition-transform group-hover:rotate-180"></i>
-                </button>
-                <div class="dropdown-menu-wrapper">
-                    <div class="dropdown-content">
-                        <a href="#" onclick="showDivision('HRD')">
-                            <i class="fa-solid fa-users-gears mr-2"></i> Human Resource
-                        </a>
-                        <a href="#" onclick="showDivision('Education')">
-                            <i class="fa-solid fa-book-open-reader mr-2"></i> Education
-                        </a>
-                        <a href="#" onclick="showDivision('PR')">
-                            <i class="fa-solid fa-bullhorn mr-2"></i> Public Relation
-                        </a>
-                    </div>
-                </div>
-            </div>
+<!--            <div class="dropdown">-->
+<!--                <button class="nav-link flex items-center group">-->
+<!--                    <span id="navDevisi">Divisi</span>-->
+<!--                    <i class="fa-solid fa-chevron-down text-xs ml-2 transition-transform group-hover:rotate-180"></i>-->
+<!--                </button>-->
+<!--                <div class="dropdown-menu-wrapper">-->
+<!--                    <div class="dropdown-content">-->
+<!--                        <a href="#" onclick="showDivision('HRD')">-->
+<!--                            <i class="fa-solid fa-users-gears mr-2"></i> Human Resource-->
+<!--                        </a>-->
+<!--                        <a href="#" onclick="showDivision('Education')">-->
+<!--                            <i class="fa-solid fa-book-open-reader mr-2"></i> Education-->
+<!--                        </a>-->
+<!--                        <a href="#" onclick="showDivision('PR')">-->
+<!--                            <i class="fa-solid fa-bullhorn mr-2"></i> Public Relation-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
 
-            <a href="memory.html" class="nav-link" id="nav-structure">memory</a>
-        </div>
+<!--            <a href="memory.html" class="nav-link" id="nav-structure">memory</a>-->
+<!--        </div>-->
 
-        <div class="flex items-center space-x-6">
-            <div class="lang-container">
-                <span onclick="changeLanguage('id')" id="btn-id" class="lang-link lang-active">ID</span>
-                <span class="text-gray-500">|</span>
-                <span onclick="changeLanguage('en')" id="btn-en" class="lang-link">EN</span>
-            </div>
-            <button onclick="window.location.href='login.html'" class="admin-login-btn">
-                <i class="fa-solid fa-user-shield"></i>
-            </button>
-        </div>
-    </nav>
+<!--        <div class="flex items-center space-x-6">-->
+<!--            <div class="lang-container">-->
+<!--                <span onclick="changeLanguage('id')" id="btn-id" class="lang-link lang-active">ID</span>-->
+<!--                <span class="text-gray-500">|</span>-->
+<!--                <span onclick="changeLanguage('en')" id="btn-en" class="lang-link">EN</span>-->
+<!--            </div>-->
+<!--            <button onclick="window.location.href='login.html'" class="admin-login-btn">-->
+<!--                <i class="fa-solid fa-user-shield"></i>-->
+<!--            </button>-->
+<!--        </div>-->
+<!--    </nav>-->
+
+    <main-navbar></main-navbar>
 
     <main>
         <div class="hero-container px-6 md:px-20">
@@ -154,6 +156,6 @@
     </footer>
 
     <script src="translate.js"></script>
-    <script src="script.js"></script>
+    <script src="js/navbar.js"></script>
 </body>
 </html>

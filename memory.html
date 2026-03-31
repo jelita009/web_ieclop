@@ -15,44 +15,7 @@
 <body class="text-white antialiased">
     <div class="overlay"></div>
 
-    <nav class="navbar-main">
-        <div class="flex items-center space-x-3">
-            <img src="image/logo_IECLOP.png" alt="Logo IECLOP" class="h-10 md:h-12 w-auto object-contain">
-            <span class="text-xl md:text-2xl font-black tracking-tighter uppercase">IECLOP</span>
-        </div>
-        
-        <div class="hidden md:flex items-center space-x-10 font-semibold tracking-wide">
-            <a href="index.html" class="nav-link">Beranda</a>
-            <a href="about.html" class="nav-link">Tentang</a>
-            <a href="struktur.html" class="nav-link">Struktur</a>
-            
-            <div class="dropdown">
-                <button class="nav-link flex items-center group">
-                    <span>Divisi</span> 
-                    <i class="fa-solid fa-chevron-down text-xs ml-2 transition-transform group-hover:rotate-180"></i>
-                </button>
-                <div class="dropdown-menu-wrapper">
-                    <div class="dropdown-content">
-                        <a href="#"><i class="fa-solid fa-users-gears mr-2"></i> Human Resource</a>
-                        <a href="#"><i class="fa-solid fa-book-open-reader mr-2"></i> Education</a>
-                        <a href="#"><i class="fa-solid fa-bullhorn mr-2"></i> Public Relation</a>
-                    </div>
-                </div>
-            </div>
-            <a href="memory.html" class="nav-link active">Memory</a>
-        </div>
-
-        <div class="flex items-center space-x-6">
-            <div class="lang-container">
-                <span class="lang-link lang-active">ID</span>
-                <span class="text-gray-500">|</span>
-                <span class="lang-link">EN</span>
-            </div>
-            <button class="admin-login-btn">
-                <i class="fa-solid fa-user-shield"></i>
-            </button>
-        </div>
-    </nav>
+    <main-navbar></main-navbar>
 
     <section class="memory-container">
         <div class="memory-header">
@@ -91,5 +54,7 @@
         </div>
         <p>Copyright &copy; 2024 INFOCOM IECLOP. All Rights Reserved.</p>
     </footer>
+
+    <script src="js/navbar.js"></script>
 </body>
 </html>
