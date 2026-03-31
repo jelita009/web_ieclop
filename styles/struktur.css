@@ -9,6 +9,10 @@ body {
     background-color: #0f172a; 
 }
 
+.container2 {
+    max-width: 100%;
+}
+
 .main-title {
     text-align: center;
     font-family: 'Lexend', sans-serif;
