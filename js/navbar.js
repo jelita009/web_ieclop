@@ -54,9 +54,9 @@ class MainNavbar extends HTMLElement {
                     <span class="text-gray-500">|</span>
                     <span onclick="changeLanguage('en')" id="btn-en" class="lang-link">EN</span>
                 </div>
-                <button onclick="toggleModal('loginModal')" class="admin-login-btn">
+                <a href="login.html" class="admin-login-btn" style="display: flex; align-items: center; justify-content: center; text-decoration: none;">
                     <i class="fa-solid fa-user-shield"></i>
-                </button>
+                </a>
             </div>
         </nav>
         `;
