@@ -1,6 +1,5 @@
 class MainNavbar extends HTMLElement {
     connectedCallback() {
-        // Ambil nama file dari URL saat ini (misal: index.html atau struktur.html)
         const currentPath = window.location.pathname.split("/").pop() || 'index.html';
 
         this.innerHTML = `
@@ -11,41 +10,37 @@ class MainNavbar extends HTMLElement {
             </div>
 
             <div class="hidden md:flex items-center space-x-10 font-semibold tracking-wide">
-                <a href="index.html" id="nav-home" class="nav-link ${currentPath === 'index.html' ? 'active' : ''}">Beranda</a>
-                <a href="about.html" id="nav-about" class="nav-link ${currentPath === 'about.html' ? 'active' : ''}">Tentang</a>
-                <a href="struktur.html" id="nav-structure" class="nav-link ${currentPath === 'struktur.html' ? 'active' : ''}">Struktur</a>
+                <a href="index.html" id="nav-home" class="nav-link ${currentPath === 'index.html' ? 'active' : ''}" data-i18n="navHome">Beranda</a>
+                <a href="about.html" id="nav-about" class="nav-link ${currentPath === 'about.html' ? 'active' : ''}" data-i18n="navAbout">Tentang</a>
+                <a href="struktur.html" id="nav-structure" class="nav-link ${currentPath === 'struktur.html' ? 'active' : ''}" data-i18n="navStructure">Struktur</a>
 
                 <div class="dropdown">
                     <button class="nav-link flex items-center group">
-                        <span>Divisi</span>
+                        <span data-i18n="navDivisions">Divisi</span>
                         <i class="fa-solid fa-chevron-down text-xs ml-2 transition-transform group-hover:rotate-180"></i>
                     </button>
                     <div class="dropdown-menu-wrapper">
                         <div class="dropdown-content">
-                            <a href="education.html" onclick="showDivision('EDU')">
+                            <a href="education.html">
                                 <i class="fa-solid fa-graduation-cap mr-2"></i> Education
                             </a>
-                            
-                            <a href="infocom.html" onclick="showDivision('INF')">
+                            <a href="infocom.html">
                                 <i class="fa-solid fa-laptop-code mr-2"></i> Infocom
                             </a>
-                            
-                            <a href="regen.html" onclick="showDivision('REG')">
+                            <a href="regen.html">
                                 <i class="fa-solid fa-user-plus mr-2"></i> Regeneration
                             </a>
-                            
-                            <a href="publicRL.html" onclick="showDivision('PR')">
+                            <a href="publicRL.html">
                                 <i class="fa-solid fa-handshake-angle mr-2"></i> Public Relation
                             </a>
-                            
-                            <a href="olympic.html" onclick="showDivision('OLY')">
+                            <a href="olympic.html">
                                 <i class="fa-solid fa-trophy mr-2"></i> Olympic
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <a href="memory.html" id="nav-memory" class="nav-link ${currentPath === 'memory.html' ? 'active' : ''}">Memory</a>
+                <a href="memory.html" id="nav-memory" class="nav-link ${currentPath === 'memory.html' ? 'active' : ''}" data-i18n="navMemory">Memory</a>
             </div>
 
             <div class="flex items-center space-x-6">
@@ -64,3 +59,22 @@ class MainNavbar extends HTMLElement {
 }
 
 customElements.define('main-navbar', MainNavbar);
+// --- FITUR PENYAMBUNG VIDEO BACKGROUND ---
+document.addEventListener("DOMContentLoaded", () => {
+    const bgVideo = document.querySelector('.video-bg');
+    
+    if (bgVideo) {
+        // 1. Cek apakah ada catatan detik video di memori browser (Session Storage)
+        const savedTime = sessionStorage.getItem('bgVideoTime');
+        
+        // Jika ada, langsung setel video ke detik tersebut
+        if (savedTime !== null) {
+            bgVideo.currentTime = parseFloat(savedTime);
+        }
+        
+        // 2. Setiap kali pengunjung akan pindah halaman, catat detik terakhir videonya
+        window.addEventListener('beforeunload', () => {
+            sessionStorage.setItem('bgVideoTime', bgVideo.currentTime);
+        });
+    }
+});

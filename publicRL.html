@@ -3,127 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Divisi - IECLOP</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Public Relation - IECLOP</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
     <style>
-        body { background-color: #080808; color: white; font-family: 'Inter', sans-serif; }
-        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; }
-        .line-connector { width: 2px; height: 40px; background: linear-gradient(to bottom, #3b82f6, transparent); margin: 0 auto; }
+        .glass-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; transition: 0.3s; }
+        .glass-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(30, 58, 138, 0.5); }
+        .line-connector { width: 2px; height: 40px; background: linear-gradient(to bottom, #1e3a8a, transparent); margin: 0 auto; }
         .status-tag { padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; }
-        .done-status { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(96, 165, 250, 0.2); }
-        .pending-status { background: rgba(255, 255, 255, 0.05); color: #94a3b8; border: 1px solid rgba(255, 255, 255, 0.1); }
+        .done-status { background: rgba(30, 58, 138, 0.3); color: #93c5fd; border: 1px solid rgba(147, 197, 253, 0.3); }
+        .pending-status { background: rgba(255, 255, 255, 0.05); color: #e2e8f0; border: 1px solid rgba(255, 255, 255, 0.1); }
     </style>
 </head>
-<body class="bg-fixed bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-blue-900/20 via-[#080808] to-[#080808]">
-
+<body class="text-white antialiased">
+    <video autoplay muted loop playsinline class="video-bg"><source src="video/contoh.mp4" type="video/mp4"></video>
+    <div class="overlay"></div>
     <main-navbar></main-navbar>
-
-    <main class="max-w-6xl mx-auto px-6 py-12">
+    <main class="max-w-6xl mx-auto px-6 py-12 relative z-10">
         <header class="text-center mb-16">
-            <h1 id="div-name" class="text-6xl font-black tracking-tighter mb-4 uppercase"></h1>
-            <p id="div-desc" class="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed"></p>
+            <h1 id="div-name" class="text-5xl md:text-6xl font-black tracking-tighter mb-4 uppercase text-white"></h1>
+            <p id="div-desc" class="text-justify leading-[1.8] tracking-[0.02em] text-blue-100 max-w-2xl mx-auto text-lg opacity-90"></p>
         </header>
-
-        <section class="mb-24">
-            <div class="flex flex-col items-center">
-                <div class="glass-card p-6 flex flex-col items-center w-56 border-blue-500/30">
-                    <img id="leader-img" src="" class="w-24 h-24 rounded-full mb-4 object-cover border-2 border-blue-500 shadow-[0_0_20px_rgba(59,130,246,0.2)]">
-                    <h3 id="leader-name" class="font-bold text-center text-lg"></h3>
-                    <span class="text-blue-400 text-[10px] font-black uppercase tracking-[0.2em] mt-1">Head of Division</span>
-                </div>
-                <div class="line-connector"></div>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="members-grid"></div>
-            </div>
-        </section>
-
-        <section>
-            <h2 class="text-2xl font-black mb-8 flex items-center gap-3">
-                <i class="fa-solid fa-list-check text-blue-500"></i> PROGRAM KERJA
-            </h2>
-            <div class="grid gap-4" id="public-task-container"></div>
-        </section>
+        <section class="mb-24"><div class="flex flex-col items-center"><div class="glass-card p-6 flex flex-col items-center w-56 border-[#1e3a8a]/50"><img id="leader-img" src="" class="w-24 h-24 rounded-full mb-4 object-cover border-4 border-[#1e3a8a]"><h3 id="leader-name" class="font-bold text-center text-lg text-white"></h3><span data-i18n="headOfDiv" class="text-blue-300 text-[10px] font-black uppercase tracking-[0.2em] mt-1">KEPALA DIVISI</span></div><div class="line-connector"></div><div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="members-grid"></div></div></section>
+        <section><h2 class="text-2xl font-black mb-8 flex items-center gap-3 text-white"><i class="fa-solid fa-list-check text-[#3b82f6]"></i> <span data-i18n="prokerTitle">PROGRAM KERJA</span></h2><div class="grid gap-4" id="public-task-container"></div></section>
     </main>
-
+    <footer class="footer mt-auto relative z-10"><div class="flex justify-center space-x-6 mb-4 text-2xl"><a href="#" class="text-white hover:text-blue-300 transition"><i class="bi bi-youtube"></i></a><a href="#" class="text-white hover:text-blue-300 transition"><i class="bi bi-discord"></i></a><a href="#" class="text-white hover:text-blue-300 transition"><i class="bi bi-instagram"></i></a></div><p>Copyright &copy; 2026 INFOCOM IECLOP. All Rights Reserved.</p></footer>
+    
     <script>
-        const divisionDetails = {
-            "Infocom": {
-                desc: "Information & Communication. Mengelola media sosial, branding visual, dan website resmi IECLOP.",
-                leader: "Ririn Rahmadani",
-                leaderImg: "https://ui-avatars.com/api/?name=Ririn+R&background=3b82f6&color=fff",
-                members: ["Diva Faradisa", "Raihan Saputra", "Muzzakir Rifaa", "Shafrijal Irmawan"],
-                tasks: ["Update Website UKM", "Postingan IG Mingguan", "Desain PDH Day"]
-            },
-            "Education": {
-                desc: "Fokus pada pengembangan akademik anggota melalui program Weekly Study dan TOEFL Class.",
-                leader: "Fauzan Arief",
-                leaderImg: "https://ui-avatars.com/api/?name=Fauzan+A&background=3b82f6&color=fff",
-                members: ["Syawali Akbar", "Chaqila Chifa", "Friyal Nabila", "Zalfa Nur Alya"],
-                tasks: ["Weekly Study", "TOEFL Simulation", "English Camp"]
-            },
-            "Public Relation": {
-                desc: "Membangun citra positif dan menjalin kolaborasi strategis dengan pihak eksternal.",
-                leader: "Faza Humairah",
-                leaderImg: "https://ui-avatars.com/api/?name=Faza+H&background=3b82f6&color=fff",
-                members: ["Santi Melvira", "Muklisah", "Karimullah", "Intan Nadia"],
-                tasks: ["MOU Perusahaan", "Media Partner", "Alumni Database"]
-            }
-            
+        const divisionDetails = { 
+            "Public Relation": { 
+                leader: "Faza Humairah", leaderImg: "https://ui-avatars.com/api/?name=Faza+H&background=1e3a8a&color=fff", members: ["Santi Melvira", "Muklisah", "Karimullah", "Intan Nadia"], 
+                id: { desc: "Membangun citra positif dan menjalin kolaborasi strategis dengan pihak eksternal, kampus lain, dan mitra kerja.", tasks: ["MOU Perusahaan", "Media Partner", "Alumni Database"] },
+                en: { desc: "Building a positive image and establishing strategic collaboration with external parties, other campuses, and partners.", tasks: ["Company MOU", "Media Partner", "Alumni Database"] }
+            } 
         };
-
         const params = new URLSearchParams(window.location.search);
         const divName = params.get('name') || "Public Relation"; 
-        const data = divisionDetails[divName];
-
-        function init() {
-            if(!data) return;
-            document.getElementById('div-name').innerText = divName;
-            document.getElementById('div-desc').innerText = data.desc;
-            document.getElementById('leader-name').innerText = data.leader;
-            document.getElementById('leader-img').src = data.leaderImg;
-
-            const memberGrid = document.getElementById('members-grid');
-            data.members.forEach(m => {
-                memberGrid.innerHTML += `
-                    <div class="glass-card p-4 flex flex-col items-center w-40 opacity-70 hover:opacity-100 transition duration-500">
-                        <img src="https://ui-avatars.com/api/?name=${m}&background=random" class="w-12 h-12 rounded-full mb-2">
-                        <span class="text-xs font-bold">${m}</span>
-                    </div>`;
-            });
-            renderPublicTasks();
-        }
-
-        function renderPublicTasks() {
-            const container = document.getElementById('public-task-container');
-            data.tasks.forEach((task, index) => {
-                const taskId = `${divName}-${index}`;
-                const isDone = localStorage.getItem(taskId) === "true";
-
-                container.innerHTML += `
-                    <div class="glass-card p-6 flex items-center justify-between group transition hover:bg-white/[0.05]">
-                        <div class="flex items-center gap-5">
-                            <div class="w-12 h-12 rounded-full flex items-center justify-center ${isDone ? 'bg-blue-500/20 text-blue-400' : 'bg-white/5 text-gray-500'}">
-                                <i class="fa-solid ${isDone ? 'fa-check-double' : 'fa-circle-notch fa-spin'}"></i>
-                            </div>
-                            <h4 class="text-lg font-bold ${isDone ? 'text-gray-500' : 'text-white'}">${task}</h4>
-                        </div>
-                        <span class="status-tag ${isDone ? 'done-status' : 'pending-status'}">
-                            ${isDone ? 'TERLAKSANA' : 'PROSES'}
-                        </span>
-                    </div>`;
-            });
-        }
+        const data = divisionDetails[divName] || Object.values(divisionDetails)[0];
+        function init() { if(!data) return; document.getElementById('div-name').innerText = divName.toUpperCase(); document.getElementById('leader-name').innerText = data.leader; document.getElementById('leader-img').src = data.leaderImg; const memberGrid = document.getElementById('members-grid'); memberGrid.innerHTML = ''; data.members.forEach(m => { memberGrid.innerHTML += `<div class="glass-card p-4 flex flex-col items-center w-40 opacity-80 hover:opacity-100 transition duration-500"><img src="https://ui-avatars.com/api/?name=${m}&background=random" class="w-12 h-12 rounded-full mb-2 border-2 border-white/20"><span class="text-xs font-bold text-center text-white">${m}</span></div>`; }); const savedLang = localStorage.getItem('preferredLang') || 'id'; window.updateLocalContent(savedLang); }
+        window.updateLocalContent = function(lang) { if(!data) return; const langData = data[lang] || data['id']; document.getElementById('div-desc').innerText = langData.desc; const container = document.getElementById('public-task-container'); container.innerHTML = ''; langData.tasks.forEach((task, index) => { const taskId = `${divName}-${index}`; const isDone = localStorage.getItem(taskId) === "true"; const statusText = isDone ? (lang === 'id' ? 'TERLAKSANA' : 'COMPLETED') : (lang === 'id' ? 'PROSES' : 'ON PROGRESS'); container.innerHTML += `<div class="glass-card p-6 flex items-center justify-between group transition"><div class="flex items-center gap-5"><div class="w-12 h-12 rounded-full flex items-center justify-center ${isDone ? 'bg-[#1e3a8a] text-blue-200' : 'bg-white/10 text-gray-400'} border border-white/10"><i class="fa-solid ${isDone ? 'fa-check-double' : 'fa-circle-notch fa-spin'}"></i></div><h4 class="text-lg font-bold ${isDone ? 'text-gray-400' : 'text-white'}">${task}</h4></div><span class="status-tag ${isDone ? 'done-status' : 'pending-status'}">${statusText}</span></div>`; }); };
         init();
     </script>
-    <script src="js/navbar.js"></script>
-     <footer class="footer">
-        <div class="flex justify-center space-x-6 mb-4 text-2xl">
-            <a href="#" class="hover:text-blue-500 transition"><i class="bi bi-youtube"></i></a>
-            <a href="#" class="hover:text-blue-400 transition"><i class="bi bi-discord"></i></a>
-            <a href="#" class="hover:text-pink-500 transition"><i class="bi bi-instagram"></i></a>
-        </div>
-        <p>Copyright &copy; 2026 INFOCOM IECLOP. All Rights Reserved.</p>
-    </footer>
+    <script src="translate.js"></script><script src="js/navbar.js"></script>
 </body>
 </html>

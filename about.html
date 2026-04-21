@@ -7,13 +7,18 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styles/about.css">
     <link rel="stylesheet" href="styles/aboutPage.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="text-white antialiased">
+    
+    <video autoplay muted loop playsinline class="video-bg">
+        <source src="video/contoh.mp4" type="video/mp4">
+    </video>
     <div class="overlay"></div>
 
     <main-navbar></main-navbar>
@@ -21,8 +26,8 @@
     <main class="about-container">
         <section class="aboutPage">
             <div class="about-hero" data-aos="fade-up">
-                <h1 class="section-title">About <span class="highlight">IECLOP</span></h1>
-                <div class="title-underline"></div>
+                <h1 class="section-title" data-i18n="aboutTitle">ABOUT <span class="highlight text-blue-300">IECLOP</span></h1>
+                <div class="title-underline bg-[#1e3a8a]"></div>
             </div>
 
             <div class="aboutpage-wrapper" data-aos="zoom-in">
@@ -33,20 +38,22 @@
                 </div>
                 <div class="aboutpage-text">
                     <div class="con">
-                        <p class="leading-relaxed text-lg"><strong>UKM IECLOP</strong> (Improving English Club of Polytechnic) adalah wadah bagi mahasiswa Politeknik Negeri Lhokseumawe untuk meningkatkan kemampuan berbahasa Inggris dan asing lainnya. Berdiri sejak <strong>27 April 2007</strong>, kami terus berinovasi menciptakan generasi yang unggul dalam komunikasi global.</p>
+                        <p class="text-justify leading-[1.8] tracking-[0.02em] text-lg" data-i18n="aboutDesc">
+                            <strong>UKM IECLOP</strong> (Improving English Club of Polytechnic) adalah wadah bagi mahasiswa Politeknik Negeri Lhokseumawe untuk meningkatkan kemampuan berbahasa Inggris dan asing lainnya. Berdiri sejak <strong>27 April 2007</strong>, kami terus berinovasi menciptakan generasi yang unggul dalam komunikasi global.
+                        </p>
                         
                         <div class="stats-container mt-8">
                             <div class="stat-box" data-aos="flip-left" data-aos-delay="100">
-                                <span class="stat-num counter">5</span>
-                                <p>Divisions</p>
+                                <span class="stat-num counter text-blue-300">5</span>
+                                <p data-i18n="statDiv" class="uppercase font-bold tracking-wider">DIVISIONS</p>
                             </div>
                             <div class="stat-box" data-aos="flip-left" data-aos-delay="200">
-                                <span class="stat-num counter">59</span>
-                                <p>Officers</p>
+                                <span class="stat-num counter text-blue-300">59</span>
+                                <p data-i18n="statOff" class="uppercase font-bold tracking-wider">OFFICERS</p>
                             </div>
                             <div class="stat-box" data-aos="flip-left" data-aos-delay="300">
-                                <span class="stat-num counter">140</span>
-                                <p>Members</p>
+                                <span class="stat-num counter text-blue-300">140</span>
+                                <p data-i18n="statMem" class="uppercase font-bold tracking-wider">MEMBERS</p>
                             </div>
                         </div>
                     </div>
@@ -56,18 +63,16 @@
 
         <section class="division-section">
             <div class="about-hero" data-aos="fade-up">
-                <h2 class="section-subtitle">Our Specialist <span class="highlight">Divisions</span></h2>
+                <h2 class="section-subtitle" data-i18n="aboutDivisionsTitle">OUR SPECIALIST <span class="highlight text-blue-300">DIVISIONS</span></h2>
             </div>
 
             <div class="division-card reverse" data-aos="fade-left">
                 <div class="div-content">
                     <div class="div-text">
-                        <h3>Education <span>📖</span></h3>
-                        <p><b>Divisi Education</b> merupakan divisi yang berfokus pada pengembangan keterampilan Akademik. 
-                        Program unggulan yg dijalankan antara lain Weekly Study, yaitu sesi belajar rutin yg membahas 
-                        topik topik pengetahuan umum maupun spesifik tentang bahasa Inggris. TOEFL Class, untuk meningkatkan 
-                        kemampuan dalam menghadapi tes TOEFL melalui pembahasan materi, strategi dan latihan soal. Special Class, 
-                        untuk memperluas wawasan Bahasa lainnya. Dengan program-program ini, dapat menciptakan lingkungan belajar yang interaktif dan produktif.</p>
+                        <h3 data-i18n="divEduTitle" class="uppercase">EDUCATION <span>📖</span></h3>
+                        <p data-i18n="divEduDesc" class="text-justify leading-[1.8] tracking-[0.02em]">
+                            <b>Divisi Education</b> merupakan divisi yang berfokus pada pengembangan keterampilan Akademik. Program unggulan yg dijalankan antara lain Weekly Study, yaitu sesi belajar rutin yg membahas topik topik pengetahuan umum maupun spesifik tentang bahasa Inggris. TOEFL Class, untuk meningkatkan kemampuan dalam menghadapi tes TOEFL melalui pembahasan materi, strategi dan latihan soal. Special Class, untuk memperluas wawasan Bahasa lainnya. Dengan program-program ini, dapat menciptakan lingkungan belajar yang interaktif dan produktif.
+                        </p>
                     </div>
                     <div class="div-img">
                         <img src="img/EDUCATION DIVISION.png" alt="Education">
@@ -78,8 +83,10 @@
             <div class="division-card" data-aos="fade-right">
                 <div class="div-content">
                     <div class="div-text">
-                        <h3>Infocom Division <span>🎦</span></h3>
-                        <p>Divisi Infocom (Information & Communication) adalah bidang yang bertanggung jawab dibidang informasi dan komunikasi serta sebagai media untuk menyebarkan informasi dalam bentuk info, konten, serta publikasi dan komunikasi baik secara online maupun offline. Bidang Infocom juga memiliki beberapa bagian didalamnya, seperti Manajemen Media Sosial, Redaksi, Discord, dan Mading.</p>
+                        <h3 data-i18n="divInfTitle" class="uppercase">INFOCOM <span>🎦</span></h3>
+                        <p data-i18n="divInfDesc" class="text-justify leading-[1.8] tracking-[0.02em]">
+                            <b>Divisi Infocom</b> (Information & Communication) adalah bidang yang bertanggung jawab dibidang informasi dan komunikasi serta sebagai media untuk menyebarkan informasi dalam bentuk info, konten, serta publikasi dan komunikasi baik secara online maupun offline. Bidang Infocom juga memiliki beberapa bagian didalamnya, seperti Manajemen Media Sosial, Redaksi, Discord, dan Mading.
+                        </p>
                     </div>
                     <div class="div-img">
                         <img src="img/INFOCOM DIVISION.png" alt="Infocom">
@@ -90,8 +97,10 @@
             <div class="division-card reverse" data-aos="fade-left">
                 <div class="div-content">
                     <div class="div-text">
-                        <h3>Regeneration Division <span>🫂</span></h3>
-                        <p>Divisi Regeneration atau biasa disebut Kaderisasi adalah divisi yang bertugas untuk mencari kader baru dan membangun kebersamaan di UKM IECLOP. Melalui program kerja seperti Open Recruitment, Home Coming, Keep in Touch, Internship, PDH Day, IBound, dan IE-Greet, Divisi Regeneration berusaha membangun kedekatan antar anggota serta menumbuhkan semangat kebersamaan dan kepemimpinan di dalam UKM IECLOP. Divisi ini juga berperan untuk membina dan mempersiapkan member untuk melanjutkan estafet kepengurusan di UKM IECLOP.</p>
+                        <h3 data-i18n="divRegTitle" class="uppercase">REGENERATION <span>🫂</span></h3>
+                        <p data-i18n="divRegDesc" class="text-justify leading-[1.8] tracking-[0.02em]">
+                            <b>Divisi Regeneration</b> atau biasa disebut Kaderisasi adalah divisi yang bertugas untuk mencari kader baru dan membangun kebersamaan di UKM IECLOP. Melalui program kerja seperti Open Recruitment, Home Coming, Keep in Touch, Internship, PDH Day, IBound, dan IE-Greet, Divisi Regeneration berusaha membangun kedekatan antar anggota serta menumbuhkan semangat kebersamaan dan kepemimpinan di dalam UKM IECLOP. Divisi ini juga berperan untuk membina dan mempersiapkan member untuk melanjutkan estafet kepengurusan di UKM IECLOP.
+                        </p>
                     </div>
                     <div class="div-img">
                         <img src="img/REGENERATION DIVISION.png" alt="Regeneration">
@@ -102,8 +111,10 @@
             <div class="division-card" data-aos="fade-right">
                 <div class="div-content">
                     <div class="div-text">
-                        <h3>Public Relation<span>👁️‍🗨️</span></h3>
-                        <p>Public Relations (PR) adalah divisi dalam UKM IECLOP yang bertugas membangun citra positif organisasi melalui komunikasi yang efektif dan hubungan baik dengan berbagai pihak eksternal, seperti alumni dan demisioner, ORMAWA KBMPNL, masyarakat, kampus/instansi lain, serta mitra kerja. Divisi ini berperan sebagai jembatan yang menjalin koneksi, menjaga relasi, dan menciptakan kolaborasi strategis guna mendukung keberlanjutan program serta memperluas dampak positif IECLOP di dalam maupun di luar lingkungan kampus.</p>
+                        <h3 data-i18n="divPrTitle" class="uppercase">PUBLIC RELATION <span>👁️‍🗨️</span></h3>
+                        <p data-i18n="divPrDesc" class="text-justify leading-[1.8] tracking-[0.02em]">
+                            <b>Public Relations</b> (PR) adalah divisi dalam UKM IECLOP yang bertugas membangun citra positif organisasi melalui komunikasi yang efektif dan hubungan baik dengan berbagai pihak eksternal, seperti alumni dan demisioner, ORMAWA KBMPNL, masyarakat, kampus/instansi lain, serta mitra kerja. Divisi ini berperan sebagai jembatan yang menjalin koneksi, menjaga relasi, dan menciptakan kolaborasi strategis guna mendukung keberlanjutan program serta memperluas dampak positif IECLOP di dalam maupun di luar lingkungan kampus.
+                        </p>
                     </div>
                     <div class="div-img">
                         <img src="img/PUBLIC RELATION DIVISION.png" alt="Public Relation">
@@ -114,8 +125,10 @@
             <div class="division-card reverse" data-aos="fade-left">
                 <div class="div-content">
                     <div class="div-text">
-                        <h3>Olympic Division <span>🏆</span></h3>
-                        <p>Divisi Olympic merupakan salah satu divisi dalam Unit Kegiatan Mahasiswa (UKM) IECLOP yang memiliki fokus utama dalam mengembangkan minat serta bakat mahasiswa, khususnya Member IECLOP, diberbagai ajang perlombaan, seperti debate, essay, Writing, Newscasting dan kompetisi lainnya yang dapat direalisasikan melalui kegiatan mingguan yaitu OPRA (olympic practice). Melalui kegiatan OPRA inilah Divisi Olympic bertujuan untuk meningkatkan kualitas dan daya saing anggota, menumbuhkan semangat untuk meningkatkan prestasi.</p>
+                        <h3 data-i18n="divOlyTitle" class="uppercase">OLYMPIC <span>🏆</span></h3>
+                        <p data-i18n="divOlyDesc" class="text-justify leading-[1.8] tracking-[0.02em]">
+                            <b>Divisi Olympic</b> merupakan salah satu divisi dalam Unit Kegiatan Mahasiswa (UKM) IECLOP yang memiliki fokus utama dalam mengembangkan minat serta bakat mahasiswa, khususnya Member IECLOP, diberbagai ajang perlombaan, seperti debate, essay, Writing, Newscasting dan kompetisi lainnya yang dapat direalisasikan melalui kegiatan mingguan yaitu OPRA (olympic practice). Melalui kegiatan OPRA inilah Divisi Olympic bertujuan untuk meningkatkan kualitas dan daya saing anggota, menumbuhkan semangat untuk meningkatkan prestasi.
+                        </p>
                     </div>
                     <div class="div-img">
                         <img src="img/OLYMPIC DIVISION.png" alt="Olympic">
@@ -123,23 +136,22 @@
                 </div>
             </div>
 
-            </section>
+        </section>
     </main>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true });
-    </script>
-    </body>
-     <footer class="footer">
+    
+    <footer class="footer">
         <div class="flex justify-center space-x-6 mb-4 text-2xl">
-            <a href="#" class="hover:text-blue-500 transition"><i class="bi bi-youtube"></i></a>
-            <a href="#" class="hover:text-blue-400 transition"><i class="bi bi-discord"></i></a>
-            <a href="#" class="hover:text-pink-500 transition"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-white hover:text-blue-300 transition"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="text-white hover:text-blue-300 transition"><i class="bi bi-discord"></i></a>
+            <a href="#" class="text-white hover:text-blue-300 transition"><i class="bi bi-instagram"></i></a>
         </div>
         <p>Copyright &copy; 2026 INFOCOM IECLOP. All Rights Reserved.</p>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
     <script src="translate.js"></script>
     <script src="js/navbar.js"></script>
 </body>

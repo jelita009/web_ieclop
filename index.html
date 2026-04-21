@@ -7,6 +7,7 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="text-white antialiased">
@@ -21,17 +22,17 @@
     <main>
         <div class="hero-container px-6 md:px-20">
             <div class="accent-line"></div>
-            <h1 class="text-5xl md:text-7xl font-extrabold leading-[1.1] mb-6" id="hero-title">
+            <h1 class="text-5xl md:text-7xl font-extrabold leading-[1.1] mb-6" id="hero-title" data-i18n="heroTitle">
                 UKM IECLOP <br>
-                <span class="text-blue-400">Innovative - Independent</span> <br>
+                <span class="text-white drop-shadow-md">Innovative - Independent</span> <br>
                 Outstanding
             </h1>
-            <p class="hero-desc" id="hero-desc">
+            <p class="hero-desc text-justify leading-[1.8] tracking-[0.02em]" id="hero-desc" data-i18n="heroDesc">
                 Improving English Club of Polytechnic. Wadah belajar bahasa Inggris terbaik di Politeknik Negeri Lhokseumawe.
             </p>
             <div class="flex flex-wrap gap-4 mt-10">
                 <button class="btn-explore" onclick="window.location.href='about.html'">
-                    <span class="relative z-10" id="btn-explore">JELAJAHI</span>
+                    <span class="relative z-10" id="btn-explore" data-i18n="btnExplore">JELAJAHI</span>
                     <div class="btn-fill"></div>
                 </button>
                 <button class="btn-voice">
@@ -43,12 +44,12 @@
         <section class="news-section">
             <div class="section-header">
                 <div class="flex items-center justify-center space-x-4 mb-3">
-                    <div class="w-12 h-1 bg-yellow-400"></div>
-                    <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tight" id="news-section-title">Berita Terkini</h2>
-                    <div class="w-12 h-1 bg-yellow-400"></div>
+                    <div class="w-12 h-1 bg-[#1e3a8a]"></div>
+                    <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tight text-[#1e3a8a]" id="news-section-title" data-i18n="newsSectionTitle">BERITA TERKINI</h2>
+                    <div class="w-12 h-1 bg-[#1e3a8a]"></div>
                 </div>
                 <a href="#" class="more-link group">
-                    <span id="news-more">Selengkapnya</span> 
+                    <span id="news-more" data-i18n="newsMore">SELENGKAPNYA</span> 
                     <i class="fa-solid fa-chevron-right ml-2 group-hover:translate-x-2 transition"></i>
                 </a>
             </div>
@@ -60,12 +61,12 @@
                         <div class="card-gradient"></div>
                     </div>
                     <div class="p-8">
-                        <h3 class="card-title" id="news-1-title">Rapat Tahunan IECLOP 2024</h3>
-                        <p class="card-desc" id="news-1-desc">
+                        <h3 class="card-title uppercase" id="news-1-title" data-i18n="news1Title">RAPAT TAHUNAN IECLOP 2024</h3>
+                        <p class="card-desc text-justify leading-[1.8] tracking-[0.02em]" id="news-1-desc" data-i18n="news1Desc">
                             Membahas visi misi baru untuk mencetak generasi mahasiswa yang mahir berkomunikasi global.
                         </p>
                         <div class="read-more-btn group">
-                            <span id="news-read">BACA KONTEN</span> <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-3 transition"></i>
+                            <span id="news-read" data-i18n="newsRead">BACA KONTEN</span> <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-3 transition"></i>
                         </div>
                     </div>
                 </div>
@@ -76,12 +77,12 @@
                         <div class="card-gradient"></div>
                     </div>
                     <div class="p-8">
-                        <h3 class="card-title" id="news-2-title">English Competition</h3>
-                        <p class="card-desc" id="news-2-desc">
+                        <h3 class="card-title uppercase" id="news-2-title" data-i18n="news2Title">ENGLISH COMPETITION</h3>
+                        <p class="card-desc text-justify leading-[1.8] tracking-[0.02em]" id="news-2-desc" data-i18n="news2Desc">
                             Perlombaan debat dan pidato bahasa Inggris antar jurusan di Politeknik Negeri Lhokseumawe.
                         </p>
                         <div class="read-more-btn group">
-                            <span id="news-read-2">BACA KONTEN</span> <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-3 transition"></i>
+                            <span id="news-read-2" data-i18n="newsRead">BACA KONTEN</span> <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-3 transition"></i>
                         </div>
                     </div>
                 </div>
@@ -92,12 +93,12 @@
                         <div class="card-gradient"></div>
                     </div>
                     <div class="p-8">
-                        <h3 class="card-title" id="news-3-title">Workshop TOEFL Intensif</h3>
-                        <p class="card-desc" id="news-3-desc">
+                        <h3 class="card-title uppercase" id="news-3-title" data-i18n="news3Title">WORKSHOP TOEFL INTENSIF</h3>
+                        <p class="card-desc text-justify leading-[1.8] tracking-[0.02em]" id="news-3-desc" data-i18n="news3Desc">
                             Tips dan trik mengerjakan soal TOEFL dengan cepat dan akurat untuk para fungsionaris.
                         </p>
                         <div class="read-more-btn group">
-                            <span id="news-read-3">BACA KONTEN</span> <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-3 transition"></i>
+                            <span id="news-read-3" data-i18n="newsRead">BACA KONTEN</span> <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-3 transition"></i>
                         </div>
                     </div>
                 </div>
@@ -110,9 +111,9 @@
     
     <footer class="footer">
         <div class="flex justify-center space-x-6 mb-4 text-2xl">
-            <a href="#" class="hover:text-blue-500 transition"><i class="bi bi-youtube"></i></a>
-            <a href="#" class="hover:text-blue-400 transition"><i class="bi bi-discord"></i></a>
-            <a href="#" class="hover:text-pink-500 transition"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-white hover:text-blue-300 transition"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="text-white hover:text-blue-300 transition"><i class="bi bi-discord"></i></a>
+            <a href="#" class="text-white hover:text-blue-300 transition"><i class="bi bi-instagram"></i></a>
         </div>
         <p>Copyright &copy; 2026 INFOCOM IECLOP. All Rights Reserved.</p>
     </footer>

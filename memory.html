@@ -7,54 +7,92 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styles/memoryPage.css">
 </head>
 <body class="text-white antialiased">
+    
+    <video autoplay muted loop playsinline class="video-bg">
+        <source src="video/contoh.mp4" type="video/mp4">
+    </video>
     <div class="overlay"></div>
 
     <main-navbar></main-navbar>
 
-    <section class="memory-container">
-        <div class="memory-header">
-            <div class="accent-line mx-auto"></div>
-            <h1>Our Shared <span class="highlight">Memories</span></h1>
-            <p>Setiap foto menceritakan sebuah cerita perjuangan dan kebersamaan kami di IECLOP.</p>
+    <section class="memory-container relative z-10 py-16 px-4 min-h-screen">
+        <div class="memory-header text-center mb-16" data-aos="fade-up">
+            <div class="w-24 h-1 bg-[#1e3a8a] mx-auto mb-6 rounded-full"></div>
+            <h1 class="text-4xl md:text-5xl font-black uppercase tracking-tight text-white mb-4" data-i18n="memoryTitle">
+                MEMORI <span class="text-blue-300">BERSAMA KAMI</span>
+            </h1>
+            <p class="text-center text-blue-100 max-w-2xl mx-auto text-lg leading-relaxed opacity-90" data-i18n="memoryDesc">
+                Setiap foto menceritakan sebuah cerita perjuangan dan kebersamaan kami di IECLOP.
+            </p>
         </div>
 
-        <div class="gallery-grid">
-            <div class="gallery-item potrait">
-                <img src="img/memories/P24.JPG" alt="Memory 1">
-                <div class="item-overlay"><span>Moment 2024</span></div>
+        <div class="gallery-grid max-w-7xl mx-auto">
+            <div class="gallery-item potrait relative overflow-hidden rounded-2xl border border-white/10 shadow-lg group cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+                <img src="img/memories/P24.JPG" alt="Memory 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="item-overlay absolute inset-0 bg-[#0a1536]/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
+                    <span class="text-white font-bold tracking-widest uppercase text-sm border border-blue-400 px-6 py-2 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.5)]" data-i18n="memTag1">MOMEN 2024</span>
+                </div>
             </div>
-            <div class="gallery-item lanscape">
-                <img src="img/memories/L21.JPG" alt="Memory 2">
-                <div class="item-overlay"><span>Activity</span></div>
+            
+            <div class="gallery-item lanscape relative overflow-hidden rounded-2xl border border-white/10 shadow-lg group cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+                <img src="img/memories/L21.JPG" alt="Memory 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="item-overlay absolute inset-0 bg-[#0a1536]/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
+                    <span class="text-white font-bold tracking-widest uppercase text-sm border border-blue-400 px-6 py-2 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.5)]" data-i18n="memTag2">KEGIATAN</span>
+                </div>
             </div>
-            <div class="gallery-item potrait">
-                <img src="img/memories/P25.JPG" alt="Memory 3">
-                <div class="item-overlay"><span>Documentation</span></div>
+            
+            <div class="gallery-item potrait relative overflow-hidden rounded-2xl border border-white/10 shadow-lg group cursor-pointer" data-aos="fade-up" data-aos-delay="300">
+                <img src="img/memories/P25.JPG" alt="Memory 3" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="item-overlay absolute inset-0 bg-[#0a1536]/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
+                    <span class="text-white font-bold tracking-widest uppercase text-sm border border-blue-400 px-6 py-2 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.5)]" data-i18n="memTag3">DOKUMENTASI</span>
+                </div>
             </div>
-            <div class="gallery-item lanscape">
-                <img src="img/memories/L22.JPG" alt="Memory 4">
-                <div class="item-overlay"><span>Group Photo</span></div>
+            
+            <div class="gallery-item lanscape relative overflow-hidden rounded-2xl border border-white/10 shadow-lg group cursor-pointer" data-aos="fade-up" data-aos-delay="400">
+                <img src="img/memories/L22.JPG" alt="Memory 4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="item-overlay absolute inset-0 bg-[#0a1536]/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
+                    <span class="text-white font-bold tracking-widest uppercase text-sm border border-blue-400 px-6 py-2 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.5)]" data-i18n="memTag4">FOTO BERSAMA</span>
+                </div>
             </div>
-            <div class="gallery-item potrait"><img src="img/memories/P28.JPG" alt=""><div class="item-overlay"><span>Team</span></div></div>
-            <div class="gallery-item lanscape"><img src="img/memories/L29.JPG" alt=""><div class="item-overlay"><span>Workshop</span></div></div>
+            
+            <div class="gallery-item potrait relative overflow-hidden rounded-2xl border border-white/10 shadow-lg group cursor-pointer" data-aos="fade-up" data-aos-delay="500">
+                <img src="img/memories/P28.JPG" alt="Memory 5" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="item-overlay absolute inset-0 bg-[#0a1536]/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
+                    <span class="text-white font-bold tracking-widest uppercase text-sm border border-blue-400 px-6 py-2 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.5)]" data-i18n="memTag5">TIM</span>
+                </div>
             </div>
+            
+            <div class="gallery-item lanscape relative overflow-hidden rounded-2xl border border-white/10 shadow-lg group cursor-pointer" data-aos="fade-up" data-aos-delay="600">
+                <img src="img/memories/L29.JPG" alt="Memory 6" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="item-overlay absolute inset-0 bg-[#0a1536]/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
+                    <span class="text-white font-bold tracking-widest uppercase text-sm border border-blue-400 px-6 py-2 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.5)]" data-i18n="memTag6">WORKSHOP</span>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <footer class="footer">
+    <footer class="footer relative z-10">
         <div class="flex justify-center space-x-6 mb-4 text-2xl">
-            <a href="#" class="hover:text-blue-500 transition"><i class="bi bi-youtube"></i></a>
-            <a href="#" class="hover:text-blue-400 transition"><i class="bi bi-discord"></i></a>
-            <a href="#" class="hover:text-pink-500 transition"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-white hover:text-blue-300 transition"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="text-white hover:text-blue-300 transition"><i class="bi bi-discord"></i></a>
+            <a href="#" class="text-white hover:text-blue-300 transition"><i class="bi bi-instagram"></i></a>
         </div>
         <p>Copyright &copy; 2026 INFOCOM IECLOP. All Rights Reserved.</p>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+    <script src="translate.js"></script>
     <script src="js/navbar.js"></script>
 </body>
 </html>

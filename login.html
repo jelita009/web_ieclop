@@ -5,54 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Admin - IECLOP</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
         .login-box {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(10, 20, 50, 0.4); /* Efek Kaca Transparan Navy */
             backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
         }
         input {
-            background: rgba(255, 255, 255, 0.1) !important;
-            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+            background: rgba(255, 255, 255, 0.05) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
             color: white !important;
         }
         input:focus {
             border-color: #3b82f6 !important;
-            box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+            background: rgba(255, 255, 255, 0.1) !important;
+        }
+        /* Posisi khusus tombol bahasa di pojok kanan atas untuk halaman tanpa navbar */
+        .lang-container-absolute {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            z-index: 50;
         }
     </style>
 </head>
-<body class="flex items-center justify-center min-h-screen bg-[#050505]">
-    <div class="overlay"></div> <div class="login-box p-10 w-full max-w-md text-center z-10">
-        <img src="image/logo_IECLOP.png" class="h-16 mx-auto mb-6" alt="Logo">
-        <h2 class="text-3xl font-black mb-2 tracking-tighter">ADMIN PANEL</h2>
-        <p class="text-gray-400 mb-8 text-sm">Silakan masuk untuk mengelola tugas divisi.</p>
+<body class="text-white antialiased min-h-screen flex items-center justify-center overflow-hidden">
+    
+    <video autoplay muted loop playsinline class="video-bg">
+        <source src="video/contoh.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+
+    <div class="lang-container-absolute">
+        <div class="lang-container">
+            <span onclick="changeLanguage('id')" id="btn-id" class="lang-link lang-active">ID</span>
+            <span class="text-gray-500">|</span>
+            <span onclick="changeLanguage('en')" id="btn-en" class="lang-link">EN</span>
+        </div>
+    </div>
+
+    <div class="login-box p-10 w-full max-w-md text-center z-10 relative" data-aos="zoom-in">
+        <img src="image/logo_IECLOP.png" class="h-16 mx-auto mb-6" alt="Logo" onerror="this.src='img/logo_IECLOP.png'">
+        <h2 class="text-3xl font-black mb-2 tracking-tighter text-white" data-i18n="adminTitle">ADMIN PANEL</h2>
+        <p class="text-blue-200 mb-8 text-sm opacity-80" data-i18n="adminDesc">Silakan masuk untuk mengelola tugas divisi.</p>
         
         <div class="space-y-4">
             <input type="text" id="username" placeholder="Username" class="w-full p-4 rounded-xl outline-none transition">
             <input type="password" id="password" placeholder="Password" class="w-full p-4 rounded-xl outline-none transition">
-            <button onclick="handleLogin()" class="w-full bg-blue-600 hover:bg-blue-700 py-4 rounded-xl font-bold transition transform hover:scale-105 shadow-lg shadow-blue-500/30">
+            <button onclick="handleLogin()" class="w-full bg-[#1e3a8a] hover:bg-[#172a6b] py-4 rounded-xl font-bold transition transform hover:scale-105 shadow-[0_4px_15px_rgba(30,58,138,0.4)]" data-i18n="adminBtn">
                 MASUK SEKARANG
             </button>
         </div>
-        <a href="index.html" class="inline-block mt-6 text-xs text-gray-500 hover:text-white transition">Kembali ke Beranda</a>
+        <a href="index.html" class="inline-block mt-6 text-xs text-blue-300 hover:text-white transition uppercase tracking-wider font-bold" data-i18n="adminBack">KEMBALI KE BERANDA</a>
     </div>
 
     <script>
+        // --- FITUR PENYAMBUNG VIDEO BACKGROUND ---
+        document.addEventListener("DOMContentLoaded", () => {
+            const bgVideo = document.querySelector('.video-bg');
+            if (bgVideo) {
+                const savedTime = sessionStorage.getItem('bgVideoTime');
+                if (savedTime !== null) bgVideo.currentTime = parseFloat(savedTime);
+                window.addEventListener('beforeunload', () => {
+                    sessionStorage.setItem('bgVideoTime', bgVideo.currentTime);
+                });
+            }
+        });
+
         function handleLogin() {
             const u = document.getElementById('username').value;
             const p = document.getElementById('password').value;
             
-            // Ganti username & password sesukamu di sini
+            // Mengambil bahasa saat ini untuk menerjemahkan notifikasi error
+            const lang = localStorage.getItem('preferredLang') || 'id';
+            const errorMsg = lang === 'id' 
+                ? "Akses Ditolak! Username atau Password salah." 
+                : "Access Denied! Incorrect Username or Password.";
+            
             if(u === "admin" && p === "pnl2026") {
                 localStorage.setItem("adminLoggedIn", "true");
                 window.location.href = "admin.html";
             } else {
-                alert("Akses Ditolak! Username atau Password salah.");
+                alert(errorMsg);
             }
         }
     </script>
+    <script src="translate.js"></script>
 </body>
 </html>
