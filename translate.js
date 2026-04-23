@@ -35,6 +35,7 @@ const translations = {
         
         // Struktur Page
         structTitle: "STRUKTUR <span class='text-blue-300'>ORGANISASI</span>",
+        structPeriod: "PERIODE 2025/2026",
         posKetum: "KETUA UMUM", posSekum: "SEKRETARIS UMUM", posBendum: "BENDAHARA UMUM",
         divInfName: "INFOCOM", divEduName: "EDUCATION", divRegName: "REGENERATION", divOlyName: "OLYMPIC", divPrName: "PUBLIC RELATION",
 
@@ -96,6 +97,7 @@ const translations = {
         
         // Struktur Page
         structTitle: "ORGANIZATIONAL <span class='text-blue-300'>STRUCTURE</span>",
+        structPeriod: "2025/2026 PERIOD",
         posKetum: "PRESIDENT", posSekum: "GENERAL SECRETARY", posBendum: "GENERAL TREASURER",
         divInfName: "INFOCOM", divEduName: "EDUCATION", divRegName: "REGENERATION", divOlyName: "OLYMPIC", divPrName: "PUBLIC RELATION",
 
