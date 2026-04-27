@@ -4,62 +4,138 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard - IECLOP</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
     <style>
-        .admin-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; }
-        .task-item { display: flex; align-items: center; padding: 12px; border-radius: 12px; background: rgba(255, 255, 255, 0.02); margin-bottom: 8px; cursor: pointer; transition: 0.3s; }
-        .task-item:hover { background: rgba(255, 255, 255, 0.07); }
-        input[type="checkbox"] { width: 18px; height: 18px; accent-color: #3b82f6; margin-right: 15px; }
+        .admin-card { 
+            background: rgba(10, 20, 50, 0.4); /* Glassmorphism Navy */
+            backdrop-filter: blur(15px); 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+            border-radius: 20px; 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        .task-item { 
+            display: flex; 
+            align-items: center; 
+            padding: 12px; 
+            border-radius: 12px; 
+            background: rgba(255, 255, 255, 0.05); 
+            margin-bottom: 8px; 
+            cursor: pointer; 
+            transition: 0.3s; 
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .task-item:hover { 
+            background: rgba(255, 255, 255, 0.1); 
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+        input[type="checkbox"] { 
+            width: 18px; 
+            height: 18px; 
+            accent-color: #1e3a8a; /* Ceklis warna Navy */
+            margin-right: 15px; 
+            cursor: pointer;
+        }
     </style>
 </head>
-<body class="bg-[#080808] text-white">
+<body class="text-white antialiased min-h-screen relative overflow-x-hidden">
+    
+    <video autoplay muted loop playsinline class="video-bg">
+        <source src="video/contoh.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
 
-    <nav class="p-6 flex justify-between items-center max-w-6xl mx-auto mb-10">
-        <span class="text-xl font-black uppercase">Admin <span class="text-blue-500">Dashboard</span></span>
-        <div class="flex gap-4">
-            <button onclick="resetProgress()" class="text-xs text-gray-500 underline hover:text-red-400 transition">Reset All</button>
-            <button onclick="logout()" class="bg-red-500/20 text-red-500 px-4 py-2 rounded-lg text-xs font-bold border border-red-500/30 hover:bg-red-500 hover:text-white transition">LOGOUT</button>
+    <nav class="p-6 flex flex-col md:flex-row justify-between items-center max-w-6xl mx-auto mb-6 relative z-10 gap-6 pt-10">
+        <span class="text-2xl md:text-3xl font-black uppercase tracking-tighter" data-i18n="adminDashTitle">
+            ADMIN <span class="text-blue-300">DASHBOARD</span>
+        </span>
+        
+        <div class="flex items-center gap-5 flex-wrap justify-center">
+            <div class="lang-container">
+                <span onclick="changeLanguage('id')" id="btn-id" class="lang-link lang-active">ID</span>
+                <span class="text-gray-500">|</span>
+                <span onclick="changeLanguage('en')" id="btn-en" class="lang-link">EN</span>
+            </div>
+            
+            <button onclick="resetProgress()" class="text-xs text-blue-200 underline hover:text-white transition uppercase font-bold tracking-wider" data-i18n="adminDashReset">RESET SEMUA</button>
+            <button onclick="logout()" class="bg-red-500/20 text-red-400 px-4 py-2.5 rounded-lg text-xs font-bold border border-red-500/30 hover:bg-red-500 hover:text-white transition shadow-lg tracking-widest" data-i18n="adminDashLogout">KELUAR</button>
         </div>
     </nav>
 
-    <main class="max-w-6xl mx-auto px-6 pb-20">
+    <main class="max-w-6xl mx-auto px-6 pb-20 relative z-10">
         <header class="mb-10 text-center md:text-left">
-            <h1 class="text-4xl font-black mb-2">Manajemen Proker Divisi</h1>
-            <p class="text-gray-400">Centang untuk mengubah status menjadi "Terlaksana" di halaman publik.</p>
+            <h1 class="text-4xl md:text-5xl font-black mb-3 uppercase tracking-tight" data-i18n="adminDashHeader">Manajemen Proker Divisi</h1>
+            <p class="text-blue-100 opacity-90 text-lg" data-i18n="adminDashSub">Centang untuk mengubah status menjadi "Terlaksana" di halaman publik.</p>
         </header>
 
-        <div class="grid md:grid-cols-3 gap-8" id="admin-task-container"></div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="admin-task-container"></div>
     </main>
 
     <script>
-        // Data Tugas Master (HARUS SAMA DENGAN DIVISI.HTML)
+        // --- FITUR PENYAMBUNG VIDEO BACKGROUND ---
+        document.addEventListener("DOMContentLoaded", () => {
+            const bgVideo = document.querySelector('.video-bg');
+            if (bgVideo) {
+                const savedTime = sessionStorage.getItem('bgVideoTime');
+                if (savedTime !== null) bgVideo.currentTime = parseFloat(savedTime);
+                window.addEventListener('beforeunload', () => {
+                    sessionStorage.setItem('bgVideoTime', bgVideo.currentTime);
+                });
+            }
+        });
+
+        // Data Tugas Tersinkronisasi dengan Halaman Divisi dan Fitur Translate
         const tasksData = {
-            "Infocom": ["Update Website UKM", "Postingan IG Mingguan", "Desain PDH Day"],
-            "Education": ["Weekly Study", "TOEFL Simulation", "English Camp"],
-            "Regeneration": ["Open Recruitment", "Internship Program", "Internal Bonding"],
-            "Olympic": ["Olympic Practice", "Debate Competition", "Speech Workshop"],
-            "Public Relation": ["MOU Perusahaan", "Media Partner", "Alumni Database"]
+            "Infocom": {
+                id: ["Update Website UKM", "Postingan IG Mingguan", "Desain PDH Day"],
+                en: ["Update UKM Website", "Weekly IG Posts", "PDH Day Design"]
+            },
+            "Education": {
+                id: ["Weekly Study", "TOEFL Simulation", "English Camp"],
+                en: ["Weekly Study", "TOEFL Simulation", "English Camp"]
+            },
+            "Regeneration": {
+                id: ["Open Recruitment", "Home Coming", "PDH Day"],
+                en: ["Open Recruitment", "Home Coming", "PDH Day"]
+            },
+            "Olympic": {
+                id: ["Olympic Practice", "Debate Competition", "Speech Training"],
+                en: ["Olympic Practice", "Debate Competition", "Speech Training"]
+            },
+            "Public Relation": {
+                id: ["MOU Perusahaan", "Media Partner", "Alumni Database"],
+                en: ["Company MOU", "Media Partner", "Alumni Database"]
+            }
         };
 
-        function renderTasks() {
+        // Fungsi ini akan dipanggil otomatis oleh translate.js saat bahasa diganti
+        window.updateLocalContent = function(lang) {
+            renderTasks(lang);
+        }
+
+        function renderTasks(lang = localStorage.getItem('preferredLang') || 'id') {
             const container = document.getElementById('admin-task-container');
             container.innerHTML = "";
 
-            for (const [divisi, tasks] of Object.entries(tasksData)) {
+            for (const [divisi, tasksObj] of Object.entries(tasksData)) {
                 let taskHtml = `
-                <div class="admin-card p-6">
-                    <h2 class="text-xl font-bold mb-4 text-blue-400 border-b border-white/10 pb-2">${divisi}</h2>`;
+                <div class="admin-card p-6 transition transform hover:-translate-y-1">
+                    <h2 class="text-xl font-black mb-5 text-blue-300 border-b border-white/10 pb-3 uppercase tracking-widest">${divisi}</h2>`;
                 
-                tasks.forEach((task, index) => {
-                    // Rumus ID: NamaDivisi-Index (Contoh: Infocom-0)
+                const displayTasks = tasksObj[lang] || tasksObj['id'];
+
+                displayTasks.forEach((taskName, index) => {
+                    // ID harus tetap sama terlepas dari bahasanya (contoh: Infocom-0)
                     const taskId = `${divisi}-${index}`;
                     const isChecked = localStorage.getItem(taskId) === "true";
                     
                     taskHtml += `
-                        <label class="task-item">
+                        <label class="task-item group">
                             <input type="checkbox" onchange="toggleTask('${taskId}', this.checked)" ${isChecked ? 'checked' : ''}>
-                            <span class="${isChecked ? 'text-blue-400 line-through' : 'text-gray-300'} text-sm">${task}</span>
+                            <span class="${isChecked ? 'text-blue-400 line-through opacity-60' : 'text-blue-50 group-hover:text-white'} text-sm font-semibold tracking-wide transition">${taskName}</span>
                         </label>`;
                 });
 
@@ -70,11 +146,15 @@
 
         function toggleTask(id, status) {
             localStorage.setItem(id, status);
-            renderTasks();
+            // Render ulang agar tampilan langsung update (coretan muncul/hilang)
+            renderTasks(localStorage.getItem('preferredLang') || 'id');
         }
 
         function resetProgress() {
-            if(confirm("Hapus semua status terlaksana?")) {
+            const lang = localStorage.getItem('preferredLang') || 'id';
+            const alertMsg = lang === 'id' ? "Hapus semua status terlaksana?" : "Clear all completed statuses?";
+            
+            if(confirm(alertMsg)) {
                 Object.keys(localStorage).forEach(key => {
                     if(key.includes('-')) localStorage.removeItem(key);
                 });
@@ -87,7 +167,9 @@
             window.location.href = "login.html";
         }
 
+        // Render pertama kali saat halaman dimuat
         renderTasks();
     </script>
+    <script src="translate.js"></script>
 </body>
 </html>
