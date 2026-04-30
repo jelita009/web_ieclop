@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animation.css">
     <style>
         .glass-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; transition: 0.3s; }
         .glass-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(30, 58, 138, 0.5); }
@@ -29,7 +30,53 @@
         <section class="mb-24"><div class="flex flex-col items-center"><div class="glass-card p-6 flex flex-col items-center w-56 border-[#1e3a8a]/50"><img id="leader-img" src="" class="w-24 h-24 rounded-full mb-4 object-cover border-4 border-[#1e3a8a]"><h3 id="leader-name" class="font-bold text-center text-lg text-white"></h3><span data-i18n="headOfDiv" class="text-blue-300 text-[10px] font-black uppercase tracking-[0.2em] mt-1">KEPALA DIVISI</span></div><div class="line-connector"></div><div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="members-grid"></div></div></section>
         <section><h2 class="text-2xl font-black mb-8 flex items-center gap-3 text-white"><i class="fa-solid fa-list-check text-[#3b82f6]"></i> <span data-i18n="prokerTitle">PROGRAM KERJA</span></h2><div class="grid gap-4" id="public-task-container"></div></section>
     </main>
-    <footer class="footer mt-auto relative z-10"><div class="flex justify-center space-x-6 mb-4 text-2xl"><a href="#" class="text-white hover:text-blue-300 transition"><i class="bi bi-youtube"></i></a><a href="#" class="text-white hover:text-blue-300 transition"><i class="bi bi-discord"></i></a><a href="#" class="text-white hover:text-blue-300 transition"><i class="bi bi-instagram"></i></a></div><p>Copyright &copy; 2026 INFOCOM IECLOP. All Rights Reserved.</p></footer>
+    
+    <footer class="footer text-white py-16 px-6">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
+        
+        <div class="space-y-4">
+            <h3 class="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-200">
+                INFOCOM IECLOP
+            </h3>
+            <p class="text-sm text-gray-400 leading-relaxed text-justify">
+                UKM IECLOP adalah organisasi mahasiswa di Politeknik Negeri Lhokseumawe yang berfokus pada pengembangan kemampuan bahasa Inggris dan bahasa asing lainnya. Berdiri sejak 27 April 2007, IECLOP berkomitmen mencetak generasi yang unggul dalam komunikasi global.
+            </p>
+        </div>
+
+        <div>
+            <h3 class="text-lg font-bold mb-6 border-l-4 border-blue-500 pl-3">Navigasi</h3>
+            <div class="grid grid-cols-2 gap-2 text-sm text-gray-400">
+                <a href="index.html" class="hover:text-blue-300 transition">Beranda</a>
+                <a href="about.html" class="hover:text-blue-300 transition">Tentang Kami</a>
+                <a href="education.html" class="hover:text-blue-300 transition">Education</a>
+                <a href="Infokom.html" class="hover:text-blue-300 transition">Infokom</a>
+                <a href="regen.html" class="hover:text-blue-300 transition">Regeneration</a>
+                <a href="publicRL.html" class="hover:text-blue-300 transition">Public Relation</a>
+                <a href="olympic.html" class="hover:text-blue-300 transition">Olympic</a>
+                <a href="admin.html" class="text-blue-400 hover:text-blue-200 font-semibold">Dashboard Admin</a>
+            </div>
+        </div>
+
+        <div class="space-y-4">
+            <h3 class="text-lg font-bold mb-4">Hubungi Kami</h3>
+            <div class="text-sm text-gray-400 space-y-2">
+                <p><i class="bi bi-geo-alt-fill mr-2 text-blue-500"></i>Politeknik Negeri Lhokseumawe, Aceh</p>
+                <p><i class="bi bi-telephone-fill mr-2 text-blue-500"></i>Public Relation: +62 8xx-xxxx-xxxx</p>
+            </div>
+            
+            <div class="flex space-x-3 pt-2">
+                <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
+                <a href="#" class="social-icon"><i class="bi bi-discord"></i></a>
+                <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="bi bi-tiktok"></i></a>
+                <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a> </div>
+        </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto mt-16 pt-8 border-t border-white/10 text-center text-xs text-gray-600">
+        <p>&copy; 2026 INFOCOM IECLOP. All Rights Reserved. Crafted with passion by Informatics Engineering.</p>
+    </div>
+</footer>
     
     <script>
         const divisionDetails = { 
@@ -47,5 +94,6 @@
         init();
     </script>
     <script src="translate.js"></script><script src="js/navbar.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

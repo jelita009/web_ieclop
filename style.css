@@ -320,16 +320,45 @@ body {
 }
 
 /* FOOTER */
+/* Styling Footer Premium */
 .footer {
-    background-color: #1e3a8a; /* Diubah menjadi Biru Dongker */
-    padding: 4rem 0;
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: #0f172a; /* Warna background utama */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
 }
 
-.footer p {
-    color: #e2e8f0; /* Teks copyright dibuat lebih putih/terang agar terbaca jelas */
-    font-weight: 600;
-    letter-spacing: 1px;
-    font-size: 0.8rem;
+/* Efek Glow halus di background footer */
+.footer::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: 20%;
+    width: 300px;
+    height: 300px;
+    background: rgba(59, 130, 246, 0.05);
+    filter: blur(80px);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+/* Navigasi Hover Effect */
+.footer a:hover {
+    color: #60a5fa;
+    transform: translateX(5px);
+    display: inline-block;
+}
+
+/* Ikon Sosial Media */
+.footer .social-icon {
+    transition: all 0.3s ease;
+    padding: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.footer .social-icon:hover {
+    background: rgba(59, 130, 246, 0.2);
+    color: #3b82f6;
+    transform: translateY(-3px);
 }
