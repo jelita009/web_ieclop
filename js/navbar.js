@@ -3,7 +3,7 @@ class MainNavbar extends HTMLElement {
         const currentPath = window.location.pathname.split("/").pop() || 'index.html';
 
         this.innerHTML = `
-        <nav class="navbar-main relative z-[999]">
+        <nav class="navbar-main fixed top-0 left-0 w-full z-[999]">
             <div class="flex items-center justify-between w-full">
                 <div class="flex items-center space-x-3">
                     <img src="img/logo_IECLOP.png" alt="Logo IECLOP" class="h-10 md:h-12 w-auto object-contain">

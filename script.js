@@ -38,3 +38,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+const textElement = document.getElementById("typing");
+    const words = ["Innovative-Independent, Outstanding"];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function typeEffect() {
+        const currentWord = words[wordIndex];
+        
+        if (isDeleting) {
+            textElement.textContent = currentWord.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            textElement.textContent = currentWord.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+        let speed = isDeleting ? 100 : 200;
+
+        if (!isDeleting && charIndex === currentWord.length) {
+            isDeleting = true;
+            speed = 2000; // Jeda saat kata sudah lengkap
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            speed = 500;
+        }
+
+        setTimeout(typeEffect, speed);
+    }
+
+    document.addEventListener("DOMContentLoaded", typeEffect);
+
+    

@@ -4,19 +4,22 @@ const translations = {
         navHome: "Beranda", navAbout: "Tentang", navStructure: "Struktur", navDivisions: "Divisi", navMemory: "Memory",
         
         // Index Page (Beranda)
-        heroTitle: "UKM IECLOP <br><span class='text-white drop-shadow-md'>Innovative - Independent</span> <br>Outstanding",
+        heroTitle: "UKM IECLOP <br><span class='text-white drop-shadow-md'>",
         heroDesc: "Improving English Club of Polytechnic. Wadah belajar bahasa Inggris terbaik di Politeknik Negeri Lhokseumawe.",
         btnExplore: "JELAJAHI", 
         newsSectionTitle: "BERITA TERKINI", 
         newsMore: "SELENGKAPNYA", 
         newsRead: "BACA KONTEN",
-        news1Title: "RAPAT TAHUNAN IECLOP 2024",
-        news1Desc: "Membahas visi misi baru untuk mencetak generasi mahasiswa yang mahir berkomunikasi global.",
-        news2Title: "ENGLISH COMPETITION",
-        news2Desc: "Perlombaan debat dan pidato bahasa Inggris antar jurusan di Politeknik Negeri Lhokseumawe.",
-        news3Title: "WORKSHOP TOEFL INTENSIF",
-        news3Desc: "Tips dan trik mengerjakan soal TOEFL dengan cepat dan akurat untuk para fungsionaris.",
-        
+        news1Title: "Momen yang Membanggakan! 🎓🌟",
+        news1Desc: "Selamat atas pencapaian luar biasa Raisa Amanda Putri (Business ’24) yang berhasil meraih juara dalam Cabang Hifdzil Qur’an di MTQPN, Politala! 🏆",
+        NewsDate1: "07 April 2026",
+        news2Title: "",
+        news2Desc: "",
+        NewsDate2: "",
+        news3Title: "",
+        news3Desc: "",
+        NewsDate2: "",
+
         // About Page
         aboutTitle: "TENTANG <span class='highlight text-blue-300'>IECLOP</span>",
         aboutDesc: "<strong>UKM IECLOP</strong> (Improving English Club of Polytechnic) adalah wadah bagi mahasiswa Politeknik Negeri Lhokseumawe untuk meningkatkan kemampuan berbahasa Inggris dan asing lainnya. Berdiri sejak <strong>27 April 2007</strong>, kami terus berinovasi menciptakan generasi yang unggul dalam komunikasi global.",
@@ -66,19 +69,22 @@ const translations = {
         navHome: "Home", navAbout: "About", navStructure: "Structure", navDivisions: "Divisions", navMemory: "Memory",
         
         // Index Page (Beranda)
-        heroTitle: "UKM IECLOP <br><span class='text-white drop-shadow-md'>Innovative - Independent</span> <br>Outstanding",
+        heroTitle: "UKM IECLOP",
         heroDesc: "The premier English learning hub at Lhokseumawe State Polytechnic.",
         btnExplore: "EXPLORE NOW", 
         newsSectionTitle: "LATEST NEWS", 
         newsMore: "SEE MORE", 
         newsRead: "READ MORE",
-        news1Title: "IECLOP ANNUAL MEETING 2024",
-        news1Desc: "Discussing new visions and missions to produce a generation of students proficient in global communication.",
-        news2Title: "ENGLISH COMPETITION",
-        news2Desc: "English debate and speech competition between departments at Lhokseumawe State Polytechnic.",
-        news3Title: "INTENSIVE TOEFL WORKSHOP",
-        news3Desc: "Tips and tricks for working on TOEFL questions quickly and accurately for functionaries.",
-        
+        news1Title: "Proud Moment! 🎓🌟",
+        news1Desc: "Congratulations to Raisa Amanda Putri (Business ’24) on her outstanding achievement in winning first place in the Hifdzil Qur’an category at the MTQPN, Politala! 🏆",
+        NewsDate1: "April 7, 2026",
+        news2Title: "Bintang Baru Telah Lahir! 🌟",
+        news2Desc: "The Stars of PILMAP (9) are Here! 🌟",
+        NewsDate2: "",
+        news3Title: "",
+        news3Desc: "",
+        NewsDate2: "",
+
         // About Page
         aboutTitle: "ABOUT <span class='highlight text-blue-300'>IECLOP</span>",
         aboutDesc: "<strong>UKM IECLOP</strong> (Improving English Club of Polytechnic) is a platform for Lhokseumawe State Polytechnic students to improve their English and other foreign language skills. Established on <strong>April 27, 2007</strong>, we continue to innovate to create a generation that excels in global communication.",

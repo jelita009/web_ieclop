@@ -14,6 +14,10 @@ body {
     background-color: #0f172a; 
 }
 
+main {
+    padding-top: 80px;
+}
+
 .video-bg {
     position: fixed;
     right: 0;
@@ -175,7 +179,7 @@ body {
     width: 4rem;
     height: 0.4rem;
     background-color: #ffffff; /* Diubah menjadi Putih */
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     border-radius: 999px;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
@@ -318,6 +322,19 @@ body {
     font-size: 0.8rem;
     text-transform: uppercase;
 }
+
+.cursor {
+        display: inline-block;
+        margin-left: 5px;
+        width: 4px;
+        background-color: currentColor; /* Mengikuti warna teks */
+        animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+    }
 
 /* FOOTER */
 /* Styling Footer Premium */

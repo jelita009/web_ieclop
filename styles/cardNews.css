@@ -1,0 +1,27 @@
+/* Posisi Badge Tanggal di Atas Gambar */
+.date-badge {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: #1e3a8a;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    z-index: 20;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Memastikan Reveal Animation Berjalan */
+.news-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.news-card.active {
+    opacity: 1;
+    transform: translateY(0);
+}
