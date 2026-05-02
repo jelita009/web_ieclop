@@ -31,7 +31,7 @@ class MainNavbar extends HTMLElement {
                         </div>
                     </div>
 
-                    <a href="memory.html" id="nav-memory" class="nav-link ${currentPath === 'memory.html' ? 'active' : ''}" data-i18n="navMemory">Memory</a>
+                    <a href="memory.html">Gallery</a>
                 </div>
 
                 <div class="flex items-center space-x-4 md:space-x-6">
@@ -70,7 +70,7 @@ class MainNavbar extends HTMLElement {
                     </div>
                 </div>
 
-                <a href="memory.html" class="block text-white font-bold hover:text-blue-300 ${currentPath === 'memory.html' ? 'text-blue-300' : ''}" data-i18n="navMemory">Memory</a>
+                <a href="memory.html">Gallery</a>
                 
                 <div class="flex sm:hidden items-center justify-center space-x-4 pt-4 border-t border-white/10">
                     <span onclick="changeLanguage('id')" class="lang-link font-bold cursor-pointer text-blue-300">ID</span>

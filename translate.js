@@ -128,6 +128,9 @@ const translations = {
         adminDashLogout: "LOGOUT",
         adminDashHeader: "DIVISION WORK PROGRAM MANAGEMENT",
         adminDashSub: "Check to change the status to 'Completed' on the public page."
+
+        //Galery page
+        
     }
 };
 

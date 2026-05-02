@@ -15,7 +15,7 @@ body {
 }
 
 main {
-    padding-top: 80px;
+    padding-top: 50px;
 }
 
 .video-bg {
@@ -335,6 +335,17 @@ main {
         0%, 100% { opacity: 1; }
         50% { opacity: 0; }
     }
+
+/* Efek teks transparan dengan outline putih tipis */
+    .stroke-text {
+        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+    }
+    
+    .text-glow {
+        text-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+        filter: brightness(1.2);
+    }
+
 
 /* FOOTER */
 /* Styling Footer Premium */

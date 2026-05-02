@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memories - UKM IECLOP</title>
+    <title>Galery - UKM IECLOP</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -13,119 +13,129 @@
     
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styles/memoryPage.css">
-     <link rel="stylesheet" href="animation.css">
+    <link rel="stylesheet" href="animation.css">
 </head>
 <body class="text-white antialiased">
     
+    <!-- Background Video -->
     <video autoplay muted loop playsinline class="video-bg">
         <source src="video/contoh.mp4" type="video/mp4">
     </video>
     <div class="overlay"></div>
 
-    <main-navbar></main-navbar>
+    <main-navbar class="relative z-[100]"></main-navbar>
 
     <section class="memory-container relative z-10 py-16 px-4 min-h-screen">
         <div class="memory-header text-center mb-16" data-aos="fade-up">
             <div class="w-24 h-1 bg-[#1e3a8a] mx-auto mb-6 rounded-full"></div>
             <h1 class="text-4xl md:text-5xl font-black uppercase tracking-tight text-white mb-4" data-i18n="memoryTitle">
-                MEMORI <span class="text-blue-300">BERSAMA KAMI</span>
+                GALERY <span class="text-blue-300">BERSAMA KAMI</span>
             </h1>
             <p class="text-center text-blue-100 max-w-2xl mx-auto text-lg leading-relaxed opacity-90" data-i18n="memoryDesc">
-                Setiap foto menceritakan sebuah cerita perjuangan dan kebersamaan kami di IECLOP.
+                Klik pada tema di bawah ini untuk melihat koleksi foto lengkap setiap momen.
             </p>
         </div>
 
+        <!-- Gallery Grid -->
         <div class="gallery-grid max-w-7xl mx-auto">
-            <div class="gallery-item potrait relative overflow-hidden rounded-2xl border border-white/10 shadow-lg group cursor-pointer" data-aos="fade-up" data-aos-delay="100">
-                <img src="img/memories/P24.JPG" alt="Memory 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                <div class="item-overlay absolute inset-0 bg-[#0a1536]/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
-                    <span class="text-white font-bold tracking-widest uppercase text-sm border border-blue-400 px-6 py-2 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.5)]" data-i18n="memTag1">MOMEN 2024</span>
-                </div>
-            </div>
             
-            <div class="gallery-item lanscape relative overflow-hidden rounded-2xl border border-white/10 shadow-lg group cursor-pointer" data-aos="fade-up" data-aos-delay="200">
-                <img src="img/memories/L21.JPG" alt="Memory 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <!-- TEMA: MOMEN 2024 -->
+            <a href="Galery/momen2024.html" class="gallery-item potrait relative overflow-hidden rounded-2xl border border-white/10 shadow-lg group cursor-pointer block" data-aos="fade-up" data-aos-delay="100">
+                <img src="img/memories/P24.JPG" alt="Momen 2024" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                 <div class="item-overlay absolute inset-0 bg-[#0a1536]/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
-                    <span class="text-white font-bold tracking-widest uppercase text-sm border border-blue-400 px-6 py-2 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.5)]" data-i18n="memTag2">KEGIATAN</span>
+                    <span class="text-white font-bold tracking-widest uppercase text-sm border border-blue-400 px-6 py-2 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.5)]" data-i18n="memTag1">LIHAT MOMEN 2024</span>
                 </div>
-            </div>
+            </a>
             
-            <div class="gallery-item potrait relative overflow-hidden rounded-2xl border border-white/10 shadow-lg group cursor-pointer" data-aos="fade-up" data-aos-delay="300">
-                <img src="img/memories/P25.JPG" alt="Memory 3" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <!-- TEMA: KEGIATAN -->
+            <a href="Galery/kegiatan.html" class="gallery-item lanscape relative overflow-hidden rounded-2xl border border-white/10 shadow-lg group cursor-pointer block" data-aos="fade-up" data-aos-delay="200">
+                <img src="img/memories/L21.JPG" alt="Kegiatan" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="item-overlay absolute inset-0 bg-[#0a1536]/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
+                    <span class="text-white font-bold tracking-widest uppercase text-sm border border-blue-400 px-6 py-2 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.5)]" data-i18n="memTag2">LIHAT KEGIATAN</span>
+                </div>
+            </a>
+            
+            <!-- TEMA: DOKUMENTASI -->
+            <a href="Galery/dokumentasi.html" class="gallery-item potrait relative overflow-hidden rounded-2xl border border-white/10 shadow-lg group cursor-pointer block" data-aos="fade-up" data-aos-delay="300">
+                <img src="img/memories/P25.JPG" alt="Dokumentasi" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                 <div class="item-overlay absolute inset-0 bg-[#0a1536]/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
                     <span class="text-white font-bold tracking-widest uppercase text-sm border border-blue-400 px-6 py-2 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.5)]" data-i18n="memTag3">DOKUMENTASI</span>
                 </div>
-            </div>
+            </a>
             
-            <div class="gallery-item lanscape relative overflow-hidden rounded-2xl border border-white/10 shadow-lg group cursor-pointer" data-aos="fade-up" data-aos-delay="400">
-                <img src="img/memories/L22.JPG" alt="Memory 4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <!-- TEMA: FOTO BERSAMA -->
+            <a href="Galery/foto-bersama.html" class="gallery-item lanscape relative overflow-hidden rounded-2xl border border-white/10 shadow-lg group cursor-pointer block" data-aos="fade-up" data-aos-delay="400">
+                <img src="img/memories/L22.JPG" alt="Foto Bersama" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                 <div class="item-overlay absolute inset-0 bg-[#0a1536]/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
                     <span class="text-white font-bold tracking-widest uppercase text-sm border border-blue-400 px-6 py-2 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.5)]" data-i18n="memTag4">FOTO BERSAMA</span>
                 </div>
-            </div>
+            </a>
             
-            <div class="gallery-item potrait relative overflow-hidden rounded-2xl border border-white/10 shadow-lg group cursor-pointer" data-aos="fade-up" data-aos-delay="500">
-                <img src="img/memories/P28.JPG" alt="Memory 5" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <!-- TEMA: TIM -->
+            <a href="Galery/tim.html" class="gallery-item potrait relative overflow-hidden rounded-2xl border border-white/10 shadow-lg group cursor-pointer block" data-aos="fade-up" data-aos-delay="500">
+                <img src="img/memories/P28.JPG" alt="Tim" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                 <div class="item-overlay absolute inset-0 bg-[#0a1536]/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
-                    <span class="text-white font-bold tracking-widest uppercase text-sm border border-blue-400 px-6 py-2 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.5)]" data-i18n="memTag5">TIM</span>
+                    <span class="text-white font-bold tracking-widest uppercase text-sm border border-blue-400 px-6 py-2 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.5)]" data-i18n="memTag5">STRUKTUR TIM</span>
                 </div>
-            </div>
+            </a>
             
-            <div class="gallery-item lanscape relative overflow-hidden rounded-2xl border border-white/10 shadow-lg group cursor-pointer" data-aos="fade-up" data-aos-delay="600">
-                <img src="img/memories/L29.JPG" alt="Memory 6" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <!-- TEMA: WORKSHOP -->
+            <a href="Galery/workshop.html" class="gallery-item lanscape relative overflow-hidden rounded-2xl border border-white/10 shadow-lg group cursor-pointer block" data-aos="fade-up" data-aos-delay="600">
+                <img src="img/memories/L29.JPG" alt="Workshop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                 <div class="item-overlay absolute inset-0 bg-[#0a1536]/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
                     <span class="text-white font-bold tracking-widest uppercase text-sm border border-blue-400 px-6 py-2 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.5)]" data-i18n="memTag6">WORKSHOP</span>
                 </div>
-            </div>
+            </a>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer text-white py-16 px-6">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
-        
-        <div class="space-y-4">
-            <h3 class="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-200">
-                INFOCOM IECLOP
-            </h3>
-            <p class="text-sm text-gray-400 leading-relaxed text-justify">
-                UKM IECLOP adalah organisasi mahasiswa di Politeknik Negeri Lhokseumawe yang berfokus pada pengembangan kemampuan bahasa Inggris dan bahasa asing lainnya. Berdiri sejak 27 April 2007, IECLOP berkomitmen mencetak generasi yang unggul dalam komunikasi global.
-            </p>
-        </div>
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
+            <div class="space-y-4">
+                <h3 class="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-200">
+                    INFOCOM IECLOP
+                </h3>
+                <p class="text-sm text-gray-400 leading-relaxed text-justify">
+                    UKM IECLOP adalah organisasi mahasiswa di Politeknik Negeri Lhokseumawe yang berfokus pada pengembangan kemampuan bahasa Inggris dan bahasa asing lainnya. Berdiri sejak 27 April 2007.
+                </p>
+            </div>
 
-        <div>
-            <h3 class="text-lg font-bold mb-6 border-l-4 border-blue-500 pl-3">Navigasi</h3>
-            <div class="grid grid-cols-2 gap-2 text-sm text-gray-400">
-                <a href="index.html" class="hover:text-blue-300 transition">Beranda</a>
-                <a href="about.html" class="hover:text-blue-300 transition">Tentang Kami</a>
-                <a href="education.html" class="hover:text-blue-300 transition">Education</a>
-                <a href="Infokom.html" class="hover:text-blue-300 transition">Infokom</a>
-                <a href="regen.html" class="hover:text-blue-300 transition">Regeneration</a>
-                <a href="publicRL.html" class="hover:text-blue-300 transition">Public Relation</a>
-                <a href="olympic.html" class="hover:text-blue-300 transition">Olympic</a>
-                <a href="admin.html" class="text-blue-400 hover:text-blue-200 font-semibold">Dashboard Admin</a>
+            <div>
+                <h3 class="text-lg font-bold mb-6 border-l-4 border-blue-500 pl-3">Navigasi</h3>
+                <div class="grid grid-cols-2 gap-2 text-sm text-gray-400">
+                    <a href="index.html" class="hover:text-blue-300 transition">Beranda</a>
+                    <a href="about.html" class="hover:text-blue-300 transition">Tentang Kami</a>
+                    <a href="education.html" class="hover:text-blue-300 transition">Education</a>
+                    <a href="Infokom.html" class="hover:text-blue-300 transition">Infokom</a>
+                    <a href="regen.html" class="hover:text-blue-300 transition">Regeneration</a>
+                    <a href="publicRL.html" class="hover:text-blue-300 transition">Public Relation</a>
+                    <a href="olympic.html" class="hover:text-blue-300 transition">Olympic</a>
+                    <a href="admin.html" class="text-blue-400 hover:text-blue-200 font-semibold">Dashboard Admin</a>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-lg font-bold mb-4">Hubungi Kami</h3>
+                <div class="text-sm text-gray-400 space-y-2">
+                    <p><i class="bi bi-geo-alt-fill mr-2 text-blue-500"></i>Politeknik Negeri Lhokseumawe, Aceh</p>
+                    <p><i class="bi bi-telephone-fill mr-2 text-blue-500"></i>Public Relation: +62 8xx-xxxx-xxxx</p>
+                </div>
+                
+                <div class="flex space-x-3 pt-2">
+                    <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
+                    <a href="#" class="social-icon"><i class="bi bi-discord"></i></a>
+                    <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="bi bi-tiktok"></i></a>
+                    <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a> 
+                </div>
             </div>
         </div>
 
-        <div class="space-y-4">
-            <h3 class="text-lg font-bold mb-4">Hubungi Kami</h3>
-            <div class="text-sm text-gray-400 space-y-2">
-                <p><i class="bi bi-geo-alt-fill mr-2 text-blue-500"></i>Politeknik Negeri Lhokseumawe, Aceh</p>
-                <p><i class="bi bi-telephone-fill mr-2 text-blue-500"></i>Public Relation: +62 8xx-xxxx-xxxx</p>
-            </div>
-            
-            <div class="flex space-x-3 pt-2">
-                <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
-                <a href="#" class="social-icon"><i class="bi bi-discord"></i></a>
-                <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="social-icon"><i class="bi bi-tiktok"></i></a>
-                <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a> </div>
+        <div class="max-w-6xl mx-auto mt-16 pt-8 border-t border-white/10 text-center text-xs text-gray-600">
+            <p>&copy; 2026 INFOCOM IECLOP. All Rights Reserved. Crafted with passion by Informatics Engineering.</p>
         </div>
-    </div>
-
-    <div class="max-w-6xl mx-auto mt-16 pt-8 border-t border-white/10 text-center text-xs text-gray-600">
-        <p>&copy; 2026 INFOCOM IECLOP. All Rights Reserved. Crafted with passion by Informatics Engineering.</p>
-    </div>
-</footer>
+    </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
@@ -134,5 +144,6 @@
     <script src="translate.js"></script>
     <script src="js/navbar.js"></script>
     <script src="script.js"></script>
+    <script src="animation.css"></script>
 </body>
 </html>

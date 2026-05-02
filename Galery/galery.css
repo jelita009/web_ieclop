@@ -1,0 +1,129 @@
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #050b1d; }
+::-webkit-scrollbar-thumb { background: #1e40af; border-radius: 10px; }
+
+/* Floating Back Button */
+.floating-back {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.floating-back:hover {
+    background: #3b82f6;
+    transform: translateX(5px);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+}
+
+/* Background Animation (Moving Stars/Particles) */
+.bg-animation {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 0;
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    overflow: hidden;
+}
+
+/* Star effect using box-shadow shadows */
+#stars, #stars2, #stars3 {
+    width: 2px; height: 2px;
+    background: transparent;
+    box-shadow: 1744px 122px #FFF, 134px 1321px #FFF, 500px 300px #FFF, 1200px 800px #FFF, 200px 1500px #FFF;
+    animation: animStar 50s linear infinite;
+}
+#stars2 { width: 3px; height: 3px; animation: animStar 100s linear infinite; opacity: 0.5; }
+#stars3 { width: 4px; height: 4px; animation: animStar 150s linear infinite; opacity: 0.3; }
+
+@keyframes animStar {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-2000px); }
+}
+
+/* Gallery Grid & Cards */
+.gallery-card {
+    position: relative;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    border-radius: 4px;
+    cursor: crosshair;
+    background: #000;
+}
+
+.gallery-img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: grayscale(20%);
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gallery-card:hover .gallery-img {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+}
+
+.card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.gallery-card:hover .card-overlay { opacity: 1; }
+
+.text-glow { text-shadow: 0 0 15px rgba(59, 130, 246, 0.8); }
+
+/* Lightbox Modern */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(0,0,0,0.98);
+    backdrop-filter: blur(10px);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-controls {
+    position: absolute;
+    top: 0; width: 100%;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-btn { font-size: 2rem; cursor: pointer; transition: 0.3s; }
+.close-btn:hover { color: #ef4444; transform: rotate(90deg); }
+
+.lightbox-content {
+    max-width: 85%;
+    max-height: 80vh;
+    object-fit: contain;
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+    animation: reveal 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes reveal {
+    from { opacity: 0; transform: scale(0.9) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
