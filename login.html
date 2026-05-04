@@ -6,8 +6,13 @@
     <title>Login Admin - IECLOP</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Link pemanggil Ikon & Animasi AOS ditambahkan di sini -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
-     <link rel="stylesheet" href="animation.css">
+    <link rel="stylesheet" href="animation.css">
     <style>
         .login-box {
             background: rgba(10, 20, 50, 0.4); /* Efek Kaca Transparan Navy */
@@ -26,7 +31,7 @@
             box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
             background: rgba(255, 255, 255, 0.1) !important;
         }
-        /* Posisi khusus tombol bahasa di pojok kanan atas untuk halaman tanpa navbar */
+        /* Posisi khusus tombol bahasa di pojok kanan atas */
         .lang-container-absolute {
             position: absolute;
             top: 2rem;
@@ -35,7 +40,9 @@
         }
     </style>
 </head>
-<body class="text-white antialiased min-h-screen flex items-center justify-center overflow-hidden">
+
+<!-- Layout body diubah agar form di tengah tapi bisa scroll ke footer -->
+<body class="text-white antialiased min-h-screen flex flex-col overflow-x-hidden">
     
     <video autoplay muted loop playsinline class="video-bg">
         <source src="video/contoh.mp4" type="video/mp4">
@@ -50,22 +57,32 @@
         </div>
     </div>
 
-    <div class="login-box p-10 w-full max-w-md text-center z-10 relative" data-aos="zoom-in">
-        <img src="img/logo_IECLOP.png" class="h-16 mx-auto mb-6" alt="Logo" onerror="this.src='img/logo_IECLOP.png'">
-        <h2 class="text-3xl font-black mb-2 tracking-tighter text-white" data-i18n="adminTitle">ADMIN PANEL</h2>
-        <p class="text-blue-200 mb-8 text-sm opacity-80" data-i18n="adminDesc">Silakan masuk untuk mengelola tugas divisi.</p>
-        
-        <div class="space-y-4">
-            <input type="text" id="username" placeholder="Username" class="w-full p-4 rounded-xl outline-none transition">
-            <input type="password" id="password" placeholder="Password" class="w-full p-4 rounded-xl outline-none transition">
-            <button onclick="handleLogin()" class="w-full bg-[#1e3a8a] hover:bg-[#172a6b] py-4 rounded-xl font-bold transition transform hover:scale-105 shadow-[0_4px_15px_rgba(30,58,138,0.4)]" data-i18n="adminBtn">
-                MASUK SEKARANG
-            </button>
+    <!-- Main content flex-grow memastikan kotak login terdorong ke tengah -->
+    <main class="flex-grow flex items-center justify-center p-6 relative z-10 w-full">
+        <div class="login-box p-10 w-full max-w-md text-center" data-aos="zoom-in">
+            <img src="img/logo_IECLOP.png" class="h-16 mx-auto mb-6" alt="Logo" onerror="this.src='img/logo_IECLOP.png'">
+            <h2 class="text-3xl font-black mb-2 tracking-tighter text-white" data-i18n="adminTitle">ADMIN PANEL</h2>
+            <p class="text-blue-200 mb-8 text-sm opacity-80" data-i18n="adminDesc">Silakan masuk untuk mengelola tugas divisi.</p>
+            
+            <div class="space-y-4">
+                <input type="text" id="username" placeholder="Username" class="w-full p-4 rounded-xl outline-none transition">
+                <input type="password" id="password" placeholder="Password" class="w-full p-4 rounded-xl outline-none transition">
+                <button onclick="handleLogin()" class="w-full bg-[#1e3a8a] hover:bg-[#172a6b] py-4 rounded-xl font-bold transition transform hover:scale-105 shadow-[0_4px_15px_rgba(30,58,138,0.4)]" data-i18n="adminBtn">
+                    MASUK SEKARANG
+                </button>
+            </div>
+            <a href="index.html" class="inline-block mt-6 text-xs text-blue-300 hover:text-white transition uppercase tracking-wider font-bold" data-i18n="adminBack">KEMBALI KE BERANDA</a>
         </div>
-        <a href="index.html" class="inline-block mt-6 text-xs text-blue-300 hover:text-white transition uppercase tracking-wider font-bold" data-i18n="adminBack">KEMBALI KE BERANDA</a>
-    </div>
+    </main>
 
+    <!-- Bingkai Footer Otomatis -->
+    <main-footer></main-footer>
+
+    <!-- Script pemanggil Animasi AOS diletakkan sebelum script utama -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        AOS.init({ duration: 1000, once: true });
+
         // --- FITUR PENYAMBUNG VIDEO BACKGROUND ---
         document.addEventListener("DOMContentLoaded", () => {
             const bgVideo = document.querySelector('.video-bg');
@@ -97,6 +114,7 @@
         }
     </script>
     <script src="translate.js"></script>
+    <script src="js/footer.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

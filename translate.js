@@ -62,7 +62,15 @@ const translations = {
         adminDashReset: "RESET SEMUA",
         adminDashLogout: "KELUAR",
         adminDashHeader: "MANAJEMEN PROKER DIVISI",
-        adminDashSub: "Centang untuk mengubah status menjadi 'Terlaksana' di halaman publik."
+        adminDashSub: "Centang untuk mengubah status menjadi 'Terlaksana' di halaman publik.",
+
+        // Footer Section
+        footerDesc: "UKM IECLOP adalah organisasi mahasiswa di Politeknik Negeri Lhokseumawe yang berfokus pada pengembangan kemampuan bahasa Inggris dan bahasa asing lainnya. Berdiri sejak 27 April 2007, IECLOP berkomitmen mencetak generasi yang unggul dalam komunikasi global.",
+        footerNav: "Navigasi",
+        footerContact: "Hubungi Kami",
+        footerAdmin: "Dashboard Admin",
+        footerRights: "Hak Cipta © 2026 INFOCOM IECLOP. Seluruh Hak Cipta Dilindungi. Dibuat dengan semangat oleh Teknik Informatika.",
+        footerInfocom: "Infokom" 
     },
     en: {
         // Navbar
@@ -127,10 +135,15 @@ const translations = {
         adminDashReset: "RESET ALL",
         adminDashLogout: "LOGOUT",
         adminDashHeader: "DIVISION WORK PROGRAM MANAGEMENT",
-        adminDashSub: "Check to change the status to 'Completed' on the public page."
+        adminDashSub: "Check to change the status to 'Completed' on the public page.",
 
-        //Galery page
-        
+        // Footer Section
+        footerDesc: "UKM IECLOP is a student organization at Lhokseumawe State Polytechnic that focuses on developing English and other foreign language skills. Established on April 27, 2007, IECLOP is committed to producing a generation that excels in global communication.",
+        footerNav: "Navigation",
+        footerContact: "Contact Us",
+        footerAdmin: "Admin Dashboard",
+        footerRights: "Copyright © 2026 INFOCOM IECLOP. All Rights Reserved. Crafted with passion by Informatics Engineering.",
+        footerInfocom: "Infocom" 
     }
 };
 

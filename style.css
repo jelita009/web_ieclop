@@ -6,7 +6,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif; /* Font diubah ke Montserrat */
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -34,7 +34,6 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    /* Transparansi diubah menjadi Biru Dongker (Navy) */
     background: rgba(10, 20, 50, 0.75); 
     z-index: -1;
 }
@@ -45,14 +44,22 @@ main {
     align-items: center;
     justify-content: space-between;
     padding: 1.25rem 5%;
-    /* Transparansi navbar diubah menjadi dominan putih transparan */
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 50;
     border-b: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.4s ease; 
+}
+
+/* KELAS BARU UNTUK EFEK NAVY SAAT SCROLL */
+.navbar-main.scrolled {
+    background: rgba(10, 20, 50, 0.95); 
+    padding: 1rem 5%; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(30, 58, 138, 0.5); 
 }
 
 .nav-link {
@@ -108,7 +115,7 @@ main {
 }
 
 .dropdown-content a:hover {
-    background-color: #1e3a8a; /* Biru Dongker */
+    background-color: #1e3a8a; 
     color: #ffffff;
     padding-left: 28px; 
 }
@@ -146,7 +153,7 @@ main {
 
 .lang-active {
     color: #fff !important;
-    background: #1e3a8a; /* Biru Dongker */
+    background: #1e3a8a; 
     box-shadow: 0 4px 10px rgba(30, 58, 138, 0.4);
 }
 
@@ -163,7 +170,7 @@ main {
 }
 
 .admin-login-btn:hover {
-    background: #1e3a8a; /* Biru Dongker */
+    background: #1e3a8a; 
     transform: rotate(15deg);
 }
 
@@ -178,7 +185,7 @@ main {
 .accent-line {
     width: 4rem;
     height: 0.4rem;
-    background-color: #ffffff; /* Diubah menjadi Putih */
+    background-color: #ffffff; 
     margin-bottom: 1rem;
     border-radius: 999px;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
@@ -219,10 +226,10 @@ main {
 }
 
 .btn-explore:hover .btn-fill { transform: translateY(0); }
-.btn-explore:hover { color: #1e3a8a; } /* Teks jadi Biru Dongker saat hover */
+.btn-explore:hover { color: #1e3a8a; } 
 
 .btn-voice {
-    background: #1e3a8a; /* Biru Dongker */
+    background: #1e3a8a; 
     color: white;
     padding: 1rem 2rem;
     font-weight: 800;
@@ -256,7 +263,7 @@ main {
     text-decoration: none;
 }
 
-.more-link:hover { color: #1e3a8a; } /* Biru Dongker */
+.more-link:hover { color: #1e3a8a; } 
 
 /* NEWS CARDS */
 .news-card {
@@ -306,7 +313,7 @@ main {
     transition: 0.3s;
 }
 
-.news-card:hover .card-title { color: #1e3a8a; } /* Biru Dongker */
+.news-card:hover .card-title { color: #1e3a8a; } 
 
 .card-desc {
     color: #64748b;
@@ -317,41 +324,42 @@ main {
 .read-more-btn {
     display: flex;
     align-items: center;
-    color: #1e3a8a; /* Biru Dongker */
+    color: #1e3a8a; 
     font-weight: 900;
     font-size: 0.8rem;
     text-transform: uppercase;
 }
 
 .cursor {
-        display: inline-block;
-        margin-left: 5px;
-        width: 4px;
-        background-color: currentColor; /* Mengikuti warna teks */
-        animation: blink 1s infinite;
-    }
+    display: inline-block;
+    margin-left: 5px;
+    width: 4px;
+    background-color: currentColor; 
+    animation: blink 1s infinite;
+}
 
-    @keyframes blink {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0; }
-    }
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
 
 /* Efek teks transparan dengan outline putih tipis */
-    .stroke-text {
-        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
-    }
+.stroke-text {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+}
     
-    .text-glow {
-        text-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
-        filter: brightness(1.2);
-    }
-
+.text-glow {
+    text-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+    filter: brightness(1.2);
+}
 
 /* FOOTER */
-/* Styling Footer Premium */
+/* DIUBAH: Menghapus warna background solid dan menambahkan efek blur glassmorphism */
 .footer {
-    background: #0f172a; /* Warna background utama */
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(15, 23, 42, 0.6); /* Transparan gelap */
+    backdrop-filter: blur(12px); /* Efek kaca (blur) pada background di belakangnya */
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
     overflow: hidden;
 }

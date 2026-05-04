@@ -2,8 +2,9 @@ class MainNavbar extends HTMLElement {
     connectedCallback() {
         const currentPath = window.location.pathname.split("/").pop() || 'index.html';
 
+        // Tambahkan id="main-nav" di elemen <nav> di bawah ini
         this.innerHTML = `
-        <nav class="navbar-main fixed top-0 left-0 w-full z-[999]">
+        <nav class="navbar-main fixed top-0 left-0 w-full z-[999]" id="main-nav">
             <div class="flex items-center justify-between w-full">
                 <div class="flex items-center space-x-3">
                     <img src="img/logo_IECLOP.png" alt="Logo IECLOP" class="h-10 md:h-12 w-auto object-contain">
@@ -81,7 +82,7 @@ class MainNavbar extends HTMLElement {
         </nav>
         `;
 
-        // Interaksi Tombol Hamburger (Buka/Tutup Menu)
+        // Interaksi Tombol Hamburger
         const btn = this.querySelector('#mobile-menu-btn');
         const menu = this.querySelector('#mobile-menu');
         const icon = btn.querySelector('i');
@@ -89,7 +90,6 @@ class MainNavbar extends HTMLElement {
         btn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
             menu.classList.toggle('flex');
-            // Ganti ikon Garis Tiga (Bars) ke Silang (X)
             if (menu.classList.contains('hidden')) {
                 icon.classList.replace('fa-xmark', 'fa-bars');
             } else {
@@ -105,7 +105,18 @@ class MainNavbar extends HTMLElement {
         divBtn.addEventListener('click', () => {
             divMenu.classList.toggle('hidden');
             divMenu.classList.toggle('flex');
-            divIcon.classList.toggle('rotate-180'); // Putar ikon panah
+            divIcon.classList.toggle('rotate-180');
+        });
+
+        // --- LOGIKA NAVBAR BERUBAH WARNA ---
+        // Saya letakkan langsung di sini agar langsung jalan
+        const navBar = this.querySelector('#main-nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navBar.classList.add('scrolled');
+            } else {
+                navBar.classList.remove('scrolled');
+            }
         });
     }
 }
