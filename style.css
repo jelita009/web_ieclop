@@ -244,17 +244,20 @@ main {
     box-shadow: 0 6px 20px rgba(30, 58, 138, 0.5);
 }
 
-/* NEWS SECTION */
+/* NEWS SECTION - DIUBAH MENJADI EFEK KACA TRANSPARAN */
 .news-section {
-    background-color: #ffffff;
+    background: rgba(255, 255, 255, 0.05); /* Transparan tipis */
+    backdrop-filter: blur(10px); /* Efek Kaca */
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Garis batas atas */
     padding: 8rem 5%;
-    color: #1a1a1a;
+    color: #ffffff; /* Warna teks utama diubah jadi putih */
 }
 
 .section-header { margin-bottom: 5rem; text-align: center; }
 
 .more-link {
-    color: #6b7280;
+    color: #cbd5e1; /* Warna link diubah agar cocok di dark mode */
     font-size: 0.85rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -263,7 +266,7 @@ main {
     text-decoration: none;
 }
 
-.more-link:hover { color: #1e3a8a; } 
+.more-link:hover { color: #60a5fa; } /* Biru terang saat hover */
 
 /* NEWS CARDS */
 .news-card {
@@ -311,6 +314,7 @@ main {
     line-height: 1.3;
     margin-bottom: 1.25rem;
     transition: 0.3s;
+    color: #1a1a1a; /* Pastikan judul di dalam card tetap hitam agar terbaca di background putih card */
 }
 
 .news-card:hover .card-title { color: #1e3a8a; } 
@@ -354,10 +358,9 @@ main {
 }
 
 /* FOOTER */
-/* DIUBAH: Menghapus warna background solid dan menambahkan efek blur glassmorphism */
 .footer {
-    background: rgba(15, 23, 42, 0.6); /* Transparan gelap */
-    backdrop-filter: blur(12px); /* Efek kaca (blur) pada background di belakangnya */
+    background: rgba(15, 23, 42, 0.6); 
+    backdrop-filter: blur(12px); 
     -webkit-backdrop-filter: blur(12px);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;

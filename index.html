@@ -24,11 +24,9 @@
 
     <main>
         <div class="hero-container px-6 md:px-20">
-            <!-- JUDUL DISINKRONKAN DENGAN FORMAT ABOUT -->
             <h1 class="text-5xl md:text-6xl font-black uppercase tracking-tighter leading-[1.1] mb-2" id="hero-title" data-i18n="heroTitle">
                 UKM IECLOP <br>
             </h1>
-            <!-- Garis Gradient diletakkan di bawah judul utama -->
             <div class="w-20 h-1.5 bg-gradient-to-r from-blue-500 to-pink-500 rounded-full mb-6"></div>
             
             <div class="text-3xl md:text-5xl font-bold text-white-600 mb-5" id="hero-tittle2">
@@ -50,16 +48,17 @@
             </div>
         </div>
 
+        <!-- Section ini sekarang memiliki efek transparan dari style.css -->
         <section class="news-section">
-            <!-- JUDUL BERITA DISINKRONKAN DENGAN FORMAT ABOUT -->
             <div class="section-header">
                 <div class="flex flex-col items-center justify-center mb-3">
-                    <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter text-[#1e3a8a] mb-4" id="news-section-title" data-i18n="newsSectionTitle">BERITA TERKINI</h2>
-                    <div class="w-20 h-1.5 bg-gradient-to-r from-blue-800 to-[#1e3a8a] mx-auto rounded-full"></div>
+                    <!-- DIUBAH: text-[#1e3a8a] menjadi text-white agar terbaca jelas -->
+                    <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter text-white mb-4" id="news-section-title" data-i18n="newsSectionTitle">BERITA TERKINI</h2>
+                    <div class="w-20 h-1.5 bg-gradient-to-r from-blue-500 to-pink-500 mx-auto rounded-full"></div>
                 </div>
             </div>
 
-            <!-- Container Berita -->
+            <!-- Container Berita (Kartu-kartunya tetap utuh dan berwarna putih) -->
             <div id="news-container" class="grid grid-cols-1 md:grid-cols-3 gap-10">
                 
                 <!-- News Item 1 -->

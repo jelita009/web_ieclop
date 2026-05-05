@@ -13,6 +13,8 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
     />
+    <!-- Link AOS untuk animasi -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="animation.css" />
     <style>
@@ -58,12 +60,18 @@
     </video>
     <div class="overlay"></div>
     <main-navbar></main-navbar>
-    <main class="max-w-6xl mx-auto px-6 py-12 relative z-10">
-      <header class="text-center mb-16">
+    
+    <!-- Mengubah py-12 menjadi pt-32 pb-12 agar judul turun -->
+    <main class="max-w-6xl mx-auto px-6 pt-32 pb-12 relative z-10">
+      <header class="text-center mb-16" data-aos="fade-up">
         <h1
           id="div-name"
-          class="text-5xl md:text-6xl font-black tracking-tighter mb-4 uppercase text-white"
+          class="text-5xl md:text-6xl font-black uppercase tracking-tighter text-white mb-4"
         ></h1>
+        
+        <!-- Garis gradient sinkronisasi -->
+        <div class="w-20 h-1.5 bg-gradient-to-r from-blue-500 to-pink-500 mx-auto rounded-full mb-6"></div>
+        
         <p
           id="div-desc"
           class="text-justify leading-[1.8] tracking-[0.02em] text-blue-100 max-w-2xl mx-auto text-lg opacity-90"
@@ -207,6 +215,13 @@
       };
       init();
     </script>
+    
+    <!-- Script AOS untuk animasi -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+    
     <script src="translate.js"></script>
     <script src="js/navbar.js"></script>
     <script src="js/footer.js"></script>
