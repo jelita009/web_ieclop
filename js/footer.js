@@ -34,19 +34,18 @@ class MainFooter extends HTMLElement {
                         <p><i class="bi bi-telephone-fill mr-2 text-blue-500"></i>Public Relation: +62 8xx-xxxx-xxxx</p>
                     </div>
                     <div class="flex space-x-3 pt-2">
-                        <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-discord"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-tiktok"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a> 
+                        <a href="https://youtube.com/@ukmiecloppnl4498?si=wf4nPGg1ajEcEkEe" class="social-icon"><i class="bi bi-youtube"></i></a>
+                        <a href="https://discord.gg/FKkKwpcntW" class="social-icon"><i class="bi bi-discord"></i></a>
+                        <a href="https://www.instagram.com/ieclop.kbmpnl?igsh=MThtejFhazRvNDBhdg==" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@ukm_ieclop_pnl?_r=1&_t=ZS-967oGnQFHiW" class="social-icon"><i class="bi bi-tiktok"></i></a>
+                        <a href="https://www.linkedin.com/company/ukm-ieclop-pnl/" class="social-icon"><i class="bi bi-linkedin"></i></a> 
                     </div>
                 </div>
             </div>
             <div class="max-w-6xl mx-auto mt-16 pt-8 border-t border-white/10 text-center text-xs text-gray-600">
                 <p data-i18n="footerRights">&copy; 2026 INFOCOM IECLOP. All Rights Reserved. Crafted with passion by Informatics Engineering.</p>
             </div>
-        </footer>
-        `;
+        </footer>`;
     }
 }
 customElements.define('main-footer', MainFooter);
