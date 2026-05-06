@@ -124,26 +124,26 @@
         Infocom: {
           leader: "Raihan Saputra",
           leaderImg:
-            "https://ui-avatars.com/api/?name=Raihan+S&background=1e3a8a&color=fff",
+            "img/infokom/bgRehan.jpg",
           members: [
-            "Zia Alicia",
-            "Asyura",
-            "Ananda Putri Nabilla",
-            "Aulia Umisyakdiah",
-            "Aqil Ocean Difra",
-            "Cut Siti Nurhaliza",
-            "Muhammad Haikal",
-            "Nurul Fadila",
-            "Muna Nafisa",
-            "Firdhila Ananda Syahputri",
-            "Bima Aril Syahputra",
-            "Janrico Maulana Sofyan",
-            "Safira Aznura Yunda",
-            "Jelita Anggraini",
-            "Fajri Ayu",
-            "Arief Maulana",
-            "Afif Kanahaya Hasibuan",
-          ],
+          { name: "Zia Alicia", img: "img/infokom/Zia.jpg" },
+          { name: "Asyura", img: "img/infokom/asyura.jpg" },
+          { name: "Ananda Putri Nabilla", img: "img/infokom/Ananda.jpg" },
+          { name: "Aulia Umisyakdiah", img: "img/infokom/Aulia.jpg" },
+          { name: "Aqil Ocean Difra", img: "img/infokom/ocean.jpg" },
+          { name: "Cut Siti Nurhaliza", img: "img/infokom/icut.jpg" },
+          { name: "Muhammad Haikal", img: "img/infokom/Haikal.jpg" },
+          { name: "Nurul Fadila", img: "img/infokom/Nurul.jpg" },
+          { name: "Muna Nafisa", img: "img/infokom/Muna.jpg" },
+          { name: "Firdhila Ananda Syahputri", img: "img/infokom/firdhila.jpg" },
+          { name: "Bima Aril Syahputra", img: "img/infokom/Bima.jpg" },
+          { name: "Janrico Maulana Sofyan", img: "img/infokom/Janrico.jpg" },
+          { name: "Safira Aznura Yunda", img: "img/infokom/yunda.jpg" },
+          { name: "Jelita Anggraini", img: "img/infokom/Jelita.jpg" },
+          { name: "Fajri Ayu", img: "img/infokom/Fajri.jpg" },
+          { name: "Arief Maulana", img: "img/infokom/Arief.jpg" },
+          { name: "Afif Kanahaya Hasibuan", img: "img/infokom/Afif.jpg" }
+        ],
           id: {
             desc: "Information & Communication. Mengelola media sosial, branding visual, dan website resmi IECLOP.",
             tasks: [
@@ -163,6 +163,7 @@
       const data =
         divisionDetails[divName] || Object.values(divisionDetails)[0];
 
+      //jelita update untuk nambahin name dan img
       function init() {
         if (!data) return;
         document.getElementById("div-name").innerText = divName.toUpperCase();
@@ -171,16 +172,18 @@
 
         const memberGrid = document.getElementById("members-grid");
         memberGrid.innerHTML = "";
+
         data.members.forEach((m) => {
-          // Tambahkan label khusus untuk Sekretaris jika namanya Zia
-          const roleLabel = m.includes("Zia")
+          // Cek apakah namanya mengandung Zia untuk label Sekretaris
+          const roleLabel = m.name.includes("Zia")
             ? `<p class="text-[9px] text-blue-300 font-bold uppercase tracking-wider mt-1">Sekretaris</p>`
             : "";
 
           memberGrid.innerHTML += `
                 <div class="glass-card p-4 flex flex-col items-center w-full min-w-[130px] opacity-80 hover:opacity-100 transition duration-500">
-                    <img src="https://ui-avatars.com/api/?name=${m}&background=random" class="w-14 h-14 rounded-full mb-3 border-2 border-white/20 object-cover">
-                    <span class="text-xs font-bold text-center text-white leading-tight">${m}</span>
+                    <!-- m.img sekarang mengambil path yang kita tulis di atas -->
+                    <img src="${m.img}" class="w-14 h-14 rounded-full mb-3 border-2 border-white/20 object-cover">
+                    <span class="text-xs font-bold text-center text-white leading-tight">${m.name}</span>
                     ${roleLabel}
                 </div>`;
         });
