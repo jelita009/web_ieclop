@@ -13,7 +13,6 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
     />
-    <!-- Link AOS untuk animasi -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="animation.css" />
@@ -61,7 +60,6 @@
     <div class="overlay"></div>
     <main-navbar></main-navbar>
     
-    <!-- Mengubah py-12 menjadi pt-32 pb-12 agar judul tidak tertutup navbar -->
     <main class="max-w-6xl mx-auto px-6 pt-32 pb-12 relative z-10">
       <header class="text-center mb-16" data-aos="fade-up">
         <h1
@@ -69,7 +67,6 @@
           class="text-5xl md:text-6xl font-black uppercase tracking-tighter text-white mb-4"
         ></h1>
         
-        <!-- Garis gradient diletakkan di Bawah Judul untuk sinkronisasi -->
         <div class="w-20 h-1.5 bg-gradient-to-r from-blue-500 to-pink-500 mx-auto rounded-full mb-6"></div>
         
         <p
@@ -79,14 +76,13 @@
       </header>
       <section class="mb-24">
         <div class="flex flex-col items-center">
-          <!-- Kartu Kepala Divisi -->
           <div
             class="glass-card p-6 flex flex-col items-center w-56 border-[#1e3a8a]/50"
           >
             <img
               id="leader-img"
               src=""
-              class="w-24 h-24 rounded-full mb-4 object-cover border-4 border-[#1e3a8a]"
+              class="w-24 h-24 rounded-full mb-4 object-cover object-top border-4 border-[#1e3a8a]"
             />
             <h3
               id="leader-name"
@@ -99,7 +95,6 @@
             >
           </div>
           <div class="line-connector"></div>
-          <!-- Grid Anggota -->
           <div
             class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
             id="members-grid"
@@ -115,35 +110,33 @@
       </section>
     </main>
 
-    <!-- Bingkai Footer Otomatis -->
     <main-footer></main-footer>
 
     <script>
       const divisionDetails = {
         "Public Relation": {
           leader: "Afzallul Zikri",
-          leaderImg:
-            "https://ui-avatars.com/api/?name=Afzallul+Z&background=1e3a8a&color=fff",
+          leaderImg: "img/publicRL/Afzallul.jpg",
           members: [
-            "Ibni Zuhdi Azizi",
-            "Zaki Habibi Akbar Gurandhi",
-            "Faiq Ghiffaril Auliansyah",
-            "Abir Ramadhani",
-            "Siti Nurainun Manurung",
-            "Renia Anjani",
-            "Santi Melvira",
-            "Putri Syakira",
-            "Muhammad Rafi Azhira",
-            "Muhammad Amharul Azhan",
-            "Anggi Sya’ban Nabila Batu Bara",
-            "Aisara Humaira",
-            "Asyifa Riskyna",
-            "Muhammad Ariskiya",
-            "Nisa Tridasari",
-            "Muhammad Refqi",
-            "Zahratul Hayati Aritonang",
-            "Nadila Zahrani",
-            "Najya Rafa Zahira",
+            { name: "Ibni Zuhdi Azizi", img: "img/publicRL/Ibni.jpg" },
+            { name: "Zaki Habibi Akbar Gurandhi", img: "img/publicRL/Zaki.jpg" },
+            { name: "Faiq Ghiffaril Auliansyah", img: "img/publicRL/Faiq.jpg" },
+            { name: "Abir Ramadhani", img: "img/publicRL/Abir.jpg" },
+            { name: "Siti Nurainun Manurung", img: "img/publicRL/Siti.jpg" },
+            { name: "Renia Anjani", img: "img/publicRL/Renia.jpg" },
+            { name: "Santi Melvira", img: "img/publicRL/Santi.jpg" },
+            { name: "Putri Syakira", img: "img/publicRL/Putri.jpg" },
+            { name: "Muhammad Rafi Azhira", img: "img/publicRL/Rafi.jpg" },
+            { name: "Muhammad Amharul Azhan", img: "img/publicRL/Amharul.jpg" },
+            { name: "Anggi Sya’ban Nabila Batu Bara", img: "img/publicRL/Anggi.jpg" },
+            { name: "Aisara Humaira", img: "img/publicRL/Aisara.jpg" },
+            { name: "Asyifa Riskyna", img: "img/publicRL/Asyifa.jpg" },
+            { name: "Muhammad Ariskiya", img: "img/publicRL/Ariskiya.jpg" },
+            { name: "Nisa Tridasari", img: "img/publicRL/Nisa.jpg" },
+            { name: "Muhammad Refqi", img: "img/publicRL/Refqi.jpg" },
+            { name: "Zahratul Hayati Aritonang", img: "img/publicRL/Zahratul.jpg" },
+            { name: "Nadila Zahrani", img: "img/publicRL/Nadila.jpg" },
+            { name: "Najya Rafa Zahira", img: "img/publicRL/Najya.jpg" }
           ],
           id: {
             desc: "Membangun citra positif dan menjalin kolaborasi strategis dengan pihak eksternal, kampus lain, dan mitra kerja.",
@@ -169,15 +162,14 @@
         const memberGrid = document.getElementById("members-grid");
         memberGrid.innerHTML = "";
         data.members.forEach((m) => {
-          // Tambahkan label khusus untuk Sekretaris jika namanya Ibni
-          const roleLabel = m.includes("Ibni")
+          const roleLabel = m.name.includes("Ibni")
             ? `<p class="text-[9px] text-blue-300 font-bold uppercase tracking-wider mt-1">Sekretaris</p>`
             : "";
 
           memberGrid.innerHTML += `
                 <div class="glass-card p-4 flex flex-col items-center w-full min-w-[130px] opacity-80 hover:opacity-100 transition duration-500">
-                    <img src="https://ui-avatars.com/api/?name=${m}&background=random" class="w-14 h-14 rounded-full mb-3 border-2 border-white/20 object-cover">
-                    <span class="text-xs font-bold text-center text-white leading-tight">${m}</span>
+                    <img src="${m.img}" class="w-14 h-14 rounded-full mb-3 border-2 border-white/20 object-cover object-top">
+                    <span class="text-xs font-bold text-center text-white leading-tight">${m.name}</span>
                     ${roleLabel}
                 </div>`;
         });
@@ -217,7 +209,6 @@
       init();
     </script>
 
-    <!-- Script AOS untuk animasi -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1000, once: true });

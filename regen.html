@@ -13,7 +13,6 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
     />
-    <!-- Link AOS untuk animasi -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="animation.css" />
@@ -61,7 +60,6 @@
     <div class="overlay"></div>
     <main-navbar></main-navbar>
     
-    <!-- Mengubah py-12 menjadi pt-32 pb-12 agar judul turun -->
     <main class="max-w-6xl mx-auto px-6 pt-32 pb-12 relative z-10">
       <header class="text-center mb-16" data-aos="fade-up">
         <h1
@@ -69,7 +67,6 @@
           class="text-5xl md:text-6xl font-black uppercase tracking-tighter text-white mb-4"
         ></h1>
         
-        <!-- Garis gradient sinkronisasi -->
         <div class="w-20 h-1.5 bg-gradient-to-r from-blue-500 to-pink-500 mx-auto rounded-full mb-6"></div>
         
         <p
@@ -79,14 +76,13 @@
       </header>
       <section class="mb-24">
         <div class="flex flex-col items-center">
-          <!-- Kartu Kepala Divisi -->
           <div
             class="glass-card p-6 flex flex-col items-center w-56 border-[#1e3a8a]/50"
           >
             <img
               id="leader-img"
               src=""
-              class="w-24 h-24 rounded-full mb-4 object-cover border-4 border-[#1e3a8a]"
+              class="w-24 h-24 rounded-full mb-4 object-cover object-top border-4 border-[#1e3a8a]"
             />
             <h3
               id="leader-name"
@@ -99,7 +95,6 @@
             >
           </div>
           <div class="line-connector"></div>
-          <!-- Grid Anggota -->
           <div
             class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
             id="members-grid"
@@ -115,34 +110,32 @@
       </section>
     </main>
 
-    <!-- Bingkai Footer Otomatis -->
     <main-footer></main-footer>
 
     <script>
       const divisionDetails = {
         Regeneration: {
           leader: "Adha Gusti Harmadhan",
-          leaderImg:
-            "https://ui-avatars.com/api/?name=Adha+G+H&background=1e3a8a&color=fff",
+          leaderImg: "img/regeneration/Adha.jpg",
           members: [
-            "Dwi Putri Aidilla",
-            "Chairunnisa Al Rohli Sadrina",
-            "Hayatul Ichwana",
-            "Salsabila Putroe Ripasha",
-            "Tengku Salsabila",
-            "Muthiah Rahma Pasaribu",
-            "Shima Nur Fatihah",
-            "Rara Amanda",
-            "Tari Ika Maulidya",
-            "Nailis Saputri",
-            "Nayla Mutia Silvia Dina",
-            "Athiyya Nauli Napitupulu",
-            "Muhammad Habiburrahman Al Fathani",
-            "Muhammad Fadlil Azis",
-            "Fahrul Putra Hajri",
-            "Nayla Safitri",
-            "TM Athaya Syauqiy",
-            "Syarifah Nayla Zaskiya",
+            { name: "Dwi Putri Aidilla", img: "img/regeneration/Dwi.jpg" },
+            { name: "Chairunnisa Al Rohli Sadrina", img: "img/regeneration/Chairunnisa.jpg" },
+            { name: "Hayatul Ichwana", img: "img/regeneration/Hayatul.jpg" },
+            { name: "Salsabila Putroe Ripasha", img: "img/regeneration/Salsabila.jpg" },
+            { name: "Tengku Salsabila", img: "img/regeneration/Tengku.jpg" },
+            { name: "Muthiah Rahma Pasaribu", img: "img/regeneration/Muthiah.jpg" },
+            { name: "Shima Nur Fatihah", img: "img/regeneration/Shima.jpg" },
+            { name: "Rara Amanda", img: "img/regeneration/Rara.jpg" },
+            { name: "Tari Ika Maulidya", img: "img/regeneration/Tari.jpg" },
+            { name: "Nailis Saputri", img: "img/regeneration/Nailis.jpg" },
+            { name: "Nayla Mutia Silvia Dina", img: "img/regeneration/Nayla.jpg" },
+            { name: "Athiyya Nauli Napitupulu", img: "img/regeneration/Athiyya.jpg" },
+            { name: "Muhammad Habiburrahman Al Fathani", img: "img/regeneration/Habiburrahman.jpg" },
+            { name: "Muhammad Fadlil Azis", img: "img/regeneration/Fadlil.jpg" },
+            { name: "Fahrul Putra Hajri", img: "img/regeneration/Fahrul.jpg" },
+            { name: "Nayla Safitri", img: "img/regeneration/Nayla.jpg" },
+            { name: "TM Athaya Syauqiy", img: "img/regeneration/TM.jpg" },
+            { name: "Syarifah Nayla Zaskiya", img: "img/regeneration/Syarifah.jpg" }
           ],
           id: {
             desc: "Mencari kader baru, membangun kebersamaan, dan menumbuhkan jiwa kepemimpinan di dalam UKM IECLOP.",
@@ -168,15 +161,14 @@
         const memberGrid = document.getElementById("members-grid");
         memberGrid.innerHTML = "";
         data.members.forEach((m) => {
-          // Tambahkan label khusus untuk Sekretaris jika namanya Dwi
-          const roleLabel = m.includes("Dwi")
+          const roleLabel = m.name.includes("Dwi")
             ? `<p class="text-[9px] text-blue-300 font-bold uppercase tracking-wider mt-1">Sekretaris</p>`
             : "";
 
           memberGrid.innerHTML += `
                 <div class="glass-card p-4 flex flex-col items-center w-full min-w-[130px] opacity-80 hover:opacity-100 transition duration-500">
-                    <img src="https://ui-avatars.com/api/?name=${m}&background=random" class="w-14 h-14 rounded-full mb-3 border-2 border-white/20 object-cover">
-                    <span class="text-xs font-bold text-center text-white leading-tight">${m}</span>
+                    <img src="${m.img}" class="w-14 h-14 rounded-full mb-3 border-2 border-white/20 object-cover object-top">
+                    <span class="text-xs font-bold text-center text-white leading-tight">${m.name}</span>
                     ${roleLabel}
                 </div>`;
         });
@@ -216,7 +208,6 @@
       init();
     </script>
     
-    <!-- Script AOS untuk animasi -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1000, once: true });
