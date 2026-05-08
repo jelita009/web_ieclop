@@ -152,31 +152,32 @@
         divisionDetails[divName] || Object.values(divisionDetails)[0];
 
       function init() {
-        if (!data) return;
-        document.getElementById("div-name").innerText = divName.toUpperCase();
-        document.getElementById("leader-name").innerText = data.leader;
-        document.getElementById("leader-img").src = data.leaderImg;
+      if (!data) return;
+      document.getElementById("div-name").innerText = divName.toUpperCase();
+      document.getElementById("leader-name").innerText = data.leader;
+      document.getElementById("leader-img").src = data.leaderImg;
 
-        const memberGrid = document.getElementById("members-grid");
-        memberGrid.innerHTML = "";
-        
-        // Looping diubah untuk membaca object m.name dan m.img
-        data.members.forEach((m) => {
-          const roleLabel = m.name.includes("Alfaraby")
-            ? `<p class="text-[9px] text-blue-300 font-bold uppercase tracking-wider mt-1">Sekretaris</p>`
-            : "";
+      const memberGrid = document.getElementById("members-grid");
+      memberGrid.innerHTML = "";
 
-          memberGrid.innerHTML += `
-                <div class="glass-card p-4 flex flex-col items-center w-full min-w-[130px] opacity-80 hover:opacity-100 transition duration-500">
-                    <img src="${m.img}" class="w-14 h-14 rounded-full mb-3 border-2 border-white/20 object-cover object-top">
-                    <span class="text-xs font-bold text-center text-white leading-tight">${m.name}</span>
-                    ${roleLabel}
-                </div>`;
-        });
+      data.members.forEach((m) => {
+        // Cek apakah namanya mengandung Zia untuk label Sekretaris
+        const roleLabel = m.name.includes("Zia")
+          ? `<p class="text-[9px] text-blue-300 font-bold uppercase tracking-wider mt-1">Sekretaris</p>`
+          : "";
 
-        const savedLang = localStorage.getItem("preferredLang") || "id";
-        window.updateLocalContent(savedLang);
-      }
+        memberGrid.innerHTML += `
+              <div class="glass-card p-4 flex flex-col items-center w-full min-w-[130px] opacity-80 hover:opacity-100 transition duration-500">
+                  <!-- m.img sekarang mengambil path yang kita tulis di atas -->
+                  <img src="${m.img}" class="w-14 h-14 rounded-full mb-3 border-2 border-white/20 object-cover">
+                  <span class="text-xs font-bold text-center text-white leading-tight">${m.name}</span>
+                  ${roleLabel}
+              </div>`;
+      });
+
+      const savedLang = localStorage.getItem("preferredLang") || "id";
+      window.updateLocalContent(savedLang);
+    }
 
       window.updateLocalContent = function (lang) {
         if (!data) return;

@@ -164,14 +164,17 @@
 
         const memberGrid = document.getElementById("members-grid");
         memberGrid.innerHTML = "";
+
         data.members.forEach((m) => {
-          const roleLabel = m.name.includes("Najril") || m.name.includes("Nazril")
+          // Cek apakah namanya mengandung Zia untuk label Sekretaris
+          const roleLabel = m.name.includes("Zia")
             ? `<p class="text-[9px] text-blue-300 font-bold uppercase tracking-wider mt-1">Sekretaris</p>`
             : "";
 
           memberGrid.innerHTML += `
                 <div class="glass-card p-4 flex flex-col items-center w-full min-w-[130px] opacity-80 hover:opacity-100 transition duration-500">
-                    <img src="${m.img}" class="w-14 h-14 rounded-full mb-3 border-2 border-white/20 object-cover object-top">
+                    <!-- m.img sekarang mengambil path yang kita tulis di atas -->
+                    <img src="${m.img}" class="w-14 h-14 rounded-full mb-3 border-2 border-white/20 object-cover">
                     <span class="text-xs font-bold text-center text-white leading-tight">${m.name}</span>
                     ${roleLabel}
                 </div>`;
