@@ -8,7 +8,7 @@ class MainNavbar extends HTMLElement {
             <div class="flex items-center justify-between w-full">
                 <div class="flex items-center space-x-3">
                     <img src="img/logo_IECLOP.png" alt="Logo IECLOP" class="h-10 md:h-12 w-auto object-contain">
-                    <span class="text-xl md:text-2xl font-black tracking-tighter uppercase">IECLOP</span>
+                    <span class="text-xl md:text-2xl font-black tracking-tighter uppercase">UKM IECLOP</span>
                 </div>
 
                 <div class="hidden md:flex items-center space-x-10 font-semibold tracking-wide">

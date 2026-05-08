@@ -12,7 +12,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgb(28, 35, 102);
     backdrop-filter: blur(10px);
     padding: 10px 20px;
     border-radius: 50px;

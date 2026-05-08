@@ -116,27 +116,27 @@
       const divisionDetails = {
         "Public Relation": {
           leader: "Afzallul Zikri",
-          leaderImg: "img/publicRL/Afzallul.jpg",
+          leaderImg: "img/kadiv-pr.png",
           members: [
-            { name: "Ibni Zuhdi Azizi", img: "img/publicRL/Ibni.jpg" },
-            { name: "Zaki Habibi Akbar Gurandhi", img: "img/publicRL/Zaki.jpg" },
-            { name: "Faiq Ghiffaril Auliansyah", img: "img/publicRL/Faiq.jpg" },
-            { name: "Abir Ramadhani", img: "img/publicRL/Abir.jpg" },
-            { name: "Siti Nurainun Manurung", img: "img/publicRL/Siti.jpg" },
-            { name: "Renia Anjani", img: "img/publicRL/Renia.jpg" },
-            { name: "Santi Melvira", img: "img/publicRL/Santi.jpg" },
-            { name: "Putri Syakira", img: "img/publicRL/Putri.jpg" },
-            { name: "Muhammad Rafi Azhira", img: "img/publicRL/Rafi.jpg" },
-            { name: "Muhammad Amharul Azhan", img: "img/publicRL/Amharul.jpg" },
-            { name: "Anggi Sya’ban Nabila Batu Bara", img: "img/publicRL/Anggi.jpg" },
-            { name: "Aisara Humaira", img: "img/publicRL/Aisara.jpg" },
-            { name: "Asyifa Riskyna", img: "img/publicRL/Asyifa.jpg" },
-            { name: "Muhammad Ariskiya", img: "img/publicRL/Ariskiya.jpg" },
-            { name: "Nisa Tridasari", img: "img/publicRL/Nisa.jpg" },
-            { name: "Muhammad Refqi", img: "img/publicRL/Refqi.jpg" },
-            { name: "Zahratul Hayati Aritonang", img: "img/publicRL/Zahratul.jpg" },
-            { name: "Nadila Zahrani", img: "img/publicRL/Nadila.jpg" },
-            { name: "Najya Rafa Zahira", img: "img/publicRL/Najya.jpg" }
+            { name: "Ibni Zuhdi Azizi", img: "img/publicRL/IBNI_ZUHDI_AZIZ.jpg" },
+            { name: "Zaki Habibi Akbar Gurandhi", img: "img/publicRL/Zaki-Habibi-akbar-Gurandhi.jpg" },
+            { name: "Faiq Ghiffaril Auliansyah", img: "img/publicRL/faiq-ghiffani.jpg" },
+            { name: "Abir Ramadhani", img: "img/publicRL/Abir-Ramadhani.jpg" },
+            { name: "Siti Nurainun Manurung", img: "img/publicRL/Siti-Nurainun-Manurung.jpg" },
+            { name: "Renia Anjani", img: "img/publicRL/Renia-Anjani.jpg" },
+            { name: "Santi Melvira", img: "img/publicRL/santi-melvira.jpg" },
+            { name: "Putri Syakira", img: "img/publicRL/Putri-Syakira.jpg" },
+            { name: "Muhammad Rafi Azhira", img: "img/publicRL/Muhammad-Rafi-Azira.jpg" },
+            { name: "Muhammad Amharul Azhan", img: "img/publicRL/Muhammad-Amharul-Azhan.jpg" },
+            { name: "Anggi Sya’ban Nabila Batu Bara", img: "img/publicRL/Angi-Syaban-Nabila-Batu-Bara.jpg" },
+            { name: "Aisara Humaira", img: "img/publicRL/aisara-humaira.jpg" },
+            { name: "Asyifa Riskyna", img: "img/publicRL/asyifa.jpg" },
+            { name: "Muhammad Ariskiya", img: "img/publicRL/Muhammad-Ariskiya.jpg" },
+            { name: "Nisa Tridasari", img: "img/publicRL/Nisa-Tridasari.jpg" },
+            { name: "Muhammad Refqi", img: "img/publicRL/muhammad-refqi.jpg" },
+            { name: "Zahratul Hayati Aritonang", img: "img/publicRL/Zahratul-Hayati-Aritonang.jpg" },
+            { name: "Nadila Zahrani", img: "img/publicRL/Nadila-Zahrani.jpg" },
+            { name: "Najya Rafa Zahira", img: "img/publicRL/Nayja-Rafa-Zahira.jpg" }
           ],
           id: {
             desc: "Membangun citra positif dan menjalin kolaborasi strategis dengan pihak eksternal, kampus lain, dan mitra kerja.",
@@ -161,14 +161,17 @@
 
         const memberGrid = document.getElementById("members-grid");
         memberGrid.innerHTML = "";
+
         data.members.forEach((m) => {
-          const roleLabel = m.name.includes("Ibni")
+          // Cek apakah namanya mengandung Zia untuk label Sekretaris
+          const roleLabel = m.name.includes("Zia")
             ? `<p class="text-[9px] text-blue-300 font-bold uppercase tracking-wider mt-1">Sekretaris</p>`
             : "";
 
           memberGrid.innerHTML += `
                 <div class="glass-card p-4 flex flex-col items-center w-full min-w-[130px] opacity-80 hover:opacity-100 transition duration-500">
-                    <img src="${m.img}" class="w-14 h-14 rounded-full mb-3 border-2 border-white/20 object-cover object-top">
+                    <!-- m.img sekarang mengambil path yang kita tulis di atas -->
+                    <img src="${m.img}" class="w-14 h-14 rounded-full mb-3 border-2 border-white/20 object-cover">
                     <span class="text-xs font-bold text-center text-white leading-tight">${m.name}</span>
                     ${roleLabel}
                 </div>`;
