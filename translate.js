@@ -19,6 +19,17 @@ const translations = {
         news3Title: "Muhammad Zuhdan Ansharulhaq Raih Juara 1 PILMAPRES 2026",
         news3Desc: "Selamat kepada Muhammad Zuhdan Ansharulhaq, Mahasiswa Teknik Kimia ’23, atas prestasinya meraih Juara 1 PILMAPRES Tingkat Wilayah 2026 Program Diploma yang diselenggarakan oleh LLDIKTI Wilayah XIII di Banda Aceh. 🎉🏆",
         NewsDate3: "04 Mei 2026",
+        news4Title: "Pengumuman Hasil Seleksi IECLOP",
+        news4Desc: "Selamat! 🎉💙 Hasil ini membuktikan kerja keras kalian. Persiapkan diri untuk tahap selanjutnya dan wakili IECLOP dengan bangga!Delegasi: Ghina Najwa Ilmi (Speech), Adha Gusti Harmadan (Interview), M. Zuhdan Ansharulhaq (Pitching), Shafa Naya Naysyla (Biztech), M. Alfaraby (Newscasting), Aqil Ocean Difra (Writing), Raisha Fathia (MC), Zia Alicia (Storytelling), Nazril Kanahaya Akbar (Poster).",
+        NewsDate4: "06 Mei 2026",
+        news5Title: "Prestasi Olahraga: Menuju PORA Aceh 2026",
+        news5Desc: "Selamat! 🎉💙 Dengan bangga kami mengapresiasi Chairunnisa Alrohli Sadrina (Bisnis ’24) yang berhasil lolos kualifikasi PRA-PORA Aceh 2026 cabang Bulu Tangkis 🏸. Terus berikan yang terbaik dan wakili IECLOP dengan penuh percaya diri di tahap selanjutnya!",
+        NewsDate5: "06 Mei 2026",
+        news6Title: "Peraih Medali Perunggu Wushu: PORA 2026",
+        news6Desc: "Selamat! 🥉✨ Kami bangga atas pencapaian Nasywa Nur Shabira (TIK ’24) yang berhasil meraih Medali Perunggu kategori Wushu Taiji-Quan Putri di PORA. Dedikasimu sangat menginspirasi—teruslah berkembang dan bersinar bersama IECLOP! 💙",
+        News6ate5: "13 Mei 2026",
+
+
 
         // About Page
         aboutTitle: "TENTANG <span class='highlight text-blue-300'>IECLOP</span>",
@@ -92,6 +103,16 @@ const translations = {
         news3Title: "Muhammad Zuhdan Ansharulhaq Wins 1st Place at PILMAPRES 2026",
         news3Desc: "Congratulations to Muhammad Zuhdan Ansharulhaq, Chemical Engineering ’23, for winning 1st Place in the 2026 Regional PILMAPRES (Diploma Program) organized by LLDIKTI Region XIII in Banda Aceh. 🎉🏆",
         NewsDate3: "Mei 4, 2026",
+        news4Title: "Announcing the IECLOP Selection Results",
+        news4Desc: "Congratulations! 🎉💙 Your consistency has paid off. Gear up for the next stage and represent IECLOP with pride!Delegates: Ghina Najwa Ilmi (Speech), Adha Gusti Harmadan (Interview), M. Zuhdan Ansharulhaq (Pitching), Shafa Naya Naysyla (Biztech), M. Alfaraby (Newscasting), Aqil Ocean Difra (Writing), Raisha Fathia (MC), Zia Alicia (Storytelling), Nazril Kanahaya Akbar (Poster).",
+        NewsDate4: "Mei 6, 2026",
+        news5Title: "Sports Achievement: Road to PORA Aceh 2026",
+        news5Desc: "Congratulations! 🎉💙 We proudly celebrate Chairunnisa Alrohli Sadrina (Business ’24) for passing the PRA-PORA Aceh 2026 pre-qualification in Badminton 🏸. Keep giving your best and represent IECLOP with confidence in the next stage!",
+        NewsDate5: "Mei 6, 2026",
+        news6Title: "Wushu Bronze Medalist: PORA 2026",
+        news6Desc: "Congratulations! 🥉✨ We are proud of Nasywa Nur Shabira (ICT ’24) for winning the Bronze Medal in Women’s Wushu Taiji-Quan at PORA. Your dedication is truly inspiring—keep growing and continue to shine for IECLOP! 💙",
+        News6ate5: "Mei 13, 2026",
+
 
         // About Page
         aboutTitle: "ABOUT <span class='highlight text-blue-300'>IECLOP</span>",
