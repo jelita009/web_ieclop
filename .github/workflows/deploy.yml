@@ -1,3 +1,4 @@
+
 name: Deploy via FTP
 
 on:
@@ -19,4 +20,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           # Biasanya file ditaruh di folder htdocs pada InfinityFree
-          server-dir: ./htdocs/
+          server-dir: ieclop.my.id/htdocs/
