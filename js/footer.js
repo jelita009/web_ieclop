@@ -24,7 +24,7 @@ class MainFooter extends HTMLElement {
                         <a href="regen.html" class="hover:text-blue-300 transition">Regeneration</a>
                         <a href="publicRL.html" class="hover:text-blue-300 transition">Public Relation</a>
                         <a href="olympic.html" class="hover:text-blue-300 transition">Olympic</a>
-                        <a href="admin.html" class="text-blue-400 hover:text-blue-200 font-semibold" data-i18n="footerAdmin">Dashboard Admin</a>
+                        <a href="login.html" class="text-blue-400 hover:text-blue-200 font-semibold" data-i18n="footerAdmin">Dashboard Admin</a>
                     </div>
                 </div>
                 <div class="space-y-4">
