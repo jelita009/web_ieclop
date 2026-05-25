@@ -47,10 +47,14 @@
         color: #93c5fd;
         border: 1px solid rgba(147, 197, 253, 0.3);
       }
-      .pending-status {
-        background: rgba(255, 255, 255, 0.05);
-        color: #e2e8f0;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+      .hourglass-anim {
+          animation: hourglassRotate 2s ease-in-out infinite;
+      }
+
+      @keyframes hourglassRotate {
+          0% { transform: rotate(0deg); }
+          50% { transform: rotate(180deg); }
+          100% { transform: rotate(360deg); }
       }
     </style>
   </head>
@@ -203,16 +207,16 @@
           const isDone = localStorage.getItem(taskId) === "true";
           const statusText = isDone
             ? lang === "id"
-              ? "TERLAKSANA"
+              ? "SUDAH TERLAKSANA"
               : "COMPLETED"
             : lang === "id"
-              ? "PROSES"
-              : "ON PROGRESS";
+              ? "BELUM TERLAKSANA"
+              : "COMING SOON";
           container.innerHTML += `
                 <div class="glass-card p-6 flex items-center justify-between group transition">
                     <div class="flex items-center gap-5">
                         <div class="w-12 h-12 rounded-full flex items-center justify-center ${isDone ? "bg-[#1e3a8a] text-blue-200" : "bg-white/10 text-gray-400"} border border-white/10">
-                            <i class="fa-solid ${isDone ? "fa-check-double" : "fa-circle-notch fa-spin"}"></i>
+                            <i class="fa-solid ${isDone ? "fa-check-double" : "fa-hourglass-half hourglass-anim"}"></i>
                         </div>
                         <h4 class="text-lg font-bold ${isDone ? "text-gray-400" : "text-white"}">${task}</h4>
                     </div>

@@ -154,12 +154,12 @@ body {
 .info h3 {
     font-size: 0.9rem;
     font-weight: 700;
-    color: #333;
+    color: #ffffff; /* putih */
 }
 
 .info p {
     font-size: 0.75rem;
-    color: #777;
+    color: #93c5fd; /* biru muda */
     margin-top: 3px;
 }
 
@@ -173,6 +173,16 @@ body {
     transform: translateY(-10px) scale(1.05);
     box-shadow: 0 15px 30px rgba(0,0,0,0.1);
     background: #f8faff;
+}
+
+/* Nama saat hover */
+.card:hover .info h3 {
+    color: #000000 !important;
+}
+
+/* Jabatan saat hover */
+.card:hover .info p {
+    color: #1d4ed8 !important;
 }
 
 .shadow-blue:hover { border-color: #2563eb; }

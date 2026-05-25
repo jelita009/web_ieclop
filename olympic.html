@@ -46,10 +46,14 @@
         color: #93c5fd;
         border: 1px solid rgba(147, 197, 253, 0.3);
       }
-      .pending-status {
-        background: rgba(255, 255, 255, 0.05);
-        color: #e2e8f0;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+      .hourglass-anim {
+          animation: hourglassRotate 2s ease-in-out infinite;
+      }
+
+      @keyframes hourglassRotate {
+          0% { transform: rotate(0deg); }
+          50% { transform: rotate(180deg); }
+          100% { transform: rotate(360deg); }
       }
     </style>
   </head>
@@ -116,7 +120,7 @@
       const divisionDetails = {
         Olympic: {
           leader: "Ghina Najwa Ilmi",
-          leaderImg: "img/olympic/Ghina.jpg",
+          leaderImg: "img/kadiv-olim.png",
           members: [
             { name: "Nazril Kanahaya Akbar", img: "img/olympic/Nazril.jpg" },
             { name: "Syarifah Rizkiah", img: "img/olympic/Syarifah.jpg" },
@@ -195,11 +199,11 @@
           const isDone = localStorage.getItem(taskId) === "true";
           const statusText = isDone
             ? lang === "id"
-              ? "TERLAKSANA"
+              ? "SUDAH TERLAKSANA"
               : "COMPLETED"
             : lang === "id"
-              ? "PROSES"
-              : "ON PROGRESS";
+              ? "BELUM TERLAKSANA"
+              : "COMING SOON";
           container.innerHTML += `
                 <div class="glass-card p-6 flex items-center justify-between group transition">
                     <div class="flex items-center gap-5">

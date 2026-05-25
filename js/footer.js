@@ -31,7 +31,7 @@ class MainFooter extends HTMLElement {
                     <h3 class="text-lg font-bold mb-4" data-i18n="footerContact">Hubungi Kami</h3>
                     <div class="text-sm text-gray-400 space-y-2">
                         <p><i class="bi bi-geo-alt-fill mr-2 text-blue-500"></i>Politeknik Negeri Lhokseumawe, Aceh</p>
-                        <p><i class="bi bi-telephone-fill mr-2 text-blue-500"></i>Public Relation: +62 8xx-xxxx-xxxx</p>
+                        <p><i class="bi bi-telephone-fill mr-2 text-blue-500"></i>Public Relation: +62 895-0893-0294</p>
                     </div>
                     <div class="flex space-x-3 pt-2">
                         <a href="https://youtube.com/@ukmiecloppnl4498?si=wf4nPGg1ajEcEkEe" class="social-icon"><i class="bi bi-youtube"></i></a>
@@ -43,7 +43,7 @@ class MainFooter extends HTMLElement {
                 </div>
             </div>
             <div class="max-w-6xl mx-auto mt-16 pt-8 border-t border-white/10 text-center text-xs text-gray-600">
-                <p data-i18n="footerRights">&copy; 2026 INFOCOM IECLOP. All Rights Reserved. Crafted with passion by Informatics Engineering.</p>
+                <p data-i18n="footerRights">&copy; 2026 INFOCOM IECLOP. All Rights Reserved. Crafted with passion by Webmaster.</p>
             </div>
         </footer>`;
     }

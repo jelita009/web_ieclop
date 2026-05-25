@@ -25,9 +25,16 @@ const translations = {
         news5Title: "Prestasi Olahraga: Menuju PORA Aceh 2026",
         news5Desc: "Selamat! 🎉💙 Dengan bangga kami mengapresiasi Chairunnisa Alrohli Sadrina (Bisnis ’24) yang berhasil lolos kualifikasi PRA-PORA Aceh 2026 cabang Bulu Tangkis 🏸. Terus berikan yang terbaik dan wakili IECLOP dengan penuh percaya diri di tahap selanjutnya!",
         NewsDate5: "06 Mei 2026",
-        news6Title: "Peraih Medali Perunggu Wushu: PORA 2026",
-        news6Desc: "Selamat! 🥉✨ Kami bangga atas pencapaian Nasywa Nur Shabira (TIK ’24) yang berhasil meraih Medali Perunggu kategori Wushu Taiji-Quan Putri di PORA. Dedikasimu sangat menginspirasi—teruslah berkembang dan bersinar bersama IECLOP! 💙",
-        News6ate5: "13 Mei 2026",
+        News6Title: "Peraih Medali Perunggu Wushu: PORA 2026",
+        News6Desc: "Selamat! 🥉✨ Kami bangga atas pencapaian Nasywa Nur Shabira (TIK ’24) yang berhasil meraih Medali Perunggu kategori Wushu Taiji-Quan Putri di PORA. Dedikasimu sangat menginspirasi—teruslah berkembang dan bersinar bersama IECLOP! 💙",
+        NewsDate6: "13 Mei 2026",
+        News7Title: "Langkah Baru, Tantangan Baru! 🚀✨",
+        News7Desc: "Selamat kepada seluruh peserta yang berhasil LOLOS ke babak berikutnya! 🎉💙<br> Berikut adalah perwakilan hebat kita yang siap melangkah maju:<br>1. Ghina Najwa Ilmi (Business ’23) - Speech <br>2. M. Zuhdan Ansharulhaq (Chemical Engineering ’23) - Pitching <br>3. Shafa Naya Naysyla (Business ’23) - Biztech <br>4. Zia Alicia (Business ’24) - Storytelling <br><br>Perjalanan baru saja dimulai! Persiapkan diri kalian sebaik mungkin dan berikan performa terbaik di babak selanjutnya. 🔥",
+        NewsDate7: "18 Mei 2026",
+        News8Title: "Langkah Awal Menuju Puncak! 🥈🥋",
+        News8Desc: "Selamat atas pencapaian luar biasa Zaki Habibi Akbar Gurandhi (Chemical Engineering ’24)! 🎉💙 Zaki berhasil meraih Juara 4 Embu Berpasangan Campuran Kyu I pada ajang PRA PORA 2026 Shorinji Kempo Tingkat Provinsi Aceh. 🥋🏅 Perjuangan baru saja dimulai, Zaki! Tetap percaya pada proses, jaga kobaran semangatmu, dan teruslah bersinar di matras-matras berikutnya. We are so proud of you! 🚀✨",
+        NewsDate8: "24 Mei 2026",
+
 
 
 
@@ -80,7 +87,7 @@ const translations = {
         footerNav: "Navigasi",
         footerContact: "Hubungi Kami",
         footerAdmin: "Dashboard Admin",
-        footerRights: "Hak Cipta © 2026 INFOCOM IECLOP. Seluruh Hak Cipta Dilindungi. Dibuat dengan semangat oleh Teknik Informatika.",
+        footerRights: "Hak Cipta © 2026 INFOCOM IECLOP. Seluruh Hak Cipta Dilindungi. Dibuat dengan semangat oleh Situs Administrator.",
         footerInfocom: "Infokom" 
     },
     en: {
@@ -109,9 +116,15 @@ const translations = {
         news5Title: "Sports Achievement: Road to PORA Aceh 2026",
         news5Desc: "Congratulations! 🎉💙 We proudly celebrate Chairunnisa Alrohli Sadrina (Business ’24) for passing the PRA-PORA Aceh 2026 pre-qualification in Badminton 🏸. Keep giving your best and represent IECLOP with confidence in the next stage!",
         NewsDate5: "Mei 6, 2026",
-        news6Title: "Wushu Bronze Medalist: PORA 2026",
-        news6Desc: "Congratulations! 🥉✨ We are proud of Nasywa Nur Shabira (ICT ’24) for winning the Bronze Medal in Women’s Wushu Taiji-Quan at PORA. Your dedication is truly inspiring—keep growing and continue to shine for IECLOP! 💙",
-        News6ate5: "Mei 13, 2026",
+        News6Title: "Wushu Bronze Medalist: PORA 2026",
+        News6Desc: "Congratulations! 🥉✨ We are proud of Nasywa Nur Shabira (ICT ’24) for winning the Bronze Medal in Women’s Wushu Taiji-Quan at PORA. Your dedication is truly inspiring—keep growing and continue to shine for IECLOP! 💙",
+        NewsDate6: "Mei 13, 2026",
+        News7Title: "The Journey Continues! 🚀✨",
+        News7Desc: "Congratulations to all participants who successfully ADVANCED to the next round! 🎉💙<br>Here are our outstanding representatives ready to move forward:<br>1. Ghina Najwa Ilmi (Business ’23) - Speech <br>2. M. Zuhdan Ansharulhaq (Chemical Engineering ’23) - Pitching <br>3. Shafa Naya Naysyla (Business ’23) - Biztech <br>4. Zia Alicia (Business ’24) - Storytelling <br><br>The journey has just begun! Prepare yourselves as best as possible and give your best performance in the next round. 🔥",
+        NewsDate7: "Mei 18, 2026",
+        News8Title: "Stepping Stone to Victory! 🥈🥋",
+        News8Desc: "Huge congratulations to Zaki Habibi Akbar Gurandhi (Chemical Engineering ’24)! 🎉💙 For securing 4th Place in Mixed Pair Embu 1st Kyu at PRA PORA 2026 Shorinji Kempo Aceh Provincial Level. 🥋🏅 This is just the beginning, Zaki! Keep trusting the process, stay passionate, and never stop shining in your next battles. We are beyond proud of you! 🚀✨",
+        NewsDate8: "Mei 24, 2026",
 
 
         // About Page
@@ -163,7 +176,7 @@ const translations = {
         footerNav: "Navigation",
         footerContact: "Contact Us",
         footerAdmin: "Admin Dashboard",
-        footerRights: "Copyright © 2026 INFOCOM IECLOP. All Rights Reserved. Crafted with passion by Informatics Engineering.",
+        footerRights: "Copyright © 2026 INFOCOM IECLOP. All Rights Reserved. Crafted with passion by Site Administrator.",
         footerInfocom: "Infocom" 
     }
 };
