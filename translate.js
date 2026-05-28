@@ -34,6 +34,9 @@ const translations = {
         News8Title: "Langkah Awal Menuju Puncak! 🥈🥋",
         News8Desc: "Selamat atas pencapaian luar biasa Zaki Habibi Akbar Gurandhi (Chemical Engineering ’24)! 🎉💙 Zaki berhasil meraih Juara 4 Embu Berpasangan Campuran Kyu I pada ajang PRA PORA 2026 Shorinji Kempo Tingkat Provinsi Aceh. 🥋🏅 Perjuangan baru saja dimulai, Zaki! Tetap percaya pada proses, jaga kobaran semangatmu, dan teruslah bersinar di matras-matras berikutnya. We are so proud of you! 🚀✨",
         NewsDate8: "24 Mei 2026",
+        News9Title: "Amanah Telah Disampaikan ✨🤲",
+        News9Desc: "Dari aksi galang dana di jalanan hingga ke senyuman saudara kita di lapangan. Penyaluran donasi khusus untuk 4 mahasiswa PNL dan warga terdampak di daerah Pardede, Gampong Jawa, telah selesai dilaksanakan dengan lancar. Terima kasih sebesar-besarnya kepada seluruh donatur dan relawan yang terlibat. Bersama, kita ringankan beban sesama!",
+        NewsDate9: "27 Mei 2026",
 
 
 
@@ -125,6 +128,9 @@ const translations = {
         News8Title: "Stepping Stone to Victory! 🥈🥋",
         News8Desc: "Huge congratulations to Zaki Habibi Akbar Gurandhi (Chemical Engineering ’24)! 🎉💙 For securing 4th Place in Mixed Pair Embu 1st Kyu at PRA PORA 2026 Shorinji Kempo Aceh Provincial Level. 🥋🏅 This is just the beginning, Zaki! Keep trusting the process, stay passionate, and never stop shining in your next battles. We are beyond proud of you! 🚀✨",
         NewsDate8: "Mei 24, 2026",
+        News9Title: "Trust Delivered, Kindness Shared ✨🤲",
+        News9Desc: "From street fundraising to the smiles of our brothers and sisters. The distribution of donations specifically for 4 PNL students and affected residents in Pardede, Gampong Jawa, has been successfully completed. Our deepest gratitude to all donors and volunteers involved. Together, we can ease each other's burdens!",
+        News9ate8: "Mei 27, 2026",
 
 
         // About Page
