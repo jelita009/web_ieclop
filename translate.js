@@ -37,8 +37,13 @@ const translations = {
         NewsDate8: "24 Mei 2026",
         News9Title: "Amanah Telah Disampaikan ✨🤲",
         News9Desc: "Dari aksi galang dana di jalanan hingga ke senyuman saudara kita di lapangan. Penyaluran donasi khusus untuk 4 mahasiswa PNL dan warga terdampak di daerah Pardede, Gampong Jawa, telah selesai dilaksanakan dengan lancar. Terima kasih sebesar-besarnya kepada seluruh donatur dan relawan yang terlibat. Bersama, kita ringankan beban sesama!",
-        NewsDate9: "27 Mei 2026",
-
+        NewsDate9: "24 Mei 2026",
+        NewsDate10: "06 Juni 2026",
+        News10Title: "Selamat 💙✨",
+        News10Desc: "Kami dengan bangga mengucapkan selamat kepada para delegasi kami atas pencapaian luar biasa mereka di Indonesian Polytechnic English Championship (IPEC) III 2026 yang diselenggarakan di Politeknik Pelayaran Surabaya. 🎉🏅 🥇 Zia Alicia (Tata Niaga '24) - Medali Emas (Novice) dalam Storytelling Competition. 🥇 Ghina Najwa Ilmi (Tata Niaga '23) - Medali Emas (Competent) dalam Speech Competition. 🥈 Muhammad Zuhdan Ansharulhaq (Teknik Kimia '23) - Medali Perak (Novice) dalam Pitching Competition. 🥉 Shafa Naya Naysyla (Tata Niaga '23) - Medali Perunggu (Competent) dalam Biz-Tech Educating Talk Competition. Pencapaian ini mencerminkan kerja keras, dedikasi, dan semangat kalian sepanjang kompetisi. Semoga keberhasilan ini membawa pengalaman berharga, membuka peluang baru, dan menginspirasi pencapaian yang lebih besar di masa depan.",
+        NewsDate11: "15 Juni 2026",
+        News11Title: "Dokumentasi Rekap – Monthly Study 📚💙",
+        News11Desc: "IECLOP telah sukses melaksanakan sesi pertama Monthly Study dengan topik “Simple Present Tense”. Melalui sesi ini, para peserta mendapatkan kesempatan untuk belajar, berlatih, dan meningkatkan pemahaman mereka tentang salah satu tenses bahasa Inggris yang paling mendasar dalam suasana yang seru dan interaktif. ✨ Terima kasih kepada semua yang telah bergabung. Sampai jumpa di Monthly Study berikutnya!",
 
 
 
@@ -132,8 +137,13 @@ const translations = {
         NewsDate8: "Mei 24, 2026",
         News9Title: "Trust Delivered, Kindness Shared ✨🤲",
         News9Desc: "From street fundraising to the smiles of our brothers and sisters. The distribution of donations specifically for 4 PNL students and affected residents in Pardede, Gampong Jawa, has been successfully completed. Our deepest gratitude to all donors and volunteers involved. Together, we can ease each other's burdens!",
-        News9ate8: "Mei 27, 2026",
-
+        News9ate8: "Juni 06, 2026",
+        NewsDate10: "Juni 06, 2026",
+        News10Title: "Congratulations 💙✨",
+        News10Desc: "We proudly congratulate our delegates on their outstanding achievements at the Indonesian Polytechnic English Championship (IPEC) III 2026, held at Surabaya Polytechnic of Shipping. 🎉🏅 🥇 Zia Alicia (Business '24) - Gold Medal (Novice) in Storytelling Competition. 🥇 Ghina Najwa Ilmi (Business '23) - Gold Medal (Competent) in Speech Competition. 🥈 Muhammad Zuhdan Ansharulhaq (Chemical Engineering '23) - Silver Medal (Novice) in Pitching Competition. 🥉 Shafa Naya Naysyla (Business '23) - Bronze Medal (Competent) in Biz-Tech Educating Talk Competition. These achievements reflect your hard work, dedication, and passion throughout the competition. May this success bring valuable experiences, open new opportunities, and inspire even greater achievements in the future.",
+        NewsDate11: "15 Juni 2026",
+        News11Title: "Dokumentasi Rekap – Monthly Study 📚💙",
+        News11Desc: "IECLOP telah sukses melaksanakan sesi pertama Monthly Study dengan topik “Simple Present Tense”. Melalui sesi ini, para peserta mendapatkan kesempatan untuk belajar, berlatih, dan meningkatkan pemahaman mereka tentang salah satu tenses bahasa Inggris yang paling mendasar dalam suasana yang seru dan interaktif. ✨ Terima kasih kepada semua yang telah bergabung. Sampai jumpa di Monthly Study berikutnya!",
 
         // About Page
         aboutTitle: "ABOUT <span class='highlight text-blue-300'>IECLOP</span>",
