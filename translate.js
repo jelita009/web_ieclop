@@ -44,7 +44,9 @@ const translations = {
         NewsDate11: "15 Juni 2026",
         News11Title: "Dokumentasi Rekap – Monthly Study 📚💙",
         News11Desc: "IECLOP telah sukses melaksanakan sesi pertama Monthly Study dengan topik “Simple Present Tense”. Melalui sesi ini, para peserta mendapatkan kesempatan untuk belajar, berlatih, dan meningkatkan pemahaman mereka tentang salah satu tenses bahasa Inggris yang paling mendasar dalam suasana yang seru dan interaktif. ✨ Terima kasih kepada semua yang telah bergabung. Sampai jumpa di Monthly Study berikutnya!",
-
+        NewsDate12: "26 Juni 2026",
+        News12Title: "Acara Mendatang Segera Hadir! 🚀🔥",
+        News12Desc: "Persiapkan dirimu untuk proyek besar kami berikutnya! Kami sedang merencanakan sesuatu yang menarik yang akan menantang keterampilanmu dan memperluas wawasanmu. Tetap pantau dan aktifkan notifikasimu agar tidak ketinggalan pembaruan apa pun. Hal-hari hebat sedang dalam perjalanan! 💙",
 
 
         // About Page
@@ -144,6 +146,9 @@ const translations = {
         NewsDate11: "15 Juni 2026",
         News11Title: "Dokumentasi Rekap – Monthly Study 📚💙",
         News11Desc: "IECLOP telah sukses melaksanakan sesi pertama Monthly Study dengan topik “Simple Present Tense”. Melalui sesi ini, para peserta mendapatkan kesempatan untuk belajar, berlatih, dan meningkatkan pemahaman mereka tentang salah satu tenses bahasa Inggris yang paling mendasar dalam suasana yang seru dan interaktif. ✨ Terima kasih kepada semua yang telah bergabung. Sampai jumpa di Monthly Study berikutnya!",
+        NewsDate12: "Juni 26, 2026",
+        News12Title: "Upcoming Event Coming Soon! 🚀🔥",
+        News12Desc: "Prepare yourself for our next big project! We are cooking up something exciting that will challenge your skills and expand your horizons. Stay tuned and turn on your notifications so you don't miss any updates. Great things are on the way! 💙",
 
         // About Page
         aboutTitle: "ABOUT <span class='highlight text-blue-300'>IECLOP</span>",
