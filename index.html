@@ -49,122 +49,150 @@
             </div>
         </div>
 
-        <!-- Section ini sekarang memiliki efek transparan dari style.css -->
-        <section class="news-section">
-            <div class="section-header">
-                <div class="flex flex-col items-center justify-center mb-3">
-                    <!-- DIUBAH: text-[#1e3a8a] menjadi text-white agar terbaca jelas -->
-                    <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter text-white mb-4" id="news-section-title" data-i18n="newsSectionTitle">BERITA TERKINI</h2>
-                    <div class="w-20 h-1.5 bg-gradient-to-r from-blue-500 to-pink-500 mx-auto rounded-full"></div>
+        <section class="news-section px-6 md:px-20 py-16 relative">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-end mb-8 border-b border-white/10 pb-4 gap-4">
+                <!-- Spacer kiri khusus desktop agar judul benar-benar di tengah -->
+                <div class="hidden md:flex gap-3 opacity-0 pointer-events-none">
+                    <button class="w-12 h-12"></button>
+                    <button class="w-12 h-12"></button>
+                </div>
+                
+                <!-- Judul Berita Terkini (Center) -->
+                <div class="flex flex-col items-center text-center">
+                    <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter text-white mb-2" id="news-section-title" data-i18n="newsSectionTitle">BERITA TERKINI</h2>
+                    <div class="w-20 h-1.5 bg-gradient-to-r from-blue-500 to-pink-500 rounded-full"></div>
+                </div>
+                
+                <!-- Tombol Navigasi Kanan -->
+                <div class="flex gap-3">
+                    <button id="prev-news" class="w-12 h-12 rounded-full border border-white/20 bg-white/5 hover:bg-white/20 text-white flex items-center justify-center transition-all duration-300 active:scale-95">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                    <button id="next-news" class="w-12 h-12 rounded-full border border-white/20 bg-white/5 hover:bg-white/20 text-white flex items-center justify-center transition-all duration-300 active:scale-95">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="news-slider-container" class="overflow-x-auto scroll-smooth snap-x snap-mandatory pb-6">
+                <div id="news-container" class="flex gap-6 w-max">
+            
+            <!-- News 1 -->
+            <div class="news-card group snap-start" data-date="2026-05-29">
+                <div class="card-img-container">
+                    <div class="date-badge" data-i18n="NewsDate1">29 Mei 2026</div>
+                    <img src="img/news/news1.webp" alt="News">
+                    <div class="card-gradient"></div>
+                </div>
+                <div class="p-8 flex flex-col justify-between flex-grow">
+                    <div>
+                        <h3 class="card-title uppercase" id="news-1-title" data-i18n="news1Title">Another Win Secured! 🚀🏅</h3>
+                        <p class="card-desc text-justify line-clamp-4" id="news-1-desc" data-i18n="news1Desc">
+                            Shout out untuk Fazira, Cut Naila, & Naisa atas keberhasilannya di ajang National Policy Brief Competition 2025 Universitas Malikussaleh!✨
+                            Dedikasi dan kerja keras mereka dalam menyusun gagasan terbaik akhirnya membuahkan hasil manis di tingkat nasional. Bangga sekali dengan pencapaian kalian, teruslah berkarya dan menginspirasi sekitar! 🙌🏆
+                        </p>
+                    </div>
                 </div>
             </div>
 
-            <!-- Container Berita (Kartu-kartunya tetap utuh dan berwarna putih) -->
-            <div id="news-container" class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <!-- News Item 1 -->
-                <div class="news-card group" data-date="2026-05-29">
-                    <div class="card-img-container">
-                        <div class="date-badge" data-i18n="NewsDate1">29 Mei 2026</div>
-                        <img src="img/news/news1.webp" alt="News">
-                        <div class="card-gradient"></div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="card-title uppercase" id="news-3-title" data-i18n="news1Title">Another Win Secured! 🚀🏅</h3>
-                        <p class="card-desc text-justify leading-[1.8] tracking-[0.02em]" id="news-3-desc" data-i18n="news1Desc">
-                           Shout out untuk Fazira, Cut Naila, & Naisa atas keberhasilannya di ajang National Policy Brief Competition 2025 Universitas Malikussaleh!✨
-                           Dedikasi dan kerja keras mereka dalam menyusun gagasan terbaik akhirnya membuahkan hasil manis di tingkat nasional. Bangga sekali dengan pencapaian kalian, teruslah berkarya dan menginspirasi sekitar! 🙌🏆</p>
-                    </div>
+            <!-- News 2 -->
+            <div class="news-card group snap-start" data-date="2026-05-29">
+                <div class="card-img-container">
+                    <div class="date-badge" data-i18n="NewsDate2">29 Mei 2026</div>
+                    <img src="img/news/news2.webp" alt="News">
+                    <div class="card-gradient"></div>
                 </div>
-
-                
-                <!-- News Item 2 -->
-                <div class="news-card group" data-date="2026-05-29">
-                    <div class="card-img-container">
-                        <div class="date-badge" data-i18n="NewsDate2">29 Mei 2026</div>
-                        <img src="img/news/news2.webp" alt="News">
-                        <div class="card-gradient"></div>
-                    </div>
-                    <div class="p-8">
+                <div class="p-8 flex flex-col justify-between flex-grow">
+                    <div>
                         <h3 class="card-title uppercase" id="news-2-title" data-i18n="news2Title">Congratulations: 2026 P2MW Funding Recipients 🏆</h3>
-                        <p class="card-desc text-justify leading-[1.8] tracking-[0.02em]" id="news-2-desc" data-i18n="news2Desc">
-                        Selamat kepada Muhammad Fikri Abdillah (Teknik Elektro '22) dan Cut Naila Aqqilah (Teknik Kimia '25) atas keberhasilannya meraih pendanaan dalam ajang bergengsi nasional Program Pembinaan Mahasiswa Wirausaha (P2MW) 2026 di kategori Tahap Usaha Berkembang. 🩵<br>Pencapaian ini membuktikan bahwa inovasi dan kerja keras di bangku kuliah mampu melahirkan usaha yang kompetitif. Selamat mengembangkan bisnis kalian, semoga sukses dan membawa keberkahan bagi sekitar!
-                        </p>    
+                        <p class="card-desc text-justify line-clamp-4" id="news-2-desc" data-i18n="news2Desc">
+                            Selamat kepada Muhammad Fikri Abdillah (Teknik Elektro '22) dan Cut Naila Aqqilah (Teknik Kimia '25) atas keberhasilannya meraih pendanaan dalam ajang bergengsi nasional Program Pembinaan Mahasiswa Wirausaha (P2MW) 2026 di kategori Tahap Usaha Berkembang. 🩵<br>Pencapaian ini membuktikan bahwa inovasi dan kerja keras di bangku kuliah mampu melahirkan usaha yang kompetitif. Selamat mengembangkan bisnis kalian, semoga sukses dan membawa keberkahan bagi sekitar!
+                        </p>
+                    </div>
                 </div>
+            </div>
 
-                
-                <!-- News Item 3 -->
-                <div class="news-card group" data-date="2026-05-30">
-                    <div class="card-img-container">
-                        <div class="date-badge" data-i18n="NewsDate3">30 Mei 2026</div>
-                        <img src="img/news/news3.webp" alt="News">
-                        <div class="card-gradient"></div>
-                    </div>
-                    <div class="p-8">
+            <!-- News 3 -->
+            <div class="news-card group snap-start" data-date="2026-05-30">
+                <div class="card-img-container">
+                    <div class="date-badge" data-i18n="NewsDate3">30 Mei 2026</div>
+                    <img src="img/news/news3.webp" alt="News">
+                    <div class="card-gradient"></div>
+                </div>
+                <div class="p-8 flex flex-col justify-between flex-grow">
+                    <div>
                         <h3 class="card-title uppercase" id="news-3-title" data-i18n="news3Title">Congratulations: 2026 PKM-RE Funding Recipients 🏆</h3>
-                        <p class="card-desc text-justify leading-[1.8] tracking-[0.02em]" id="news-3-desc" data-i18n="news3Desc">
-                           Selamat kepada Muzzakir Rifaa, Friyal Nabila, dan Reza Mauliza atas keberhasilannya meraih pendanaan dalam ajang bergengsi nasional Program Kreativitas Mahasiswa (PKM) 2026 untuk skema Riset Eksakta (PKM-RE). 🩵<br>Pencapaian ini membuktikan bahwa sinergi dan kerja keras dalam penelitian mampu melahirkan inovasi yang solutif. Selamat menjalankan risetnya, semoga hasil penelitian kalian memberikan dampak nyata bagi perkembangan ilmu pengetahuan!</p>
+                        <p class="card-desc text-justify line-clamp-4" id="news-3-desc" data-i18n="news3Desc">
+                            Selamat kepada Muzzakir Rifaa, Friyal Nabila, dan Reza Mauliza atas keberhasilannya meraih pendanaan dalam ajang bergengsi nasional Program Kreativitas Mahasiswa (PKM) 2026 untuk skema Riset Eksakta (PKM-RE). 🩵<br>Pencapaian ini membuktikan bahwa sinergi dan kerja keras dalam penelitian mampu melahirkan inovasi yang solutif. Selamat menjalankan risetnya, semoga hasil penelitian kalian memberikan dampak nyata bagi perkembangan ilmu pengetahuan!
+                        </p>
                     </div>
                 </div>
-                
-                <!-- News Item 4 -->
-                <div class="news-card group" data-date="2026-05-06">
-                    <div class="card-img-container">
-                        <div class="date-badge" data-i18n="NewsDate4">06 Mei 2026</div>
-                        <img src="img/news/news4.webp" alt="News">
-                        <div class="card-gradient"></div>
-                    </div>
-                    <div class="p-8">
+            </div>
+
+            <!-- News 4 -->
+            <div class="news-card group snap-start" data-date="2026-05-06">
+                <div class="card-img-container">
+                    <div class="date-badge" data-i18n="NewsDate4">06 Mei 2026</div>
+                    <img src="img/news/news4.webp" alt="News">
+                    <div class="card-gradient"></div>
+                </div>
+                <div class="p-8 flex flex-col justify-between flex-grow">
+                    <div>
                         <h3 class="card-title uppercase" id="news-4-title" data-i18n="news4Title">Announcing the IECLOP Selection Results</h3>
-                        <p class="card-desc text-justify leading-[1.8] tracking-[0.02em]" id="news-4-desc" data-i18n="news4Desc">
+                        <p class="card-desc text-justify line-clamp-4" id="news-4-desc" data-i18n="news4Desc">
                             Selamat! 🎉💙 Hasil ini membuktikan kerja keras kalian. Persiapkan diri untuk tahap selanjutnya dan wakili IECLOP dengan bangga!
                             Delegasi: Ghina Najwa Ilmi (Speech), Adha Gusti Harmadan (Interview), M. Zuhdan Ansharulhaq (Pitching), Shafa Naya Naysyla (Biztech), M. Alfaraby (Newscasting), Aqil Ocean Difra (Writing), Raisha Fathia (MC), Zia Alicia (Storytelling), Nazril Kanahaya Akbar (Poster).
                         </p>
                     </div>
                 </div>
+            </div>
 
-                <!-- News Item 5 -->
-                <div class="news-card group" data-date="2026-05-06">
-                    <div class="card-img-container">
-                        <div class="date-badge" data-i18n="NewsDate5">06 Mei 2026</div>
-                        <img src="img/news/news5.webp" alt="News">
-                        <div class="card-gradient"></div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="card-title uppercase" id="news-5-title" data-i18n="news5Title">Sports Achievement: Road to PORA Aceh 2026</h3>
-                        <p class="card-desc text-justify leading-[1.8] tracking-[0.02em]" id="news-5-desc" data-i18n="news5Desc">
-                            Selamat! 🎉💙 Dengan bangga kami mengapresiasi Chairunnisa Alrohli Sadrina (Bisnis ’24) yang berhasil lolos kualifikasi PRA-PORA Aceh 2026 cabang Bulu Tangkis 🏸. 
-                            Terus berikan yang terbaik dan wakili IECLOP dengan penuh percaya diri di tahap selanjutnya!
+            <!-- News 5 -->
+            <div class="news-card group snap-start" data-date="2026-06-28">
+                <div class="card-img-container">
+                    <div class="date-badge" data-i18n="NewsDate5">28 Juni 2026</div>
+                    <img src="img/news/news5.webp" alt="News">
+                    <div class="card-gradient"></div>
+                </div>
+                <div class="p-8 flex flex-col justify-between flex-grow">
+                    <div>
+                        <h3 class="card-title uppercase" id="News-5-title" data-i18n="News5Title">Recap Documentation – HOCO XI 📸</h3>
+                        <p class="card-desc text-justify line-clamp-4" id="News-5-desc" data-i18n="News5Desc">
+                            Every moment marked a new beginning. From our first gathering to every shared experience, HOCO XI became a place to learn, connect, and grow together 🌟🤝 Thank you to everyone who made this journey so memorable. This is just the beginning, and we can't wait for what's next! ✨💙 🧭 Navigate the Future, Lead the Journey.
                         </p>
                     </div>
                 </div>
+            </div>
 
-                <!-- News Item 6 -->
-                <div class="news-card group" data-date="2026-05-13">
-                    <div class="card-img-container">
-                        <div class="date-badge" data-i18n="NewsDate6">13 Mei 2026</div>
-                        <img src="img/news/news6.webp" alt="News">
-                        <div class="card-gradient"></div>
-                    </div>
-                    <div class="p-8">
+            <!-- News 6 -->
+            <div class="news-card group snap-start" data-date="2026-05-13">
+                <div class="card-img-container">
+                    <div class="date-badge" data-i18n="NewsDate6">13 Mei 2026</div>
+                    <img src="img/news/news6.webp" alt="News">
+                    <div class="card-gradient"></div>
+                </div>
+                <div class="p-8 flex flex-col justify-between flex-grow">
+                    <div>
                         <h3 class="card-title uppercase" id="News-6-title" data-i18n="News6Title">Wushu Bronze Medalist: PORA 2026</h3>
-                        <p class="card-desc text-justify leading-[1.8] tracking-[0.02em]" id="News-6-desc" data-i18n="News6Desc">
+                        <p class="card-desc text-justify line-clamp-4" id="News-6-desc" data-i18n="News6Desc">
                             Selamat! 🥉✨ Kami bangga atas pencapaian Nasywa Nur Shabira (TIK ’24) yang berhasil meraih Medali Perunggu kategori Wushu Taiji-Quan Putri di PORA. 
                             Dedikasimu sangat menginspirasi—teruslah berkembang dan bersinar bersama IECLOP! 💙
                         </p>
                     </div>
                 </div>
+            </div>
 
-                <!-- News Item 7 -->
-                <div class="news-card group" data-date="2026-05-18">
-                    <div class="card-img-container">
-                        <div class="date-badge" data-i18n="NewsDate7">18 Mei 2026</div>
-                        <img src="img/news/news7.webp" alt="News">
-                        <div class="card-gradient"></div>
-                    </div>
-                    <div class="p-8">
+            <!-- News 7 -->
+            <div class="news-card group snap-start" data-date="2026-05-18">
+                <div class="card-img-container">
+                    <div class="date-badge" data-i18n="NewsDate7">18 Mei 2026</div>
+                    <img src="img/news/news7.webp" alt="News">
+                    <div class="card-gradient"></div>
+                </div>
+                <div class="p-8 flex flex-col justify-between flex-grow">
+                    <div>
                         <h3 class="card-title uppercase" id="News-7-title" data-i18n="News7Title">The Journey Continues! 🚀✨</h3>
-                        <p class="card-desc text-justify leading-[1.8] tracking-[0.02em]" id="News-7-desc" data-i18n="News7Desc">
-                           Selamat kepada seluruh peserta yang berhasil LOLOS ke babak berikutnya! 🎉💙
+                        <p class="card-desc text-justify line-clamp-4" id="News-7-desc" data-i18n="News7Desc">
+                            Selamat kepada seluruh peserta yang berhasil LOLOS ke babak berikutnya! 🎉💙
                             Berikut adalah perwakilan hebat kita yang siap melangkah maju:
                             1. Ghina Najwa Ilmi (Business ’23) - Speech <br>
                             2. M. Zuhdan Ansharulhaq (Chemical Engineering ’23) - Pitching <br>
@@ -174,93 +202,154 @@
                         </p>
                     </div>
                 </div>
+            </div>
 
-                <!-- News Item 8 -->
-                <div class="news-card group" data-date="2026-05-24">
-                    <div class="card-img-container">
-                        <div class="date-badge" data-i18n="NewsDate8">24 Mei 2026</div>
-                        <img src="img/news/news8.webp" alt="News">
-                        <div class="card-gradient"></div>
-                    </div>
-                    <div class="p-8">
+            <!-- News 8 -->
+            <div class="news-card group snap-start" data-date="2026-05-24">
+                <div class="card-img-container">
+                    <div class="date-badge" data-i18n="NewsDate8">24 Mei 2026</div>
+                    <img src="img/news/news8.webp" alt="News">
+                    <div class="card-gradient"></div>
+                </div>
+                <div class="p-8 flex flex-col justify-between flex-grow">
+                    <div>
                         <h3 class="card-title uppercase" id="News-8-title" data-i18n="News8Title">Stepping Stone to Victory! 🥈🥋</h3>
-                        <p class="card-desc text-justify leading-[1.8] tracking-[0.02em]" id="News-8-desc" data-i18n="News8Desc">
+                        <p class="card-desc text-justify line-clamp-4" id="News-8-desc" data-i18n="News8Desc">
                             Selamat atas pencapaian luar biasa Zaki Habibi Akbar Gurandhi (Chemical Engineering ’24)! 🎉💙
                             Zaki berhasil meraih Juara 4 Embu Berpasangan Campuran Kyu I pada ajang PRA PORA 2026 Shorinji Kempo Tingkat Provinsi Aceh. 🥋🏅
                             Perjuangan baru saja dimulai, Zaki! Tetap percaya pada proses, jaga kobaran semangatmu, dan teruslah bersinar di matras-matras berikutnya. We are so proud of you! 🚀✨
                         </p>
                     </div>
                 </div>
+            </div>
 
-                <!-- News Item 9 -->
-                <div class="news-card group" data-date="2026-05-27">
-                    <div class="card-img-container">
-                        <div class="date-badge" data-i18n="NewsDate9">27 Mei 2026</div>
-                        <img src="img/news/news9.webp" alt="News">
-                        <div class="card-gradient"></div>
-                    </div>
-                    <div class="p-8">
+            <!-- News 9 -->
+            <div class="news-card group snap-start" data-date="2026-05-27">
+                <div class="card-img-container">
+                    <div class="date-badge" data-i18n="NewsDate9">27 Mei 2026</div>
+                    <img src="img/news/news9.webp" alt="News">
+                    <div class="card-gradient"></div>
+                </div>
+                <div class="p-8 flex flex-col justify-between flex-grow">
+                    <div>
                         <h3 class="card-title uppercase" id="News-9-title" data-i18n="News9Title">Trust Delivered, Kindness Shared ✨🤲</h3>
-                        <p class="card-desc text-justify leading-[1.8] tracking-[0.02em]" id="News-9-desc" data-i18n="News9Desc">
+                        <p class="card-desc text-justify line-clamp-4" id="News-9-desc" data-i18n="News9Desc">
                             Dari aksi galang dana di jalanan hingga ke senyuman saudara kita di lapangan. Penyaluran donasi khusus untuk 4 mahasiswa PNL dan warga terdampak di daerah Pardede, Gampong Jawa, telah selesai dilaksanakan dengan lancar. Terima kasih sebesar-besarnya kepada seluruh donatur dan relawan yang terlibat. Bersama, kita ringankan beban sesama!
                         </p>
                     </div>
                 </div>
+            </div>
 
-                <!-- News Item 10 -->
-            <div class="news-card group" data-date="2026-06-06">
+            <!-- News 10 -->
+            <div class="news-card group snap-start" data-date="2026-06-06">
                 <div class="card-img-container">
                     <div class="date-badge" data-i18n="NewsDate10">06 Juni 2026</div>
                     <img src="img/news/news10.webp" alt="News">
                     <div class="card-gradient"></div>
                 </div>
-                <div class="p-8">
-                    <h3 class="card-title uppercase" id="News-10-title" data-i18n="News10Title">Congratulations 💙✨</h3>
-                    <p class="card-desc text-justify leading-[1.8] tracking-[0.02em]" id="News-10-desc" data-i18n="News10Desc">
-                        We proudly congratulate our delegates on their outstanding achievements at the Indonesian Polytechnic English Championship (IPEC) III 2026, held at Surabaya Polytechnic of Shipping. 🎉🏅 
-                        🥇 Zia Alicia (Business '24) - Gold Medal (Novice) in Storytelling Competition. 
-                        🥇 Ghina Najwa Ilmi (Business '23) - Gold Medal (Competent) in Speech Competition. 
-                        🥈 Muhammad Zuhdan Ansharulhaq (Chemical Engineering '23) - Silver Medal (Novice) in Pitching Competition. 
-                        🥉 Shafa Naya Naysyla (Business '23) - Bronze Medal (Competent) in Biz-Tech Educating Talk Competition. 
-                        These achievements reflect your hard work, dedication, and passion throughout the competition. May this success bring valuable experiences, open new opportunities, and inspire even greater achievements in the future.
-                    </p>
+                <div class="p-8 flex flex-col justify-between flex-grow">
+                    <div>
+                        <h3 class="card-title uppercase" id="News-10-title" data-i18n="News10Title">Congratulations 💙✨</h3>
+                        <p class="card-desc text-justify line-clamp-4" id="News-10-desc" data-i18n="News10Desc">
+                            We proudly congratulate our delegates on their outstanding achievements at the Indonesian Polytechnic English Championship (IPEC) III 2026, held at Surabaya Polytechnic of Shipping. 🎉🏅 
+                            🥇 Zia Alicia (Business '24) - Gold Medal (Novice) in Storytelling Competition. 
+                            🥇 Ghina Najwa Ilmi (Business '23) - Gold Medal (Competent) in Speech Competition. 
+                            🥈 Muhammad Zuhdan Ansharulhaq (Chemical Engineering '23) - Silver Medal (Novice) in Pitching Competition. 
+                            🥉 Shafa Naya Naysyla (Business '23) - Bronze Medal (Competent) in Biz-Tech Educating Talk Competition.
+                        </p>
+                    </div>
                 </div>
             </div>
 
-            <!-- News Item 11 -->
-            <div class="news-card group" data-date="2026-06-15">
+            <!-- News 11 -->
+            <div class="news-card group snap-start" data-date="2026-06-15">
                 <div class="card-img-container">
                     <div class="date-badge" data-i18n="NewsDate11">15 Juni 2026</div>
                     <img src="img/news/news11.webp" alt="News">
                     <div class="card-gradient"></div>
                 </div>
-                <div class="p-8">
-                    <h3 class="card-title uppercase" id="News-11-title" data-i18n="News11Title">Recap Documentation – Monthly Study 📚💙</h3>
-                    <p class="card-desc text-justify leading-[1.8] tracking-[0.02em]" id="News-11-desc" data-i18n="News11Desc">
-                        IECLOP successfully held the first session of Monthly Study with the topic “Simple Present Tense”. Through this session, participants had the opportunity to learn, practice, and improve their understanding of one of the most essential English tenses in a fun and interactive environment. ✨ Thank you to everyone who joined us. See you at the next Monthly Study!
-                    </p>
+                <div class="p-8 flex flex-col justify-between flex-grow">
+                    <div>
+                        <h3 class="card-title uppercase" id="News-11-title" data-i18n="News11Title">Recap Documentation – Monthly Study 📚💙</h3>
+                        <p class="card-desc text-justify line-clamp-4" id="News-11-desc" data-i18n="News11Desc">
+                            IECLOP successfully held the first session of Monthly Study with the topic “Simple Present Tense”. Through this session, participants had the opportunity to learn, practice, and improve their understanding of one of the most essential English tenses in a fun and interactive environment. ✨ Thank you to everyone who joined us. See you at the next Monthly Study!
+                        </p>
+                    </div>
                 </div>
             </div>
 
-            <!-- News Item 12 -->
-            <div class="news-card group" data-date="2026-06-26">
-                <div class="card-img-container">
-                    <div class="date-badge" data-i18n="NewsDate12">4 Juli 2026</div>
-                    <img src="img/news/news12.webp" alt="News">
-                    <div class="card-gradient"></div>
+                <!-- News 12 -->
+                <div class="news-card group snap-start" data-date="2026-07-04">
+                    <div class="card-img-container">
+                        <div class="date-badge" data-i18n="NewsDate12">04 Juli 2026</div>
+                        <img src="img/news/news12.webp" alt="News">
+                        <div class="card-gradient"></div>
+                    </div>
+                    <div class="p-8 flex flex-col justify-between flex-grow">
+                        <div>
+                            <h3 class="card-title uppercase" id="News-12-title" data-i18n="News12Title">Upcoming Event Coming Soon! 🚀🔥</h3>
+                            <p class="card-desc text-justify line-clamp-4" id="News-12-desc" data-i18n="News12Desc">
+                                Prepare yourself for our next big project! We are cooking up something exciting that will challenge your skills and expand your horizons. Stay tuned and turn on your notifications so you don't miss any updates. Great things are on the way! 💙
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="p-8">
-                    <h3 class="card-title uppercase" id="News-12-title" data-i18n="News12Title">Upcoming Event Coming Soon! 🚀🔥</h3>
-                    <p class="card-desc text-justify leading-[1.8] tracking-[0.02em]" id="News-12-desc" data-i18n="News12Desc">
-                        Prepare yourself for our next big project! We are cooking up something exciting that will challenge your skills and expand your horizons. Stay tuned and turn on your notifications so you don't miss any updates. Great things are on the way! 💙
-                    </p>
+
+                <!-- News Item 13 -->
+                <div class="news-card group snap-start" data-date="2026-07-05">
+                    <div class="card-img-container">
+                        <div class="date-badge" data-i18n="NewsDate13">05 Juli 2026</div>
+                        <img src="img/news/news13.webp" alt="News">
+                        <div class="card-gradient"></div>
+                    </div>
+                    <div class="p-8 flex flex-col justify-between flex-grow">
+                    <div>
+                        <h3 class="card-title uppercase" id="News-13-title" data-i18n="News13Title">IECLOP GATHERING 2026 ‼️ 🌊</h3>
+                        <p class="card-desc text-justify line-clamp-4" id="News-13-desc" data-i18n="News13Desc">
+                            Hi IECLOPers! 💙👋 Something exciting is on the way 👀 The wait is almost over. Get ready for unforgettable moments, stronger bonds, and endless memories ✨ IECLOP GATHERING 2026 ‼️ 🌊 "Waves of Legacy: From One Generation to Another" Where our story flows forward, hand in hand 💙 📋 REGISTRATION DETAILS: 🗓️ Open: July 2nd – July 8th ⏰ Time: 10.00 AM – 04.00 PM 📍 Place: Secretariat of UKM IECLOP, 1st Floor Lobby 🔗 Online Registration: https://forms.gle/szstgTZ3eMW7XDfYA 💰 Fee: 25K 📋 EVENT DETAILS: 📅 Day/Date: Saturday, 11 July 2026 🕐 Time: 7:30 AM until finish 📍 Location: Black Rose 👗 Dress Code: Blue and Cream 📝 Notes: • Bring Tumbler + Water • Prayer Equipment • Gift wrapped in newspaper.
+                        </p>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            
+                <!-- News Item 14 -->
+                <div class="news-card group snap-start" data-date="2026-07-13">
+                    <div class="card-img-container">
+                        <div class="date-badge" data-i18n="NewsDate14">13 Juli 2026</div>
+                        <img src="img/news/news14.webp" alt="News">
+                        <div class="card-gradient"></div>
+                    </div>
+                    <div class="p-8 flex flex-col justify-between flex-grow">
+                        <div>
+                            <h3 class="card-title uppercase" id="News-14-title" data-i18n="News14Title">Congratulations 🩵✨</h3>
+                            <p class="card-desc text-justify line-clamp-4" id="News-14-desc" data-i18n="News14Desc">
+                                We proudly congratulate Sarajulis (Business '25) on achieving 1st Runner Up in the Duta Muda CBP Rupiah 2026 Competition organized by Bank Indonesia Representative Office (KPwBI) Lhokseumawe 🎉 This remarkable achievement reflects your dedication, confidence, and commitment to making a positive impact as a young ambassador. May this success inspire you to continue growing, creating meaningful contributions, and reaching even greater milestones in the future. Keep shining and keep making us proud! 🚀
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- News Item 15 -->
+                <div class="news-card group snap-start" data-date="2026-07-13">
+                    <div class="card-img-container">
+                        <div class="date-badge" data-i18n="NewsDate15">13 Juli 2026</div>
+                        <img src="img/news/news15.webp" alt="News">
+                        <div class="card-gradient"></div>
+                    </div>
+                    <div class="p-8 flex flex-col justify-between flex-grow">
+                        <div>
+                            <h3 class="card-title uppercase" id="News-15-title" data-i18n="News15Title">Congratulations 🩵✨</h3>
+                            <p class="card-desc text-justify line-clamp-4" id="News-15-desc" data-i18n="News15Desc">
+                                We proudly congratulate Muhammad Fikri Abdillah (Electrical Engineering '22) on winning 3rd Place in the Duta Muda CBP Rupiah 2026 Competition organized by Bank Indonesia Representative Office (KPwBI) Lhokseumawe 🎉 This achievement reflects your perseverance, leadership, and dedication throughout the competition. May this accomplishment become a stepping stone toward even greater opportunities and inspire others to pursue excellence with confidence. Keep moving forward and continue making us proud! 🚀
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
             </div>
-        </section>
+        </div>
+    </section>
+
     </main>
     
     <main-footer></main-footer>

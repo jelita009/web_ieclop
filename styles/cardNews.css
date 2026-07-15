@@ -1,100 +1,139 @@
-/* CARD */
-.news-card {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+/* ==========================================
+   CAROUSEL & SLIDER SETTINGS
+   ========================================== */
 
-    display: flex;
-    flex-direction: column;
-
-    height: 100%;
-    overflow: hidden;
-
-    border-radius: 24px;
-
-    background: rgba(255,255,255,0.08);
-    backdrop-filter: blur(12px);
-
-    border: 1px solid rgba(255,255,255,0.1);
+/* Mengaktifkan native touch scroll yang halus dan menyembunyikan scrollbar */
+#news-slider-container {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch; /* Momentum scroll untuk iOS */
+    touch-action: pan-x; /* Mengizinkan scroll horizontal menggunakan jari */
 }
 
-/* ACTIVE */
+#news-slider-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
+/* ==========================================
+   CARD STYLES (FROSTED GLASS EFFECT)
+   ========================================== */
+.news-card {
+    display: inline-flex; /* Diubah ke inline-flex agar w-max pada container berfungsi konisten */
+    flex-direction: column;
+    height: 540px; 
+    width: 380px;  
+    overflow: hidden;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    /* Animasi Reveal */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+                transform 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+                background 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
 .news-card.active {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* CONTAINER GAMBAR */
+.news-card:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Lebar Card untuk Mobile Device */
+@media (max-width: 640px) {
+    .news-card {
+        width: 310px;
+        height: 500px;
+    }
+}
+
+/* ==========================================
+   IMAGE CONTAINER & HOVER EFFECT (FOTO TIDAK KEPOTONG)
+   ========================================== */
 .card-img-container {
     position: relative;
     width: 100%;
-    height: 260px;
-
-    background: #111827;
-
+    height: 220px;
+    background: rgba(0, 0, 0, 0.2); /* Background gelap transparan jika rasio foto berbeda */
     display: flex;
     align-items: center;
     justify-content: center;
-
     overflow: hidden;
 }
 
-/* GAMBAR */
 .card-img-container img {
     width: 100%;
     height: 100%;
-
-    object-fit: contain; /* FOTO TIDAK KEPOTONG */
-
-    transition: transform 0.5s ease;
+    object-fit: contain; /* Menggunakan contain agar SELURUH foto kelihatan utuh dan tidak terpotong */
+    padding: 8px; /* Memberikan sedikit ruang manis di sekitar gambar */
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* HOVER */
 .news-card:hover img {
-    transform: scale(1.03);
+    transform: scale(1.05);
 }
 
-/* BADGE */
+.card-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(17, 24, 39, 0.3), transparent);
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* ==========================================
+   BADGE DATE (STYLING)
+   ========================================== */
 .date-badge {
     position: absolute;
-    bottom: 1rem;
-    left: 1rem;
-
+    bottom: 0.75rem;
+    left: 0.75rem;
     background: rgba(30, 58, 138, 0.9);
-
+    backdrop-filter: blur(4px);
     color: white;
-
-    padding: 0.45rem 0.9rem;
-
+    padding: 0.35rem 0.85rem;
     border-radius: 999px;
-
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 700;
-
     z-index: 20;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* KONTEN */
+/* ==========================================
+   CARD CONTENT TYPOGRAPHY
+   ========================================== */
 .news-card .p-8 {
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100% - 220px);
+    white-space: normal; /* Mengembalikan teks ke normal dari nowrap slider */
 }
 
-/* JUDUL */
 .card-title {
     color: white;
-
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     font-weight: 800;
-
-    line-height: 1.5;
-
-    margin-bottom: 1rem;
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+    transition: color 0.3s ease;
 }
-
-/* DESKRIPSI */
 .card-desc {
-    color: rgba(255,255,255,0.82);
-
-    line-height: 1.8;
-    letter-spacing: 0.02em;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.85rem;
+    line-height: 1.6;
 }
