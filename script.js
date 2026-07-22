@@ -1,15 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. OTOMATISASI PATH VIDEO
-    // Deteksi apakah halaman saat ini berada di dalam subfolder (misal: Galery)
+    // ==========================================
+    // 1. OTOMATISASI PATH & OVERLAY LOADING
+    // ==========================================
     const pathName = window.location.pathname;
     const isInsideSubfolder = /\/galery\//i.test(pathName);
     const prefix = isInsideSubfolder ? '../' : '';
 
-    // 2. MEMBUAT ELEMEN OVERLAY LOADING
     const overlay = document.createElement('div');
     overlay.id = 'loading-overlay';
     
-    // Gunakan `${prefix}` agar path video menyesuaikan posisi HTML
     overlay.innerHTML = `
         <video class="loader-video" muted playsinline>
             <source src="${prefix}video/chibi2.webm" type="video/webm">
@@ -19,60 +18,88 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const video = overlay.querySelector('video');
 
-    // Fungsi untuk transisi halaman
     function navigateWithLoading(url) {
         overlay.classList.add('active');
-        video.currentTime = 0; // Pastikan animasi mulai dari detik 0
-        video.play();
+        if (video) {
+            video.currentTime = 0;
+            video.play().catch(() => {}); // Catch jika browser memblokir autoplay
+        }
         
-        // Jeda 1.5 detik agar animasi terlihat
         setTimeout(() => {
             window.location.href = url;
         }, 1500); 
     }
 
-    // 3. MENANGANI KLIK LINK SECARA GLOBAL (EVENT DELEGATION)
-    // Menggunakan cara ini agar link di dalam Web Component (Navbar/Footer) yang di-render 
-    // belakangan tetap bisa memicu loading screen.
+    // Event Delegation untuk Link
     document.addEventListener('click', (e) => {
         const link = e.target.closest('a');
         if (!link) return;
 
         const href = link.getAttribute('href');
         
-        // Logika pengecekan link internal
         if (href && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('http') && !href.startsWith('javascript:')) {
             e.preventDefault();
             navigateWithLoading(href);
         }
     });
+
+    // ==========================================
+    // 2. NAVIGASI SLIDER BERITA
+    // ==========================================
+    const sliderContainer = document.getElementById('news-slider-container');
+    const prevBtn = document.getElementById('prev-news');
+    const nextBtn = document.getElementById('next-news');
+
+    if (sliderContainer && prevBtn && nextBtn) {
+        const scrollAmount = 400; // Jarak geser per klik (px)
+
+        nextBtn.addEventListener('click', () => {
+            sliderContainer.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+
+        prevBtn.addEventListener('click', () => {
+            sliderContainer.scrollBy({
+                left: -scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // Jalankan efek mengetik setelah DOM siap
+    typeEffect();
 });
 
-// --- EFEK MENGETIK (TYPING EFFECT) ---
-const textElement = document.getElementById("typing");
+
+// ==========================================
+// 3. EFEK MENGETIK (TYPING EFFECT)
+// ==========================================
 const words = ["Innovative-Independent, Outstanding"];
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
 
 function typeEffect() {
-    // Mengantisipasi jika halaman tertentu tidak memiliki elemen id="typing" agar tidak error
+    const textElement = document.getElementById("typing");
     if (!textElement) return;
 
     const currentWord = words[wordIndex];
     
     if (isDeleting) {
-        textElement.textContent = currentWord.substring(0, charIndex - 1);
+        textElement.textContent = currentWord.substring(0, charIndex);
         charIndex--;
     } else {
         textElement.textContent = currentWord.substring(0, charIndex + 1);
+        charIndex++; // Increment agar pengetikan berjalan maju
     }
 
-    let speed = isDeleting ? 100 : 200;
+    let speed = isDeleting ? 50 : 100;
 
     if (!isDeleting && charIndex === currentWord.length) {
         isDeleting = true;
-        speed = 2000; // Jeda saat kata sudah lengkap
+        speed = 2000; // Jeda 2 detik saat kalimat lengkap
     } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
         wordIndex = (wordIndex + 1) % words.length;
@@ -81,6 +108,3 @@ function typeEffect() {
 
     setTimeout(typeEffect, speed);
 }
-
-// Jalankan efek mengetik setelah DOM siap
-document.addEventListener("DOMContentLoaded", typeEffect);
