@@ -1,20 +1,27 @@
 class MainNavbar extends HTMLElement {
     connectedCallback() {
-        const currentPath = window.location.pathname.split("/").pop() || 'index.html';
+        const pathName = window.location.pathname;
+        const currentPath = pathName.split("/").pop() || 'index.html';
+
+        // OTOMATISASI PATH: 
+        // Jika halaman saat ini berada di dalam folder 'Galery' (case-insensitive), 
+        // berikan prefix "../" untuk kembali ke root. Jika tidak, kosongkan "".
+        const isInsideSubfolder = /\/galery\//i.test(pathName);
+        const prefix = isInsideSubfolder ? '../' : '';
 
         // Tambahkan id="main-nav" di elemen <nav> di bawah ini
         this.innerHTML = `
         <nav class="navbar-main fixed top-0 left-0 w-full z-[999]" id="main-nav">
             <div class="flex items-center justify-between w-full">
                 <div class="flex items-center space-x-3">
-                    <img src="img/logo_IECLOP.png" alt="Logo IECLOP" class="h-10 md:h-12 w-auto object-contain">
+                    <img src="${prefix}img/logo_IECLOP.png" alt="Logo IECLOP" class="h-10 md:h-12 w-auto object-contain">
                     <span class="text-xl md:text-2xl font-black tracking-tighter uppercase">UKM IECLOP</span>
                 </div>
 
                 <div class="hidden md:flex items-center space-x-10 font-semibold tracking-wide">
-                    <a href="index.html" id="nav-home" class="nav-link ${currentPath === 'index.html' ? 'active' : ''}" data-i18n="navHome">Beranda</a>
-                    <a href="about.html" id="nav-about" class="nav-link ${currentPath === 'about.html' ? 'active' : ''}" data-i18n="navAbout">Tentang</a>
-                    <a href="struktur.html" id="nav-structure" class="nav-link ${currentPath === 'struktur.html' ? 'active' : ''}" data-i18n="navStructure">Struktur</a>
+                    <a href="${prefix}index.html" id="nav-home" class="nav-link ${currentPath === 'index.html' ? 'active' : ''}" data-i18n="navHome">Beranda</a>
+                    <a href="${prefix}about.html" id="nav-about" class="nav-link ${currentPath === 'about.html' ? 'active' : ''}" data-i18n="navAbout">Tentang</a>
+                    <a href="${prefix}struktur.html" id="nav-structure" class="nav-link ${currentPath === 'struktur.html' ? 'active' : ''}" data-i18n="navStructure">Struktur</a>
 
                     <div class="dropdown">
                         <button class="nav-link flex items-center group">
@@ -23,16 +30,16 @@ class MainNavbar extends HTMLElement {
                         </button>
                         <div class="dropdown-menu-wrapper">
                             <div class="dropdown-content">
-                                <a href="education.html"><i class="fa-solid fa-graduation-cap mr-2"></i> Education</a>
-                                <a href="infocom.html"><i class="fa-solid fa-laptop-code mr-2"></i> Infocom</a>
-                                <a href="regen.html"><i class="fa-solid fa-user-plus mr-2"></i> Regeneration</a>
-                                <a href="publicRL.html"><i class="fa-solid fa-handshake-angle mr-2"></i> Public Relation</a>
-                                <a href="olympic.html"><i class="fa-solid fa-trophy mr-2"></i> Olympic</a>
+                                <a href="${prefix}education.html"><i class="fa-solid fa-graduation-cap mr-2"></i> Education</a>
+                                <a href="${prefix}infocom.html"><i class="fa-solid fa-laptop-code mr-2"></i> Infocom</a>
+                                <a href="${prefix}regen.html"><i class="fa-solid fa-user-plus mr-2"></i> Regeneration</a>
+                                <a href="${prefix}publicRL.html"><i class="fa-solid fa-handshake-angle mr-2"></i> Public Relation</a>
+                                <a href="${prefix}olympic.html"><i class="fa-solid fa-trophy mr-2"></i> Olympic</a>
                             </div>
                         </div>
                     </div>
 
-                    <a href="memory.html">Gallery</a>
+                    <a href="${prefix}memory.html">Gallery</a>
                 </div>
 
                 <div class="flex items-center space-x-4 md:space-x-6">
@@ -42,7 +49,7 @@ class MainNavbar extends HTMLElement {
                         <span onclick="changeLanguage('en')" id="btn-en" class="lang-link">EN</span>
                     </div>
                     
-                    <a href="login.html" class="admin-login-btn flex items-center justify-center">
+                    <a href="${prefix}login.html" class="admin-login-btn flex items-center justify-center">
                         <i class="fa-solid fa-user-shield"></i>
                     </a>
 
@@ -53,9 +60,9 @@ class MainNavbar extends HTMLElement {
             </div>
 
             <div id="mobile-menu" class="hidden flex-col absolute top-[120%] left-0 w-full bg-[rgba(10,20,50,0.95)] backdrop-blur-xl border border-white/10 rounded-2xl p-6 space-y-5 shadow-2xl md:hidden transition-all duration-300 origin-top">
-                <a href="index.html" class="block text-white font-bold hover:text-blue-300 ${currentPath === 'index.html' ? 'text-blue-300' : ''}" data-i18n="navHome">Beranda</a>
-                <a href="about.html" class="block text-white font-bold hover:text-blue-300 ${currentPath === 'about.html' ? 'text-blue-300' : ''}" data-i18n="navAbout">Tentang</a>
-                <a href="struktur.html" class="block text-white font-bold hover:text-blue-300 ${currentPath === 'struktur.html' ? 'text-blue-300' : ''}" data-i18n="navStructure">Struktur</a>
+                <a href="${prefix}index.html" class="block text-white font-bold hover:text-blue-300 ${currentPath === 'index.html' ? 'text-blue-300' : ''}" data-i18n="navHome">Beranda</a>
+                <a href="${prefix}about.html" class="block text-white font-bold hover:text-blue-300 ${currentPath === 'about.html' ? 'text-blue-300' : ''}" data-i18n="navAbout">Tentang</a>
+                <a href="${prefix}struktur.html" class="block text-white font-bold hover:text-blue-300 ${currentPath === 'struktur.html' ? 'text-blue-300' : ''}" data-i18n="navStructure">Struktur</a>
                 
                 <div class="block">
                     <button id="mobile-div-btn" class="flex justify-between items-center w-full text-white font-bold hover:text-blue-300">
@@ -63,15 +70,15 @@ class MainNavbar extends HTMLElement {
                         <i class="fa-solid fa-chevron-down text-xs transition-transform" id="mobile-div-icon"></i>
                     </button>
                     <div id="mobile-div-menu" class="hidden flex-col pl-4 mt-3 space-y-4 border-l-2 border-[#1e3a8a]">
-                        <a href="education.html" class="text-sm text-blue-100 hover:text-white"><i class="fa-solid fa-graduation-cap w-6"></i> Education</a>
-                        <a href="infocom.html" class="text-sm text-blue-100 hover:text-white"><i class="fa-solid fa-laptop-code w-6"></i> Infocom</a>
-                        <a href="regen.html" class="text-sm text-blue-100 hover:text-white"><i class="fa-solid fa-user-plus w-6"></i> Regeneration</a>
-                        <a href="publicRL.html" class="text-sm text-blue-100 hover:text-white"><i class="fa-solid fa-handshake-angle w-6"></i> Public Relation</a>
-                        <a href="olympic.html" class="text-sm text-blue-100 hover:text-white"><i class="fa-solid fa-trophy w-6"></i> Olympic</a>
+                        <a href="${prefix}education.html" class="text-sm text-blue-100 hover:text-white"><i class="fa-solid fa-graduation-cap w-6"></i> Education</a>
+                        <a href="${prefix}infocom.html" class="text-sm text-blue-100 hover:text-white"><i class="fa-solid fa-laptop-code w-6"></i> Infocom</a>
+                        <a href="${prefix}regen.html" class="text-sm text-blue-100 hover:text-white"><i class="fa-solid fa-user-plus w-6"></i> Regeneration</a>
+                        <a href="${prefix}publicRL.html" class="text-sm text-blue-100 hover:text-white"><i class="fa-solid fa-handshake-angle w-6"></i> Public Relation</a>
+                        <a href="${prefix}olympic.html" class="text-sm text-blue-100 hover:text-white"><i class="fa-solid fa-trophy w-6"></i> Olympic</a>
                     </div>
                 </div>
 
-                <a href="memory.html">Gallery</a>
+                <a href="${prefix}memory.html">Gallery</a>
                 
                 <div class="flex sm:hidden items-center justify-center space-x-4 pt-4 border-t border-white/10">
                     <span onclick="changeLanguage('id')" class="lang-link font-bold cursor-pointer text-blue-300">ID</span>
@@ -108,8 +115,7 @@ class MainNavbar extends HTMLElement {
             divIcon.classList.toggle('rotate-180');
         });
 
-        // --- LOGIKA NAVBAR BERUBAH WARNA ---
-        // Saya letakkan langsung di sini agar langsung jalan
+        // Logika Navbar Berubah Warna
         const navBar = this.querySelector('#main-nav');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {

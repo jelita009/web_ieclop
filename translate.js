@@ -107,7 +107,11 @@ const translations = {
         footerContact: "Hubungi Kami",
         footerAdmin: "Dashboard Admin",
         footerRights: "Hak Cipta © 2026 INFOCOM IECLOP. Seluruh Hak Cipta Dilindungi. Dibuat dengan semangat oleh Situs Administrator.",
-        footerInfocom: "Infokom" 
+        footerInfocom: "Infokom",
+        
+        //Memory2024
+        memoTittle: "IECLOP Memories",
+        memoDesc: "Kumpulan dokumentasi momen berharga, keseruan, dan kebersamaan seluruh keluarga besar UKM IECLOP.",
     },
     en: {
         // Navbar
@@ -215,7 +219,11 @@ const translations = {
         footerContact: "Contact Us",
         footerAdmin: "Admin Dashboard",
         footerRights: "Copyright © 2026 INFOCOM IECLOP. All Rights Reserved. Crafted with passion by Site Administrator.",
-        footerInfocom: "Infocom" 
+        footerInfocom: "Infocom",
+        
+        // Memory2026
+        memoTittle: "IECLOP Memories",
+        memoDesc: "A collection of moments capturing the cherished memories, fun, and togetherness of the entire extended IECLOP family.",
     }
 };
 
@@ -223,13 +231,12 @@ function changeLanguage(lang) {
     // 1. Simpan preferensi bahasa ke memori browser
     localStorage.setItem('preferredLang', lang);
 
-    // 2. Terjemahkan HANYA elemen yang memiliki tag data-i18n
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (translations[lang] && translations[lang][key]) {
-            el.innerHTML = translations[lang][key];
-        }
-    });
+   document.querySelectorAll('[data-i18n]').forEach(element => {
+    const key = element.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key]) {
+        element.innerHTML = translations[lang][key];
+    }
+});
 
     // 3. Ubah warna tombol ID / EN yang sedang aktif
     const btnId = document.getElementById('btn-id');
