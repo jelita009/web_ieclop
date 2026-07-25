@@ -75,3 +75,34 @@
         transform: scale(0.35); /* Penyesuaian ukuran video di layar HP */
     }
 }
+
+/* ==========================================
+   5. ANIMASI POP-UP & FLOAT ANGGOTA (STRUKTUR ORGANISASI STYLE)
+   ========================================== */
+@keyframes popUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes floatCard {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.member-pop-card {
+    animation: popUp 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+.floating-card {
+    animation: floatCard 3s ease-in-out infinite, popUp 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}

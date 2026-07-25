@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galery - UKM IECLOP</title>
+    <title>Galeri Olympic - UKM IECLOP</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -26,38 +26,65 @@
     <!-- Navbar Utama -->
     <main-navbar class="relative z-[100]"></main-navbar>
 
-    <!-- Konten Utama Galeri -->
+    <!-- Konten Utama Galeri Divisi -->
     <main class="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 pt-32 pb-24">
         
+        <!-- Tombol Kembali -->
+        <div class="mb-6" data-aos="fade-right">
+            <a href="../gallery.html" class="inline-flex items-center gap-2 bg-white/10 hover:bg-blue-600/80 text-white text-xs font-bold px-4 py-2.5 rounded-full border border-white/20 transition shadow-lg backdrop-blur-md" data-i18n="btnBackToGallery">
+                ← Kembali ke Galeri Utama
+            </a>
+        </div>
+
         <!-- Judul Halaman -->
-        <div class="text-center mb-10" data-aos="fade-down">
-            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 uppercase text-glow" id="memory2024-title" data-i18n="memoTittle">
-                IECLOP Memories
+        <div class="text-center mb-12" data-aos="fade-down">
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 uppercase text-glow">
+                Galeri Divisi Olympic
             </h1>
-            <p class="text-gray-400 mt-3 text-sm md:text-base max-w-xl mx-auto" id="memory2024-desc" data-i18n="memoDesc">
-                Kumpulan dokumentasi momen berharga, keseruan, dan kebersamaan seluruh keluarga besar UKM IECLOP.
+            <p class="text-gray-300 mt-3 text-sm md:text-base max-w-xl mx-auto">
+                Dokumentasi Komunitas Olimpiade, Latihan Kompetisi, Juara IECLOP, dan Gudang Pengetahuan.
             </p>
             <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto mt-4 rounded-full"></div>
         </div>
 
-        <!-- ==========================================
-             TEMPAT MENAMBAHKAN FOTO (KHUSUS HALAMAN INI)
-             Tinggal tambah baris di dalam tanda [ ... ] di bawah ini.
-             Pastikan baris terakhir tidak menggunakan tanda koma ( , )
-        ========================================== -->
+        <!-- DATA FOTO PROGRAM KERJA DIVISI OLYMPIC -->
         <script type="application/json" id="gallery-data">
         [
     {
-        "src": "../img/gallery/momen/P24.JPG",
-        "alt": "Dokumentasi Momen & Keakraban IECLOP"
+        "title": "Juara IEClop",
+        "folder": "juara-ieclop",
+        "cover": "../img/OLYMPIC.png",
+        "photos": []
+    },
+    {
+        "title": "Jaringan Juara IEClop",
+        "folder": "jaringan-juara",
+        "cover": "../img/OLYMPIC.png",
+        "photos": []
+    },
+    {
+        "title": "Komunitas Olimpiade",
+        "folder": "komunitas-olimpiade",
+        "cover": "../img/OLYMPIC.png",
+        "photos": []
+    },
+    {
+        "title": "Gudang Pengetahuan",
+        "folder": "gudang-pengetahuan",
+        "cover": "../img/OLYMPIC.png",
+        "photos": []
+    },
+    {
+        "title": "Latihan Olimpiade",
+        "folder": "latihan-olimpiade",
+        "cover": "../img/OLYMPIC.png",
+        "photos": []
     }
 ]
         </script>
 
-        <!-- Grid Foto Dinamis (Akan diisi otomatis oleh JS) -->
-        <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-            <!-- Data foto di-render otomatis berdasarkan data script diatas -->
-        </div>
+        <!-- Grid Foto Dinamis -->
+        <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6"></div>
     </main>
 
     <!-- Lightbox Modal Modern -->
@@ -75,7 +102,6 @@
     <!-- Bingkai Footer Otomatis -->
     <main-footer></main-footer>
 
-    <!-- Urutan Pemanggilan Script untuk Keamanan Render & Animasi -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="galery.js"></script>
     <script src="../translate.js"></script>

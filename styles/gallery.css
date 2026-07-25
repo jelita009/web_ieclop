@@ -1,7 +1,7 @@
-.memory {
+.gallery-section {
     padding: 10rem 4% 0;
 }
-.memory h1 {
+.gallery-section h1 {
     text-align: center;
     font-family: "Poppins", serif;
     font-weight: 500;
@@ -44,7 +44,7 @@
 }
 
 @media (max-width: 378px) {
-    .memory {
+    .gallery-section {
         padding: 5rem 4% 0;
         margin-top: 5rem;
     }
@@ -57,7 +57,7 @@
 }
 
 @media (max-width: 430px) {
-    .memory {
+    .gallery-section {
         padding: 5rem 4% 0;
         margin-top: 5rem;
     }

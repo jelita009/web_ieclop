@@ -46,8 +46,8 @@
 </head>
 <body class="text-white antialiased min-h-screen relative overflow-x-hidden">
     
-    <video autoplay muted loop playsinline class="video-bg">
-        <source src="video/contoh.mp4" type="video/mp4">
+    <video autoplay muted loop playsinline controlsList="nodownload" disablePictureInPicture class="video-bg">
+        <source src="https://res.cloudinary.com/dpmzgrwjo/video/upload/v1778140441/contoh_fofhrz.mp4" type="video/mp4">
     </video>
     <div class="overlay"></div>
 
@@ -81,6 +81,11 @@
     <main-footer></main-footer>
 
     <script>
+        // Cek autentikasi login admin
+        if (localStorage.getItem("adminLoggedIn") !== "true") {
+            window.location.href = "login.html";
+        }
+
         // --- FITUR PENYAMBUNG VIDEO BACKGROUND ---
         document.addEventListener("DOMContentLoaded", () => {
             const bgVideo = document.querySelector('.video-bg');

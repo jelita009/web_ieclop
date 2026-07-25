@@ -1,7 +1,7 @@
 const translations = {
     id: {
         // Navbar
-        navHome: "Beranda", navAbout: "Tentang", navStructure: "Struktur", navDivisions: "Divisi", navMemory: "Memory",
+        navHome: "Beranda", navAbout: "Tentang", navStructure: "Struktur", navDivisions: "Divisi", navMemory: "Galeri", navGallery: "Galeri",
         
         // Index Page (Beranda)
         heroTitle: "UKM IECLOP <br><span class='text-white drop-shadow-md'>",
@@ -10,7 +10,6 @@ const translations = {
         newsSectionTitle: "BERITA TERKINI", 
         newsMore: "SELENGKAPNYA", 
         newsRead: "BACA KONTEN",
-        news1Title: "Prestasi di Politeknik Nasional MTQ",
         news1Title: "Kabar Membanggakan! 🚀🏅",
         news1Desc: "Shout out untuk Fazira, Cut Naila, & Naisa atas keberhasilannya di ajang National Policy Brief Competition 2025 Universitas Malikussaleh! 🩵✨<br>Dedikasi dan kerja keras mereka dalam menyusun gagasan terbaik akhirnya membuahkan hasil manis di tingkat nasional. Bangga banget dengan pencapaian kalian, teruslah berkarya dan menginspirasi sekitar! 🙌🏆",
         NewsDate1:"29 Mei 2026",
@@ -83,7 +82,19 @@ const translations = {
         headOfDiv: "KEPALA DIVISI",
         prokerTitle: "PROGRAM KERJA",
 
-        // Memory Page
+        // Gallery Page
+        galleryTitle: "GALERI <span class='text-blue-300'>DIVISI & PROKER</span>",
+        galleryDesc: "Pilih divisi di bawah ini untuk melihat album dokumentasi program kerja lengkap.",
+        galDivEduTitle: "Divisi Education", galDivEduDesc: "Dokumentasi Kelas TOEFL, Belajar Bulanan, Kelas Spesial & Artikel.",
+        galDivInfTitle: "Divisi Infocom", galDivInfDesc: "Dokumentasi Website, Social Media, Podcast, Mading & Desain.",
+        galDivRegTitle: "Divisi Regeneration", galDivRegDesc: "Dokumentasi Open Recruitment, HOCO, Internship & Gathering.",
+        galDivOlyTitle: "Divisi Olympic", galDivOlyDesc: "Dokumentasi Komunitas Olimpiade, Latihan & Prestasi IECLOP.",
+        galDivPrTitle: "Divisi Public Relation", galDivPrDesc: "Dokumentasi I-Care, Charity, Iftar, Pengabdian & Kemitraan.",
+        galKegiatanTitle: "Kegiatan UKM IECLOP", galKegiatanDesc: "Kumpulan dokumentasi kegiatan seluruh keluarga besar UKM IECLOP.",
+        galMomenTitle: "Momen & Kenangan", galMomenDesc: "Kumpulan dokumentasi momen berharga, keseruan, dan kebersamaan IECLOP.",
+        galKompetisiTitle: "Kompetisi & Lomba", galKompetisiDesc: "Dokumentasi partisipasi dan kejuaraan IECLOP di berbagai ajang kompetisi.",
+        btnViewDivGallery: "LIHAT GALERI DIVISI",
+        btnBackToGallery: "← Kembali ke Galeri Utama",
         memoryTitle: "MEMORI <span class='text-blue-300'>BERSAMA KAMI</span>",
         memoryDesc: "Setiap foto menceritakan sebuah cerita perjuangan dan kebersamaan kami di IECLOP.",
         memTag1: "MOMEN 2024", memTag2: "KEGIATAN", memTag3: "DOKUMENTASI", memTag4: "FOTO BERSAMA", memTag5: "TIM", memTag6: "WORKSHOP",
@@ -115,7 +126,7 @@ const translations = {
     },
     en: {
         // Navbar
-        navHome: "Home", navAbout: "About", navStructure: "Structure", navDivisions: "Divisions", navMemory: "Memory",
+        navHome: "Home", navAbout: "About", navStructure: "Structure", navDivisions: "Divisions", navMemory: "Gallery", navGallery: "Gallery",
         
         // Index Page (Beranda)
         heroTitle: "UKM IECLOP",
@@ -195,7 +206,19 @@ const translations = {
         headOfDiv: "HEAD OF DIVISION",
         prokerTitle: "WORK PROGRAM",
 
-        // Memory Page
+        // Gallery Page
+        galleryTitle: "DIVISION & <span class='text-blue-300'>PROKER GALLERY</span>",
+        galleryDesc: "Select a division below to view the complete work program documentation album.",
+        galDivEduTitle: "Education Division", galDivEduDesc: "Documentation of TOEFL Class, Monthly Study, Special Class & Articles.",
+        galDivInfTitle: "Infocom Division", galDivInfDesc: "Documentation of Website, Social Media, Podcast, Wall Mag & Design.",
+        galDivRegTitle: "Regeneration Division", galDivRegDesc: "Documentation of Open Recruitment, HOCO, Internship & Gathering.",
+        galDivOlyTitle: "Olympic Division", galDivOlyDesc: "Documentation of Olympic Society, Practice & IECLOP Achievements.",
+        galDivPrTitle: "Public Relation Division", galDivPrDesc: "Documentation of I-Care, Charity, Iftar, Community Service & Partnership.",
+        galKegiatanTitle: "IECLOP Activities", galKegiatanDesc: "Collection of activity documentation for the entire extended IECLOP family.",
+        galMomenTitle: "Moments & Memories", galMomenDesc: "Collection of cherished moments, fun, and togetherness of IECLOP.",
+        galKompetisiTitle: "Competitions & Contests", galKompetisiDesc: "Documentation of IECLOP participation and championships in various competitions.",
+        btnViewDivGallery: "VIEW DIVISION GALLERY",
+        btnBackToGallery: "← Back to Main Gallery",
         memoryTitle: "OUR SHARED <span class='text-blue-300'>MEMORIES</span>",
         memoryDesc: "Every photo tells a story of our struggle and togetherness in IECLOP.",
         memTag1: "MOMENT 2024", memTag2: "ACTIVITY", memTag3: "DOCUMENTATION", memTag4: "GROUP PHOTO", memTag5: "TEAM", memTag6: "WORKSHOP",
@@ -224,6 +247,7 @@ const translations = {
         // Memory2026
         memoTittle: "IECLOP Memories",
         memoDesc: "A collection of moments capturing the cherished memories, fun, and togetherness of the entire extended IECLOP family.",
+        News13Desc: "Hi IECLOPers! 💙👋 Something exciting is on the way 👀 The wait is almost over. Get ready for unforgettable moments, stronger bonds, and endless memories ✨ IECLOP GATHERING 2026 ‼️ 🌊 \"Waves of Legacy: From One Generation to Another\" Where our story flows forward, hand in hand 💙 📋 REGISTRATION DETAILS: 🗓️ Open: July 2 – July 8 ⏰ Time: 10.00 - 16.00 WIB 📍 Venue: IECLOP Secretariat, 1st Floor Lobby 🔗 Online Registration: https://forms.gle/szstgTZ3eMW7XDfYA 💰 Fee: 25K 📋 EVENT DETAILS: 📅 Date: Saturday, July 11, 2026 🕐 Time: 07.30 WIB until finished 📍 Event Location: Black Rose 👗 Dress Code: Blue and Beige 📝 Notes: • Bring Tumbler + Drinking Water • Prayer Equipment • Gift wrapped in newspaper.",
     }
 };
 

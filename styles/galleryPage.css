@@ -10,7 +10,7 @@ body {
 }
 
 /* CONTAINER SETUP */
-.memory-container {
+.gallery-container {
     padding: 6rem 5% 4rem;
     min-height: 100vh;
     position: relative;
@@ -18,12 +18,12 @@ body {
 }
 
 /* HEADER STYLE */
-.memory-header {
+.gallery-header {
     text-align: center;
     margin-bottom: 4rem;
 }
 
-.memory-header h1 {
+.gallery-header h1 {
     font-size: 3rem;
     font-weight: 900;
     text-transform: uppercase;
@@ -31,12 +31,12 @@ body {
     margin-bottom: 1rem;
 }
 
-.memory-header .highlight {
+.gallery-header .highlight {
     color: #2563eb;
     text-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
 }
 
-.memory-header p {
+.gallery-header p {
     color: #9ca3af;
     font-size: 1.1rem;
     max-width: 600px;
@@ -97,44 +97,4 @@ body {
 .gallery-item:hover img {
     transform: scale(1.1);
     filter: brightness(0.6);
-}
-
-/* CAPTION OVERLAY */
-.item-overlay {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(to top, rgba(37, 99, 235, 0.4), transparent);
-    opacity: 0;
-    transition: 0.4s ease;
-}
-
-.item-overlay span {
-    color: white;
-    font-weight: 800;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    border-bottom: 2px solid #2563eb;
-    padding-bottom: 5px;
-    transform: translateY(20px);
-    transition: 0.4s ease;
-}
-
-.gallery-item:hover .item-overlay {
-    opacity: 1;
-}
-
-.gallery-item:hover .item-overlay span {
-    transform: translateY(0);
-}
-
-/* FOOTER FIX UNTUK PAGE INI */
-.footer {
-    margin-top: 5rem;
-    padding: 3rem;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
 }

@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     // 1. Logika Sorting Berita Otomatis (Terbaru Muncul Paling Depan)
     const container = document.getElementById('news-container');
+    if (!container) return;
     const cards = Array.from(container.getElementsByClassName('news-card'));
 
     cards.sort((a, b) => {

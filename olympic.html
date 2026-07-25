@@ -58,8 +58,8 @@
     </style>
   </head>
   <body class="text-white antialiased">
-    <video autoplay muted loop playsinline class="video-bg">
-      <source src="video/contoh.mp4" type="video/mp4" />
+    <video autoplay muted loop playsinline controlsList="nodownload" disablePictureInPicture class="video-bg">
+      <source src="https://res.cloudinary.com/dpmzgrwjo/video/upload/v1778140441/contoh_fofhrz.mp4" type="video/mp4" />
     </video>
     <div class="overlay"></div>
     <main-navbar></main-navbar>
@@ -78,27 +78,33 @@
           class="text-justify leading-[1.8] tracking-[0.02em] text-blue-100 max-w-2xl mx-auto text-lg opacity-90"
         ></p>
       </header>
-      <section class="mb-24">
+      <section class="mb-24" data-aos="zoom-in" data-aos-delay="200">
         <div class="flex flex-col items-center">
+          <!-- Kartu Kepala Divisi (Identik Struktur) -->
           <div
-            class="glass-card p-6 flex flex-col items-center w-56 border-[#1e3a8a]/50"
+            class="card ketum relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 w-56 text-center transition duration-300 hover:-translate-y-2 hover:shadow-[0_10px_25px_rgba(30,58,138,0.6)] floating-card"
           >
-            <img
-              id="leader-img"
-              src=""
-              class="w-24 h-24 rounded-full mb-4 object-cover object-top border-4 border-[#1e3a8a]"
-            />
-            <h3
-              id="leader-name"
-              class="font-bold text-center text-lg text-white leading-tight"
-            ></h3>
-            <span
-              data-i18n="headOfDiv"
-              class="text-blue-300 text-[10px] font-black uppercase tracking-[0.2em] mt-2"
-              >KEPALA DIVISI</span
-            >
+            <div class="image-box w-28 h-28 mx-auto mb-3 rounded-full overflow-hidden border-4 border-[#1e3a8a]">
+              <img
+                id="leader-img"
+                src=""
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="info">
+              <h3
+                id="leader-name"
+                class="font-bold text-center text-lg text-white leading-tight"
+              ></h3>
+              <p
+                data-i18n="headOfDiv"
+                class="text-blue-300 text-[10px] font-black uppercase tracking-[0.2em] mt-2"
+                >KEPALA DIVISI</p
+              >
+            </div>
           </div>
           <div class="line-connector"></div>
+          <!-- Grid Anggota -->
           <div
             class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
             id="members-grid"
@@ -126,7 +132,7 @@
             { name: "Syarifah Rizkiah", img: "img/olympic/Syarifah.jpg" },
             { name: "Shafa Naya Naysyla", img: "img/olympic/Shafa.jpg" },
             { name: "Najwa Sabrina", img: "img/olympic/Najwa.jpg" },
-            { name: "Muhammad Azhar Refandi", img: "img/olympic/Azhar.jpg" },
+            { name: "Muhammad Azhar Refandi", img: "img/olympic/azhar.jpg" },
             { name: "Raisha Fathia", img: "img/olympic/Raisha.jpg" },
             { name: "Lisa Agustin Nasution", img: "img/olympic/Lisa.jpg" },
             { name: "Raisa Amanda Putri", img: "img/olympic/Raisa.jpg" },
@@ -173,18 +179,23 @@
         const memberGrid = document.getElementById("members-grid");
         memberGrid.innerHTML = "";
 
-        data.members.forEach((m) => {
-          // Cek apakah namanya mengandung Zia untuk label Sekretaris
+        data.members.forEach((m, index) => {
+          // Cek apakah namanya mengandung Nazril untuk label Sekretaris
           const roleLabel = m.name.includes("Nazril")
-            ? `<p class="text-[9px] text-blue-300 font-bold uppercase tracking-wider mt-1">Sekretaris</p>`
+            ? `<p class="text-blue-300 text-xs font-semibold uppercase tracking-wider mt-1">Sekretaris</p>`
             : "";
 
+          const delay = (0.2 + index * 0.08).toFixed(2);
+
           memberGrid.innerHTML += `
-                <div class="glass-card p-4 flex flex-col items-center w-full min-w-[130px] opacity-80 hover:opacity-100 transition duration-500">
-                    <!-- m.img sekarang mengambil path yang kita tulis di atas -->
-                    <img src="${m.img}" class="w-14 h-14 rounded-full mb-3 border-2 border-white/20 object-cover">
-                    <span class="text-xs font-bold text-center text-white leading-tight">${m.name}</span>
-                    ${roleLabel}
+                <div class="card divisi relative bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 min-w-[140px] text-center transition duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-[0_10px_20px_rgba(30,58,138,0.6)] member-pop-card group cursor-pointer" style="animation-delay: ${delay}s;">
+                    <div class="image-box w-20 h-20 mx-auto mb-3 rounded-full overflow-hidden border-2 border-[#1e3a8a] group-hover:border-blue-400 group-hover:scale-110 transition duration-300">
+                        <img src="${m.img}" onerror="this.src='img/logo_IECLOP.png'" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="info">
+                        <h3 class="font-bold text-sm text-white group-hover:text-blue-200 leading-tight transition">${m.name}</h3>
+                        ${roleLabel}
+                    </div>
                 </div>`;
         });
 

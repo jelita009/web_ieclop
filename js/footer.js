@@ -24,12 +24,11 @@ class MainFooter extends HTMLElement {
                         <a href="${prefix}index.html" class="hover:text-blue-300 transition" data-i18n="navHome">Beranda</a>
                         <a href="${prefix}about.html" class="hover:text-blue-300 transition" data-i18n="navAbout">Tentang Kami</a>
                         <a href="${prefix}education.html" class="hover:text-blue-300 transition">Education</a>
-                        
                         <a href="${prefix}infocom.html" class="hover:text-blue-300 transition" data-i18n="footerInfocom">Infokom</a>
-                        
                         <a href="${prefix}regen.html" class="hover:text-blue-300 transition">Regeneration</a>
                         <a href="${prefix}publicRL.html" class="hover:text-blue-300 transition">Public Relation</a>
                         <a href="${prefix}olympic.html" class="hover:text-blue-300 transition">Olympic</a>
+                        <a href="${prefix}gallery.html" class="hover:text-blue-300 transition" data-i18n="navGallery">Galeri</a>
                         <a href="${prefix}login.html" class="text-blue-400 hover:text-blue-200 font-semibold" data-i18n="footerAdmin">Dashboard Admin</a>
                     </div>
                 </div>
@@ -52,6 +51,11 @@ class MainFooter extends HTMLElement {
                 <p data-i18n="footerRights">&copy; 2026 INFOCOM IECLOP. All Rights Reserved. Crafted with passion by Webmaster.</p>
             </div>
         </footer>`;
+
+        if (typeof changeLanguage === 'function') {
+            const savedLang = localStorage.getItem('preferredLang') || 'id';
+            changeLanguage(savedLang);
+        }
     }
 }
 customElements.define('main-footer', MainFooter);

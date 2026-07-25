@@ -27,8 +27,15 @@ document.addEventListener('DOMContentLoaded', () => {
         
         setTimeout(() => {
             window.location.href = url;
-        }, 1500); 
+        }, 400); 
     }
+
+    // Reset overlay saat navigasi kembali (bfcache / tombol back browser)
+    window.addEventListener('pageshow', () => {
+        if (overlay) {
+            overlay.classList.remove('active');
+        }
+    });
 
     // Event Delegation untuk Link
     document.addEventListener('click', (e) => {
@@ -36,11 +43,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!link) return;
 
         const href = link.getAttribute('href');
-        
-        if (href && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('http') && !href.startsWith('javascript:')) {
-            e.preventDefault();
-            navigateWithLoading(href);
+        const target = link.getAttribute('target');
+
+        // Abaikan link eksternal, target="_blank", download, mailto, tel, hash internal, atau javascript:
+        if (!href || target === '_blank' || link.hasAttribute('download') || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('http://') || href.startsWith('https://') || href.startsWith('//') || href.startsWith('javascript:')) {
+            return;
         }
+
+        e.preventDefault();
+        navigateWithLoading(href);
     });
 
     // ==========================================

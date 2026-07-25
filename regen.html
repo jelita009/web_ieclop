@@ -58,8 +58,8 @@
     </style>
   </head>
   <body class="text-white antialiased">
-    <video autoplay muted loop playsinline class="video-bg">
-      <source src="video/contoh.mp4" type="video/mp4" />
+    <video autoplay muted loop playsinline controlsList="nodownload" disablePictureInPicture class="video-bg">
+      <source src="https://res.cloudinary.com/dpmzgrwjo/video/upload/v1778140441/contoh_fofhrz.mp4" type="video/mp4" />
     </video>
     <div class="overlay"></div>
     <main-navbar></main-navbar>
@@ -78,27 +78,33 @@
           class="text-justify leading-[1.8] tracking-[0.02em] text-blue-100 max-w-2xl mx-auto text-lg opacity-90"
         ></p>
       </header>
-      <section class="mb-24">
+      <section class="mb-24" data-aos="zoom-in" data-aos-delay="200">
         <div class="flex flex-col items-center">
+          <!-- Kartu Kepala Divisi (Identik Struktur) -->
           <div
-            class="glass-card p-6 flex flex-col items-center w-56 border-[#1e3a8a]/50"
+            class="card ketum relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 w-56 text-center transition duration-300 hover:-translate-y-2 hover:shadow-[0_10px_25px_rgba(30,58,138,0.6)] floating-card"
           >
-            <img
-              id="leader-img"
-              src=""
-              class="w-24 h-24 rounded-full mb-4 object-cover object-top border-4 border-[#1e3a8a]"
-            />
-            <h3
-              id="leader-name"
-              class="font-bold text-center text-lg text-white leading-tight"
-            ></h3>
-            <span
-              data-i18n="headOfDiv"
-              class="text-blue-300 text-[10px] font-black uppercase tracking-[0.2em] mt-2"
-              >KEPALA DIVISI</span
-            >
+            <div class="image-box w-28 h-28 mx-auto mb-3 rounded-full overflow-hidden border-4 border-[#1e3a8a]">
+              <img
+                id="leader-img"
+                src=""
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="info">
+              <h3
+                id="leader-name"
+                class="font-bold text-center text-lg text-white leading-tight"
+              ></h3>
+              <p
+                data-i18n="headOfDiv"
+                class="text-blue-300 text-[10px] font-black uppercase tracking-[0.2em] mt-2"
+                >KEPALA DIVISI</p
+              >
+            </div>
           </div>
           <div class="line-connector"></div>
+          <!-- Grid Anggota -->
           <div
             class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
             id="members-grid"
@@ -123,9 +129,9 @@
           leaderImg: "img/kadiv-regen.png",
           members: [
             { name: "Dwi Putri Aidilla", img: "img/regeneration/Dwi-Putri-Aidila.jpg" },
-            { name: "Chairunnisa Al Rohli Sadrina", img: "img/regeneration/Chairunnisa.jpg" },
+            { name: "Chairunnisa Al Rohli Sadrina", img: "img/regeneration/Chairunnisa.JPG" },
             { name: "Hayatul Ichwana", img: "img/regeneration/Hayatul-Ichwana.jpg" },
-            { name: "Salsabila Putroe Ripasha", img: "img/regeneration/Salsabila-Putroe-Ripasha.jpg" },
+            { name: "Salsabila Putroe Ripasha", img: "img/regeneration/Salsabila-Putroe-Ripasha.JPG" },
             { name: "Tengku Salsabila", img: "img/regeneration/Tengku-Salsabila.jpg" },
             { name: "Muthiah Rahma Pasaribu", img: "img/regeneration/Muthiah-Rahma-Pasaribu.jpg" },
             { name: "Shima Nur Fatihah", img: "img/regeneration/Shima-Nur-Fatihah.jpg" },
@@ -133,12 +139,12 @@
             { name: "Tari Ika Maulidya", img: "img/regeneration/Tari.jpg" },
             { name: "Nailis Saputri", img: "img/regeneration/nailis-saputri.jpg" },
             { name: "Nayla Mutia Silvia Dina", img: "img/regeneration/Nayla-Mutia-Silvia-Dina.jpg" },
-            { name: "Athiyya Nauli Napitupulu", img: "img/regeneration/Athiyya-Nauli-Napitupulu.jpg" },
-            { name: "Muhammad Habiburrahman Al Fathani", img: "img/regeneration/M-Habiburrahman-AlFathani.jpg" },
-            { name: "Muhammad Fadlil Azis", img: "img/regeneration/Muhammad-Fadlil-Aziz.jpg" },
+            { name: "Athiyya Nauli Napitupulu", img: "img/regeneration/Athiyya-Nauli-Napitupulu.JPG" },
+            { name: "Muhammad Habiburrahman Al Fathani", img: "img/regeneration/M-Habiburrahman-AlFathani.JPG" },
+            { name: "Muhammad Fadlil Azis", img: "img/regeneration/Muhammad-Fadlil-Aziz.JPG" },
             { name: "Fahrul Putra Hajri", img: "img/regeneration/Fahrul-Putra-Hajri.jpg" },
             { name: "Nayla Safitri", img: "img/regeneration/Nayl-Safitri.jpg" },
-            { name: "TM Athaya Syauqiy", img: "img/regeneration/Tm-Athaya-Syauqiy.jpg" },
+            { name: "TM Athaya Syauqiy", img: "img/regeneration/Tm-Athaya-Syauqiy.JPG" },
             { name: "Syarifah Nayla Zaskiya", img: "img/regeneration/Syarifah-Nayla.jpg" }
           ],
           id: {
@@ -164,16 +170,22 @@
 
         const memberGrid = document.getElementById("members-grid");
         memberGrid.innerHTML = "";
-        data.members.forEach((m) => {
+        data.members.forEach((m, index) => {
           const roleLabel = m.name.includes("Dwi")
-            ? `<p class="text-[9px] text-blue-300 font-bold uppercase tracking-wider mt-1">Sekretaris</p>`
+            ? `<p class="text-blue-300 text-xs font-semibold uppercase tracking-wider mt-1">Sekretaris</p>`
             : "";
 
+          const delay = (0.2 + index * 0.08).toFixed(2);
+
           memberGrid.innerHTML += `
-                <div class="glass-card p-4 flex flex-col items-center w-full min-w-[130px] opacity-80 hover:opacity-100 transition duration-500">
-                    <img src="${m.img}" class="w-14 h-14 rounded-full mb-3 border-2 border-white/20 object-cover object-top">
-                    <span class="text-xs font-bold text-center text-white leading-tight">${m.name}</span>
-                    ${roleLabel}
+                <div class="card divisi relative bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 min-w-[140px] text-center transition duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-[0_10px_20px_rgba(30,58,138,0.6)] member-pop-card group cursor-pointer" style="animation-delay: ${delay}s;">
+                    <div class="image-box w-20 h-20 mx-auto mb-3 rounded-full overflow-hidden border-2 border-[#1e3a8a] group-hover:border-blue-400 group-hover:scale-110 transition duration-300">
+                        <img src="${m.img}" onerror="this.src='img/logo_IECLOP.png'" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="info">
+                        <h3 class="font-bold text-sm text-white group-hover:text-blue-200 leading-tight transition">${m.name}</h3>
+                        ${roleLabel}
+                    </div>
                 </div>`;
         });
 

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - UKM IECLOP</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/galleryPage.css">
+    <link rel="stylesheet" href="animation.css">
+</head>
+<body class="text-white antialiased">
+    
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline controlsList="nodownload" disablePictureInPicture class="video-bg">
+        <source src="https://res.cloudinary.com/dpmzgrwjo/video/upload/v1778140441/contoh_fofhrz.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+
+    <main-navbar class="relative z-[100]"></main-navbar>
+
+    <section class="gallery-container relative z-10 pt-32 pb-16 px-4 min-h-screen">
+        
+        <!-- BAGIAN JUDUL DISINKRONKAN DENGAN FORMAT ABOUT -->
+        <div class="gallery-header text-center mb-16" data-aos="fade-up">
+            <h1 class="text-5xl md:text-6xl font-black uppercase tracking-tighter text-white mb-4" data-i18n="galleryTitle">
+                GALERI <span class="text-blue-300">DIVISI & PROKER</span>
+            </h1>
+            
+            <!-- Garis gradient diletakkan di Bawah Judul -->
+            <div class="w-20 h-1.5 bg-gradient-to-r from-blue-500 to-pink-500 mx-auto rounded-full mb-6"></div>
+            
+            <p class="text-center text-blue-100 max-w-2xl mx-auto text-lg leading-relaxed opacity-90" data-i18n="galleryDesc">
+                Pilih divisi di bawah ini untuk melihat album dokumentasi program kerja lengkap.
+            </p>
+        </div>
+
+        <!-- Gallery Grid (Kartu Divisi, Kegiatan, dan Momen) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            
+            <!-- DIVISI 1: EDUCATION -->
+            <a href="Galery/education.html" class="glass-card rounded-2xl overflow-hidden border border-white/10 shadow-xl group cursor-pointer block transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(30,58,138,0.5)]" data-aos="fade-up" data-aos-delay="100">
+                <div class="relative h-64 overflow-hidden bg-slate-900">
+                    <img src="img/EDUCATION.png" alt="Education" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute top-4 right-4 bg-blue-600/90 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg border border-blue-400/30">
+                        5 Program Kerja
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a1432] via-transparent to-transparent opacity-80"></div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-black text-white group-hover:text-blue-300 transition mb-2" data-i18n="galDivEduTitle">Divisi Education</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed" data-i18n="galDivEduDesc">Dokumentasi Kelas TOEFL, Belajar Bulanan, Kelas Spesial & Artikel.</p>
+                </div>
+            </a>
+            
+            <!-- DIVISI 2: INFOCOM -->
+            <a href="Galery/infocom.html" class="glass-card rounded-2xl overflow-hidden border border-white/10 shadow-xl group cursor-pointer block transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(30,58,138,0.5)]" data-aos="fade-up" data-aos-delay="200">
+                <div class="relative h-64 overflow-hidden bg-slate-900">
+                    <img src="img/INFOCOM.png" alt="Infocom" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute top-4 right-4 bg-blue-600/90 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg border border-blue-400/30">
+                        12 Program Kerja
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a1432] via-transparent to-transparent opacity-80"></div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-black text-white group-hover:text-blue-300 transition mb-2" data-i18n="galDivInfTitle">Divisi Infocom</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed" data-i18n="galDivInfDesc">Dokumentasi Website, Social Media, Podcast, Mading & Desain.</p>
+                </div>
+            </a>
+            
+            <!-- DIVISI 3: REGENERATION -->
+            <a href="Galery/regen.html" class="glass-card rounded-2xl overflow-hidden border border-white/10 shadow-xl group cursor-pointer block transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(30,58,138,0.5)]" data-aos="fade-up" data-aos-delay="300">
+                <div class="relative h-64 overflow-hidden bg-slate-900">
+                    <img src="img/REGENERATION.png" alt="Regeneration" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute top-4 right-4 bg-blue-600/90 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg border border-blue-400/30">
+                        8 Program Kerja
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a1432] via-transparent to-transparent opacity-80"></div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-black text-white group-hover:text-blue-300 transition mb-2" data-i18n="galDivRegTitle">Divisi Regeneration</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed" data-i18n="galDivRegDesc">Dokumentasi Open Recruitment, HOCO, Internship & Gathering.</p>
+                </div>
+            </a>
+            
+            <!-- DIVISI 4: OLYMPIC -->
+            <a href="Galery/olympic.html" class="glass-card rounded-2xl overflow-hidden border border-white/10 shadow-xl group cursor-pointer block transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(30,58,138,0.5)]" data-aos="fade-up" data-aos-delay="400">
+                <div class="relative h-64 overflow-hidden bg-slate-900">
+                    <img src="img/OLYMPIC.png" alt="Olympic" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute top-4 right-4 bg-blue-600/90 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg border border-blue-400/30">
+                        5 Program Kerja
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a1432] via-transparent to-transparent opacity-80"></div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-black text-white group-hover:text-blue-300 transition mb-2" data-i18n="galDivOlyTitle">Divisi Olympic</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed" data-i18n="galDivOlyDesc">Dokumentasi Komunitas Olimpiade, Latihan & Prestasi IECLOP.</p>
+                </div>
+            </a>
+            
+            <!-- DIVISI 5: PUBLIC RELATION -->
+            <a href="Galery/publicRL.html" class="glass-card rounded-2xl overflow-hidden border border-white/10 shadow-xl group cursor-pointer block transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(30,58,138,0.5)]" data-aos="fade-up" data-aos-delay="500">
+                <div class="relative h-64 overflow-hidden bg-slate-900">
+                    <img src="img/PUBLIC RELATION.png" alt="Public Relation" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute top-4 right-4 bg-blue-600/90 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg border border-blue-400/30">
+                        8 Program Kerja
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a1432] via-transparent to-transparent opacity-80"></div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-black text-white group-hover:text-blue-300 transition mb-2" data-i18n="galDivPrTitle">Divisi Public Relation</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed" data-i18n="galDivPrDesc">Dokumentasi I-Care, Charity, Iftar, Pengabdian & Kemitraan.</p>
+                </div>
+            </a>
+
+            <!-- KARTU KEGIATAN -->
+            <a href="Galery/kegiatan.html" class="glass-card rounded-2xl overflow-hidden border border-white/10 shadow-xl group cursor-pointer block transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(30,58,138,0.5)]" data-aos="fade-up" data-aos-delay="600">
+                <div class="relative h-64 overflow-hidden bg-slate-900">
+                    <img src="img/gallery/kegiatan/L21.JPG" alt="Kegiatan IECLOP" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute top-4 right-4 bg-blue-600/90 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg border border-blue-400/30">
+                        Dokumentasi Kegiatan
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a1432] via-transparent to-transparent opacity-80"></div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-black text-white group-hover:text-blue-300 transition mb-2" data-i18n="galKegiatanTitle">Kegiatan UKM IECLOP</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed" data-i18n="galKegiatanDesc">Kumpulan dokumentasi kegiatan seluruh keluarga besar UKM IECLOP.</p>
+                </div>
+            </a>
+
+            <!-- KARTU MOMEN -->
+            <a href="Galery/momen2024.html" class="glass-card rounded-2xl overflow-hidden border border-white/10 shadow-xl group cursor-pointer block transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(30,58,138,0.5)]" data-aos="fade-up" data-aos-delay="700">
+                <div class="relative h-64 overflow-hidden bg-slate-900">
+                    <img src="img/gallery/momen/P24.JPG" alt="Momen & Kenangan" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute top-4 right-4 bg-blue-600/90 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg border border-blue-400/30">
+                        Dokumentasi Momen
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a1432] via-transparent to-transparent opacity-80"></div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-black text-white group-hover:text-blue-300 transition mb-2" data-i18n="galMomenTitle">Momen & Kenangan</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed" data-i18n="galMomenDesc">Kumpulan dokumentasi momen berharga, keseruan, dan kebersamaan IECLOP.</p>
+                </div>
+            </a>
+
+            <!-- KARTU KOMPETISI -->
+            <a href="Galery/kompetisi.html" class="glass-card rounded-2xl overflow-hidden border border-white/10 shadow-xl group cursor-pointer block transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(30,58,138,0.5)]" data-aos="fade-up" data-aos-delay="800">
+                <div class="relative h-64 overflow-hidden bg-slate-900">
+                    <img src="img/gallery/kompetisi/L1.jpg" alt="Kompetisi & Lomba" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute top-4 right-4 bg-blue-600/90 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg border border-blue-400/30">
+                        Dokumentasi Lomba
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a1432] via-transparent to-transparent opacity-80"></div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-black text-white group-hover:text-blue-300 transition mb-2" data-i18n="galKompetisiTitle">Kompetisi & Lomba</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed" data-i18n="galKompetisiDesc">Dokumentasi partisipasi dan kejuaraan IECLOP di berbagai ajang kompetisi.</p>
+                </div>
+            </a>
+            
+        </div>
+    </section>
+
+    <!-- Bingkai Footer Otomatis -->
+    <main-footer></main-footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+    <script src="translate.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
