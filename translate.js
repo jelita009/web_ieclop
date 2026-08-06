@@ -55,6 +55,15 @@ const translations = {
         NewsDate15: "13 Juli 2026",
         News15Title: "Selamat 🩵✨",
         News15Desc: "Kami dengan bangga mengucapkan selamat kepada Muhammad Fikri Abdillah (Teknik Elektro '22) atas pencapaiannya meraih Juara 3 dalam Kompetisi Duta Muda CBP Rupiah 2026 yang diselenggarakan oleh Kantor Perwakilan Bank Indonesia (KPwBI) Lhokseumawe 🎉 Pencapaian ini mencerminkan kegigihan, kepemimpinan, dan dedikasimu sepanjang kompetisi. Semoga keberhasilan ini menjadi batu loncatan menuju peluang yang lebih besar dan menginspirasi orang lain untuk mengejar keunggulan dengan percaya diri. Tetaplah melangkah maju dan terus buat kami bangga! 🚀",
+        NewsDate16: "06 Agustus 2026",
+        News16Title: "Selamat 🩵✨",
+        News16Desc: "Kami dengan bangga mengucapkan selamat kepada teman-teman kita atas pencapaian luar biasa mereka di ajang Duta GenRe Lhokseumawe 2026 🎉.<br><br>🏆 <b>Ghina Najwa Ilmi</b> (Tata Niaga '23) - Juara 1 Kategori Putri<br>🥈 <b>Adha Gusti Harmadhan</b> (TIK '24) - Juara 2 Kategori Putra<br>🥉 <b>Tengku Salsabila</b> (Teknik Kimia '24) - Juara 3 Kategori Putri<br><br>Pencapaian ini mencerminkan dedikasi, ketangguhan, dan komitmen kalian sepanjang perjalanan. Kerja keras kalian telah membuahkan hasil, dan pengakuan ini sangat layak didapatkan. Semoga keberhasilan ini menginspirasi kalian untuk meraih puncak yang lebih tinggi. Kami bangga pada kalian! 💙✨",
+        NewsDate17: "06 Agustus 2026",
+        News17Title: "Selamat 🩵✨",
+        News17Desc: "Kami dengan bangga mengucapkan selamat kepada teman-teman kita atas pencapaian luar biasa mereka di ajang Duta GenRe Lhokseumawe 2026 🎉.<br><br>🏆 <b>Ghina Najwa Ilmi</b> (Tata Niaga '23) - Juara 1 Kategori Putri<br>🥈 <b>Adha Gusti Harmadhan</b> (TIK '24) - Juara 2 Kategori Putra<br>🥉 <b>Tengku Salsabila</b> (Teknik Kimia '24) - Juara 3 Kategori Putri<br><br>Pencapaian ini mencerminkan dedikasi, ketangguhan, dan komitmen kalian sepanjang perjalanan. Kerja keras kalian telah membuahkan hasil, dan pengakuan ini sangat layak didapatkan. Semoga keberhasilan ini menginspirasi kalian untuk meraih puncak yang lebih tinggi. Kami bangga pada kalian! 💙✨",
+        NewsDate18: "06 Agustus 2026",
+        News18Title: "Selamat 🩵✨",
+        News18Desc: "Kami dengan bangga mengucapkan selamat kepada teman-teman kita atas pencapaian luar biasa mereka di ajang Duta GenRe Lhokseumawe 2026 🎉.<br><br>🏆 <b>Ghina Najwa Ilmi</b> (Tata Niaga '23) - Juara 1 Kategori Putri<br>🥈 <b>Adha Gusti Harmadhan</b> (TIK '24) - Juara 2 Kategori Putra<br>🥉 <b>Tengku Salsabila</b> (Teknik Kimia '24) - Juara 3 Kategori Putri<br><br>Pencapaian ini mencerminkan dedikasi, ketangguhan, dan komitmen kalian sepanjang perjalanan. Kerja keras kalian telah membuahkan hasil, dan pengakuan ini sangat layak didapatkan. Semoga keberhasilan ini menginspirasi kalian untuk meraih puncak yang lebih tinggi. Kami bangga pada kalian! 💙✨",
 
         // About Page
         aboutTitle: "TENTANG <span class='highlight text-blue-300'>IECLOP</span>",
@@ -179,6 +188,15 @@ const translations = {
         NewsDate15: "July 13, 2026",
         News15Title: "Congratulations 🩵✨",
         News15Desc: "We proudly congratulate Muhammad Fikri Abdillah (Electrical Engineering '22) on winning 3rd Place in the Duta Muda CBP Rupiah 2026 Competition organized by Bank Indonesia Representative Office (KPwBI) Lhokseumawe 🎉 This achievement reflects your perseverance, leadership, and dedication throughout the competition. May this accomplishment become a stepping stone toward even greater opportunities and inspire others to pursue excellence with confidence. Keep moving forward and continue making us proud! 🚀",
+        NewsDate16: "August 06, 2026",
+        News16Title: "Congratulations 🩵✨",
+        News16Desc: "We proudly congratulate our friends on their outstanding achievements at Duta GenRe Lhokseumawe 2026 🎉.<br><br>🏆 <b>Ghina Najwa Ilmi</b> (Business '23) - 1st Place Winner, Women's Category<br>🥈 <b>Adha Gusti Harmadhan</b> (Information & Computer Technology '24) - 2nd Place Winner, Men's Category<br>🥉 <b>Tengku Salsabila</b> (Chemical Engineering '24) - 3rd Place Winner, Women's Category<br><br>This achievement reflects your dedication, resilience, and commitment throughout the journey. Your hard work has truly paid off, and this recognition is well deserved. May this accomplishment inspire you to reach even greater heights. We are proud of you! 💙✨",
+        NewsDate17: "August 06, 2026",
+        News17Title: "Congratulations 🩵✨",
+        News17Desc: "We proudly congratulate our friends on their outstanding achievements at Duta GenRe Lhokseumawe 2026 🎉.<br><br>🏆 <b>Ghina Najwa Ilmi</b> (Business '23) - 1st Place Winner, Women's Category<br>🥈 <b>Adha Gusti Harmadhan</b> (Information & Computer Technology '24) - 2nd Place Winner, Men's Category<br>🥉 <b>Tengku Salsabila</b> (Chemical Engineering '24) - 3rd Place Winner, Women's Category<br><br>This achievement reflects your dedication, resilience, and commitment throughout the journey. Your hard work has truly paid off, and this recognition is well deserved. May this accomplishment inspire you to reach even greater heights. We are proud of you! 💙✨",
+        NewsDate18: "August 06, 2026",
+        News18Title: "Congratulations 🩵✨",
+        News18Desc: "We proudly congratulate our friends on their outstanding achievements at Duta GenRe Lhokseumawe 2026 🎉.<br><br>🏆 <b>Ghina Najwa Ilmi</b> (Business '23) - 1st Place Winner, Women's Category<br>🥈 <b>Adha Gusti Harmadhan</b> (Information & Computer Technology '24) - 2nd Place Winner, Men's Category<br>🥉 <b>Tengku Salsabila</b> (Chemical Engineering '24) - 3rd Place Winner, Women's Category<br><br>This achievement reflects your dedication, resilience, and commitment throughout the journey. Your hard work has truly paid off, and this recognition is well deserved. May this accomplishment inspire you to reach even greater heights. We are proud of you! 💙✨",
 
         // About Page
         aboutTitle: "ABOUT <span class='highlight text-blue-300'>IECLOP</span>",

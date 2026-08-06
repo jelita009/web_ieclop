@@ -14,7 +14,7 @@ class MainNavbar extends HTMLElement {
         <nav class="navbar-main fixed top-0 left-0 w-full z-[999]" id="main-nav">
             <div class="flex items-center justify-between w-full">
                 <div class="flex items-center space-x-3">
-                    <img src="${prefix}img/logo_IECLOP.png" alt="Logo IECLOP" class="h-10 md:h-12 w-auto object-contain">
+                    <img src="${prefix}img/logo_IECLOP.webp" alt="Logo IECLOP" class="h-10 md:h-12 w-auto object-contain">
                     <span class="text-xl md:text-2xl font-black tracking-tighter uppercase">UKM IECLOP</span>
                 </div>
 
