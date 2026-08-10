@@ -139,7 +139,7 @@ const translations = {
         
         // Index Page (Beranda)
         heroTitle: "UKM IECLOP",
-        heroDesc: "The premier English learning hub at Lhokseumawe State Polytechnic.",
+        heroDesc: "Improving English Club of Polytechnic. The best platform for learning English at Lhokseumawe State Polytechnic.",
         btnExplore: "EXPLORE NOW", 
         newsSectionTitle: "LATEST NEWS", 
         newsMore: "SEE MORE", 
