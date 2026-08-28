@@ -39,6 +39,7 @@ class MainNavbar extends HTMLElement {
                         </div>
                     </div>
 
+                    <a href="${prefix}learning.html" id="nav-learning" class="nav-link ${currentPath === 'learning.html' ? 'active' : ''}" data-i18n="navLearning">Modul</a>
                     <a href="${prefix}gallery.html" id="nav-gallery" class="nav-link ${currentPath === 'gallery.html' ? 'active' : ''}" data-i18n="navGallery">Gallery</a>
                 </div>
 
@@ -78,6 +79,7 @@ class MainNavbar extends HTMLElement {
                     </div>
                 </div>
 
+                <a href="${prefix}learning.html" class="block text-white font-bold hover:text-blue-300 ${currentPath === 'learning.html' ? 'text-blue-300' : ''}" data-i18n="navLearning">Modul</a>
                 <a href="${prefix}gallery.html" class="block text-white font-bold hover:text-blue-300 ${currentPath === 'gallery.html' ? 'text-blue-300' : ''}" data-i18n="navGallery">Gallery</a>
                 
                 <div class="flex sm:hidden items-center justify-center space-x-4 pt-4 border-t border-white/10">
@@ -115,15 +117,22 @@ class MainNavbar extends HTMLElement {
             divIcon.classList.toggle('rotate-180');
         });
 
-        // Logika Navbar Berubah Warna
+        // Logika Navbar Berubah Warna (Dioptimasi dengan requestAnimationFrame & passive)
         const navBar = this.querySelector('#main-nav');
+        let isScrolling = false;
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navBar.classList.add('scrolled');
-            } else {
-                navBar.classList.remove('scrolled');
+            if (!isScrolling) {
+                window.requestAnimationFrame(() => {
+                    if (window.scrollY > 50) {
+                        navBar.classList.add('scrolled');
+                    } else {
+                        navBar.classList.remove('scrolled');
+                    }
+                    isScrolling = false;
+                });
+                isScrolling = true;
             }
-        });
+        }, { passive: true });
 
         // Trigger bahasa otomatis jika translate.js sudah dimuat
         if (typeof changeLanguage === 'function') {

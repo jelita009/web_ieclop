@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>Modul Pembelajaran - UKM IECLOP</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animation.css">
+    <link rel="stylesheet" href="styles/learning.css">
+
+    <!-- Favicon / Tab Logo -->
+    <link rel="icon" type="image/webp" href="img/logo_IECLOP.webp">
+    <link rel="shortcut icon" type="image/webp" href="img/logo_IECLOP.webp">
+    <link rel="apple-touch-icon" href="img/logo_IECLOP.webp">
+</head>
+<body class="text-white antialiased">
+    
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline controlsList="nodownload" disablePictureInPicture class="video-bg">
+        <source src="https://res.cloudinary.com/dpmzgrwjo/video/upload/v1778140441/contoh_fofhrz.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+
+    <!-- Main Navigation Header -->
+    <main-navbar></main-navbar>
+
+    <!-- Main Content Container -->
+    <main class="learning-main-wrap max-w-6xl mx-auto px-4 md:px-8 pt-32 md:pt-36 pb-20 relative z-10">
+        <!-- Header Section -->
+        <header class="learning-header text-center mb-8" data-aos="fade-up">
+            <h1 class="text-4xl md:text-5xl font-black uppercase tracking-tight text-white mb-3" data-i18n="learningHeroTitle">
+                MODUL <span class="highlight text-blue-300">PEMBELAJARAN</span>
+            </h1>
+            <div class="w-16 h-1 bg-gradient-to-r from-blue-500 to-pink-500 mx-auto rounded-full mb-4"></div>
+            <p class="text-center text-blue-100 max-w-xl mx-auto text-sm md:text-base leading-relaxed opacity-90 mb-6" data-i18n="learningHeroSubtitle">
+                Akses kumpulan modul pembelajaran bahasa Inggris, materi lomba, panduan public speaking, dan arsip pelatihan resmi UKM IECLOP yang terhubung langsung ke Google Drive.
+            </p>
+
+            <!-- Search Bar -->
+            <div class="search-wrapper max-w-md mx-auto">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input 
+                        type="text" 
+                        id="module-search-input" 
+                        class="search-input" 
+                        placeholder="Cari modul (contoh: Tenses, Speaking, TOEFL, Debate)..." 
+                        autocomplete="off"
+                        data-i18n-placeholder="searchPlaceholder"
+                    >
+                    <button type="button" id="search-clear-btn" class="search-clear-btn" title="Bersihkan pencarian">
+                        <i class="fa-solid fa-xmark text-xs"></i>
+                    </button>
+                    <span class="search-shortcut" title="Tekan '/' untuk fokus">/</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Category Filter Tabs -->
+        <section class="category-filter-section mb-8" data-aos="fade-up" data-aos-delay="100">
+            <div class="category-filter-nav">
+                <button type="button" class="filter-pill active" data-category="all">
+                    <i class="fa-solid fa-border-all"></i>
+                    <span data-i18n="catAll">Semua</span>
+                    <span class="filter-count" data-count-cat="all">0</span>
+                </button>
+                <button type="button" class="filter-pill" data-category="grammar">
+                    <i class="fa-solid fa-spell-check"></i>
+                    <span data-i18n="catGrammar">Grammar</span>
+                    <span class="filter-count" data-count-cat="grammar">0</span>
+                </button>
+                <button type="button" class="filter-pill" data-category="speaking">
+                    <i class="fa-solid fa-comments"></i>
+                    <span data-i18n="catSpeaking">Speaking</span>
+                    <span class="filter-count" data-count-cat="speaking">0</span>
+                </button>
+                <button type="button" class="filter-pill" data-category="toefl">
+                    <i class="fa-solid fa-award"></i>
+                    <span data-i18n="catToefl">TOEFL / IELTS</span>
+                    <span class="filter-count" data-count-cat="toefl">0</span>
+                </button>
+                <button type="button" class="filter-pill" data-category="public-speaking">
+                    <i class="fa-solid fa-bullhorn"></i>
+                    <span data-i18n="catDebate">Debate & Speech</span>
+                    <span class="filter-count" data-count-cat="public-speaking">0</span>
+                </button>
+                <button type="button" class="filter-pill" data-category="infocom">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <span data-i18n="catInfocom">Infocom & Design</span>
+                    <span class="filter-count" data-count-cat="infocom">0</span>
+                </button>
+                <button type="button" class="filter-pill" data-category="organization">
+                    <i class="fa-solid fa-sitemap"></i>
+                    <span data-i18n="catOrg">Organisasi</span>
+                    <span class="filter-count" data-count-cat="organization">0</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Modules Grid -->
+        <section id="modules-grid" class="modules-grid" data-aos="fade-up" data-aos-delay="150">
+            <!-- Dynamically populated via js/learning.js -->
+        </section>
+
+        <!-- Empty State -->
+        <div id="empty-state" class="empty-state">
+            <div class="empty-state-icon">
+                <i class="fa-solid fa-folder-open"></i>
+            </div>
+            <h3 class="empty-state-title" data-i18n="emptyTitle">Modul Tidak Ditemukan</h3>
+            <p class="empty-state-desc" data-i18n="emptyDesc">
+                Tidak ada modul yang cocok dengan kata kunci atau filter pencarian Anda. Silakan coba kata kunci lain.
+            </p>
+            <button type="button" id="btn-reset-filter" class="btn-reset-filter">
+                <i class="fa-solid fa-arrow-rotate-left"></i>
+                <span data-i18n="btnResetFilter">Reset Pencarian & Filter</span>
+            </button>
+        </div>
+    </main>
+
+    <!-- Detail & Preview Modal Dialog -->
+    <div id="learning-modal" class="learning-modal-overlay">
+        <div class="learning-modal-card">
+            <div class="modal-header">
+                <div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span id="modal-topic-badge" class="topic-badge grammar">Grammar</span>
+                        <span id="modal-format-badge" class="file-format-badge pdf">PDF</span>
+                    </div>
+                    <h3 id="modal-title" class="text-xl font-bold text-white leading-snug">Judul Modul</h3>
+                </div>
+                <button type="button" id="modal-close-btn" class="modal-close-btn" title="Tutup Modal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <p id="modal-desc" class="text-slate-300 text-sm leading-relaxed mb-4">Deskripsi modul...</p>
+
+                <div class="modal-syllabus-box">
+                    <h4>
+                        <i class="fa-solid fa-list-check"></i>
+                        <span data-i18n="modalSyllabusHeading">Topik & Silabus yang Dipelajari:</span>
+                    </h4>
+                    <ul id="modal-syllabus-list" class="syllabus-list">
+                        <!-- Populated dynamically -->
+                    </ul>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" id="modal-copy-btn" class="btn-copy-link">
+                    <i class="fa-regular fa-copy"></i>
+                    <span data-i18n="btnCopyLink">Salin Tautan Drive</span>
+                </button>
+                <a id="modal-drive-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-drive-access">
+                    <i class="fa-brands fa-google-drive"></i>
+                    <span data-i18n="btnOpenDriveFull">Buka di Google Drive</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-70"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification for Copy Link -->
+    <div id="toast-notice" class="toast-notice">
+        <i class="fa-solid fa-circle-check"></i>
+        <span>Tautan Drive berhasil disalin!</span>
+    </div>
+
+    <!-- Footer Component -->
+    <main-footer></main-footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+    </script>
+    <script src="translate.js"></script>
+    <script src="js/navbar.js?v=2"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/learning.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 const translations = {
     id: {
         // Navbar
-        navHome: "Beranda", navAbout: "Tentang", navStructure: "Struktur", navDivisions: "Divisi", navMemory: "Galeri", navGallery: "Galeri",
+        navHome: "Beranda", navAbout: "Tentang", navStructure: "Struktur", navDivisions: "Divisi", navMemory: "Galeri", navGallery: "Galeri", navLearning: "Modul",
         
         // Index Page (Beranda)
         heroTitle: "UKM IECLOP <br><span class='text-white drop-shadow-md'>",
@@ -150,10 +150,36 @@ const translations = {
         //Memory2024
         memoTittle: "IECLOP Memories",
         memoDesc: "Kumpulan dokumentasi momen berharga, keseruan, dan kebersamaan seluruh keluarga besar UKM IECLOP.",
+
+        // Learning Hub & Modul Pembelajaran (ID)
+        learningBadge: "IECLOP LEARNING HUB & ACADEMIC REPOSITORY",
+        learningHeroTitle: "MODUL <span class='highlight text-blue-300'>PEMBELAJARAN</span>",
+        learningHeroSubtitle: "Akses kumpulan modul pembelajaran bahasa Inggris, materi lomba, panduan public speaking, dan arsip pelatihan resmi UKM IECLOP yang terhubung langsung ke Google Drive.",
+        statModules: "Modul Tersedia",
+        statCategories: "Kategori Topik",
+        statDriveIntegration: "Akses Google Drive Langsung",
+        searchPlaceholder: "Cari modul (contoh: Tenses, Speaking, TOEFL, Debate)...",
+        catAll: "Semua",
+        catGrammar: "Grammar",
+        catSpeaking: "Speaking",
+        catToefl: "TOEFL / IELTS",
+        catDebate: "Debate & Speech",
+        catInfocom: "Infocom & Desain",
+        catOrg: "Organisasi",
+        btnOpenDrive: "Buka di Drive",
+        btnOpenDriveFull: "Buka di Google Drive",
+        btnCopyLink: "Salin Tautan Drive",
+        emptyTitle: "Modul Tidak Ditemukan",
+        emptyDesc: "Tidak ada modul yang cocok dengan kata kunci atau filter pencarian Anda. Silakan coba kata kunci lain.",
+        btnResetFilter: "Reset Pencarian & Filter",
+        modalSyllabusHeading: "Topik & Silabus yang Dipelajari:",
+        eduBannerTitle: "Pusat Modul & Materi Belajar IECLOP",
+        eduBannerDesc: "Akses modul tenses, tips speaking, persiapan TOEFL, dan bank materi resmi di Google Drive.",
+        eduBannerBtn: "Buka Katalog Modul",
     },
     en: {
         // Navbar
-        navHome: "Home", navAbout: "About", navStructure: "Structure", navDivisions: "Divisions", navMemory: "Gallery", navGallery: "Gallery",
+        navHome: "Home", navAbout: "About", navStructure: "Structure", navDivisions: "Divisions", navMemory: "Gallery", navGallery: "Gallery", navLearning: "Modules",
         
         // Index Page (Beranda)
         heroTitle: "UKM IECLOP",
@@ -302,6 +328,32 @@ const translations = {
         memoTittle: "IECLOP Memories",
         memoDesc: "A collection of moments capturing the cherished memories, fun, and togetherness of the entire extended IECLOP family.",
         News13Desc: "Hi IECLOPers! 💙👋 Something exciting is on the way 👀 The wait is almost over. Get ready for unforgettable moments, stronger bonds, and endless memories ✨ IECLOP GATHERING 2026 ‼️ 🌊 \"Waves of Legacy: From One Generation to Another\" Where our story flows forward, hand in hand 💙 📋 REGISTRATION DETAILS: 🗓️ Open: July 2 – July 8 ⏰ Time: 10.00 - 16.00 WIB 📍 Venue: IECLOP Secretariat, 1st Floor Lobby 🔗 Online Registration: https://forms.gle/szstgTZ3eMW7XDfYA 💰 Fee: 25K 📋 EVENT DETAILS: 📅 Date: Saturday, July 11, 2026 🕐 Time: 07.30 WIB until finished 📍 Event Location: Black Rose 👗 Dress Code: Blue and Beige 📝 Notes: • Bring Tumbler + Drinking Water • Prayer Equipment • Gift wrapped in newspaper.",
+
+        // Learning Hub & Modul Pembelajaran (EN)
+        learningBadge: "IECLOP LEARNING HUB & ACADEMIC REPOSITORY",
+        learningHeroTitle: "LEARNING <span class='highlight text-blue-300'>MODULES</span>",
+        learningHeroSubtitle: "Access our collection of English learning modules, competition preparation guides, public speaking frameworks, and official UKM IECLOP training archives directly connected to Google Drive.",
+        statModules: "Available Modules",
+        statCategories: "Topic Categories",
+        statDriveIntegration: "Direct Drive Access",
+        searchPlaceholder: "Search modules (e.g. Tenses, Speaking, TOEFL, Debate)...",
+        catAll: "All",
+        catGrammar: "Grammar",
+        catSpeaking: "Speaking",
+        catToefl: "TOEFL / IELTS",
+        catDebate: "Debate & Speech",
+        catInfocom: "Infocom & Design",
+        catOrg: "Organization",
+        btnOpenDrive: "Open in Drive",
+        btnOpenDriveFull: "Open in Google Drive",
+        btnCopyLink: "Copy Drive Link",
+        emptyTitle: "No Modules Found",
+        emptyDesc: "No modules matched your search keywords or active filter. Try searching with different terms.",
+        btnResetFilter: "Reset Search & Filters",
+        modalSyllabusHeading: "Topics & Syllabus Covered:",
+        eduBannerTitle: "IECLOP Learning Modules & Study Center",
+        eduBannerDesc: "Access tenses modules, speaking tips, TOEFL prep kits, and official study materials on Google Drive.",
+        eduBannerBtn: "Open Module Catalog",
     }
 };
 
@@ -309,12 +361,20 @@ function changeLanguage(lang) {
     // 1. Simpan preferensi bahasa ke memori browser
     localStorage.setItem('preferredLang', lang);
 
-   document.querySelectorAll('[data-i18n]').forEach(element => {
-    const key = element.getAttribute('data-i18n');
-    if (translations[lang] && translations[lang][key]) {
-        element.innerHTML = translations[lang][key];
-    }
-});
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            element.innerHTML = translations[lang][key];
+        }
+    });
+
+    // 2. Terjemahkan atribut placeholder input jika ada
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+        const key = element.getAttribute('data-i18n-placeholder');
+        if (translations[lang] && translations[lang][key]) {
+            element.placeholder = translations[lang][key];
+        }
+    });
 
     // 3. Ubah warna tombol ID / EN yang sedang aktif
     const btnId = document.getElementById('btn-id');

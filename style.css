@@ -26,6 +26,9 @@ main {
     min-height: 100%;
     z-index: -2;
     object-fit: cover;
+    pointer-events: none;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .overlay {
@@ -36,6 +39,9 @@ main {
     height: 100%;
     background: rgba(10, 20, 50, 0.75); 
     z-index: -1;
+    pointer-events: none;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 /* NAVBAR CUSTOM */
@@ -244,14 +250,13 @@ main {
     box-shadow: 0 6px 20px rgba(30, 58, 138, 0.5);
 }
 
-/* NEWS SECTION - DIUBAH MENJADI EFEK KACA TRANSPARAN */
+/* NEWS SECTION */
 .news-section {
-    background: rgba(255, 255, 255, 0.05); /* Transparan tipis */
-    backdrop-filter: blur(10px); /* Efek Kaca */
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(10, 20, 50, 0.65); /* Transparan gelap elegan tanpa beban GPU */
     border-top: 1px solid rgba(255, 255, 255, 0.1); /* Garis batas atas */
     padding: 8rem 5%;
-    color: #ffffff; /* Warna teks utama diubah jadi putih */
+    color: #ffffff;
+    contain: content;
 }
 
 .section-header { margin-bottom: 5rem; text-align: center; }
