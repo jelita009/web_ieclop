@@ -1,3 +1,106 @@
+/* Consolidated Gallery & Album Styles for IECLOP */
+/* 1. GLOBAL & DYNAMIC BACKGROUND */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    overflow-x: hidden;
+    /* Latar belakang dasar gelap gelap */
+    background-color: #0f172a; 
+}
+
+/* CONTAINER SETUP */
+.gallery-container {
+    padding: 6rem 5% 4rem;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+/* HEADER STYLE */
+.gallery-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.gallery-header h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin-bottom: 1rem;
+}
+
+.gallery-header .highlight {
+    color: #2563eb;
+    text-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+}
+
+.gallery-header p {
+    color: #9ca3af;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* GALLERY GRID SYSTEM (MASONRY LOOK) */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 150px; /* Tinggi baris dasar */
+    grid-auto-flow: dense; /* Sangat penting untuk mengisi celah kosong */
+    gap: 20px;
+}
+
+/* BASE ITEM */
+.gallery-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* LOGIC UKURAN GAMBAR */
+.potrait {
+    grid-row: span 3; /* Lebih tinggi */
+}
+
+.lanscape {
+    grid-column: span 2; /* Lebih lebar */
+    grid-row: span 2;
+}
+
+@media (max-width: 768px) {
+    .lanscape {
+        grid-column: span 1; /* Di HP jadi normal agar tidak sempit */
+    }
+}
+
+/* IMAGE BEHAVIOR */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+/* HOVER EFFECTS */
+.gallery-item:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(37, 99, 235, 0.4);
+    z-index: 10;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+    filter: brightness(0.6);
+}
+
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: #050b1d; }

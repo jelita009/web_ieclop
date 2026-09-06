@@ -1,9 +1,9 @@
 class MainFooter extends HTMLElement {
     connectedCallback() {
         // OTOMATISASI PATH FOOTER:
-        // Memeriksa apakah halaman saat ini berada di dalam folder 'Galery'
+        // Memeriksa apakah halaman saat ini berada di dalam folder 'gallery'
         const pathName = window.location.pathname;
-        const isInsideSubfolder = /\/galery\//i.test(pathName);
+        const isInsideSubfolder = /\/(gallery|galery)\//i.test(pathName);
         const prefix = isInsideSubfolder ? '../' : '';
 
         // Memastikan tidak ada class tailwind seperti bg-[] yang menimpa CSS eksternal kita
@@ -14,7 +14,7 @@ class MainFooter extends HTMLElement {
                     <h3 class="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-200">
                         UKM IECLOP
                     </h3>
-                    <p class="text-sm text-gray-400 leading-relaxed text-justify" data-i18n="footerDesc">
+                    <p class="text-sm text-gray-400 leading-relaxed text-left" data-i18n="footerDesc">
                         UKM IECLOP adalah organisasi mahasiswa di Politeknik Negeri Lhokseumawe yang berfokus pada pengembangan kemampuan bahasa Inggris dan bahasa asing lainnya. Berdiri sejak 27 April 2007, IECLOP berkomitmen mencetak generasi yang unggul dalam komunikasi global.
                     </p>
                 </div>
@@ -39,11 +39,11 @@ class MainFooter extends HTMLElement {
                         <p><i class="bi bi-telephone-fill mr-2 text-blue-500"></i>Public Relation: +62 895-0893-0294</p>
                     </div>
                     <div class="flex space-x-3 pt-2">
-                        <a href="https://youtube.com/@ukmiecloppnl4498?si=wf4nPGg1ajEcEkEe" target="_blank" class="social-icon"><i class="bi bi-youtube"></i></a>
-                        <a href="https://discord.gg/FKkKwpcntW" target="_blank" class="social-icon"><i class="bi bi-discord"></i></a>
-                        <a href="https://www.instagram.com/ieclop.kbmpnl?igsh=MThtejFhazRvNDBhdg==" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
-                        <a href="https://www.tiktok.com/@ukm_ieclop_pnl?_r=1&_t=ZS-967oGnQFHiW" target="_blank" class="social-icon"><i class="bi bi-tiktok"></i></a>
-                        <a href="https://www.linkedin.com/company/ukm-ieclop-pnl/" target="_blank" class="social-icon"><i class="bi bi-linkedin"></i></a> 
+                        <a href="https://youtube.com/@ukmiecloppnl4498?si=wf4nPGg1ajEcEkEe" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Kanal YouTube Resmi UKM IECLOP" title="YouTube"><i class="bi bi-youtube"></i></a>
+                        <a href="https://discord.gg/FKkKwpcntW" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Server Komunitas Discord UKM IECLOP" title="Discord"><i class="bi bi-discord"></i></a>
+                        <a href="https://www.instagram.com/ieclop.kbmpnl?igsh=MThtejFhazRvNDBhdg==" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Akun Instagram Resmi UKM IECLOP" title="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@ukm_ieclop_pnl?_r=1&_t=ZS-967oGnQFHiW" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Akun TikTok Resmi UKM IECLOP" title="TikTok"><i class="bi bi-tiktok"></i></a>
+                        <a href="https://www.linkedin.com/company/ukm-ieclop-pnl/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Halaman LinkedIn Resmi UKM IECLOP" title="LinkedIn"><i class="bi bi-linkedin"></i></a> 
                     </div>
                 </div>
             </div>

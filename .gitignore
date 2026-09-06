@@ -1,0 +1,38 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Editor & IDE Directories
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment & Sensitive Keys
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.cert
+
+# Python & Runtime Cache
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+
+# Scratch & Temporary Tools
+scratch/
+*.tmp
+*.log
+
+# Impeccable Cache & Local Config
+.impeccable/config.local.json

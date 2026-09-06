@@ -11,9 +11,9 @@
     
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="styles/struktur.css">
-     <link rel="stylesheet" href="animation.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/struktur.css">
+     <link rel="stylesheet" href="css/animation.css">
      
     <!-- Favicon / Tab Logo -->
     <link rel="icon" type="image/webp" href="img/logo_IECLOP.webp">
@@ -22,10 +22,15 @@
 </head>
 <body class="text-white antialiased">
     
-    <video autoplay muted loop playsinline controlsList="nodownload" disablePictureInPicture class="video-bg">
+    <video autoplay muted loop playsinline preload="auto" controlsList="nodownload" disablePictureInPicture class="video-bg">
         <source src="video/VIDEO%20PROFIL%20UKM%20IECLOP%20PNL%20-%202026_2.mp4" type="video/mp4">
     </video>
     <div class="overlay"></div>
+
+    <!-- Tombol Kontrol Video Background -->
+    <button id="video-ctrl-btn" class="video-control-btn" aria-label="Jeda Video Latar Belakang" title="Jeda Video Latar Belakang">
+        <i class="fa-solid fa-pause"></i>
+    </button>
 
     <main-navbar></main-navbar>
 
@@ -49,7 +54,7 @@
                         <div class="card ketum relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 mx-auto max-w-[250px] text-center transition duration-300 hover:-translate-y-2 hover:shadow-[0_10px_25px_rgba(30,58,138,0.6)]">
                             <div class="image-box w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-[#1e3a8a]">
                                 <!-- Ditambahkan object-top -->
-                                <img src="img/ketum.webp" onerror="this.src='https://via.placeholder.com/100'" class="w-full h-full object-cover object-top">
+                                <img src="img/ketum.webp" onerror="this.src='img/logo_IECLOP.webp'" class="w-full h-full object-cover object-top">
                             </div>
                             <div class="info">
                                 <h3 class="font-bold text-lg text-white mb-1">Zaini Amri</h3>
@@ -63,7 +68,7 @@
                                 <div class="card bph relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 mx-auto max-w-[200px] text-center transition duration-300 hover:-translate-y-2 hover:shadow-[0_10px_25px_rgba(30,58,138,0.6)]">
                                     <div class="image-box w-32 h-32 mx-auto mb-3 rounded-full overflow-hidden border-4 border-[#1e3a8a]">
                                         <!-- Ditambahkan object-top -->
-                                        <img src="img/sekum.webp" onerror="this.src='https://via.placeholder.com/100'" class="w-full h-full object-cover object-top">
+                                        <img src="img/sekum.webp" onerror="this.src='img/logo_IECLOP.webp'" class="w-full h-full object-cover object-top">
                                     </div>
                                     <div class="info">
                                         <h3 class="font-bold text-md text-white mb-1">Muhammad Aryanda</h3>
@@ -76,7 +81,7 @@
                                 <div class="card bph relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 mx-auto max-w-[200px] text-center transition duration-300 hover:-translate-y-2 hover:shadow-[0_10px_25px_rgba(30,58,138,0.6)]">
                                     <div class="image-box w-32 h-32 mx-auto mb-3 rounded-full overflow-hidden border-4 border-[#1e3a8a]">
                                         <!-- Ditambahkan object-top -->
-                                        <img src="img/bendum.webp" onerror="this.src='https://via.placeholder.com/100'" class="w-full h-full object-cover object-top">
+                                        <img src="img/bendum.webp" onerror="this.src='img/logo_IECLOP.webp'" class="w-full h-full object-cover object-top">
                                     </div>
                                     <div class="info">
                                         <h3 class="font-bold text-md text-white mb-1">Nurwahida Zakia</h3>
@@ -93,7 +98,7 @@
                                     <div class="card divisi relative bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 min-w-[150px] text-center transition duration-300 hover:-translate-y-2 hover:shadow-[0_10px_20px_rgba(30,58,138,0.5)]">
                                         <div class="image-box w-28 h-28 mx-auto mb-3 rounded-full overflow-hidden border-2 border-[#1e3a8a]">
                                             <!-- Ditambahkan object-top -->
-                                            <img src="img/kadiv-infocom.webp" onerror="this.src='https://via.placeholder.com/80'" class="w-full h-full object-cover object-top">
+                                            <img src="img/kadiv-infocom.webp" onerror="this.src='img/logo_IECLOP.webp'" class="w-full h-full object-cover object-top">
                                         </div>
                                         <div class="info">
                                             <h3 class="font-bold text-sm text-white mb-1">Raihan Saputra</h3>
@@ -106,7 +111,7 @@
                                     <div class="card divisi relative bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 min-w-[150px] text-center transition duration-300 hover:-translate-y-2 hover:shadow-[0_10px_20px_rgba(30,58,138,0.5)]">
                                         <div class="image-box w-28 h-28 mx-auto mb-3 rounded-full overflow-hidden border-2 border-[#1e3a8a]">
                                             <!-- Ditambahkan object-top -->
-                                            <img src="img/kadiv-edu.webp" onerror="this.src='https://via.placeholder.com/80'" class="w-full h-full object-cover object-top">
+                                            <img src="img/kadiv-edu.webp" onerror="this.src='img/logo_IECLOP.webp'" class="w-full h-full object-cover object-top">
                                         </div>
                                         <div class="info">
                                             <h3 class="font-bold text-sm text-white mb-1">Chaqila Chifa Adelya</h3>
@@ -119,7 +124,7 @@
                                     <div class="card divisi relative bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 min-w-[150px] text-center transition duration-300 hover:-translate-y-2 hover:shadow-[0_10px_20px_rgba(30,58,138,0.5)]">
                                         <div class="image-box w-28 h-28 mx-auto mb-3 rounded-full overflow-hidden border-2 border-[#1e3a8a]">
                                             <!-- Ditambahkan object-top -->
-                                            <img src="img/kadiv-regen.webp" onerror="this.src='https://via.placeholder.com/80'" class="w-full h-full object-cover object-top">
+                                            <img src="img/kadiv-regen.webp" onerror="this.src='img/logo_IECLOP.webp'" class="w-full h-full object-cover object-top">
                                         </div>
                                         <div class="info">
                                             <h3 class="font-bold text-sm text-white mb-1">Adha Gusti Harmadhan</h3>
@@ -132,7 +137,7 @@
                                     <div class="card divisi relative bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 min-w-[150px] text-center transition duration-300 hover:-translate-y-2 hover:shadow-[0_10px_20px_rgba(30,58,138,0.5)]">
                                         <div class="image-box w-28 h-28 mx-auto mb-3 rounded-full overflow-hidden border-2 border-[#1e3a8a]">
                                             <!-- Ditambahkan object-top -->
-                                            <img src="img/kadiv-olim.webp" onerror="this.src='https://via.placeholder.com/80'" class="w-full h-full object-cover object-top">
+                                            <img src="img/kadiv-olim.webp" onerror="this.src='img/logo_IECLOP.webp'" class="w-full h-full object-cover object-top">
                                         </div>
                                         <div class="info">
                                             <h3 class="font-bold text-sm text-white mb-1">Ghina Najwa Hilmi</h3>
@@ -145,7 +150,7 @@
                                     <div class="card divisi relative bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 min-w-[150px] text-center transition duration-300 hover:-translate-y-2 hover:shadow-[0_10px_20px_rgba(30,58,138,0.5)]">
                                         <div class="image-box w-28 h-28 mx-auto mb-3 rounded-full overflow-hidden border-2 border-[#1e3a8a]">
                                             <!-- Ditambahkan object-top -->
-                                            <img src="img/kadiv-pr.webp" onerror="this.src='https://via.placeholder.com/80'" class="w-full h-full object-cover object-top">
+                                            <img src="img/kadiv-pr.webp" onerror="this.src='img/logo_IECLOP.webp'" class="w-full h-full object-cover object-top">
                                         </div>
                                         <div class="info">
                                             <h3 class="font-bold text-sm text-white mb-1">Afzallul Zikri</h3>
@@ -168,9 +173,9 @@
     <script>
         AOS.init({ duration: 1000, once: true });
     </script>
-    <script src="translate.js"></script>
+    <script src="js/translate.js"></script>
     <script src="js/navbar.js?v=2"></script>
     <script src="js/footer.js"></script>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

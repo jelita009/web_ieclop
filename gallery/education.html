@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeri Infocom - UKM IECLOP</title>
+    <title>Galeri Education - UKM IECLOP</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
-    <link rel="stylesheet" href="galery.css">
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../styles/galleryPage.css">
-    <link rel="stylesheet" href="../animation.css">
+    <link rel="stylesheet" href="../css/gallery.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animation.css">
     
     <!-- Favicon / Tab Logo -->
     <link rel="icon" type="image/webp" href="../img/logo_IECLOP.webp">
@@ -23,7 +22,7 @@
 <body class="text-white antialiased bg-[#050b1d]">
     
     <!-- Background Video -->
-    <video autoplay muted loop playsinline controlsList="nodownload" disablePictureInPicture class="video-bg">
+    <video autoplay muted loop playsinline preload="auto" controlsList="nodownload" disablePictureInPicture class="video-bg">
         <source src="../video/VIDEO%20PROFIL%20UKM%20IECLOP%20PNL%20-%202026_2.mp4" type="video/mp4">
     </video>
     <div class="overlay"></div>
@@ -44,87 +43,51 @@
         <!-- Judul Halaman -->
         <div class="text-center mb-12" data-aos="fade-down">
             <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 uppercase text-glow">
-                Galeri Divisi Infocom
+                Galeri Divisi Education
             </h1>
             <p class="text-gray-300 mt-3 text-sm md:text-base max-w-xl mx-auto">
-                Dokumentasi kegiatan Website, Media Sosial, Podcast, Redaksi Mading, dan Desain Publikasi.
+                Dokumentasi kegiatan Kelas TOEFL, Belajar Bulanan, Kelas Spesial, dan Edukasi Bahasa.
             </p>
             <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto mt-4 rounded-full"></div>
         </div>
 
-        <!-- DATA FOTO PROGRAM KERJA DIVISI INFOCOM -->
+        <!-- DATA FOTO PROGRAM KERJA DIVISI EDUCATION -->
         <script type="application/json" id="gallery-data">
         [
     {
-        "title": "Discord",
-        "folder": "discord",
-        "cover": "../img/INFOCOM.webp",
+        "title": "Belajar Bulanan",
+        "folder": "belajar-bulanan",
+        "cover": "../img/EDUCATION.webp",
         "photos": []
     },
     {
-        "title": "Podcast",
-        "folder": "podcast",
-        "cover": "../img/INFOCOM.webp",
+        "title": "Kelas Spesial",
+        "folder": "kelas-spesial",
+        "cover": "../img/EDUCATION.webp",
         "photos": []
     },
     {
-        "title": "Website",
-        "folder": "website",
-        "cover": "../img/INFOCOM.webp",
+        "title": "Kelas TOEFL",
+        "folder": "kelas-toefl",
+        "cover": "../img/EDUCATION.webp",
         "photos": []
     },
     {
-        "title": "DYK (Ieclopedia)",
-        "folder": "dyk-ieclopedia",
-        "cover": "../img/INFOCOM.webp",
+        "title": "Tahukah Kamu?",
+        "folder": "tahukah-kamu",
+        "cover": "../img/EDUCATION.webp",
         "photos": []
     },
     {
-        "title": "I-GREET (Birthday)",
-        "folder": "i-greet",
-        "cover": "../img/INFOCOM.webp",
+        "title": "I-Article",
+        "folder": "i-article",
+        "cover": "../img/EDUCATION.webp",
         "photos": []
     },
     {
-        "title": "Redoction",
-        "folder": "redoction",
-        "cover": "../img/INFOCOM.webp",
-        "photos": []
-    },
-    {
-        "title": "I-Anniversary",
-        "folder": "i-anniversary",
-        "cover": "../img/INFOCOM.webp",
-        "photos": []
-    },
-    {
-        "title": "LINKEDIN",
-        "folder": "linkedin",
-        "cover": "../img/INFOCOM.webp",
-        "photos": []
-    },
-    {
-        "title": "WA Channel",
-        "folder": "wa-channel",
-        "cover": "../img/INFOCOM.webp",
-        "photos": []
-    },
-    {
-        "title": "Poster",
-        "folder": "poster",
-        "cover": "../img/INFOCOM.webp",
-        "photos": []
-    },
-    {
-        "title": "Social Media",
-        "folder": "social-media",
-        "cover": "../img/INFOCOM.webp",
-        "photos": []
-    },
-    {
-        "title": "Mading",
-        "folder": "mading",
-        "cover": "../img/INFOCOM.webp",
+        "title": "Ieschool",
+        "folder": "ieschool",
+        "cover": "../img/EDUCATION.webp",
         "photos": []
     }
 ]
@@ -150,10 +113,10 @@
     <main-footer></main-footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="galery.js"></script>
-    <script src="../translate.js"></script>
+    <script src="../js/gallery.js"></script>
+    <script src="../js/translate.js"></script>
     <script src="../js/navbar.js?v=2"></script>
     <script src="../js/footer.js"></script>
-    <script src="../script.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>

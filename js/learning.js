@@ -366,9 +366,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         <span class="topic-badge ${mod.category}">
                             <i class="fa-solid fa-bookmark text-[9px]"></i> ${badgeLabel}
                         </span>
-                        <span class="file-format-badge ${mod.format}">
-                            <i class="fa-solid ${formatIcon}"></i> ${mod.formatLabel}
-                        </span>
                     </div>
 
                     <div class="module-card-body">
@@ -425,8 +422,9 @@ document.addEventListener("DOMContentLoaded", () => {
         modalDesc.textContent = desc;
         modalTopicBadge.textContent = badgeLabel;
         modalTopicBadge.className = `topic-badge ${mod.category}`;
-        modalFormatBadge.textContent = mod.formatLabel;
-        modalFormatBadge.className = `file-format-badge ${mod.format}`;
+        if (modalFormatBadge) {
+            modalFormatBadge.remove();
+        }
         modalDriveBtn.href = mod.driveUrl;
 
         // Render syllabus items

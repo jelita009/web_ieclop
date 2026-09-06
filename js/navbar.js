@@ -4,9 +4,9 @@ class MainNavbar extends HTMLElement {
         const currentPath = pathName.split("/").pop() || 'index.html';
 
         // OTOMATISASI PATH: 
-        // Jika halaman saat ini berada di dalam folder 'Galery' (case-insensitive), 
+        // Jika halaman saat ini berada di dalam subfolder album (gallery), 
         // berikan prefix "../" untuk kembali ke root. Jika tidak, kosongkan "".
-        const isInsideSubfolder = /\/galery\//i.test(pathName);
+        const isInsideSubfolder = /\/(gallery|galery)\//i.test(pathName);
         const prefix = isInsideSubfolder ? '../' : '';
 
         // Tambahkan id="main-nav" di elemen <nav> di bawah ini
@@ -24,7 +24,7 @@ class MainNavbar extends HTMLElement {
                     <a href="${prefix}struktur.html" id="nav-structure" class="nav-link ${currentPath === 'struktur.html' ? 'active' : ''}" data-i18n="navStructure">Struktur</a>
 
                     <div class="dropdown">
-                        <button class="nav-link flex items-center group">
+                        <button class="nav-link flex items-center group" aria-haspopup="true" aria-expanded="false" aria-label="Menu Pilihan Divisi">
                             <span data-i18n="navDivisions">Divisi</span>
                             <i class="fa-solid fa-chevron-down text-xs ml-2 transition-transform group-hover:rotate-180"></i>
                         </button>
@@ -44,17 +44,17 @@ class MainNavbar extends HTMLElement {
                 </div>
 
                 <div class="flex items-center space-x-4 md:space-x-6">
-                    <div class="lang-container hidden sm:flex">
-                        <span onclick="changeLanguage('id')" id="btn-id" class="lang-link lang-active">ID</span>
+                    <div class="lang-container hidden sm:flex" role="group" aria-label="Pilihan Bahasa">
+                        <button type="button" onclick="changeLanguage('id')" id="btn-id" class="lang-link lang-active" aria-label="Bahasa Indonesia">ID</button>
                         <span class="text-gray-500">|</span>
-                        <span onclick="changeLanguage('en')" id="btn-en" class="lang-link">EN</span>
+                        <button type="button" onclick="changeLanguage('en')" id="btn-en" class="lang-link" aria-label="English Language">EN</button>
                     </div>
                     
-                    <a href="${prefix}login.html" class="admin-login-btn flex items-center justify-center">
+                    <a href="${prefix}login.html" class="admin-login-btn flex items-center justify-center" aria-label="Login Pengurus / Dashboard Admin" title="Login Pengurus">
                         <i class="fa-solid fa-user-shield"></i>
                     </a>
 
-                    <button id="mobile-menu-btn" class="md:hidden text-white text-2xl focus:outline-none transition-transform hover:scale-110">
+                    <button id="mobile-menu-btn" class="md:hidden text-white text-2xl focus:outline-none transition-transform hover:scale-110" aria-label="Buka Menu Navigasi" aria-expanded="false">
                         <i class="fa-solid fa-bars"></i>
                     </button>
                 </div>

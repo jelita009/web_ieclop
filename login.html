@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="animation.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animation.css">
     
     <!-- Favicon / Tab Logo -->
     <link rel="icon" type="image/webp" href="img/logo_IECLOP.webp">
@@ -49,10 +49,15 @@
 <!-- Layout body diubah agar form di tengah tapi bisa scroll ke footer -->
 <body class="text-white antialiased min-h-screen flex flex-col overflow-x-hidden">
     
-    <video autoplay muted loop playsinline controlsList="nodownload" disablePictureInPicture class="video-bg">
+    <video autoplay muted loop playsinline preload="auto" controlsList="nodownload" disablePictureInPicture class="video-bg">
         <source src="video/VIDEO%20PROFIL%20UKM%20IECLOP%20PNL%20-%202026_2.mp4" type="video/mp4">
     </video>
     <div class="overlay"></div>
+
+    <!-- Tombol Kontrol Video Background -->
+    <button id="video-ctrl-btn" class="video-control-btn" aria-label="Jeda Video Latar Belakang" title="Jeda Video Latar Belakang">
+        <i class="fa-solid fa-pause"></i>
+    </button>
 
     <div class="lang-container-absolute">
         <div class="lang-container">
@@ -70,9 +75,9 @@
             <p class="text-blue-200 mb-8 text-sm opacity-80" data-i18n="adminDesc">Silakan masuk untuk mengelola tugas divisi.</p>
             
             <div class="space-y-4">
-                <input type="text" id="username" placeholder="Username" class="w-full p-4 rounded-xl outline-none transition">
-                <input type="password" id="password" placeholder="Password" class="w-full p-4 rounded-xl outline-none transition">
-                <button onclick="handleLogin()" class="w-full bg-[#1e3a8a] hover:bg-[#172a6b] py-4 rounded-xl font-bold transition transform hover:scale-105 shadow-[0_4px_15px_rgba(30,58,138,0.4)]" data-i18n="adminBtn">
+                <input type="text" id="username" placeholder="Username" autocomplete="username" class="w-full p-4 rounded-xl outline-none transition">
+                <input type="password" id="password" placeholder="Password" autocomplete="current-password" class="w-full p-4 rounded-xl outline-none transition">
+                <button type="button" id="login-submit-btn" class="w-full bg-[#1e3a8a] hover:bg-[#172a6b] py-4 rounded-xl font-bold transition transform hover:scale-105 shadow-[0_4px_15px_rgba(30,58,138,0.4)]" data-i18n="adminBtn">
                     MASUK SEKARANG
                 </button>
             </div>
@@ -83,7 +88,7 @@
     <!-- Bingkai Footer Otomatis -->
     <main-footer></main-footer>
 
-    <!-- Script pemanggil Animasi AOS diletakkan sebelum script utama -->
+    <!-- Script pemanggil Animasi AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1000, once: true });
@@ -99,27 +104,10 @@
                 });
             }
         });
-
-        function handleLogin() {
-            const u = document.getElementById('username').value;
-            const p = document.getElementById('password').value;
-            
-            // Mengambil bahasa saat ini untuk menerjemahkan notifikasi error
-            const lang = localStorage.getItem('preferredLang') || 'id';
-            const errorMsg = lang === 'id' 
-                ? "Akses Ditolak! Username atau Password salah." 
-                : "Access Denied! Incorrect Username or Password.";
-            
-            if(u === "admin" && p === "pnl2026") {
-                localStorage.setItem("adminLoggedIn", "true");
-                window.location.href = "admin.html";
-            } else {
-                alert(errorMsg);
-            }
-        }
     </script>
-    <script src="translate.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/translate.js"></script>
     <script src="js/footer.js"></script>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

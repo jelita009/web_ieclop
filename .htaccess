@@ -1,0 +1,50 @@
+# ==============================================================================
+# UKM IECLOP PNL - APACHE / CPANEL HTTP SECURITY & OPTIMIZATION CONFIGURATION
+# ==============================================================================
+
+# 1. PREVENT DIRECTORY LISTING (Mencegah pengunjung melihat isi folder secara publik)
+Options -Indexes
+
+# 2. HTTP SECURITY HEADERS
+<IfModule mod_headers.c>
+    # Anti-Clickjacking: Melarang situs disematkan di iframe pihak ketiga
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # Anti-MIME Sniffing: Memaksa browser mematuhi MIME-type asli
+    Header always set X-Content-Type-Options "nosniff"
+
+    # Referrer Policy: Menjaga privasi data URL rujukan saat navigasi keluar
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # XSS Protection: Filter XSS otomatis untuk browser lama
+    Header always set X-XSS-Protection "1; mode=block"
+
+    # Permissions Policy: Mematikan fitur sensor perangkat yang tidak digunakan
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+
+    # Content Security Policy (Upgrade link tidak aman menjadi HTTPS)
+    Header always set Content-Security-Policy "upgrade-insecure-requests;"
+</IfModule>
+
+# 3. BLOKIR AKSES KE FILE SENSITIF & KONFIGURASI
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Blokir akses ke file dokumentasi markdown, script backend, atau log
+<FilesMatch "\.(md|log|py|sh|gitattributes)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# 4. MIME TYPES & CACHE OPTIMIZATION
+<IfModule mod_mime.c>
+    AddType image/webp .webp
+    AddType video/mp4 .mp4
+    AddType video/webm .webm
+</IfModule>
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json
+</IfModule>

@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeri Kompetisi & Lomba - UKM IECLOP</title>
+    <title>Galeri Regeneration - UKM IECLOP</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
-    <link rel="stylesheet" href="galery.css">
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../styles/galleryPage.css">
-    <link rel="stylesheet" href="../animation.css">
+    <link rel="stylesheet" href="../css/gallery.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animation.css">
     
     <!-- Favicon / Tab Logo -->
     <link rel="icon" type="image/webp" href="../img/logo_IECLOP.webp">
@@ -23,7 +22,7 @@
 <body class="text-white antialiased bg-[#050b1d]">
     
     <!-- Background Video -->
-    <video autoplay muted loop playsinline controlsList="nodownload" disablePictureInPicture class="video-bg">
+    <video autoplay muted loop playsinline preload="auto" controlsList="nodownload" disablePictureInPicture class="video-bg">
         <source src="../video/VIDEO%20PROFIL%20UKM%20IECLOP%20PNL%20-%202026_2.mp4" type="video/mp4">
     </video>
     <div class="overlay"></div>
@@ -31,7 +30,7 @@
     <!-- Navbar Utama -->
     <main-navbar class="relative z-[100]"></main-navbar>
 
-    <!-- Konten Utama Galeri Kompetisi -->
+    <!-- Konten Utama Galeri Divisi -->
     <main class="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 pt-32 pb-24">
         
         <!-- Tombol Kembali -->
@@ -44,84 +43,64 @@
         <!-- Judul Halaman -->
         <div class="text-center mb-12" data-aos="fade-down">
             <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 uppercase text-glow">
-                Dokumentasi Kompetisi & Lomba
+                Galeri Divisi Regeneration
             </h1>
             <p class="text-gray-300 mt-3 text-sm md:text-base max-w-xl mx-auto">
-                Kumpulan momen perjuangan dan pencapaian delegasi UKM IECLOP di berbagai ajang kompetisi lokal dan nasional.
+                Dokumentasi Open Recruitment, HOCO, Internship, PDH Day, IBOUND, dan Keakraban Kader.
             </p>
             <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto mt-4 rounded-full"></div>
         </div>
 
-        <!-- DATA FOTO KOMPETISI -->
+        <!-- DATA FOTO PROGRAM KERJA DIVISI REGENERATION -->
         <script type="application/json" id="gallery-data">
         [
     {
-        "src": "../img/gallery/kompetisi/L1.webp",
-        "alt": "Dokumentasi Lomba & Kompetisi IECLOP"
+        "title": "Open Recruitment",
+        "folder": "open-recruitment",
+        "cover": "../img/REGENERATION.webp",
+        "photos": []
     },
     {
-        "src": "../img/gallery/kompetisi/L2.webp",
-        "alt": "Dokumentasi Lomba & Kompetisi IECLOP"
+        "title": "Keep In Touch",
+        "folder": "keep-in-touch",
+        "cover": "../img/REGENERATION.webp",
+        "photos": []
     },
     {
-        "src": "../img/gallery/kompetisi/L3.webp",
-        "alt": "Dokumentasi Lomba & Kompetisi IECLOP"
+        "title": "HOCO",
+        "folder": "hoco",
+        "cover": "../img/REGENERATION.webp",
+        "photos": []
     },
     {
-        "src": "../img/gallery/kompetisi/L4.webp",
-        "alt": "Dokumentasi Lomba & Kompetisi IECLOP"
+        "title": "Internship",
+        "folder": "internship",
+        "cover": "../img/REGENERATION.webp",
+        "photos": []
     },
     {
-        "src": "../img/gallery/kompetisi/L5.webp",
-        "alt": "Dokumentasi Lomba & Kompetisi IECLOP"
+        "title": "PDH DAY",
+        "folder": "pdh-day",
+        "cover": "../img/REGENERATION.webp",
+        "photos": []
     },
     {
-        "src": "../img/gallery/kompetisi/L6.webp",
-        "alt": "Dokumentasi Lomba & Kompetisi IECLOP"
+        "title": "IBOUND",
+        "folder": "ibound",
+        "cover": "../img/REGENERATION.webp",
+        "photos": []
     },
     {
-        "src": "../img/gallery/kompetisi/L7.webp",
-        "alt": "Dokumentasi Lomba & Kompetisi IECLOP"
+        "title": "IE-GREET",
+        "folder": "ie-greet",
+        "cover": "../img/REGENERATION.webp",
+        "photos": []
     },
     {
-        "src": "../img/gallery/kompetisi/L8.webp",
-        "alt": "Dokumentasi Lomba & Kompetisi IECLOP"
-    },
-    {
-        "src": "../img/gallery/kompetisi/L9.webp",
-        "alt": "Dokumentasi Lomba & Kompetisi IECLOP"
-    },
-    {
-        "src": "../img/gallery/kompetisi/P1.webp",
-        "alt": "Dokumentasi Lomba & Kompetisi IECLOP"
-    },
-    {
-        "src": "../img/gallery/kompetisi/P2.webp",
-        "alt": "Dokumentasi Lomba & Kompetisi IECLOP"
-    },
-    {
-        "src": "../img/gallery/kompetisi/P3.webp",
-        "alt": "Dokumentasi Lomba & Kompetisi IECLOP"
-    },
-    {
-        "src": "../img/gallery/kompetisi/P4.webp",
-        "alt": "Dokumentasi Lomba & Kompetisi IECLOP"
-    },
-    {
-        "src": "../img/gallery/kompetisi/P5.webp",
-        "alt": "Dokumentasi Lomba & Kompetisi IECLOP"
-    },
-    {
-        "src": "../img/gallery/kompetisi/P6.webp",
-        "alt": "Dokumentasi Lomba & Kompetisi IECLOP"
-    },
-    {
-        "src": "../img/gallery/kompetisi/P7.webp",
-        "alt": "Dokumentasi Lomba & Kompetisi IECLOP"
-    },
-    {
-        "src": "../img/gallery/kompetisi/P8.webp",
-        "alt": "Dokumentasi Lomba & Kompetisi IECLOP"
+        "title": "I-Anniversary",
+        "folder": "i-anniversary",
+        "cover": "../img/REGENERATION.webp",
+        "photos": []
     }
 ]
         </script>
@@ -146,10 +125,10 @@
     <main-footer></main-footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="galery.js"></script>
-    <script src="../translate.js"></script>
+    <script src="../js/gallery.js"></script>
+    <script src="../js/translate.js"></script>
     <script src="../js/navbar.js?v=2"></script>
     <script src="../js/footer.js"></script>
-    <script src="../script.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>

@@ -11,7 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 🚚 Get latest code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          lfs: true
 
       - name: 📂 Sync files to InfinityFree
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
@@ -21,3 +23,8 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           # Biasanya file ditaruh di folder htdocs pada InfinityFree
           server-dir: ieclop.my.id/htdocs/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            server.py
+            PRODUCT.md

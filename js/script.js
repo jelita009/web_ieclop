@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. OTOMATISASI PATH & OVERLAY LOADING
     // ==========================================
     const pathName = window.location.pathname;
-    const isInsideSubfolder = /\/galery\//i.test(pathName);
+    const isInsideSubfolder = /\/(gallery|galery)\//i.test(pathName);
     const prefix = isInsideSubfolder ? '../' : '';
 
     const overlay = document.createElement('div');
@@ -55,27 +55,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================
-    // 2. NAVIGASI SLIDER BERITA
+    // 2. KONTROL VIDEO LATAR BELAKANG (PLAY / PAUSE)
     // ==========================================
-    const sliderContainer = document.getElementById('news-slider-container');
-    const prevBtn = document.getElementById('prev-news');
-    const nextBtn = document.getElementById('next-news');
+    const bgVideo = document.querySelector('.video-bg');
+    const videoCtrlBtn = document.getElementById('video-ctrl-btn');
 
-    if (sliderContainer && prevBtn && nextBtn) {
-        const scrollAmount = 400; // Jarak geser per klik (px)
-
-        nextBtn.addEventListener('click', () => {
-            sliderContainer.scrollBy({
-                left: scrollAmount,
-                behavior: 'smooth'
-            });
-        });
-
-        prevBtn.addEventListener('click', () => {
-            sliderContainer.scrollBy({
-                left: -scrollAmount,
-                behavior: 'smooth'
-            });
+    if (bgVideo && videoCtrlBtn) {
+        const icon = videoCtrlBtn.querySelector('i');
+        
+        videoCtrlBtn.addEventListener('click', () => {
+            if (bgVideo.paused) {
+                bgVideo.play();
+                if (icon) {
+                    icon.className = 'fa-solid fa-pause';
+                }
+                videoCtrlBtn.setAttribute('title', 'Jeda Video Latar Belakang');
+                videoCtrlBtn.setAttribute('aria-label', 'Jeda Video Latar Belakang');
+            } else {
+                bgVideo.pause();
+                if (icon) {
+                    icon.className = 'fa-solid fa-play';
+                }
+                videoCtrlBtn.setAttribute('title', 'Putar Video Latar Belakang');
+                videoCtrlBtn.setAttribute('aria-label', 'Putar Video Latar Belakang');
+            }
         });
     }
 
