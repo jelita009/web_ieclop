@@ -2,17 +2,17 @@ const translations = {
     id: {
         // Navbar
         navHome: "Beranda", navAbout: "Tentang", navStructure: "Struktur", navDivisions: "Divisi", navMemory: "Galeri", navGallery: "Galeri", navLearning: "Modul",
-        
+
         // Index Page (Beranda)
         heroTitle: "UKM IECLOP <br><span class='text-white drop-shadow-md'>",
         heroDesc: "Improving English Club of Polytechnic. Wadah belajar bahasa Inggris terbaik di Politeknik Negeri Lhokseumawe.",
-        btnExplore: "JELAJAHI", 
-        newsSectionTitle: "BERITA TERKINI", 
-        newsMore: "SELENGKAPNYA", 
+        btnExplore: "JELAJAHI",
+        newsSectionTitle: "BERITA TERKINI",
+        newsMore: "SELENGKAPNYA",
         newsRead: "BACA KONTEN",
         news1Title: "Kabar Membanggakan! 🚀🏅",
         news1Desc: "Shout out untuk Fazira, Cut Naila, & Naisa atas keberhasilannya di ajang National Policy Brief Competition 2025 Universitas Malikussaleh! 🩵✨<br>Dedikasi dan kerja keras mereka dalam menyusun gagasan terbaik akhirnya membuahkan hasil manis di tingkat nasional. Bangga banget dengan pencapaian kalian, teruslah berkarya dan menginspirasi sekitar! 🙌🏆",
-        NewsDate1:"29 Mei 2026",
+        NewsDate1: "29 Mei 2026",
         news2Title: "Selamat & Sukses: Penerima Pendanaan P2MW 2026 🏆",
         news2Desc: "Selamat kepada Muhammad Fikri Abdillah (Teknik Elektro '22) dan Cut Naila Aqqilah (Teknik Kimia '25) atas keberhasilannya meraih pendanaan dalam ajang bergengsi nasional Program Pembinaan Mahasiswa Wirausaha (P2MW) 2026 di kategori Tahap Usaha Berkembang. 🩵<br>Pencapaian ini membuktikan bahwa inovasi dan kerja keras di bangku kuliah mampu melahirkan usaha yang kompetitif. Selamat mengembangkan bisnis kalian, semoga sukses dan membawa keberkahan bagi sekitar!",
         NewsDate2: "29 Mei 2026",
@@ -67,21 +67,37 @@ const translations = {
         NewsDate19: "11 Agustus 2026",
         News19Title: "Perjalanan Menuju Final: KMIPN 2026 🏆💻",
         News19Desc: "Kabar membanggakan kembali hadir dari bidang informatika dan teknologi! Selamat atas pencapaian luar biasa yang diraih oleh rekan-rekan kita yang berhasil melangkah ke babak Final KMIPN 2026: 🎉💙<br><br>1. <b>Yuli Mulia Dinah & Santi Melvira</b> (TIK '23) — Finalis Kategori Hackathon<br>2. <b>Amirullah</b> (TIK '24) — Finalis Kategori E-Government<br>3. <b>Adha Gusti Harmadhan, Muthiah Rahma Pasaribu, & Livia Safirani</b> (TIK '23, '24) — Finalis Kategori ICT Business Planning<br>4. <b>Athaya Fidhla Anisah</b> (TIK '23) — Finalis Kategori Game Application Development<br><br>Apresiasi setinggi-tingginya atas kerja keras, inovasi, dan dedikasi yang telah ditunjukkan hingga titik ini. Selamat berjuang di babak final, tetap fokus, dan berikan performa terbaik kalian! 🚀🔥",
-        NewsDate20: "11 Agustus 2026",
-        News20Title: "Pendanaan PKM-RE 2026 🔬✨",
-        News20Desc: "Selamat atas pencapaian luar biasa yang diraih oleh <b>Muzzakir Rifaa</b> (TIK '23), <b>Friyal Nabila</b> (Teknik Kimia '22), dan <b>Reza Mauliza</b> (Bisnis '24) yang berhasil lolos dan meraih pendanaan pada Program Kreativitas Mahasiswa (PKM) 2026 di skema Riset Eksakta (PKM-RE). 🎉🩵<br><br>Apresiasi setinggi-tingginya atas dedikasi, kolaborasi lintas disiplin ilmu, serta komitmen kalian dalam memajukan riset dan inovasi. Semoga pendanaan ini dapat memperkaya pengalaman akademik dan menjadi langkah awal menuju PIMNAS. Selamat melakukan riset dan terus berkarya! 🚀",
-        NewsDate21: "11 Agustus 2026",
-        News21Title: "Pendanaan P2MW 2026 💼✨",
-        News21Desc: "Kabar membanggakan dari dunia wirausaha mahasiswa! Selamat atas pencapaian <b>Muhammad Fikri Abdillah</b> (Teknik Elektro '22) dan <b>Cut Naila Aqqilah</b> (Teknik Kimia '25) yang berhasil meraih pendanaan pada Program Pembinaan Mahasiswa Wirausaha (P2MW) 2026 untuk kategori Tahap Usaha Berkembang. 🎉🩵<br><br>Apresiasi setinggi-tingginya atas kerja keras, kreativitas, dan semangat kewirausahaan yang telah ditunjukkan. Semoga pendanaan ini mengakselerasi pertumbuhan usaha kalian dan menjadi inspirasi bagi seluruh mahasiswa! 🚀",
-        NewsDate22: "11 Agustus 2026",
-        News22Title: "Prestasi Tingkat Nasional 🏆✨",
-        News22Desc: "Selamat dan sukses atas prestasi gemilang yang diraih oleh <b>Fazira Asha Frachila</b>, <b>Cut Naila Aqqilah</b>, dan <b>Naisa Khairuna</b> (Teknik Kimia '25)! 🎉🩵<br><br>Tim hebat ini berhasil meraih <b>Juara 1 Kategori Harapan</b> pada ajang <i>2025 National Policy Brief Competition</i> yang diselenggarakan oleh HMTK Universitas Malikussaleh. Pencapaian ini merupakan buah dari dedikasi, kerja sama tim yang solid, serta ide-ide solutif yang luar biasa. Keep up the amazing work! 🏅🎊",
         NewsDate23: "25 Agustus 2026",
         News23Title: "Prestasi Internasional 🏆✨",
         News23Desc: "Kabar membanggakan dari panggung internasional! Selamat atas pencapaian luar biasa yang diraih oleh <b>Raisha Fathla</b> (Bisnis ’24) sebagai <b>Juara 2 Category Master of Ceremony</b> pada ajang <i>International Business Administration Competition (IBAC) 2026</i>. 🎉💙<br><br>Pencapaian ini merupakan bukti nyata dari kepercayaan diri, dedikasi, serta kerja keras yang konsisten. Terima kasih telah mengharumkan nama kita di tingkat internasional. Teruslah menginspirasi dan meraih prestasi tertinggi! 🔥🏆",
         NewsDate24: "19 Agustus 2026",
         News24Title: "Kehormatan Tingkat Nasional 🇮🇩✨",
         News24Desc: "Kabar membanggakan di tingkat nasional! Selamat atas terpilihnya <b>Zalfa Nur Alya</b> (Teknik Kimia ’23) sebagai <b>Assistant Protocol Officer untuk Kepresidenan Republik Indonesia 2026</b>. 🇮🇩💙<br><br>Sebuah kehormatan luar biasa atas kepercayaan dan amanah besar ini. Semoga dapat menjalankan tugas dengan penuh percaya diri, dedikasi, serta tanggung jawab tinggi. Terus berikan yang terbaik dan harumkan nama kita di kancah nasional! 🚀✨",
+        NewsDate25: "27 Agustus 2026",
+        News25Title: "Juara 1 Lomba Video Kreatif HUT RI Ke-81 🏆🎉",
+        News25Desc: "Prestasi membanggakan kembali diraih oleh mahasiswa UKM IECLOP! Selamat dan sukses kepada <b>Cut Siti Nurhaliza</b> (Bisnis '23), <b>Asyura</b> (Bisnis '23), dan <b>Firdhila Ananda Syahputri</b> (Teknologi Informasi & Komputer '24) atas keberhasilannya meraih <b>Juara 1 Lomba Video Konten Kreatif</b> dalam rangka HUT RI ke-81 Tahun 2026 yang diselenggarakan oleh Polres Lhokseumawe. 🎉🇮🇩<br><br>Pencapaian luar biasa ini merupakan bukti kreativitas, kerja sama tim yang solid, serta dedikasi tanpa henti. Teruslah berkarya, berinovasi, dan menginspirasi kita semua! 🚀✨",
+        NewsDate26: "28 Agustus 2026",
+        News26Title: "Prestasi Gemilang KMIPN VIII 2026 🏆🎉",
+        News26Desc: "Torehan sejarah dan kebanggaan luar biasa dari panggung nasional! Selamat atas prestasi spektakuler kontingen mahasiswa Teknologi Informasi & Komputer di ajang bergengsi <b>KMIPN VIII 2026</b> di Makassar. 🏆🎉<br><br>🏆 <b>Juara 1 ICT Business Planning</b> (Kategori Kreativitas) — Adha Gusti Harmadhan, Muthiah Rahma Pasaribu, & Livia Safirani<br>🏆 <b>Juara 1 E-Government</b> (Kategori Solusi Inovatif) — Amirullah<br>🥈 <b>Juara 2 Game Application Development</b> (Kategori Narasi & Storytelling) — Athaya Fidla Anisah<br>🥈 <b>Juara 2 Hackathon</b> (Kategori Utama) — Santi Melvira & Yuli Mulia Dinah<br><br>Pencapaian ini mencerminkan dedikasi, ketangguhan, dan kerja keras tanpa henti. We are so proud of you! 💙✨",
+        News26BtnModal: "Lihat Detail & Daftar Pemenang 🏆",
+        ModalKMIPNBadge: "KMIPN VIII 2026",
+        ModalKMIPNLocation: "Makassar, 2026",
+        ModalKMIPNTitle: "Prestasi Gemilang KMIPN VIII 2026 🏆🎉",
+        ModalKMIPNIntro: "Kami mengucapkan selamat dan apresiasi setinggi-tingginya kepada rekan-rekan mahasiswa Teknologi Informasi & Komputer atas pencapaian luar biasa pada ajang <b>KMIPN VIII 2026</b> di Makassar. Dedikasi, ketangguhan, dan kerja keras kalian telah membuahkan hasil manis yang mengharumkan nama kampus dan organisasi. Teruslah berkarya dan raih prestasi yang lebih tinggi! We are so proud of you! 💙✨",
+        ModalKMIPNWinnersHeading: "Daftar Pemenang & Kategori Lomba",
+        ModalWinner1Badge: "Juara 1",
+        ModalWinner1Category: "ICT Business Planning Competition",
+        ModalWinner1Sub: "Kategori Kreativitas",
+        ModalWinner2Badge: "Juara 1",
+        ModalWinner2Category: "E-Government Competition",
+        ModalWinner2Sub: "Kategori Solusi Inovatif",
+        ModalWinner3Badge: "Juara 2",
+        ModalWinner3Category: "Game Application Development",
+        ModalWinner3Sub: "Kategori Narasi & Storytelling",
+        ModalWinner4Badge: "Juara 2",
+        ModalWinner4Category: "Hackathon Competition",
+        ModalWinner4Sub: "Kategori Utama",
+        ModalKMIPNGalleryHeading: "Galeri Poster Penghargaan",
 
         // About Page
         aboutTitle: "TENTANG <span class='highlight text-blue-300'>IECLOP</span>",
@@ -98,7 +114,7 @@ const translations = {
         divPrDesc: "<b>Public Relations</b> (PR) adalah divisi dalam UKM IECLOP yang bertugas membangun citra positif organisasi melalui komunikasi yang efektif dan hubungan baik dengan berbagai pihak eksternal, seperti alumni dan demisioner, ORMAWA KBMPNL, masyarakat, kampus/instansi lain, serta mitra kerja. Divisi ini berperan sebagai jembatan yang menjalin koneksi, menjaga relasi, dan menciptakan kolaborasi strategis guna mendukung keberlanjutan program serta memperluas dampak positif IECLOP di dalam maupun di luar lingkungan kampus.",
         divOlyTitle: "OLYMPIC <span>🏆</span>",
         divOlyDesc: "<b>Divisi Olympic</b> merupakan salah satu divisi dalam Unit Kegiatan Mahasiswa (UKM) IECLOP yang memiliki fokus utama dalam mengembangkan minat serta bakat mahasiswa, khususnya Member IECLOP, diberbagai ajang perlombaan, seperti debate, essay, Writing, Newscasting dan kompetisi lainnya yang dapat direalisasikan melalui kegiatan mingguan yaitu OPRA (olympic practice). Melalui kegiatan OPRA inilah Divisi Olympic bertujuan untuk meningkatkan kualitas dan daya saing anggota, menumbuhkan semangat untuk meningkatkan prestasi.",
-        
+
         // Struktur Page
         structTitle: "STRUKTUR <span class='text-blue-300'>ORGANISASI</span>",
         structPeriod: "PERIODE 2025/2026",
@@ -146,7 +162,7 @@ const translations = {
         footerAdmin: "Dashboard Admin",
         footerRights: "Hak Cipta © 2026 INFOCOM IECLOP. Seluruh Hak Cipta Dilindungi. Dibuat dengan semangat oleh Situs Administrator.",
         footerInfocom: "Infokom",
-        
+
         //Memory2024
         memoTittle: "IECLOP Memories",
         memoDesc: "Kumpulan dokumentasi momen berharga, keseruan, dan kebersamaan seluruh keluarga besar UKM IECLOP.",
@@ -180,13 +196,13 @@ const translations = {
     en: {
         // Navbar
         navHome: "Home", navAbout: "About", navStructure: "Structure", navDivisions: "Divisions", navMemory: "Gallery", navGallery: "Gallery", navLearning: "Modules",
-        
+
         // Index Page (Beranda)
         heroTitle: "UKM IECLOP",
         heroDesc: "Improving English Club of Polytechnic. The best platform for learning English at Lhokseumawe State Polytechnic.",
-        btnExplore: "EXPLORE NOW", 
-        newsSectionTitle: "LATEST NEWS", 
-        newsMore: "SEE MORE", 
+        btnExplore: "EXPLORE NOW",
+        newsSectionTitle: "LATEST NEWS",
+        newsMore: "SEE MORE",
         newsRead: "READ MORE",
         news1Title: "Another Win Secured! 🚀🏅",
         news1Desc: "Shout out to Fazira, Cut Naila, & Naisa for their remarkable achievement at the 2025 National Policy Brief Competition hosted by Malikussaleh University! 🩵✨<br>Their hard work and innovative ideas have truly paid off on the national stage. Beyond proud of you, girls! Keep creating and never stop inspiring! 🙌🏆",
@@ -244,21 +260,37 @@ const translations = {
         NewsDate19: "August 11, 2026",
         News19Title: "Road to Finals: KMIPN 2026 🏆💻",
         News19Desc: "Proud news from our ICT talents! We extend our warmest congratulations to our amazing students who have successfully advanced as Finalists in KMIPN 2026: 🎉💙<br><br>1. <b>Yuli Mulia Dinah & Santi Melvira</b> (ICT '23) — Finalist in Hackathon Category<br>2. <b>Amirullah</b> (ICT '24) — Finalist in E-Government Category<br>3. <b>Adha Gusti Harmadhan, Muthiah Rahma Pasaribu, & Livia Safirani</b> (ICT '23, '24) — Finalist in ICT Business Planning Category<br>4. <b>Athaya Fidhla Anisah</b> (ICT '23) — Finalist in Game Application Development Category<br><br>This milestone highlights your dedication, problem-solving skills, and passion for technology. Keep fighting and give your absolute best performance in the final round! 🚀🔥",
-        NewsDate20: "August 11, 2026",
-        News20Title: "PKM-RE 2026 Funding Secured 🔬✨",
-        News20Desc: "We sincerely congratulate <b>Muzzakir Rifaa</b> (ICT '23), <b>Friyal Nabila</b> (Chemical Engineering '22), and <b>Reza Mauliza</b> (Business '24) on securing funding under the PKM-RE Scheme in the 2026 Student Creativity Program (PKM). 🎉🩵<br><br>This milestone reflects your dedication, strong interdisciplinary collaboration, and commitment to innovation. May this research opportunity enrich your academic journey and lead to even greater scientific breakthroughs in the future! 🚀",
-        NewsDate21: "August 11, 2026",
-        News21Title: "P2MW 2026 Funding Secured 💼✨",
-        News21Desc: "Proud news from our student entrepreneurs! We congratulate <b>Muhammad Fikri Abdillah</b> (Electrical Engineering '22) and <b>Cut Naila Aqqilah</b> (Chemical Engineering '25) on securing funding in the Growing Business Stage Category of the 2026 Student Entrepreneurship Development Program (P2MW). 🎉🩵<br><br>This milestone is a direct reflection of your hard work, innovation, and entrepreneurial spirit. May this opportunity accelerate your business growth! 🚀",
-        NewsDate22: "August 11, 2026",
-        News22Title: "National Achievement 🏆✨",
-        News22Desc: "We proudly congratulate <b>Fazira Asha Frachila</b>, <b>Cut Naila Aqqilah</b>, and <b>Naisa Khairuna</b> (Chemical Engineering '25) on earning 1st Place in the Hope Category at the 2025 National Policy Brief Competition organized by Malikussaleh University! 🎉🩵<br><br>This milestone reflects your dedication, solid teamwork, and outstanding ideas throughout the competition. Keep believing in yourselves and stay passionate! 🏅🎊",
         NewsDate23: "August 25, 2026",
         News23Title: "International Victory 🏆✨",
         News23Desc: "Proud news from the international stage! We extend our warmest congratulations to <b>Raisha Fathla</b> (Business ’24) on her outstanding achievement as the <b>2nd Winner in the Master of Ceremony Category</b> at the <i>International Business Administration Competition (IBAC) 2026</i>. 🎉💙<br><br>This accomplishment reflects your confidence, dedication, and hard work throughout the competition. Thank you for bringing pride to our community on an international level. Keep inspiring and reaching greater heights! 🔥🏆",
         NewsDate24: "August 19, 2026",
         News24Title: "National Appointment 🇮🇩✨",
         News24Desc: "Proud news from the national level! We extend our warmest congratulations to <b>Zalfa Nur Alya</b> (Chemical Engineering ’23) on her appointment as an <b>Assistant Protocol Officer for the Presidency of the Republic of Indonesia 2026</b>. 🇮🇩💙<br><br>We are immensely proud of this incredible achievement and grateful to see her entrusted with such an honorable responsibility. May you carry out your duties with confidence, dedication, and integrity. Give your best and make us proud! 🚀✨",
+        NewsDate25: "August 27, 2026",
+        News25Title: "1st Place Creative Video Competition 🏆🎉",
+        News25Desc: "We proudly congratulate <b>Cut Siti Nurhaliza</b> (Business '23), <b>Asyura</b> (Business '23), and <b>Firdhila Ananda Syahputri</b> (Information & Computer Technology '24) on winning <b>1st Place in the Creative Content Video Competition</b> for the 81st Independence Day of the Republic of Indonesia 2026, organized by the Lhokseumawe City Police. 🎉🇮🇩<br><br>This achievement reflects your creativity, teamwork, and dedication. Keep creating, keep striving, and continue making us proud! 🚀✨",
+        NewsDate26: "August 28, 2026",
+        News26Title: "KMIPN VIII 2026 Champions 🏆🎉",
+        News26Desc: "We proudly congratulate our friends on their outstanding achievements at KMIPN VIII 2026 in Makassar! 🎉💙<br><br>🏆 <b>First Place Winner</b>, Business Planning Competition in the ICT (Creativity Category) — Adha Gusti Harmadhan, Muthiah Rahma Pasaribu, & Livia Safirani<br>🏆 <b>First Place Winner</b>, E-Government Competition (Innovative Solutions Category) — Amirullah<br>🥈 <b>Second Place Winner</b>, Game Application Development Competition (Narration & Storytelling Category) — Athaya Fidla Anisah<br>🥈 <b>Second Place Winner</b>, Hackathon Competition (Main Category) — Santi Melvira & Yuli Mulia Dinah<br><br>This achievement reflects your dedication, resilience, and commitment throughout the journey. Your hard work has truly paid off. We are proud of you! 💙✨",
+        News26BtnModal: "View Details & Winners 🏆",
+        ModalKMIPNBadge: "KMIPN VIII 2026",
+        ModalKMIPNLocation: "Makassar, 2026",
+        ModalKMIPNTitle: "KMIPN VIII 2026 Outstanding Champions 🏆🎉",
+        ModalKMIPNIntro: "We proudly congratulate our friends on their outstanding achievements at KMIPN VIII 2026 in Makassar. This achievement reflects your dedication, resilience, and commitment throughout the journey. Your hard work has truly paid off, and this recognition is well deserved. May this accomplishment inspire you to reach even greater heights. We are proud of you! 💙✨",
+        ModalKMIPNWinnersHeading: "Winners List & Categories",
+        ModalWinner1Badge: "1st Place",
+        ModalWinner1Category: "ICT Business Planning Competition",
+        ModalWinner1Sub: "Creativity Category",
+        ModalWinner2Badge: "1st Place",
+        ModalWinner2Category: "E-Government Competition",
+        ModalWinner2Sub: "Innovative Solutions Category",
+        ModalWinner3Badge: "2nd Place",
+        ModalWinner3Category: "Game Application Development",
+        ModalWinner3Sub: "Narration & Storytelling Category",
+        ModalWinner4Badge: "2nd Place",
+        ModalWinner4Category: "Hackathon Competition",
+        ModalWinner4Sub: "Main Category",
+        ModalKMIPNGalleryHeading: "Award Poster Gallery",
 
         // About Page
         aboutTitle: "ABOUT <span class='highlight text-blue-300'>IECLOP</span>",
@@ -275,7 +307,7 @@ const translations = {
         divPrDesc: "<b>Public Relations</b> (PR) is a division tasked with building a positive organizational image through effective communication and good relationships with various external parties, such as alumni, other student organizations, the public, other campuses/institutions, and partners. This division acts as a bridge that establishes connections, maintains relations, and creates strategic collaborations to support program sustainability and expand the positive impact of IECLOP.",
         divOlyTitle: "OLYMPIC <span>🏆</span>",
         divOlyDesc: "<b>Olympic Division</b> has a main focus on developing the interests and talents of students, especially IECLOP members, in various competitions, such as debate, essay writing, newscasting, and others, which can be realized through the weekly activity OPRA (Olympic Practice). Through OPRA, the Olympic Division aims to improve the quality and competitiveness of members, fostering a spirit to achieve greater accomplishments.",
-        
+
         // Struktur Page
         structTitle: "ORGANIZATIONAL <span class='text-blue-300'>STRUCTURE</span>",
         structPeriod: "2025/2026 PERIOD",
@@ -323,7 +355,7 @@ const translations = {
         footerAdmin: "Admin Dashboard",
         footerRights: "Copyright © 2026 INFOCOM IECLOP. All Rights Reserved. Crafted with passion by Site Administrator.",
         footerInfocom: "Infocom",
-        
+
         // Memory2026
         memoTittle: "IECLOP Memories",
         memoDesc: "A collection of moments capturing the cherished memories, fun, and togetherness of the entire extended IECLOP family.",

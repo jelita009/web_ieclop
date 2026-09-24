@@ -78,8 +78,20 @@ class RangeRequestHandler(SimpleHTTPRequestHandler):
 
 if __name__ == '__main__':
     port = int(sys.argv[1]) if len(sys.argv) > 1 else 5500
+    
+    # Otomatis arahkan direktori server ke folder 'frontend/'
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    root_dir = os.path.dirname(script_dir)
+    frontend_dir = os.path.join(root_dir, 'frontend')
+    
+    if os.path.isdir(frontend_dir):
+        os.chdir(frontend_dir)
+        print(f"Serving folder: {frontend_dir}")
+    else:
+        print(f"Serving folder: {os.getcwd()}")
+
     server = ThreadingHTTPServer(('0.0.0.0', port), RangeRequestHandler)
-    print(f"Serving HTTP on 0.0.0.0 port {port} with Range support...")
+    print(f"Serving HTTP on 0.0.0.0 port {port} with Range support (http://localhost:{port})...")
     try:
         server.serve_forever()
     except KeyboardInterrupt:

@@ -159,4 +159,51 @@ document.addEventListener("DOMContentLoaded", () => {
     }, observerOptions);
 
     cards.forEach(card => observer.observe(card));
+
+    // ==========================================
+    // 6. Modal Interaktif Detail Pemenang KMIPN VIII 2026
+    // ==========================================
+    const kmipnModal = document.getElementById('kmipn-news-modal');
+    const kmipnCloseBtn = document.getElementById('kmipn-modal-close');
+    const kmipnCard = document.getElementById('card-kmipn-2026');
+    const kmipnOpenBtns = document.querySelectorAll('.btn-open-kmipn-modal');
+
+    const openKMIPNModal = () => {
+        if (!kmipnModal) return;
+        kmipnModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeKMIPNModal = () => {
+        if (!kmipnModal) return;
+        kmipnModal.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    kmipnOpenBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openKMIPNModal();
+        });
+    });
+
+    if (kmipnCard) {
+        kmipnCard.addEventListener('click', (e) => {
+            if (hasMoved) return;
+            openKMIPNModal();
+        });
+    }
+
+    if (kmipnCloseBtn) kmipnCloseBtn.addEventListener('click', closeKMIPNModal);
+
+    if (kmipnModal) {
+        kmipnModal.addEventListener('click', (e) => {
+            if (e.target === kmipnModal) closeKMIPNModal();
+        });
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && kmipnModal.classList.contains('active')) {
+                closeKMIPNModal();
+            }
+        });
+    }
 });

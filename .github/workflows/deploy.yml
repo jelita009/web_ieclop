@@ -21,10 +21,9 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          # Biasanya file ditaruh di folder htdocs pada InfinityFree
+          # Hanya upload isi folder frontend langsung ke htdocs
+          local-dir: ./frontend/
           server-dir: ieclop.my.id/htdocs/
           exclude: |
             **/.git*
             **/.git*/**
-            server.py
-            PRODUCT.md
