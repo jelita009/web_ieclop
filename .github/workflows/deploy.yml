@@ -13,7 +13,7 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v4
         with:
-          lfs: true
+          lfs: false
 
       - name: 📂 Sync files to InfinityFree
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
@@ -27,3 +27,4 @@ jobs:
           exclude: |
             **/.git*
             **/.git*/**
+            **/video/VIDEO*

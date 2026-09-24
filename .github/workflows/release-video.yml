@@ -1,0 +1,36 @@
+name: Release Video Asset
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'assets-*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: 🎬 Publish Video Asset to GitHub Releases CDN
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Checkout Repository with LFS
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: 📦 Prepare Video File
+        run: |
+          cp "frontend/video/VIDEO PROFIL UKM IECLOP PNL - 2026_2.mp4" "video-profil-ieclop-2026.mp4"
+
+      - name: 🚀 Publish to GitHub Releases
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: assets-v1
+          name: "Assets Media v1"
+          body: "Direct CDN video asset for UKM IECLOP profile background video"
+          draft: false
+          prerelease: false
+          files: video-profil-ieclop-2026.mp4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
