@@ -1,0 +1,12 @@
+# Mengatur review otomatis untuk folder frontend
+/frontend/       @jelita26
+
+# My galeri
+/Galery/         @jelita26
+
+# Mengatur review otomatis untuk folder tools/backend
+/tools/          @jelita009
+
+# Dokumentasi dan workflow GitHub Actions
+/.github/        @jelita009
+/docs/           @jelita009
