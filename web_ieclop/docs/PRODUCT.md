@@ -52,8 +52,7 @@ Portal web UKM teknologi dan multimedia terdepan di lingkungan Politeknik Negeri
 - Struktur semantik HTML5 dengan heading hierarchy teratur dan dukungan keyboard navigation.
 - Label deskriptif pada tombol aksi dan tautan navigasi.
 
-# Test proteksi jelita26
-
-# Test proteksi jelita26
 
 ## Pengujian Codeowners jelita26
+
+# Test proteksi jelita26
