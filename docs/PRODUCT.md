@@ -51,3 +51,16 @@ Portal web UKM teknologi dan multimedia terdepan di lingkungan Politeknik Negeri
 - Target kepatuhan WCAG 2.1 Level AA untuk kontras warna teks dan elemen interaktif.
 - Struktur semantik HTML5 dengan heading hierarchy teratur dan dukungan keyboard navigation.
 - Label deskriptif pada tombol aksi dan tautan navigasi.
+
+
+## Pengujian Codeowners jelita26
+
+# Test proteksi jelita26
+
+# jelita tess
+
+# jelita tess
+
+# jelita tes lagi
+
+# jelita tes lagi2
