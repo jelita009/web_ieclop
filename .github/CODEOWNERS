@@ -1,12 +1,9 @@
 # Mengatur review otomatis untuk folder frontend
-/frontend/       @jelita26
-
-# My galeri
-/Galery/         @jelita26
+/frontend/       @jelita009 @jelita26 @ripo-let-cooks @mhaikaal0811-prog @Azharasepole223 @muda05-dev
 
 # Mengatur review otomatis untuk folder tools/backend
-/tools/          @jelita009
+/tools/          @jelita009 @ripo-let-cooks
 
 # Dokumentasi dan workflow GitHub Actions
-/.github/        @jelita009
-/docs/           @jelita009
+/.github/        @jelita009 @ripo-let-cooks @mhaikaal0811-prog
+/docs/           @jelita009 @ripo-let-cooks @mhaikaal0811-prog
