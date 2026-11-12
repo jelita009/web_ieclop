@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard - IECLOP</title>
-    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Link pemanggil ikon ditambahkan di sini -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animation.css">
@@ -17,14 +16,8 @@
     <link rel="shortcut icon" type="image/webp" href="img/logo_IECLOP.webp">
     <link rel="apple-touch-icon" href="img/logo_IECLOP.webp">
     
-    <script>
-        // Anti-FOUC Guard: Segera alihkan jika tidak ada token sesi admin
-        if (!sessionStorage.getItem("adminSessionToken") && !localStorage.getItem("adminLoggedIn")) {
-            window.location.replace("login.html");
-        }
-    </script>
-    
     <style>
+        body.auth-checking { display: none; }
         .admin-card { 
             background: rgba(10, 20, 50, 0.4); 
             backdrop-filter: blur(15px); 
@@ -56,11 +49,10 @@
         }
     </style>
 </head>
-<body class="text-white antialiased min-h-screen relative overflow-x-hidden">
+<body class="text-white antialiased min-h-screen relative overflow-x-hidden auth-checking">
     
     <video autoplay muted loop playsinline preload="auto" controlsList="nodownload" disablePictureInPicture class="video-bg">
         <source src="https://github.com/jelita009/web_ieclop/releases/download/assets-v1/video-profil-ieclop-2026.mp4" type="video/mp4">
-
         <source src="video/VIDEO%20PROFIL%20UKM%20IECLOP%20PNL%20-%202026_2.mp4" type="video/mp4">
     </video>
     <div class="overlay"></div>
@@ -99,20 +91,9 @@
     <!-- Bingkai Footer Otomatis -->
     <main-footer></main-footer>
 
-    <!-- Script Autentikasi Kriptografis -->
-    <script src="js/auth.js"></script>
+    <script src="js/supabase-config.js"></script>
     <script>
-        // Cek autentikasi login admin berbasis token kriptografis bertanda tangan
-        (async function enforceAuth() {
-            if (typeof window.verifyAdminSession === 'function') {
-                const isValid = await window.verifyAdminSession();
-                if (!isValid) {
-                    window.location.href = "login.html";
-                }
-            } else {
-                window.location.href = "login.html";
-            }
-        })();
+        let allTasksFromDB = [];
 
         // --- FITUR PENYAMBUNG VIDEO BACKGROUND ---
         document.addEventListener("DOMContentLoaded", () => {
@@ -126,91 +107,121 @@
             }
         });
 
-        // Data Tugas Tersinkronisasi dengan Halaman Divisi dan Fitur Translate
-        const tasksData = {
-            "Infocom": {
-                id: ["Discord", "Podcast", "Website", "DYK (Ieclopedia)", "I-GREET (Birthday)", "Redoction", "I-Anniversary", "LINKEDIN","WA Chanel", "Poster", "Social Media", "Mading"],
-                en: ["Discord", "Podcast", "Website", "DYK (Ieclopedia)", "I-GREET (Birthday)", "Redoction", "I-Anniversary", "LINKEDIN","WA Chanel", "Poster", "Media Social", "Mading"],
-            },
-            "Education": {
-                id: ["Belajar Bulanan", "Kelas Spesial", "Kelas TOEFL", "Tahukah Kamu?", "I-Article"],
-                en: ["Monthly Study", "Special Class", "TOEFL Class", "Did You Know?", "I-Article"]
-            },
-            "Regeneration": {
-                id: ["Open Recruitment", "Keep In Touch", "HOCO", "Internship", "PDH DAY", "IBOUND", "IE-GREET", "I-ANNYVERSARY"],
-                en: ["Open Recruitment", "Keep In Touch", "HOCO", "Internship", "PDH DAY", "IBOUND", "IE-GREET", "I-ANNYVERSARY"]
-            },
-            "Olympic": {
-                id: ["Juara IEClop","Jaringan Juara IEClop","Komunitas Olimpiade","Gudang Pengetahuan","Latihan Olimpiade",],
-                en: ["IEClop Champion","IEClop Champion Link","Olympic Society","Store of Knowledge","Olympic Practice",]
-            },
-            "Public Relation": {
-                id: ["I CARE", "I Charity", "IFTAR", "Pengabdian Masyarakat", "IeSchool", "TruStore", "Symfouny", "Kemitraan"],
-                en: ["I CARE","I Charity", "IFTAR", "Community Service", "IeSchool", "TruStore", "Symfouny", "PartnerShip"]
+        // 1. Cek Sesi Login ke Server Supabase
+        async function initAdminPage() {
+            const { data: { session } } = await supabaseClient.auth.getSession();
+            
+            if (!session) {
+                window.location.replace("login.html");
+                return;
             }
-        };
 
-        // Fungsi ini akan dipanggil otomatis oleh translate.js saat bahasa diganti
+            // Tampilkan halaman karena sesi valid
+            document.body.classList.remove('auth-checking');
+            await fetchAndRenderTasks();
+        }
+
+        // 2. Ambil Data Proker dari Database Supabase
+        async function fetchAndRenderTasks() {
+            const container = document.getElementById('admin-task-container');
+            container.innerHTML = `<p class="text-blue-200 col-span-full text-center">Memuat data proker...</p>`;
+
+            const { data, error } = await supabaseClient
+                .from('tasks')
+                .select('*')
+                .order('id', { ascending: true });
+
+            if (error) {
+                container.innerHTML = `<p class="text-red-400 col-span-full text-center">Gagal memuat data: ${error.message}</p>`;
+                return;
+            }
+
+            allTasksFromDB = data;
+            renderTasks(localStorage.getItem('preferredLang') || 'id');
+        }
+
+        // 3. Render ke Layar sesuai Bahasa
         window.updateLocalContent = function(lang) {
             renderTasks(lang);
         }
 
-        function renderTasks(lang = localStorage.getItem('preferredLang') || 'id') {
+        function renderTasks(lang = 'id') {
             const container = document.getElementById('admin-task-container');
             container.innerHTML = "";
 
-            for (const [divisi, tasksObj] of Object.entries(tasksData)) {
+            const divisiOrder = ["Infocom", "Education", "Regeneration", "Olympic", "Public Relation"];
+
+            divisiOrder.forEach(divisi => {
+                const divTasks = allTasksFromDB
+                    .filter(t => t.divisi === divisi)
+                    .sort((a, b) => parseInt(a.id.split('-')[1]) - parseInt(b.id.split('-')[1]));
+
+                if (divTasks.length === 0) return;
+
                 let taskHtml = `
                 <div class="admin-card p-6 transition transform hover:-translate-y-1">
                     <h2 class="text-xl font-black mb-5 text-blue-300 border-b border-white/10 pb-3 uppercase tracking-widest">${divisi}</h2>`;
-                
-                const displayTasks = tasksObj[lang] || tasksObj['id'];
 
-                displayTasks.forEach((taskName, index) => {
-                    const taskId = `${divisi}-${index}`;
-                    const isChecked = localStorage.getItem(taskId) === "true";
-                    
+                divTasks.forEach(task => {
+                    const taskName = lang === 'en' ? task.nama_en : task.nama_id;
+                    const isChecked = task.status_selesai;
+
                     taskHtml += `
                         <label class="task-item group">
-                            <input type="checkbox" onchange="toggleTask('${taskId}', this.checked)" ${isChecked ? 'checked' : ''}>
+                            <input type="checkbox" onchange="toggleTask('${task.id}', this.checked)" ${isChecked ? 'checked' : ''}>
                             <span class="${isChecked ? 'text-blue-400 line-through opacity-60' : 'text-blue-50 group-hover:text-white'} text-sm font-semibold tracking-wide transition">${taskName}</span>
                         </label>`;
                 });
 
                 taskHtml += `</div>`;
                 container.innerHTML += taskHtml;
-            }
+            });
         }
 
-        function toggleTask(id, status) {
-            localStorage.setItem(id, status);
+        // 4. Update Status Centang ke Database Supabase
+        async function toggleTask(id, status) {
+            const taskIndex = allTasksFromDB.findIndex(t => t.id === id);
+            if (taskIndex !== -1) allTasksFromDB[taskIndex].status_selesai = status;
             renderTasks(localStorage.getItem('preferredLang') || 'id');
+
+            const { error } = await supabaseClient
+                .from('tasks')
+                .update({ status_selesai: status })
+                .eq('id', id);
+
+            if (error) {
+                alert("Gagal menyimpan perubahan ke server: " + error.message);
+                await fetchAndRenderTasks();
+            }
         }
 
-        function resetProgress() {
+        // 5. Reset Semua Status ke False di Database
+        async function resetProgress() {
             const lang = localStorage.getItem('preferredLang') || 'id';
-            const alertMsg = lang === 'id' ? "Hapus semua status terlaksana?" : "Clear all completed statuses?";
+            const alertMsg = lang === 'id' ? "Hapus semua status terlaksana di database?" : "Clear all completed statuses in database?";
             
-            if(confirm(alertMsg)) {
-                Object.keys(localStorage).forEach(key => {
-                    if(key.includes('-')) localStorage.removeItem(key);
-                });
-                location.reload();
+            if (confirm(alertMsg)) {
+                const { error } = await supabaseClient
+                    .from('tasks')
+                    .update({ status_selesai: false })
+                    .neq('id', '');
+
+                if (error) {
+                    alert("Gagal mereset data: " + error.message);
+                } else {
+                    await fetchAndRenderTasks();
+                }
             }
         }
 
-        function logout() {
-            if (typeof window.logoutAdmin === 'function') {
-                window.logoutAdmin();
-            } else {
-                localStorage.removeItem("adminLoggedIn");
-                sessionStorage.removeItem("adminSessionToken");
-                window.location.href = "login.html";
-            }
+        // 6. Logout
+        async function logout() {
+            await supabaseClient.auth.signOut();
+            window.location.replace("login.html");
         }
 
-        // Render pertama kali saat halaman dimuat
-        renderTasks();
+        // Jalankan saat halaman dibuka
+        initAdminPage();
     </script>
     <script src="js/translate.js"></script>
     <script src="js/script.js"></script>
