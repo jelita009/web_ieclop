@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Infocom Division - IECLOP</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
@@ -68,13 +69,11 @@
   <body class="text-white antialiased">
     <video autoplay muted loop playsinline preload="auto" controlsList="nodownload" disablePictureInPicture class="video-bg">
       <source src="https://github.com/jelita009/web_ieclop/releases/download/assets-v1/video-profil-ieclop-2026.mp4" type="video/mp4">
-
       <source src="video/VIDEO%20PROFIL%20UKM%20IECLOP%20PNL%20-%202026_2.mp4" type="video/mp4">
     </video>
     <div class="overlay"></div>
     <main-navbar></main-navbar>
     
-    <!-- Tag Main yang sudah dirapikan (pt-32 pb-12) -->
     <main class="max-w-6xl mx-auto px-6 pt-32 pb-12 relative z-10">
       <header class="text-center mb-16" data-aos="fade-up">
         <h1
@@ -82,7 +81,6 @@
           class="text-5xl md:text-6xl font-black uppercase tracking-tighter text-white mb-4"
         ></h1>
         
-        <!-- Garis gradient sinkronisasi -->
         <div class="w-20 h-1.5 bg-gradient-to-r from-blue-500 to-pink-500 mx-auto rounded-full mb-6"></div>
         
         <p
@@ -93,7 +91,7 @@
       
       <section class="mb-24" data-aos="zoom-in" data-aos-delay="200">
         <div class="flex flex-col items-center">
-          <!-- Kartu Kepala Divisi (Identik Struktur) -->
+          <!-- Kartu Kepala Divisi -->
           <div
             class="card ketum relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 w-56 text-center transition duration-300 hover:-translate-y-2 hover:shadow-[0_10px_25px_rgba(30,58,138,0.6)] floating-card"
           >
@@ -136,30 +134,33 @@
     <!-- Bingkai Footer Otomatis -->
     <main-footer></main-footer>
 
+    <!-- Panggil Konfigurasi Supabase -->
+    <script src="js/supabase-config.js"></script>
+
     <script>
       const divisionDetails = {
         Infocom: {
           leader: "Raihan Saputra",
           leaderImg: "img/kadiv-infocom.webp",
           members: [
-          { name: "Zia Alicia", img: "img/infokom/Zia.webp" },
-          { name: "Asyura", img: "img/infokom/Asyura.webp" },
-          { name: "Ananda Putri Nabilla", img: "img/infokom/nanda.webp" },
-          { name: "Aulia Umisyakdiah", img: "img/infokom/lia.webp" },
-          { name: "Aqil Ocean Difra", img: "img/infokom/ocean.webp" },
-          { name: "Cut Siti Nurhaliza", img: "img/infokom/icut.webp" },
-          { name: "Muhammad Haikal", img: "img/infokom/haikal.webp" },
-          { name: "Nurul Fadila", img: "img/infokom/dila.webp" },
-          { name: "Muna Nafisa", img: "img/infokom/muna.webp" },
-          { name: "Firdhila Ananda Syahputri", img: "img/infokom/Firdhilla.webp" },
-          { name: "Bima Aril Syahputra", img: "img/logo_IECLOP.webp" },
-          { name: "Janrico Maulana Sofyan", img: "img/infokom/rico.webp" },
-          { name: "Safira Aznura Yunda", img: "img/infokom/yunda.webp" },
-          { name: "Jelita Anggraini", img: "img/infokom/jelita.webp" },
-          { name: "Fajri Ayu", img: "img/infokom/ayu.webp" },
-          { name: "Arief Maulana", img: "img/infokom/Arief.webp" },
-          { name: "Afif Kanahaya Hasibuan", img: "img/infokom/afif.webp" }
-        ],
+            { name: "Zia Alicia", img: "img/infokom/Zia.webp" },
+            { name: "Asyura", img: "img/infokom/Asyura.webp" },
+            { name: "Ananda Putri Nabilla", img: "img/infokom/nanda.webp" },
+            { name: "Aulia Umisyakdiah", img: "img/infokom/lia.webp" },
+            { name: "Aqil Ocean Difra", img: "img/infokom/ocean.webp" },
+            { name: "Cut Siti Nurhaliza", img: "img/infokom/icut.webp" },
+            { name: "Muhammad Haikal", img: "img/infokom/haikal.webp" },
+            { name: "Nurul Fadila", img: "img/infokom/dila.webp" },
+            { name: "Muna Nafisa", img: "img/infokom/muna.webp" },
+            { name: "Firdhila Ananda Syahputri", img: "img/infokom/Firdhilla.webp" },
+            { name: "Bima Aril Syahputra", img: "img/logo_IECLOP.webp" },
+            { name: "Janrico Maulana Sofyan", img: "img/infokom/rico.webp" },
+            { name: "Safira Aznura Yunda", img: "img/infokom/yunda.webp" },
+            { name: "Jelita Anggraini", img: "img/infokom/jelita.webp" },
+            { name: "Fajri Ayu", img: "img/infokom/ayu.webp" },
+            { name: "Arief Maulana", img: "img/infokom/Arief.webp" },
+            { name: "Afif Kanahaya Hasibuan", img: "img/infokom/afif.webp" }
+          ],
           id: {
             desc: "Information & Communication. Mengelola media sosial, branding visual, dan website resmi IECLOP.",
             tasks: ["Discord", "Podcast", "Website", "DYK (Ieclopedia)", "I-GREET (Birthday)", "Redoction", "I-Anniversary", "LINKEDIN","WA Chanel", "Poster", "Social Media", "Mading"],
@@ -170,13 +171,15 @@
           },
         },
       };
+
       const params = new URLSearchParams(window.location.search);
       const divName = params.get("name") || "Infocom";
-      const data =
-        divisionDetails[divName] || Object.values(divisionDetails)[0];
+      const data = divisionDetails[divName] || Object.values(divisionDetails)[0];
+      
+      // Menyimpan status proker yang diambil dari Supabase
+      let tasksStatusFromDB = {};
 
-      //jelita update untuk nambahin name dan img
-      function init() {
+      async function init() {
         if (!data) return;
         document.getElementById("div-name").innerText = divName.toUpperCase();
         document.getElementById("leader-name").innerText = data.leader;
@@ -186,7 +189,6 @@
         memberGrid.innerHTML = "";
 
         data.members.forEach((m, index) => {
-          // Cek apakah namanya mengandung Zia untuk label Sekretaris
           const roleLabel = m.name.includes("Zia")
             ? `<p class="text-blue-300 text-xs font-semibold uppercase tracking-wider mt-1">Sekretaris</p>`
             : "";
@@ -206,7 +208,32 @@
         });
 
         const savedLang = localStorage.getItem("preferredLang") || "id";
+        // Render tampilan awal sementara sebelum data Supabase selesai dimuat
         window.updateLocalContent(savedLang);
+        
+        // Ambil data status terbaru dari Supabase
+        await fetchTasksFromSupabase();
+      }
+
+      async function fetchTasksFromSupabase() {
+        const { data: dbTasks, error } = await supabaseClient
+          .from('tasks')
+          .select('id, status_selesai')
+          .eq('divisi', divName);
+
+        if (error) {
+          console.error("Gagal mengambil status proker dari Supabase:", error.message);
+          return;
+        }
+
+        if (dbTasks) {
+          dbTasks.forEach(item => {
+            tasksStatusFromDB[item.id] = item.status_selesai;
+          });
+          // Perbarui tampilan setelah data dari Supabase diterima
+          const savedLang = localStorage.getItem("preferredLang") || "id";
+          window.updateLocalContent(savedLang);
+        }
       }
 
       window.updateLocalContent = function (lang) {
@@ -215,9 +242,10 @@
         document.getElementById("div-desc").innerText = langData.desc;
         const container = document.getElementById("public-task-container");
         container.innerHTML = "";
+        
         langData.tasks.forEach((task, index) => {
           const taskId = `${divName}-${index}`;
-          const isDone = localStorage.getItem(taskId) === "true";
+          const isDone = tasksStatusFromDB[taskId] === true;
           const statusText = isDone
             ? lang === "id"
               ? "SUDAH TERLAKSANA"
@@ -225,6 +253,7 @@
             : lang === "id"
               ? "BELUM TERLAKSANA"
               : "COMING SOON";
+              
           container.innerHTML += `
                 <div class="glass-card p-6 flex items-center justify-between group transition">
                     <div class="flex items-center gap-5">
@@ -237,6 +266,7 @@
                 </div>`;
         });
       };
+
       init();
     </script>
     

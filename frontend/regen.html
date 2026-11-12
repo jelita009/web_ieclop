@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Regeneration Division - IECLOP</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
@@ -67,7 +68,6 @@
   <body class="text-white antialiased">
     <video autoplay muted loop playsinline preload="auto" controlsList="nodownload" disablePictureInPicture class="video-bg">
       <source src="https://github.com/jelita009/web_ieclop/releases/download/assets-v1/video-profil-ieclop-2026.mp4" type="video/mp4">
-
       <source src="video/VIDEO%20PROFIL%20UKM%20IECLOP%20PNL%20-%202026_2.mp4" type="video/mp4">
     </video>
     <div class="overlay"></div>
@@ -89,7 +89,7 @@
       </header>
       <section class="mb-24" data-aos="zoom-in" data-aos-delay="200">
         <div class="flex flex-col items-center">
-          <!-- Kartu Kepala Divisi (Identik Struktur) -->
+          <!-- Kartu Kepala Divisi -->
           <div
             class="card ketum relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 w-56 text-center transition duration-300 hover:-translate-y-2 hover:shadow-[0_10px_25px_rgba(30,58,138,0.6)] floating-card"
           >
@@ -131,6 +131,9 @@
 
     <main-footer></main-footer>
 
+    <!-- Panggil Konfigurasi Supabase -->
+    <script src="js/supabase-config.js"></script>
+
     <script>
       const divisionDetails = {
         Regeneration: {
@@ -166,12 +169,16 @@
           },
         },
       };
+
       const params = new URLSearchParams(window.location.search);
       const divName = params.get("name") || "Regeneration";
       const data =
         divisionDetails[divName] || Object.values(divisionDetails)[0];
 
-      function init() {
+      // Menyimpan status proker yang diambil dari Supabase
+      let tasksStatusFromDB = {};
+
+      async function init() {
         if (!data) return;
         document.getElementById("div-name").innerText = divName.toUpperCase();
         document.getElementById("leader-name").innerText = data.leader;
@@ -199,7 +206,32 @@
         });
 
         const savedLang = localStorage.getItem("preferredLang") || "id";
+        // Render tampilan awal sementara sebelum data Supabase selesai dimuat
         window.updateLocalContent(savedLang);
+
+        // Ambil data status terbaru dari Supabase
+        await fetchTasksFromSupabase();
+      }
+
+      async function fetchTasksFromSupabase() {
+        const { data: dbTasks, error } = await supabaseClient
+          .from('tasks')
+          .select('id, status_selesai')
+          .eq('divisi', divName);
+
+        if (error) {
+          console.error("Gagal mengambil status proker dari Supabase:", error.message);
+          return;
+        }
+
+        if (dbTasks) {
+          dbTasks.forEach(item => {
+            tasksStatusFromDB[item.id] = item.status_selesai;
+          });
+          // Perbarui tampilan setelah data dari Supabase diterima
+          const savedLang = localStorage.getItem("preferredLang") || "id";
+          window.updateLocalContent(savedLang);
+        }
       }
 
       window.updateLocalContent = function (lang) {
@@ -210,7 +242,7 @@
         container.innerHTML = "";
         langData.tasks.forEach((task, index) => {
           const taskId = `${divName}-${index}`;
-          const isDone = localStorage.getItem(taskId) === "true";
+          const isDone = tasksStatusFromDB[taskId] === true;
           const statusText = isDone
             ? lang === "id"
               ? "SUDAH TERLAKSANA"
@@ -230,6 +262,7 @@
                 </div>`;
         });
       };
+
       init();
     </script>
     
